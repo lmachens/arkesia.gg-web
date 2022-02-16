@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 export default function Index() {
   return (
     <>
-      <Navigate to="/maps/Arkesia World Map" replace={true} />
+      <Navigate to="/maps/Yorn/Unfinished Garden" replace={true} />
     </>
   );
 }

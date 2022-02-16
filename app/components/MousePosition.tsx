@@ -3,17 +3,17 @@ import { useMap } from "react-leaflet";
 
 export default function MousePosition() {
   const map = useMap();
-  const [latlng, setLatlng] = useState<L.LeafletMouseEvent["latlng"] | null>(
+  const [latLng, setLatLng] = useState<L.LeafletMouseEvent["latlng"] | null>(
     null
   );
 
   useEffect(() => {
     const handleMouseMove = (event: L.LeafletMouseEvent) => {
-      setLatlng(event.latlng);
+      setLatLng(event.latlng);
     };
 
     const handleMouseOut = () => {
-      setLatlng(null);
+      setLatLng(null);
     };
 
     map.on("mousemove", handleMouseMove);
@@ -25,13 +25,13 @@ export default function MousePosition() {
     };
   }, [map]);
 
-  if (!latlng) {
+  if (!latLng) {
     return null;
   }
 
   return (
     <div className="mouse-position">
-      [{latlng.lat.toFixed(2)}, {latlng.lng.toFixed(2)}]
+      [{latLng.lat.toFixed(2)}, {latLng.lng.toFixed(2)}]
     </div>
   );
 }

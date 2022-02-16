@@ -1,93 +1,120 @@
-import { MapData, MapNodeCategory } from "./types";
+import { Continent, AreaNodeCategory } from "./types";
 
-export const nodeCategories: MapNodeCategory[] = [
+export const nodeCategories: AreaNodeCategory[] = [
   {
-    title: "Locations",
+    name: "Locations",
     types: [
       {
-        title: "Area",
+        name: "Area",
         iconUrl: "",
       },
       {
-        title: "Dungeon",
+        name: "Dungeon",
         iconUrl: "",
       },
       {
-        title: "Portal",
+        name: "Portal",
         iconUrl: "",
       },
     ],
   },
   {
-    title: "Services",
+    name: "Services",
     types: [
       {
-        title: "Crafting",
+        name: "Crafting",
         iconUrl: "",
       },
     ],
   },
 ];
 
-export const allMapData: MapData[] = [
+export const nodeTypes = nodeCategories
+  .map((nodeCategory) => nodeCategory.types)
+  .flat();
+
+export const continents: Continent[] = [
+  // {
+  //   name: "Arkesia World Map",
+  //   center: [-200, 200],
+  //   mapNodes: [
+  //     {
+  //       type: "Area",
+  //       position: [51.505, -0.09],
+  //     },
+  //     {
+  //       type: "Area",
+  //       position: [51.506, -0.08],
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Rethramis",
+  //   center: [-200, 200],
+  //   mapNodes: [
+  //     {
+  //       type: "Area",
+  //       position: [51.51, -0.09],
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Luterra West",
+  //   center: [-200, 200],
+  //   mapNodes: [],
+  // },
+  // {
+  //   name: "Luterra East",
+  //   center: [-200, 200],
+  //   mapNodes: [
+  //     {
+  //       type: "Area",
+  //       position: [51.511, -0.01],
+  //     },
+  //   ],
+  // },
+  //   {
+  //     name: "Tortoyk",
+  //   },
+  //   {
+  //     name: "Anikka",
+  //   },
+  //   {
+  //     name: "Arthetine",
+  //   },
+  //   {
+  //     name: "Vern North",
+  //   },
+  //   {
+  //     name: "Shushire",
+  //   },
+  //   {
+  //     name: "Rohendel",
+  //   },
   {
-    title: "Arkesia World Map",
-    zoom: 3,
-    mapNodes: [
+    name: "Yorn",
+    areas: [
       {
-        type: "Area",
-        position: [51.505, -0.09],
+        name: "Iron Hammer Mine",
+        tileURL:
+          "/tiles/yorn/iron_hammer_mine/lv_yor_secondwpgv_i_ps_0_{y}x{x}.webp",
+        tiles: [7, 7],
+        nodes: [],
       },
       {
-        type: "Area",
-        position: [51.506, -0.08],
+        name: "Unfinished Garden",
+        tileURL:
+          "/tiles/yorn/unfinished_garden/lv_yor_ugarden_f_ps_0_{y}x{x}.webp",
+        tiles: [6, 6],
+        nodes: [],
+      },
+      {
+        name: "Hall of Promise",
+        tileURL:
+          "/tiles/yorn/hall_of_promise/lv_yor_lpromise_f_ps_0_{y}x{x}.webp",
+        tiles: [6, 6],
+        nodes: [],
       },
     ],
   },
-  {
-    title: "Rethramis",
-    zoom: 2,
-    mapNodes: [
-      {
-        type: "Area",
-        position: [51.51, -0.09],
-      },
-    ],
-  },
-  {
-    title: "Luterra West",
-    zoom: 4,
-    mapNodes: [],
-  },
-  {
-    title: "Luterra East",
-    zoom: 3,
-    mapNodes: [
-      {
-        type: "Area",
-        position: [51.511, -0.01],
-      },
-    ],
-  },
-  //   {
-  //     title: "Tortoyk",
-  //   },
-  //   {
-  //     title: "Anikka",
-  //   },
-  //   {
-  //     title: "Arthetine",
-  //   },
-  //   {
-  //     title: "Vern North",
-  //   },
-  //   {
-  //     title: "Shushire",
-  //   },
-  //   {
-  //     title: "Rohendel",
-  //   },
-  //   {
-  //     title: "Yorn",
-  //   },
 ];

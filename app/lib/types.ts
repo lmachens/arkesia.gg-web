@@ -1,18 +1,26 @@
-export type MapData = {
-  title: string;
-  zoom: number;
-  mapNodes: MapNode[];
+export type Area = {
+  name: string;
+  tileURL: string;
+  tiles: [number, number];
+  nodes: AreaNode[];
 };
 
-export type MapNode = {
+export type Continent = {
+  name: string;
+  areas: Area[];
+};
+
+export type AreaNode = {
+  name: string;
   position: [number, number];
-  type: string;
 };
 
-export type MapNodeCategory = {
-  title: string;
-  types: {
-    title: string;
-    iconUrl: string;
-  }[];
+export type AreaNodeType = {
+  name: string;
+  iconUrl: string;
+};
+
+export type AreaNodeCategory = {
+  name: string;
+  types: AreaNodeType[];
 };

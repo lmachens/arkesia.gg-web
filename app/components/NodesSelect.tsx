@@ -9,20 +9,20 @@ export default function NodesSelect({ value, onChange }: NodesSelectProps) {
     <section>
       <h3>Nodes</h3>
       {nodeCategories.map((nodeCategory) => (
-        <section key={nodeCategory.title}>
-          <h4>{nodeCategory.title}</h4>
+        <section key={nodeCategory.name}>
+          <h4>{nodeCategory.name}</h4>
           {nodeCategory.types.map((nodeTypes) => (
-            <label key={nodeTypes.title}>
-              {nodeTypes.title}{" "}
+            <label key={nodeTypes.name}>
+              {nodeTypes.name}{" "}
               <input
                 type="checkbox"
-                checked={value.includes(nodeTypes.title)}
+                checked={value.includes(nodeTypes.name)}
                 onChange={(event) => {
                   let newValue = [...value];
                   if (event.target.checked) {
-                    newValue.push(nodeTypes.title);
+                    newValue.push(nodeTypes.name);
                   } else {
-                    const index = newValue.indexOf(nodeTypes.title);
+                    const index = newValue.indexOf(nodeTypes.name);
                     newValue.splice(index, 1);
                   }
                   onChange(newValue);
