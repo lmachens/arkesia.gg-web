@@ -1,9 +1,14 @@
-import { Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "remix";
 
 export default function Index() {
-  return (
-    <>
-      <Navigate to="/maps/Yorn/Unfinished Garden" replace={true} />
-    </>
-  );
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate(`/maps/Yorn/${encodeURIComponent("Unfinished Garden")}`, {
+      replace: true,
+    });
+  }, []);
+
+  return <></>;
 }

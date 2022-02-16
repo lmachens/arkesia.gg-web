@@ -38,7 +38,6 @@ export default function MapView({ area, selectedNodes }: MapProps) {
         crs={L.CRS.Simple}
         attributionControl={false}
       >
-        <div className="inner-shadow" />
         <TileLayer
           ref={tileLayerRef}
           url={area.tileURL}
@@ -78,7 +77,7 @@ export default function MapView({ area, selectedNodes }: MapProps) {
 }
 
 function getMapCenter(area: Area): [number, number] {
-  return [(-64 * area.tiles[0]) / 2, (64 * area.tiles[1]) / 2];
+  return [(-64 * area.tiles[0]) / 2, (64 * area.tiles[1]) / 1.5];
 }
 
 function getBounds(area: Area): [[number, number], [number, number]] {
