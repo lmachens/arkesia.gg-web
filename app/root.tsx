@@ -20,7 +20,7 @@ export function links() {
 }
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "Arkesia - Lost Ark Map" };
 };
 
 export default function App() {
