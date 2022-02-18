@@ -1,23 +1,29 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Marker, Tooltip } from "react-leaflet";
 import { nodeTypes } from "~/lib/db";
-import { Form, useActionData } from "remix";
+import { Form, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
+import { Area } from "~/lib/types";
+import { Button, Card, Grid, Select, useMantineTheme } from "@mantine/core";
 
 type DraggableMarkerProps = {
+  area: Area;
   initialLatLng: L.LatLng;
   onClose: () => void;
 };
 
 export default function DraggableMarker({
+  area,
   initialLatLng,
   onClose,
 }: DraggableMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
   const [latLng, setLatLng] = useState<L.LatLng>(initialLatLng);
-  const [type, setType] = useState<string>("");
-  const actionData = useActionData();
+  const [type, setType] = useState<string | null>(null);
+  const transition = useTransition();
   const notifications = useNotifications();
+  const notificationId = useRef<string | null>(null);
+  const theme = useMantineTheme();
 
   const eventHandlers = useMemo(
     () => ({
@@ -38,14 +44,24 @@ export default function DraggableMarker({
   }, []);
 
   useEffect(() => {
-    if (actionData) {
-      console.log(actionData);
-      notifications.showNotification({
-        title: "Default notification",
-        message: `Add ${actionData.type} 🤘`,
+    if (transition.state === "submitting") {
+      notificationId.current = notifications.showNotification({
+        loading: true,
+        title: "Submitting node",
+        message: "",
+        autoClose: false,
+        disallowClose: true,
       });
+    } else if (transition.state === "idle" && notificationId.current) {
+      notifications.updateNotification(notificationId.current, {
+        id: notificationId.current,
+        title: "Node was added 🤘",
+        message: "",
+      });
+
+      onClose();
     }
-  }, [actionData]);
+  }, [transition.state]);
 
   return (
     <Marker
@@ -54,26 +70,43 @@ export default function DraggableMarker({
       position={latLng}
       ref={markerRef}
     >
-      <Tooltip permanent interactive direction="top">
+      <Tooltip
+        permanent
+        interactive
+        direction="top"
+        opacity={1}
+        className="marker-tooltip"
+      >
         <Form method="post">
-          <select
-            name="type"
-            value={type}
-            onChange={(event) => setType(event.target.value)}
-          >
-            <option value="">Select type</option>
-            {nodeTypes.map((nodeType) => (
-              <option key={nodeType.name}>{nodeType.name}</option>
-            ))}
-          </select>
-          <input type="hidden" name="lat" value={latLng.lat} />
-          <input type="hidden" name="lng" value={latLng.lng} />
-          <button type="button" onClick={onClose}>
-            Close
-          </button>
-          <button type="submit" disabled={!type}>
-            Save
-          </button>
+          <Card className="node-form">
+            <Select
+              label="Type"
+              placeholder="Pick one"
+              name="type"
+              value={type}
+              zIndex={800}
+              onChange={(value) => setType(value)}
+              data={nodeTypes.map((nodeType) => ({
+                value: nodeType.name,
+                label: nodeType.name,
+                group: nodeType.category,
+              }))}
+            />
+            <input type="hidden" name="lat" value={latLng.lat} />
+            <input type="hidden" name="lng" value={latLng.lng} />
+            <input type="hidden" name="areaName" value={area.name} />
+            <Button
+              type="submit"
+              disabled={!type}
+              loading={transition.state !== "idle"}
+              variant="gradient"
+            >
+              Save
+            </Button>
+            <Button type="button" onClick={onClose} variant="subtle">
+              Close
+            </Button>
+          </Card>
         </Form>
       </Tooltip>
     </Marker>

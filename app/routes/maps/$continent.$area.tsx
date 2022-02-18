@@ -2,10 +2,10 @@ import { ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
 import { ActionFunction, LoaderFunction, redirect, useLoaderData } from "remix";
 import invariant from "tiny-invariant";
-import { continents } from "~/lib/db";
+import { continents, findNodes, insertNode } from "~/lib/db";
 import MapSelect from "~/components/MapSelect";
 import { useState } from "react";
-import { Area } from "~/lib/types";
+import { Area, AreaNode } from "~/lib/types";
 import { AppShell, Header } from "@mantine/core";
 
 type LoaderData = {
@@ -13,6 +13,7 @@ type LoaderData = {
   area: Area;
   continentNames: string[];
   areaNames: string[];
+  nodes: AreaNode[];
 };
 
 export const loader: LoaderFunction = async ({ params }) => {
@@ -30,30 +31,36 @@ export const loader: LoaderFunction = async ({ params }) => {
   const continentNames = continents.map((continent) => continent.name);
   const areaNames = continent.areas.map((area) => area.name);
 
+  const nodes = await findNodes(area.name);
+
   return {
     continentName: continent.name,
     area,
     continentNames,
     areaNames,
+    nodes,
   } as LoaderData;
 };
 
 export const action: ActionFunction = async ({ request }) => {
   const body = await request.formData();
 
-  const node = {
-    lat: +body.get("lat")!,
-    lng: +body.get("lng")!,
-    type: body.get("type")!,
-  };
-
-  return node;
+  try {
+    const node: AreaNode = {
+      areaName: body.get("areaName")!.toString(),
+      type: body.get("type")!.toString(),
+      position: [+body.get("lat")!, +body.get("lng")!],
+    };
+    await insertNode(node);
+    return node;
+  } catch (error) {
+    return { errors: [error], values: body };
+  }
 };
 
 export default function MapPage() {
-  const { continentName, area, continentNames, areaNames } =
+  const { continentName, area, continentNames, areaNames, nodes } =
     useLoaderData<LoaderData>();
-  const [selectedNodes, setSelectedNodes] = useState<string[]>([]);
 
   return (
     <AppShell
@@ -77,7 +84,7 @@ export default function MapPage() {
       })}
     >
       <ClientOnly>
-        <MapView area={area} />
+        <MapView area={area} nodes={nodes} />
       </ClientOnly>
     </AppShell>
   );

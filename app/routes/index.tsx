@@ -1,14 +1,5 @@
-import { useEffect } from "react";
-import { useNavigate } from "remix";
+import { redirect } from "remix";
 
-export default function Index() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate(`/maps/Yorn/${encodeURIComponent("Unfinished Garden")}`, {
-      replace: true,
-    });
-  }, []);
-
-  return <></>;
-}
+export const loader = async () => {
+  return redirect(`/maps/Yorn/${encodeURIComponent("Unfinished Garden")}`);
+};

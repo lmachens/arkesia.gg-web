@@ -1,23 +1,46 @@
 import { Map } from "leaflet";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Area } from "~/lib/types";
+import { Area, AreaNode } from "~/lib/types";
 import L from "leaflet";
 import MousePosition from "./MousePosition";
 import Contextmenu from "./Contextmenu";
+import { nodeTypes } from "~/lib/db";
 
 const DefaultIcon = L.icon({
   iconUrl: "/markers/unknown.webp",
   iconSize: [32, 32],
   tooltipAnchor: [0, -20],
+  popupAnchor: [0, -20],
 });
+
+const icons: {
+  [iconUrl: string]: L.Icon;
+} = {};
+const getIcon = (type: string) => {
+  const nodeType = nodeTypes.find((nodeType) => nodeType.name === type);
+  if (!nodeType) {
+    return DefaultIcon;
+  }
+
+  if (!icons[nodeType.name]) {
+    icons[nodeType.name] = L.icon({
+      iconUrl: nodeType.iconUrl,
+      iconSize: [32, 32],
+      tooltipAnchor: [0, -20],
+      popupAnchor: [0, -20],
+    });
+  }
+  return icons[nodeType.name];
+};
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
 type MapProps = {
   area: Area;
+  nodes: AreaNode[];
 };
-export default function MapView({ area }: MapProps) {
+export default function MapView({ area, nodes }: MapProps) {
   const [map, setMap] = useState<Map | null>(null);
   const tileLayerRef = useRef<L.TileLayer | null>(null);
 
@@ -44,12 +67,14 @@ export default function MapView({ area }: MapProps) {
           bounds={getBounds(area)}
         />
         <MousePosition />
-        <Contextmenu />
-        {area.nodes.map((node) => (
-          <Marker key={node.position.toString()} position={node.position}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
+        <Contextmenu area={area} />
+        {nodes.map((node) => (
+          <Marker
+            key={node.position.toString()}
+            position={node.position}
+            icon={getIcon(node.type)}
+          >
+            <Popup>{node.type}</Popup>
           </Marker>
         ))}
       </MapContainer>

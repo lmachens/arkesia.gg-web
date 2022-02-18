@@ -2,7 +2,6 @@ export type Area = {
   name: string;
   tileURL: string;
   tiles: [number, number];
-  nodes: AreaNode[];
 };
 
 export type Continent = {
@@ -11,7 +10,8 @@ export type Continent = {
 };
 
 export type AreaNode = {
-  name: string;
+  areaName: string;
+  type: string;
   position: [number, number];
 };
 

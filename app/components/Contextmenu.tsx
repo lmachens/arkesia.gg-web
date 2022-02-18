@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { useMapEvents } from "react-leaflet";
+import { Area } from "~/lib/types";
 import DraggableMarker from "./DraggableMarker";
 
-export default function Contextmenu() {
+type ContextMenuProps = {
+  area: Area;
+};
+export default function Contextmenu({ area }: ContextMenuProps) {
   const [latLng, setLatLng] = useState<L.LatLng | null>(null);
 
   useMapEvents({
@@ -15,6 +19,10 @@ export default function Contextmenu() {
     return null;
   }
   return (
-    <DraggableMarker initialLatLng={latLng} onClose={() => setLatLng(null)} />
+    <DraggableMarker
+      initialLatLng={latLng}
+      onClose={() => setLatLng(null)}
+      area={area}
+    />
   );
 }

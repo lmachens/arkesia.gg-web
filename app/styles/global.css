@@ -68,3 +68,13 @@ body {
   right: 1rem;
   bottom: 1rem;
 }
+
+.marker-tooltip {
+  padding: 0 !important;
+}
+
+.node-form {
+  display: grid;
+  gap: 1rem;
+  width: 200px;
+}
