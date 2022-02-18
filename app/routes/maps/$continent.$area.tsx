@@ -1,12 +1,19 @@
 import { ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
-import { ActionFunction, LoaderFunction, useLoaderData } from "remix";
+import { ActionFunction, LoaderFunction, redirect, useLoaderData } from "remix";
 import invariant from "tiny-invariant";
 import { continents } from "~/lib/db";
-import NodesSelect from "~/components/NodesSelect";
 import MapSelect from "~/components/MapSelect";
 import { useState } from "react";
 import { Area } from "~/lib/types";
+import { AppShell, Header } from "@mantine/core";
+
+type LoaderData = {
+  continentName: string;
+  area: Area;
+  continentNames: string[];
+  areaNames: string[];
+};
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.continent, "Expected params.continent");
@@ -16,7 +23,19 @@ export const loader: LoaderFunction = async ({ params }) => {
     (mapData) => mapData.name === params.continent
   );
   const area = continent?.areas.find((area) => area.name === params.area);
-  return area;
+
+  if (!continent || !area) {
+    return redirect("/");
+  }
+  const continentNames = continents.map((continent) => continent.name);
+  const areaNames = continent.areas.map((area) => area.name);
+
+  return {
+    continentName: continent.name,
+    area,
+    continentNames,
+    areaNames,
+  } as LoaderData;
 };
 
 export const action: ActionFunction = async ({ request }) => {
@@ -32,18 +51,34 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export default function MapPage() {
-  const area = useLoaderData<Area>();
+  const { continentName, area, continentNames, areaNames } =
+    useLoaderData<LoaderData>();
   const [selectedNodes, setSelectedNodes] = useState<string[]>([]);
 
   return (
-    <>
-      <aside className="sidebar">
-        <MapSelect />
-        <NodesSelect value={selectedNodes} onChange={setSelectedNodes} />
-      </aside>
+    <AppShell
+      padding={0}
+      style={{ overflow: "hidden" }}
+      header={
+        <Header height={60} padding="xs" className="nav">
+          <MapSelect
+            continentName={continentName}
+            areaName={area.name}
+            continentNames={continentNames}
+            areaNames={areaNames}
+          />
+        </Header>
+      }
+      styles={(theme) => ({
+        main: {
+          backgroundColor: theme.colors.dark[5],
+          color: theme.colors.dark[0],
+        },
+      })}
+    >
       <ClientOnly>
-        <MapView selectedNodes={selectedNodes} area={area} />
+        <MapView area={area} />
       </ClientOnly>
-    </>
+    </AppShell>
   );
 }

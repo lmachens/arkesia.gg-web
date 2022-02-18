@@ -1,31 +1,46 @@
-import { NavLink } from "remix";
-import { continents } from "~/lib/db";
+import { Select } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
 
-export default function MapSelect() {
+type MapSelectProps = {
+  continentName: string;
+  areaName: string;
+  continentNames: string[];
+  areaNames: string[];
+};
+export default function MapSelect({
+  continentName,
+  areaName,
+  continentNames,
+  areaNames,
+}: MapSelectProps) {
+  const navigate = useNavigate();
+
   return (
-    <section>
-      <h3>Maps</h3>
-      <ul>
-        {continents.map((continent) => (
-          <li key={continent.name}>
-            {continent.name}
-            <ul>
-              {continent.areas.map((area) => (
-                <li key={area.name}>
-                  <NavLink
-                    to={`/maps/${encodeURIComponent(
-                      continent.name
-                    )}/${encodeURIComponent(area.name)}`}
-                    className={({ isActive }) => (isActive ? "active" : "")}
-                  >
-                    {area.name}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <Select
+        className="inline-select"
+        label="Continent"
+        value={continentName}
+        zIndex={800}
+        onChange={(value) => {
+          navigate(`/maps/${encodeURIComponent(value || "")}`);
+        }}
+        data={continentNames}
+      />
+      <Select
+        className="inline-select"
+        label="Area"
+        value={areaName}
+        zIndex={800}
+        onChange={(value) => {
+          navigate(
+            `/maps/${encodeURIComponent(continentName)}/${encodeURIComponent(
+              value || ""
+            )}`
+          );
+        }}
+        data={areaNames}
+      />
+    </>
   );
 }

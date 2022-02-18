@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Marker, Tooltip } from "react-leaflet";
 import { nodeTypes } from "~/lib/db";
-import { toast } from "react-toastify";
 import { Form, useActionData } from "remix";
+import { useNotifications } from "@mantine/notifications";
 
 type DraggableMarkerProps = {
   initialLatLng: L.LatLng;
@@ -17,6 +17,7 @@ export default function DraggableMarker({
   const [latLng, setLatLng] = useState<L.LatLng>(initialLatLng);
   const [type, setType] = useState<string>("");
   const actionData = useActionData();
+  const notifications = useNotifications();
 
   const eventHandlers = useMemo(
     () => ({
@@ -39,7 +40,10 @@ export default function DraggableMarker({
   useEffect(() => {
     if (actionData) {
       console.log(actionData);
-      toast.success(`Add ${actionData.type} 🤘`);
+      notifications.showNotification({
+        title: "Default notification",
+        message: `Add ${actionData.type} 🤘`,
+      });
     }
   }, [actionData]);
 
@@ -59,7 +63,7 @@ export default function DraggableMarker({
           >
             <option value="">Select type</option>
             {nodeTypes.map((nodeType) => (
-              <option key={nodeType.title}>{nodeType.title}</option>
+              <option key={nodeType.name}>{nodeType.name}</option>
             ))}
           </select>
           <input type="hidden" name="lat" value={latLng.lat} />

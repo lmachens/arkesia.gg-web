@@ -34,63 +34,6 @@ export const nodeTypes = nodeCategories
   .flat();
 
 export const continents: Continent[] = [
-  // {
-  //   name: "Arkesia World Map",
-  //   center: [-200, 200],
-  //   mapNodes: [
-  //     {
-  //       type: "Area",
-  //       position: [51.505, -0.09],
-  //     },
-  //     {
-  //       type: "Area",
-  //       position: [51.506, -0.08],
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: "Rethramis",
-  //   center: [-200, 200],
-  //   mapNodes: [
-  //     {
-  //       type: "Area",
-  //       position: [51.51, -0.09],
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: "Luterra West",
-  //   center: [-200, 200],
-  //   mapNodes: [],
-  // },
-  // {
-  //   name: "Luterra East",
-  //   center: [-200, 200],
-  //   mapNodes: [
-  //     {
-  //       type: "Area",
-  //       position: [51.511, -0.01],
-  //     },
-  //   ],
-  // },
-  //   {
-  //     name: "Tortoyk",
-  //   },
-  //   {
-  //     name: "Anikka",
-  //   },
-  //   {
-  //     name: "Arthetine",
-  //   },
-  //   {
-  //     name: "Vern North",
-  //   },
-  //   {
-  //     name: "Shushire",
-  //   },
-  //   {
-  //     name: "Rohendel",
-  //   },
   {
     name: "Yorn",
     areas: [

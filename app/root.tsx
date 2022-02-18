@@ -9,14 +9,13 @@ import {
 import type { MetaFunction } from "remix";
 import styles from "~/styles/global.css";
 import leafletStyles from "leaflet/dist/leaflet.css";
-import toastifyStyles from "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
+import { MantineProvider } from "@mantine/core";
+import { NotificationsProvider } from "@mantine/notifications";
 
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: leafletStyles },
-    { rel: "stylesheet", href: toastifyStyles },
   ];
 }
 
@@ -34,8 +33,17 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ToastContainer />
+        <MantineProvider
+          theme={{ fontFamily: "NunitoVariable", colorScheme: "dark" }}
+        >
+          <NotificationsProvider
+            zIndex={700}
+            position="top-right"
+            autoClose={2500}
+          >
+            <Outlet />
+          </NotificationsProvider>
+        </MantineProvider>
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}

@@ -1,12 +1,6 @@
 import { Map } from "leaflet";
 import { useEffect, useMemo, useRef, useState } from "react";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  LayersControl,
-} from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Area } from "~/lib/types";
 import L from "leaflet";
 import MousePosition from "./MousePosition";
@@ -22,12 +16,10 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 type MapProps = {
   area: Area;
-  selectedNodes: string[];
 };
-export default function MapView({ area, selectedNodes }: MapProps) {
+export default function MapView({ area }: MapProps) {
   const [map, setMap] = useState<Map | null>(null);
   const tileLayerRef = useRef<L.TileLayer | null>(null);
-  const nodes = area.nodes.filter((node) => selectedNodes.includes(node.name));
 
   const displayMap = useMemo(
     () => (
@@ -37,6 +29,9 @@ export default function MapView({ area, selectedNodes }: MapProps) {
         whenCreated={setMap}
         crs={L.CRS.Simple}
         attributionControl={false}
+        style={{
+          background: "none",
+        }}
       >
         <TileLayer
           ref={tileLayerRef}
@@ -50,7 +45,7 @@ export default function MapView({ area, selectedNodes }: MapProps) {
         />
         <MousePosition />
         <Contextmenu />
-        {nodes.map((node) => (
+        {area.nodes.map((node) => (
           <Marker key={node.position.toString()} position={node.position}>
             <Popup>
               A pretty CSS3 popup. <br /> Easily customizable.
@@ -59,11 +54,10 @@ export default function MapView({ area, selectedNodes }: MapProps) {
         ))}
       </MapContainer>
     ),
-    [nodes]
+    [area]
   );
 
   useEffect(() => {
-    console.log("EFFECT");
     if (map) {
       map.panTo(getMapCenter(area));
     }
@@ -77,7 +71,7 @@ export default function MapView({ area, selectedNodes }: MapProps) {
 }
 
 function getMapCenter(area: Area): [number, number] {
-  return [(-64 * area.tiles[0]) / 2, (64 * area.tiles[1]) / 1.5];
+  return [(-64 * area.tiles[0]) / 2, (64 * area.tiles[1]) / 2];
 }
 
 function getBounds(area: Area): [[number, number], [number, number]] {

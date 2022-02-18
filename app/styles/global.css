@@ -1,41 +1,70 @@
+@font-face {
+  font-family: "NunitoVariable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  src: url("/fonts/nunito/nunito-latin-variable-wghtOnly-normal.woff2")
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
 :root {
   --color-shade-1: #fff;
   --color-shade-2: #e0e0e0;
   --color-shade-3: #3a3c3d;
   --color-shade-4: #303030;
+  --color-shade-5: #1f1f1f;
+  --font-family: "NunitoVariable", sans-serif;
 }
 
 body {
   margin: 0;
-  color: var(--color-shade-1);
-  background-color: var(--color-shade-4);
+  /* color: var(--color-shade-1);
+  background-color: var(--color-shade-4); */
 }
 
-a {
-  text-decoration: none;
-  color: currentColor;
+.inline-select {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-a.active {
-  text-decoration: underline;
+.inline-select > label {
+  margin-bottom: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.mantine-AppShell-root {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.mantine-MultiSelect-values {
+  max-width: 200px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.mantine-MultiSelect-values::-webkit-scrollbar {
+  display: none;
 }
 
 .leaflet-container {
-  height: 100vh;
-  background-color: var(--color-shade-3) !important;
-}
-
-.sidebar {
-  position: absolute;
-  z-index: 620;
-  right: 30px;
-  top: 90px;
-  width: 300px;
+  height: 100%;
 }
 
 .mouse-position {
   position: absolute;
   z-index: 630;
-  left: 1rem;
+  right: 1rem;
   bottom: 1rem;
 }

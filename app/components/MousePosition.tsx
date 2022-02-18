@@ -1,3 +1,4 @@
+import { Text } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { useMap } from "react-leaflet";
 
@@ -30,8 +31,8 @@ export default function MousePosition() {
   }
 
   return (
-    <div className="mouse-position">
+    <Text className="mouse-position">
       [{latLng.lat.toFixed(2)}, {latLng.lng.toFixed(2)}]
-    </div>
+    </Text>
   );
 }
