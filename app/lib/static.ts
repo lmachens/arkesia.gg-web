@@ -16,8 +16,22 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "Locations",
+    name: "Enemies",
     color: "rgba(220, 20, 60, 0.7)",
+    types: [
+      {
+        name: "Boss",
+        iconUrl: "/markers/daemon-skull.svg",
+      },
+      {
+        name: "World Boss",
+        iconUrl: "/markers/gooey-daemon.svg",
+      },
+    ],
+  },
+  {
+    name: "Locations",
+    color: "rgba(112, 128, 144, 0.7)",
     types: [
       {
         name: "Dungeon",
