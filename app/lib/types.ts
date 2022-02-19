@@ -9,12 +9,6 @@ export type Continent = {
   areas: Area[];
 };
 
-export type AreaNode = {
-  areaName: string;
-  type: string;
-  position: [number, number];
-};
-
 export type AreaNodeType = {
   name: string;
   iconUrl: string;

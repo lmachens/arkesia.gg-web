@@ -1,6 +1,6 @@
 import { LoaderFunction, redirect } from "remix";
 import invariant from "tiny-invariant";
-import { continents } from "~/lib/db";
+import { continents } from "~/lib/static";
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.continent, "Expected params.continent");

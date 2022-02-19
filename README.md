@@ -1,10 +1,17 @@
-# Welcome to Remix!
+# Arkesia.gg Website - A Lost Ark interactive map
 
-- [Remix Docs](https://remix.run/docs)
+- [Website](https://arkesia.gg)
+- [Overwolf App on GitHub](https://github.com/lmachens/arkesia.gg-overwolf)
 
 ## Development
 
 From your terminal:
+
+```sh
+npm install
+```
+
+This installs the dependencies for the project.
 
 ```sh
 npm run dev

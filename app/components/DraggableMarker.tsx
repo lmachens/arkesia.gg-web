@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Marker, Tooltip } from "react-leaflet";
-import { nodeTypes } from "~/lib/db";
+import { nodeTypes } from "~/lib/static";
 import { Form, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
 import { Area } from "~/lib/types";

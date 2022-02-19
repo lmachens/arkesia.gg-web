@@ -1,11 +1,12 @@
 import { Map } from "leaflet";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Area, AreaNode } from "~/lib/types";
+import { Area } from "~/lib/types";
 import L from "leaflet";
 import MousePosition from "./MousePosition";
 import Contextmenu from "./Contextmenu";
-import { nodeTypes } from "~/lib/db";
+import { nodeTypes } from "~/lib/static";
+import { AreaNode } from "@prisma/client";
 
 const DefaultIcon = L.icon({
   iconUrl: "/markers/unknown.webp",
@@ -71,7 +72,7 @@ export default function MapView({ area, nodes }: MapProps) {
         {nodes.map((node) => (
           <Marker
             key={node.position.toString()}
-            position={node.position}
+            position={node.position as [number, number]}
             icon={getIcon(node.type)}
           >
             <Popup>{node.type}</Popup>

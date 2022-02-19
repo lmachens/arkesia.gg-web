@@ -1,0 +1,18 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model AreaNode {
+  id       String @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  areaName String
+  position Float[]
+  type     String
+
+  @@index([areaName])
+}

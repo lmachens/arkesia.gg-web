@@ -1,5 +1,4 @@
-import { MongoClient } from "mongodb";
-import { Continent, AreaNodeCategory, AreaNode } from "./types";
+import { Continent, AreaNodeCategory } from "./types";
 
 export const nodeCategories: AreaNodeCategory[] = [
   {
@@ -69,46 +68,3 @@ export const continents: Continent[] = [
     ],
   },
 ];
-
-export const requestDataAPI = async (resource: string, payload: any) => {
-  if (
-    !process.env.DATA_API_BASE_URL ||
-    !process.env.DATA_API_KEY ||
-    !process.env.CLUSTER_NAME
-  ) {
-    throw new Error("Missing DATA API environment variables");
-  }
-
-  const request = await fetch(`${process.env.DATA_API_BASE_URL}${resource}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Request-Headers": "*",
-      "api-key": process.env.DATA_API_KEY,
-    },
-    body: JSON.stringify({
-      database: "arkesia",
-      dataSource: "Arkesia0",
-      ...payload,
-    }),
-  });
-  return await request.json();
-};
-
-export const findNodes = async (areaName: string) => {
-  const result = await requestDataAPI("/action/find", {
-    collection: "nodes",
-    filter: {
-      areaName,
-    },
-  });
-  return result.documents;
-};
-
-export const insertNode = async (node: AreaNode) => {
-  const result = await requestDataAPI("/action/insertOne", {
-    collection: "nodes",
-    document: node,
-  });
-  return result.documents;
-};

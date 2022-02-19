@@ -2,11 +2,12 @@ import { ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
 import { ActionFunction, LoaderFunction, redirect, useLoaderData } from "remix";
 import invariant from "tiny-invariant";
-import { continents, findNodes, insertNode } from "~/lib/db";
+import { continents } from "~/lib/static";
 import MapSelect from "~/components/MapSelect";
-import { useState } from "react";
-import { Area, AreaNode } from "~/lib/types";
+import { Area } from "~/lib/types";
 import { AppShell, Header } from "@mantine/core";
+import { findNodes, insertNode } from "~/lib/db.server";
+import { AreaNode } from "@prisma/client";
 
 type LoaderData = {
   continentName: string;
@@ -46,12 +47,11 @@ export const action: ActionFunction = async ({ request }) => {
   const body = await request.formData();
 
   try {
-    const node: AreaNode = {
+    const node = await insertNode({
       areaName: body.get("areaName")!.toString(),
       type: body.get("type")!.toString(),
       position: [+body.get("lat")!, +body.get("lng")!],
-    };
-    await insertNode(node);
+    });
     return node;
   } catch (error) {
     return { errors: [error], values: body };
