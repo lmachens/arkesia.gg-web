@@ -10,11 +10,18 @@ export type Continent = {
 };
 
 export type AreaNodeType = {
+  category: string;
   name: string;
   iconUrl: string;
+  color: string;
+};
+
+type PartialAreaNodeType = Omit<AreaNodeType, "category" | "color"> & {
+  color?: string;
 };
 
 export type AreaNodeCategory = {
   name: string;
-  types: AreaNodeType[];
+  color: string;
+  types: PartialAreaNodeType[];
 };

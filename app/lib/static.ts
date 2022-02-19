@@ -1,8 +1,9 @@
-import { Continent, AreaNodeCategory } from "./types";
+import { Continent, AreaNodeCategory, AreaNodeType } from "./types";
 
 export const nodeCategories: AreaNodeCategory[] = [
   {
     name: "Collectibles",
+    color: "rgba(200, 200, 200, 0.7)",
     types: [
       {
         name: "Collectible Card",
@@ -16,6 +17,7 @@ export const nodeCategories: AreaNodeCategory[] = [
   },
   {
     name: "Locations",
+    color: "rgba(220, 20, 60, 0.7)",
     types: [
       {
         name: "Dungeon",
@@ -25,6 +27,7 @@ export const nodeCategories: AreaNodeCategory[] = [
   },
   {
     name: "Services",
+    color: "rgba(34, 139, 34, 0.7)",
     types: [
       {
         name: "Chef",
@@ -36,12 +39,23 @@ export const nodeCategories: AreaNodeCategory[] = [
 
 export const nodeTypes = nodeCategories
   .map((nodeCategory) =>
-    nodeCategory.types.map((nodeType) => ({
+    nodeCategory.types.map<AreaNodeType>((nodeType) => ({
       ...nodeType,
       category: nodeCategory.name,
+      color: nodeType.color || nodeCategory.color,
     }))
   )
   .flat();
+
+export const nodeTypesMap = nodeTypes.reduce(
+  (prev, nodeType) => ({
+    ...prev,
+    [nodeType.name]: nodeType,
+  }),
+  {} as {
+    [name: string]: AreaNodeType;
+  }
+);
 
 export const continents: Continent[] = [
   {
