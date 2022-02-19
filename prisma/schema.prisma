@@ -13,6 +13,16 @@ model AreaNode {
   areaName String
   position Float[]
   type     String
+  userId   String
+  user     User @relation(fields: [userId], references: [id])
 
   @@index([areaName])
+}
+
+model User {
+  id    String @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  token String @unique
+  nodes AreaNode[]
+
+  @@index([token])
 }

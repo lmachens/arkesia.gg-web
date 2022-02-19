@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Marker, Tooltip } from "react-leaflet";
 import { nodeTypes } from "~/lib/static";
-import { Form, useTransition } from "remix";
+import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
 import { Area } from "~/lib/types";
-import { Button, Card, Grid, Select, useMantineTheme } from "@mantine/core";
+import { Button, Card, Select, TextInput } from "@mantine/core";
+import { useLocalStorageValue } from "@mantine/hooks";
 
 type DraggableMarkerProps = {
   area: Area;
@@ -19,11 +20,18 @@ export default function DraggableMarker({
 }: DraggableMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
   const [latLng, setLatLng] = useState<L.LatLng>(initialLatLng);
-  const [type, setType] = useState<string | null>(null);
+  const [type, setType] = useLocalStorageValue<string>({
+    key: "last-type",
+    defaultValue: "",
+  });
   const transition = useTransition();
   const notifications = useNotifications();
   const notificationId = useRef<string | null>(null);
-  const theme = useMantineTheme();
+  const [userToken, setUserToken] = useLocalStorageValue<string>({
+    key: "user-token",
+    defaultValue: "",
+  });
+  const actionError = useActionData();
 
   const eventHandlers = useMemo(
     () => ({
@@ -53,15 +61,23 @@ export default function DraggableMarker({
         disallowClose: true,
       });
     } else if (transition.state === "idle" && notificationId.current) {
-      notifications.updateNotification(notificationId.current, {
-        id: notificationId.current,
-        title: "Node was added 🤘",
-        message: "",
-      });
-
-      onClose();
+      if (actionError) {
+        notifications.updateNotification(notificationId.current, {
+          id: notificationId.current,
+          title: actionError,
+          message: "",
+          color: "red",
+        });
+      } else {
+        notifications.updateNotification(notificationId.current, {
+          id: notificationId.current,
+          title: "Node was added 🤘",
+          message: "",
+        });
+        onClose();
+      }
     }
-  }, [transition.state]);
+  }, [transition.state, actionError]);
 
   return (
     <Marker
@@ -79,13 +95,22 @@ export default function DraggableMarker({
       >
         <Form method="post">
           <Card className="node-form">
+            <TextInput
+              label="User-Token"
+              required
+              placeholder="Only for moderators right now"
+              value={userToken}
+              onChange={(event) => setUserToken(event.target.value)}
+              name="userToken"
+            />
             <Select
               label="Type"
               placeholder="Pick one"
               name="type"
               value={type}
               zIndex={800}
-              onChange={(value) => setType(value)}
+              onChange={(value) => setType(value || "")}
+              required
               data={nodeTypes.map((nodeType) => ({
                 value: nodeType.name,
                 label: nodeType.name,
@@ -97,7 +122,7 @@ export default function DraggableMarker({
             <input type="hidden" name="areaName" value={area.name} />
             <Button
               type="submit"
-              disabled={!type}
+              disabled={!type || !userToken}
               loading={transition.state !== "idle"}
               variant="gradient"
             >

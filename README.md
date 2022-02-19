@@ -38,6 +38,20 @@ Now you are ready to start the app in development mode:
 npm run dev
 ```
 
+### Sample data
+
+The app requires a user to add and maintain nodes. You can create a user with the following script:
+
+```sh
+npx prisma db seed
+```
+
+Prisma has an integrated client to explore your database:
+
+```sh
+npx prisma studio
+```
+
 ### Libraries
 
 The project is based on [Remix](https://remix.run/), a full stack [React](https://reactjs.org/) web framework focused on user experience and performance.

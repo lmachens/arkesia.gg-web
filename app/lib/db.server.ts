@@ -54,3 +54,8 @@ export const insertNode = async (node: Omit<AreaNode, "id">) => {
   const result = await db.areaNode.create({ data: node });
   return result;
 };
+
+export const findUser = async (token: string) => {
+  const user = await db.user.findFirst({ where: { token } });
+  return user;
+};
