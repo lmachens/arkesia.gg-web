@@ -3,58 +3,53 @@
 - [Website](https://arkesia.gg)
 - [Overwolf App on GitHub](https://github.com/lmachens/arkesia.gg-overwolf)
 
-## Development
+## Contribution
 
-From your terminal:
+This app is Open Source. Contributors are highly welcome!
+
+Join us on our [Discord](https://discord.com/invite/NTZu8Px).
+
+### Requirements
+
+This project uses [Node.js](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/).
+You need to set some environment variables to run the app. A common way is to create an `.env` file, based on `template.env`.
+
+```
+cp template.env .env
+```
+
+The following list shows the variables you need to set:
+
+| KEY          | VALUE                      |
+| ------------ | -------------------------- |
+| DATABASE_URL | URI of your MongoDB server |
+
+### Development
+
+From your terminal, you need to install the dependencies first:
 
 ```sh
 npm install
 ```
 
-This installs the dependencies for the project.
+Now you are ready to start the app in development mode:
 
 ```sh
 npm run dev
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+### Libraries
+
+The project is based on [Remix](https://remix.run/), a full stack [React](https://reactjs.org/) web framework focused on user experience and performance.
+For UI components, we use [Mantine](https://mantine.dev/).
+The database is connected via [Prisma](https://www.prisma.io/), an ORM which connects to [MongoDB](https://www.mongodb.com/).
+
+Please refer to these documentations for more information.
 
 ## Deployment
 
-First, build your app for production:
+The app is deployed on [Vercel](https://vercel.com/).
 
-```sh
-npm run build
-```
+## Licensing
 
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+MIT
