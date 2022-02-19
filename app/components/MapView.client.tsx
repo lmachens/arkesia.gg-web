@@ -58,7 +58,10 @@ export default function MapView({ area, nodes }: MapProps) {
   const notificationId = useRef<string | null>(null);
 
   useEffect(() => {
-    if (transition.state === "submitting") {
+    if (
+      transition.state === "submitting" &&
+      transition.submission.method === "DELETE"
+    ) {
       notificationId.current = notifications.showNotification({
         loading: true,
         title: "Removing node",
@@ -80,6 +83,7 @@ export default function MapView({ area, nodes }: MapProps) {
           title: "Node was removed 💀",
           message: "",
         });
+        notificationId.current = null;
         map?.closePopup();
       }
     }

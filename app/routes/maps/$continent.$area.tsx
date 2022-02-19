@@ -8,6 +8,7 @@ import { Area } from "~/lib/types";
 import { AppShell, Header } from "@mantine/core";
 import { deleteNode, findNodes, findUser, insertNode } from "~/lib/db.server";
 import { AreaNode } from "@prisma/client";
+import { postToDiscord } from "~/lib/discord";
 
 type LoaderData = {
   continentName: string;
@@ -52,14 +53,24 @@ export const action: ActionFunction = async ({ request }) => {
     }
 
     if (request.method === "POST") {
-      await insertNode({
+      const node = await insertNode({
         areaName: body.get("areaName")!.toString(),
         type: body.get("type")!.toString(),
         position: [+body.get("lat")!, +body.get("lng")!],
         userId: user.id,
       });
+      postToDiscord(
+        `📌 ${node.type} in ${
+          node.areaName
+        } at [${node.position.toString()}] added`
+      );
     } else if (request.method === "DELETE") {
-      await deleteNode(body.get("nodeId")!.toString());
+      const deletedNode = await deleteNode(body.get("nodeId")!.toString());
+      postToDiscord(
+        `💀 ${deletedNode.type} in ${
+          deletedNode.areaName
+        } at [${deletedNode.position.toString()}] deleted`
+      );
     }
     return null;
   } catch (error) {

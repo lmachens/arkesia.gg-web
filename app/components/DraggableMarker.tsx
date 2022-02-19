@@ -52,7 +52,10 @@ export default function DraggableMarker({
   }, []);
 
   useEffect(() => {
-    if (transition.state === "submitting") {
+    if (
+      transition.state === "submitting" &&
+      transition.submission?.method === "POST"
+    ) {
       notificationId.current = notifications.showNotification({
         loading: true,
         title: "Submitting node",
@@ -74,6 +77,7 @@ export default function DraggableMarker({
           title: "Node was added 🤘",
           message: "",
         });
+        notificationId.current = null;
         onClose();
       }
     }
@@ -111,6 +115,7 @@ export default function DraggableMarker({
                 group: nodeType.category,
               }))}
             />
+            <input type="hidden" name="_action" value="create" />
             <input type="hidden" name="lat" value={latLng.lat} />
             <input type="hidden" name="lng" value={latLng.lng} />
             <input type="hidden" name="areaName" value={area.name} />
