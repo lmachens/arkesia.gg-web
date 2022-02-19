@@ -86,13 +86,7 @@ export default function DraggableMarker({
       position={latLng}
       ref={markerRef}
     >
-      <Tooltip
-        permanent
-        interactive
-        direction="top"
-        opacity={1}
-        className="marker-tooltip"
-      >
+      <Tooltip permanent interactive direction="top" opacity={1}>
         <Form method="post">
           <Card className="node-form">
             <TextInput

@@ -6,7 +6,7 @@ import { continents } from "~/lib/static";
 import MapSelect from "~/components/MapSelect";
 import { Area } from "~/lib/types";
 import { AppShell, Header } from "@mantine/core";
-import { findNodes, findUser, insertNode } from "~/lib/db.server";
+import { deleteNode, findNodes, findUser, insertNode } from "~/lib/db.server";
 import { AreaNode } from "@prisma/client";
 
 type LoaderData = {
@@ -51,12 +51,16 @@ export const action: ActionFunction = async ({ request }) => {
       throw new Error("User not found");
     }
 
-    const node = await insertNode({
-      areaName: body.get("areaName")!.toString(),
-      type: body.get("type")!.toString(),
-      position: [+body.get("lat")!, +body.get("lng")!],
-      userId: user.id,
-    });
+    if (request.method === "POST") {
+      await insertNode({
+        areaName: body.get("areaName")!.toString(),
+        type: body.get("type")!.toString(),
+        position: [+body.get("lat")!, +body.get("lng")!],
+        userId: user.id,
+      });
+    } else if (request.method === "DELETE") {
+      await deleteNode(body.get("nodeId")!.toString());
+    }
     return null;
   } catch (error) {
     if (error instanceof Error) {
