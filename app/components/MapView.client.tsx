@@ -98,10 +98,10 @@ export default function MapView({ area, nodes }: MapProps) {
           <CanvasMarker
             key={node.position.toString()}
             center={node.position as [number, number]}
-            src={nodeTypesMap[node.type].iconUrl}
+            src={nodeTypesMap[node.type]?.iconUrl || "/markers/unknown.webp"}
             size={[24, 24]}
             showBackground
-            borderColor={nodeTypesMap[node.type].color}
+            borderColor={nodeTypesMap[node.type]?.color || "transparent"}
             padding={10}
           >
             <Popup>
