@@ -37,6 +37,18 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Dungeon",
         iconUrl: "/markers/dungeon-gate.svg",
       },
+      {
+        name: "Triport",
+        iconUrl: "/markers/moebius-triangle.svg",
+      },
+      {
+        name: "Portal",
+        iconUrl: "/markers/portal.svg",
+      },
+      {
+        name: "Chaosportal",
+        iconUrl: "/markers/magic-portal.svg",
+      },
     ],
   },
   {
@@ -46,6 +58,16 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Chef",
         iconUrl: "/markers/chef-toque.svg",
+      },
+    ],
+  },
+  {
+    name: "Miscellaneous",
+    color: "rgba(134, 87, 229, 0.7)",
+    types: [
+      {
+        name: "Play Instrument",
+        iconUrl: "/markers/guitar.svg",
       },
     ],
   },
