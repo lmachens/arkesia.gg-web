@@ -69,6 +69,10 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Play Instrument",
         iconUrl: "/markers/guitar.svg",
       },
+      {
+        name: "Vista",
+        iconUrl: "/markers/spyglass.svg",
+      },
     ],
   },
 ];
