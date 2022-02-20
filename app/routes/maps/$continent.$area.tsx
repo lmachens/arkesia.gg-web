@@ -55,8 +55,11 @@ export const action: ActionFunction = async ({ request }) => {
     if (request.method === "POST") {
       const node = await insertNode({
         areaName: body.get("areaName")!.toString(),
-        type: body.get("type")!.toString(),
         position: [+body.get("lat")!, +body.get("lng")!],
+        type: body.get("type")!.toString(),
+        name: body.get("name")!.toString(),
+        description: body.get("description")?.toString() || "",
+        screenshot: body.get("screenshot")?.toString() || "",
         userId: user.id,
       });
       postToDiscord(

@@ -4,7 +4,7 @@ import { nodeTypes } from "~/lib/static";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
 import { Area } from "~/lib/types";
-import { Button, Card, Select, TextInput } from "@mantine/core";
+import { Button, Card, Select, Textarea, TextInput } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 
 type DraggableMarkerProps = {
@@ -100,6 +100,18 @@ export default function DraggableMarker({
               value={userToken}
               onChange={(event) => setUserToken(event.target.value)}
               name="userToken"
+            />
+            <TextInput
+              label="Name"
+              required
+              placeholder="A node needs a name"
+              max={30}
+              name="name"
+            />
+            <Textarea
+              label="Description (optional)"
+              placeholder="Additional information about this node"
+              name="description"
             />
             <Select
               label="Type"

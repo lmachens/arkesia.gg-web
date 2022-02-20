@@ -90,3 +90,7 @@ body {
   gap: 1rem;
   width: 300px;
 }
+
+.text-block {
+  white-space: pre;
+}
