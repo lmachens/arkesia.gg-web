@@ -5,9 +5,9 @@ import { Area } from "~/lib/types";
 import L from "leaflet";
 import MousePosition from "./MousePosition";
 import Contextmenu from "./Contextmenu";
-import { nodeTypes, nodeTypesMap } from "~/lib/static";
+import { nodeTypesMap } from "~/lib/static";
 import { AreaNode } from "@prisma/client";
-import { Button, Card, Text, TextInput } from "@mantine/core";
+import { Button, Card, Text, TextInput, Title } from "@mantine/core";
 import { Form, useActionData, useTransition } from "remix";
 import { useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
@@ -107,7 +107,13 @@ export default function MapView({ area, nodes }: MapProps) {
             <Popup>
               <Form method="delete">
                 <Card className="node-form">
-                  <Text size="lg">{node.type}</Text>
+                  <Title order={3}>{node.name}</Title>
+                  <Text variant="gradient">{node.type}</Text>
+                  {node.description && (
+                    <Text lineClamp={4} className="text-block">
+                      {node.description}
+                    </Text>
+                  )}
                   <TextInput
                     label="User-Token"
                     required
