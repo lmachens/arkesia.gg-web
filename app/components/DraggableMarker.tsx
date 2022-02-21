@@ -144,8 +144,8 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
               }))}
             />
             <input type="hidden" name="_action" value="create" />
-            <input type="hidden" name="lat" value={latLng?.lat || ""} />
-            <input type="hidden" name="lng" value={latLng?.lng || ""} />
+            <input type="hidden" name="lat" value={latLng.lat} />
+            <input type="hidden" name="lng" value={latLng.lng} />
             <input type="hidden" name="areaName" value={area.name} />
             <Button
               type="submit"
