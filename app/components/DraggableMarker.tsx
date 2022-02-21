@@ -1,25 +1,27 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Marker, Tooltip } from "react-leaflet";
+import { Marker, Tooltip, useMap, useMapEvents } from "react-leaflet";
 import { nodeTypes } from "~/lib/static";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
 import { Area } from "~/lib/types";
-import { Button, Card, Select, Textarea, TextInput } from "@mantine/core";
+import { Button, Drawer, Select, Textarea, TextInput } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 
 type DraggableMarkerProps = {
   area: Area;
-  initialLatLng: L.LatLng;
-  onClose: () => void;
 };
 
-export default function DraggableMarker({
-  area,
-  initialLatLng,
-  onClose,
-}: DraggableMarkerProps) {
+export default function DraggableMarker({ area }: DraggableMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
-  const [latLng, setLatLng] = useState<L.LatLng>(initialLatLng);
+  const [latLng, setLatLng] = useState<L.LatLng | null>(null);
+  const map = useMap();
+
+  useMapEvents({
+    contextmenu: (event) => {
+      map.closePopup();
+      setLatLng(event.latlng);
+    },
+  });
   const [type, setType] = useLocalStorageValue<string>({
     key: "last-type",
     defaultValue: "",
@@ -78,21 +80,35 @@ export default function DraggableMarker({
           message: "",
         });
         notificationId.current = null;
-        onClose();
+        setLatLng(null);
       }
     }
   }, [transition.state, actionError]);
 
   return (
-    <Marker
-      draggable={true}
-      eventHandlers={eventHandlers}
-      position={latLng}
-      ref={markerRef}
-    >
-      <Tooltip permanent interactive direction="top" opacity={1}>
-        <Form method="post">
-          <Card className="node-form">
+    <>
+      {latLng && (
+        <Marker
+          draggable={true}
+          eventHandlers={eventHandlers}
+          position={latLng}
+          ref={markerRef}
+        >
+          <Tooltip permanent direction="top">
+            Choose marker
+          </Tooltip>
+        </Marker>
+      )}
+      <Drawer
+        opened={Boolean(latLng)}
+        zIndex={700}
+        noCloseOnClickOutside
+        noOverlay
+        padding="md"
+        onClose={() => setLatLng(null)}
+      >
+        {latLng && (
+          <Form method="post" className="node-form">
             <TextInput
               label="User-Token"
               required
@@ -128,8 +144,8 @@ export default function DraggableMarker({
               }))}
             />
             <input type="hidden" name="_action" value="create" />
-            <input type="hidden" name="lat" value={latLng.lat} />
-            <input type="hidden" name="lng" value={latLng.lng} />
+            <input type="hidden" name="lat" value={latLng?.lat || ""} />
+            <input type="hidden" name="lng" value={latLng?.lng || ""} />
             <input type="hidden" name="areaName" value={area.name} />
             <Button
               type="submit"
@@ -139,12 +155,9 @@ export default function DraggableMarker({
             >
               Save
             </Button>
-            <Button type="button" onClick={onClose} variant="subtle">
-              Close
-            </Button>
-          </Card>
-        </Form>
-      </Tooltip>
-    </Marker>
+          </Form>
+        )}
+      </Drawer>
+    </>
   );
 }
