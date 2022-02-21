@@ -66,8 +66,8 @@ export const nodeCategories: AreaNodeCategory[] = [
     color: "rgba(134, 87, 229, 0.7)",
     types: [
       {
-        name: "Play Instrument",
-        iconUrl: "/markers/guitar.svg",
+        name: "Play Song",
+        iconUrl: "/markers/double-quaver.svg",
       },
       {
         name: "Vista",
