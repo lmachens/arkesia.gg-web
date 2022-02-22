@@ -15,6 +15,7 @@ type LeafletCanvasMarkerOptions = {
   borderColor?: string;
   radius: number;
   padding?: number;
+  onClick?: () => void;
 };
 
 type CanvasMarkerProps = LeafletCanvasMarkerOptions & CircleMarkerProps;
@@ -53,6 +54,9 @@ class LeafletNodeMarker extends LeafletCircleMarker {
       imageElements[options.src].src = options.src;
     }
     this.imageElement = imageElements[options.src];
+    if (this.options.onClick) {
+      this.on("click", this.options.onClick);
+    }
   }
 
   _redraw(): void {

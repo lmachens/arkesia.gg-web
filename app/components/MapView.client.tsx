@@ -1,17 +1,17 @@
 import { Map } from "leaflet";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { MapContainer, TileLayer, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Tooltip } from "react-leaflet";
 import { Area } from "~/lib/types";
 import L from "leaflet";
 import MousePosition from "./MousePosition";
-import Contextmenu from "./Contextmenu";
 import { nodeTypesMap } from "~/lib/static";
 import { AreaNode } from "@prisma/client";
-import { Button, Card, Text, TextInput, Title } from "@mantine/core";
+import { Button, Drawer, Text, TextInput, Title } from "@mantine/core";
 import { Form, useActionData, useTransition } from "remix";
 import { useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
 import CanvasMarker from "./CanvasMarker";
+import DraggableMarker from "./DraggableMarker";
 
 const DefaultIcon = L.icon({
   iconUrl: "/markers/unknown.webp",
@@ -36,6 +36,7 @@ export default function MapView({ area, nodes }: MapProps) {
   const actionError = useActionData();
   const notifications = useNotifications();
   const notificationId = useRef<string | null>(null);
+  const [selectedNode, setSelectedNode] = useState<AreaNode | null>(null);
 
   useEffect(() => {
     if (
@@ -72,7 +73,7 @@ export default function MapView({ area, nodes }: MapProps) {
   const displayMap = useMemo(
     () => (
       <MapContainer
-        center={getMapCenter(area)}
+        center={getMapCenter(area.tiles)}
         zoom={1}
         whenCreated={setMap}
         crs={L.CRS.Simple}
@@ -81,6 +82,7 @@ export default function MapView({ area, nodes }: MapProps) {
           background: "none",
         }}
         renderer={L.canvas()}
+        zoomControl={false}
       >
         <TileLayer
           ref={tileLayerRef}
@@ -90,10 +92,10 @@ export default function MapView({ area, nodes }: MapProps) {
           minZoom={0}
           maxZoom={4}
           tileSize={256}
-          bounds={getBounds(area)}
+          bounds={getBounds(area.tiles)}
         />
         <MousePosition />
-        <Contextmenu area={area} />
+        <DraggableMarker area={area} />
         {nodes.map((node) => (
           <CanvasMarker
             key={node.position.toString()}
@@ -103,32 +105,11 @@ export default function MapView({ area, nodes }: MapProps) {
             padding={5}
             showBackground
             borderColor={nodeTypesMap[node.type]?.color || "transparent"}
+            onClick={() => setSelectedNode(node)}
           >
-            <Popup>
-              <Form method="delete">
-                <Card className="node-form">
-                  <Title order={3}>{node.name}</Title>
-                  <Text variant="gradient">{node.type}</Text>
-                  {node.description && (
-                    <Text lineClamp={4} className="text-block">
-                      {node.description}
-                    </Text>
-                  )}
-                  <TextInput
-                    label="User-Token"
-                    required
-                    placeholder="Only for moderators right now"
-                    value={userToken}
-                    onChange={(event) => setUserToken(event.target.value)}
-                    name="userToken"
-                  />
-                  <input type="hidden" name="nodeId" value={node.id} />
-                  <Button type="submit" color="red">
-                    Delete
-                  </Button>
-                </Card>
-              </Form>
-            </Popup>
+            <Tooltip direction="top" offset={[0, -10]}>
+              {node.name}
+            </Tooltip>
           </CanvasMarker>
         ))}
       </MapContainer>
@@ -138,24 +119,60 @@ export default function MapView({ area, nodes }: MapProps) {
 
   useEffect(() => {
     if (map) {
-      map.panTo(getMapCenter(area));
+      map.panTo(getMapCenter(area.tiles));
     }
     if (tileLayerRef.current) {
-      tileLayerRef.current.options.bounds = getBounds(area);
+      tileLayerRef.current.options.bounds = getBounds(area.tiles);
       tileLayerRef.current.setUrl(area.tileURL);
     }
-  }, [map, area]);
+  }, [Boolean(map), area.tiles.toString(), area.tileURL]);
 
-  return <>{displayMap}</>;
+  return (
+    <>
+      {displayMap}
+      <Drawer
+        opened={Boolean(selectedNode)}
+        zIndex={700}
+        padding="md"
+        onClose={() => setSelectedNode(null)}
+      >
+        {selectedNode && (
+          <Form method="delete" className="node-form">
+            <Title order={3}>{selectedNode.name}</Title>
+            <Text variant="gradient">{selectedNode.type}</Text>
+            {selectedNode.description && (
+              <Text lineClamp={4} className="text-block">
+                {selectedNode.description}
+              </Text>
+            )}
+            <TextInput
+              label="User-Token"
+              required
+              placeholder="Only for moderators right now"
+              value={userToken}
+              onChange={(event) => setUserToken(event.target.value)}
+              name="userToken"
+            />
+            <input type="hidden" name="nodeId" value={selectedNode.id} />
+            <Button type="submit" color="red">
+              Delete
+            </Button>
+          </Form>
+        )}
+      </Drawer>
+    </>
+  );
 }
 
-function getMapCenter(area: Area): [number, number] {
-  return [(-64 * area.tiles[0]) / 2, (64 * area.tiles[1]) / 2];
+function getMapCenter(tiles: [number, number]): [number, number] {
+  return [(-64 * tiles[0]) / 2, (64 * tiles[1]) / 2];
 }
 
-function getBounds(area: Area): [[number, number], [number, number]] {
+function getBounds(
+  tiles: [number, number]
+): [[number, number], [number, number]] {
   return [
-    [0, 64 * area.tiles[1]],
-    [-64 * area.tiles[0], 0],
+    [0, 64 * tiles[1]],
+    [-64 * tiles[0], 0],
   ];
 }
