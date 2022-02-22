@@ -134,7 +134,6 @@ export default function MapPage() {
       })}
     >
       <ClientOnly>
-        <Test />
         <MapView area={area} nodes={nodes} />
       </ClientOnly>
     </AppShell>
