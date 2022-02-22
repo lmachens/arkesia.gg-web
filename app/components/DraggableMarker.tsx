@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Marker, Tooltip, useMap, useMapEvents } from "react-leaflet";
+import { Marker, Tooltip, useMapEvents } from "react-leaflet";
 import { nodeTypes } from "~/lib/static";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
 import { Area } from "~/lib/types";
 import { Button, Drawer, Select, Textarea, TextInput } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
+import ImageDropzone from "./ImageDropzone";
 
 type DraggableMarkerProps = {
   area: Area;
@@ -14,11 +15,9 @@ type DraggableMarkerProps = {
 export default function DraggableMarker({ area }: DraggableMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
   const [latLng, setLatLng] = useState<L.LatLng | null>(null);
-  const map = useMap();
 
   useMapEvents({
     contextmenu: (event) => {
-      map.closePopup();
       setLatLng(event.latlng);
     },
   });
@@ -34,6 +33,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
     defaultValue: "",
   });
   const actionError = useActionData();
+  const [screenshot, setScreenshot] = useState<File | null>(null);
 
   const eventHandlers = useMemo(
     () => ({
@@ -46,12 +46,6 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
     }),
     []
   );
-  useEffect(() => {
-    const marker = markerRef.current;
-    if (marker != null) {
-      marker.openPopup();
-    }
-  }, []);
 
   useEffect(() => {
     if (
@@ -81,6 +75,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
         });
         notificationId.current = null;
         setLatLng(null);
+        setLatLng(null);
       }
     }
   }, [transition.state, actionError]);
@@ -105,10 +100,28 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
         noCloseOnClickOutside
         noOverlay
         padding="md"
-        onClose={() => setLatLng(null)}
+        onClose={() => {
+          setLatLng(null);
+          setScreenshot(null);
+        }}
       >
         {latLng && (
-          <Form method="post" className="node-form">
+          <Form
+            method="post"
+            className="node-form"
+            encType="multipart/form-data"
+            onSubmit={(event) => {
+              // ImageDropzone has no input `name`. This is a workaround to add it on submit
+              for (let input of event.currentTarget.elements) {
+                if (
+                  input instanceof HTMLInputElement &&
+                  input.type === "file"
+                ) {
+                  input.name = "screenshot";
+                }
+              }
+            }}
+          >
             <TextInput
               label="User-Token"
               required
@@ -142,6 +155,17 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
                 label: nodeType.name,
                 group: nodeType.category,
               }))}
+            />
+            <ImageDropzone
+              onDrop={(files) => setScreenshot(files[0])}
+              onReject={() =>
+                notifications.showNotification({
+                  title: "Upload failed",
+                  message: "",
+                  color: "red",
+                })
+              }
+              image={screenshot}
             />
             <input type="hidden" name="_action" value="create" />
             <input type="hidden" name="lat" value={latLng.lat} />

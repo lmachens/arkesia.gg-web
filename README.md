@@ -20,10 +20,12 @@ cp template.env .env
 
 The following list shows the variables you need to set:
 
-| KEY                 | VALUE                                            |
-| ------------------- | ------------------------------------------------ |
-| DATABASE_URL        | URI of your MongoDB server                       |
-| DISCORD_WEBHOOK_URL | Discord webhook URL for notifications (optional) |
+| KEY                 | VALUE                                                |
+| ------------------- | ---------------------------------------------------- |
+| DATABASE_URL        | URI of your MongoDB server                           |
+| DISCORD_WEBHOOK_URL | Discord webhook URL for notifications (optional)     |
+| SUPABASE_URL        | Supabase URL for storage (required for image upload) |
+| SUPABASE_KEY        | Supabase Key for storage (required for image upload) |
 
 ### Development
 

@@ -1,6 +1,13 @@
+import Test from "~/components/Test.client";
 import { ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
-import { ActionFunction, LoaderFunction, redirect, useLoaderData } from "remix";
+import {
+  ActionFunction,
+  LoaderFunction,
+  redirect,
+  unstable_parseMultipartFormData,
+  useLoaderData,
+} from "remix";
 import invariant from "tiny-invariant";
 import { continents } from "~/lib/static";
 import MapSelect from "~/components/MapSelect";
@@ -9,6 +16,13 @@ import { AppShell, Header } from "@mantine/core";
 import { deleteNode, findNodes, findUser, insertNode } from "~/lib/db.server";
 import { AreaNode } from "@prisma/client";
 import { postToDiscord } from "~/lib/discord";
+import {
+  deleteNodeScreenshot,
+  imageToWebp,
+  uploadHandler,
+  uploadNodeScreenshot,
+} from "~/lib/storage.server";
+import type { NodeOnDiskFile } from "@remix-run/node";
 
 type LoaderData = {
   continentName: string;
@@ -44,36 +58,47 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  const body = await request.formData();
-
   try {
+    const body = await unstable_parseMultipartFormData(request, uploadHandler);
     const user = await findUser(body.get("userToken")!.toString());
     if (!user) {
       throw new Error("User not found");
     }
 
     if (request.method === "POST") {
-      const node = await insertNode({
+      const partialNode: Omit<AreaNode, "id"> = {
         areaName: body.get("areaName")!.toString(),
         position: [+body.get("lat")!, +body.get("lng")!],
         type: body.get("type")!.toString(),
         name: body.get("name")!.toString(),
         description: body.get("description")?.toString() || "",
-        screenshot: body.get("screenshot")?.toString() || "",
+        screenshot: "",
         userId: user.id,
-      });
-      postToDiscord(
-        `📌 ${node.type} in ${
-          node.areaName
-        } at [${node.position.toString()}] added`
-      );
+      };
+      const screenshot = body.get("screenshot") as NodeOnDiskFile | undefined;
+      if (screenshot) {
+        const imageWebp = await imageToWebp(screenshot);
+        const filename =
+          `${partialNode.areaName}_${partialNode.type}_${partialNode.position}.webp`.replace(
+            /\s/g,
+            "_"
+          );
+        partialNode.screenshot = await uploadNodeScreenshot(
+          filename,
+          imageWebp
+        );
+      }
+
+      const node = await insertNode(partialNode);
+      postToDiscord("inserted", node);
     } else if (request.method === "DELETE") {
+      console.log("DELETED");
+
       const deletedNode = await deleteNode(body.get("nodeId")!.toString());
-      postToDiscord(
-        `💀 ${deletedNode.type} in ${
-          deletedNode.areaName
-        } at [${deletedNode.position.toString()}] deleted`
-      );
+      if (deletedNode.screenshot) {
+        await deleteNodeScreenshot(deletedNode.screenshot);
+      }
+      postToDiscord("deleted", deletedNode);
     }
     return null;
   } catch (error) {
@@ -110,6 +135,7 @@ export default function MapPage() {
       })}
     >
       <ClientOnly>
+        <Test />
         <MapView area={area} nodes={nodes} />
       </ClientOnly>
     </AppShell>

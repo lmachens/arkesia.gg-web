@@ -37,7 +37,7 @@ export default function App() {
           theme={{ fontFamily: "NunitoVariable", colorScheme: "dark" }}
         >
           <NotificationsProvider
-            zIndex={700}
+            zIndex={900}
             position="top-right"
             autoClose={2500}
           >
