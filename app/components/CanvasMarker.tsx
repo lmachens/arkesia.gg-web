@@ -11,9 +11,9 @@ export type { CircleMarkerProps } from "@react-leaflet/core";
 
 type LeafletCanvasMarkerOptions = {
   src: string;
-  size: [number, number];
   showBackground?: boolean;
   borderColor?: string;
+  radius: number;
   padding?: number;
   onClick?: () => void;
 };
@@ -89,22 +89,15 @@ LeafletCanvas.include({
     if (!ctx) {
       return;
     }
-    const { size, showBackground, borderColor, padding = 0 } = layer.options;
+    const { radius, showBackground, borderColor, padding = 0 } = layer.options;
     const p = layer._point.round();
-    const halfWidth = size[0] / 2;
-    const halfHeight = halfWidth;
-    const dx = p.x - halfWidth;
-    const dy = p.y - halfHeight;
+    const size = radius * 2;
+    const halfSize = size / 2;
+    const dx = p.x - halfSize;
+    const dy = p.y - halfSize;
     if (showBackground) {
       ctx.beginPath();
-      ctx.arc(
-        dx + halfWidth,
-        dy + halfHeight,
-        halfWidth + padding,
-        0,
-        Math.PI * 2,
-        true
-      );
+      ctx.arc(dx + halfSize, dy + halfSize, halfSize, 0, Math.PI * 2, true);
       ctx.fillStyle = "rgba(30, 30, 30, 0.7)";
       ctx.fill();
       if (borderColor) {
@@ -113,6 +106,12 @@ LeafletCanvas.include({
         ctx.stroke();
       }
     }
-    ctx.drawImage(layer.imageElement, dx, dy, size[0], size[1]);
+    ctx.drawImage(
+      layer.imageElement,
+      dx + padding,
+      dy + padding,
+      radius * 2 - padding * 2,
+      radius * 2 - padding * 2
+    );
   },
 });

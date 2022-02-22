@@ -101,10 +101,10 @@ export default function MapView({ area, nodes }: MapProps) {
             key={node.position.toString()}
             center={node.position as [number, number]}
             src={nodeTypesMap[node.type]?.iconUrl || "/markers/unknown.webp"}
-            size={[24, 24]}
+            radius={16}
+            padding={5}
             showBackground
             borderColor={nodeTypesMap[node.type]?.color || "transparent"}
-            padding={10}
             onClick={() => setSelectedNode(node)}
           >
             <Tooltip direction="top" offset={[0, -10]}>
