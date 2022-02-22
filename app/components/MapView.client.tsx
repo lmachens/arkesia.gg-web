@@ -6,7 +6,7 @@ import L from "leaflet";
 import MousePosition from "./MousePosition";
 import { nodeTypesMap } from "~/lib/static";
 import { AreaNode } from "@prisma/client";
-import { Button, Drawer, Text, TextInput, Title } from "@mantine/core";
+import { Button, Drawer, Image, Text, TextInput, Title } from "@mantine/core";
 import { Form, useActionData, useTransition } from "remix";
 import { useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
@@ -65,7 +65,7 @@ export default function MapView({ area, nodes }: MapProps) {
           message: "",
         });
         notificationId.current = null;
-        map?.closePopup();
+        setSelectedNode(null);
       }
     }
   }, [transition.state, actionError]);
@@ -77,12 +77,12 @@ export default function MapView({ area, nodes }: MapProps) {
         zoom={1}
         whenCreated={setMap}
         crs={L.CRS.Simple}
+        zoomControl={false}
         attributionControl={false}
         style={{
           background: "none",
         }}
         renderer={L.canvas()}
-        zoomControl={false}
       >
         <TileLayer
           ref={tileLayerRef}
@@ -153,6 +153,14 @@ export default function MapView({ area, nodes }: MapProps) {
               onChange={(event) => setUserToken(event.target.value)}
               name="userToken"
             />
+            {selectedNode.screenshot && (
+              <Image
+                src={selectedNode.screenshot}
+                alt=""
+                height={200}
+                radius="sm"
+              />
+            )}
             <input type="hidden" name="nodeId" value={selectedNode.id} />
             <Button type="submit" color="red">
               Delete
