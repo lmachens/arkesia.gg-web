@@ -92,13 +92,12 @@ LeafletCanvas.include({
     const { radius, showBackground, borderColor, padding = 0 } = layer.options;
     const p = layer._point.round();
     const size = radius * 2;
-    const halfWidth = size / 2;
-    const halfHeight = halfWidth;
-    const dx = p.x - halfWidth;
-    const dy = p.y - halfHeight;
+    const halfSize = size / 2;
+    const dx = p.x - halfSize;
+    const dy = p.y - halfSize;
     if (showBackground) {
       ctx.beginPath();
-      ctx.arc(dx + halfWidth, dy + halfHeight, halfWidth, 0, Math.PI * 2, true);
+      ctx.arc(dx + halfSize, dy + halfSize, halfSize, 0, Math.PI * 2, true);
       ctx.fillStyle = "rgba(30, 30, 30, 0.7)";
       ctx.fill();
       if (borderColor) {
