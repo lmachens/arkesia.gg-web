@@ -27,6 +27,8 @@ The following list shows the variables you need to set:
 | SUPABASE_URL        | Supabase URL for storage (required for image upload) |
 | SUPABASE_KEY        | Supabase Key for storage (required for image upload) |
 
+In order for the screenshot file upload to work locally, you need to create a [Supabase](https://supabase.com/) account, activate the [storage](https://supabase.com/storage) feature, [create a new bucket](https://supabase.com/docs/guides/storage#create-a-bucket) called `nodes` and make it public.
+
 ### Development
 
 From your terminal, you need to install the dependencies first:
