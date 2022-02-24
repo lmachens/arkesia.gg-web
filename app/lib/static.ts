@@ -99,6 +99,17 @@ export const nodeTypesMap = nodeTypes.reduce(
 
 export const continents: Continent[] = [
   {
+    name: "Rethramis",
+    areas: [
+      {
+        name: "Prideholme",
+        tileURL:
+          "/tiles/rethramis/prideholme/lv_atm_leonhart_t_ps_0_{y}x{x}.webp",
+        tiles: [3, 3],
+      },
+    ],
+  },
+  {
     name: "Yorn",
     areas: [
       {
