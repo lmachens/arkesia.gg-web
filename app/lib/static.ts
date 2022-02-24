@@ -104,7 +104,7 @@ export const continents: Continent[] = [
       {
         name: "Prideholme",
         tileURL:
-          "/tiles/rethramis/prideholme/lv_atm_dleonhart_d_ps_0_{y}x{x}.webp",
+          "/tiles/rethramis/prideholme/lv_atm_leonhart_t_ps_0_{y}x{x}.webp",
         tiles: [3, 3],
       },
     ],
