@@ -7,5 +7,6 @@ node_modules
 /build/
 /public/build
 /api/index.js
+/api/_build
 
 .env
