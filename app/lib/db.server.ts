@@ -55,7 +55,7 @@ export const insertNode = async (node: Omit<AreaNode, "id">) => {
   return result;
 };
 
-export const deleteNode = async (nodeId: string) => {
+export const deleteNode = async (nodeId: number) => {
   const result = await db.areaNode.delete({ where: { id: nodeId } });
   return result;
 };
