@@ -164,6 +164,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
             />
             <ImageDropzone
               onDrop={(files) => setScreenshot(files[0])}
+              onClear={() => setScreenshot(null)}
               onReject={() =>
                 notifications.showNotification({
                   title: "Upload failed",
