@@ -1,29 +1,28 @@
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["mongoDb"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model AreaNode {
-  id          String  @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id          Int     @id @default(autoincrement())
   areaName    String
   position    Float[]
   type        String
   name        String
   description String?
   screenshot  String?
-  userId      String
+  userId      Int
   user        User    @relation(fields: [userId], references: [id])
 
   @@index([areaName])
 }
 
 model User {
-  id    String     @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id    Int        @id @default(autoincrement())
   token String     @unique
   nodes AreaNode[]
 

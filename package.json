@@ -19,7 +19,7 @@
     "@mantine/rte": "^3.6.11",
     "@mantine/ssr": "^3.6.11",
     "@modulz/radix-icons": "^4.0.0",
-    "@prisma/client": "^3.9.2",
+    "@prisma/client": "^3.10.0",
     "@remix-run/react": "^1.2.2",
     "@remix-run/serve": "^1.2.2",
     "@remix-run/vercel": "^1.2.2",
@@ -48,7 +48,7 @@
     "@types/uuid": "^8.3.4",
     "cross-env": "^7.0.3",
     "esbuild-register": "^3.3.2",
-    "prisma": "^3.9.2",
+    "prisma": "^3.10.0",
     "typescript": "^4.5.5"
   },
   "engines": {
