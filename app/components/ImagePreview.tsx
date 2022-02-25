@@ -26,6 +26,9 @@ export default function ImagePreview({ src }: ImagePreviewProps) {
         radius="sm"
         onClick={() => setOpened(true)}
         withPlaceholder
+        sx={() => ({
+          cursor: "pointer",
+        })}
       />
     </>
   );
