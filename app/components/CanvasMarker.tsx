@@ -95,6 +95,7 @@ LeafletCanvas.include({
     const halfSize = size / 2;
     const dx = p.x - halfSize;
     const dy = p.y - halfSize;
+
     if (showBackground) {
       ctx.beginPath();
       ctx.arc(dx + halfSize, dy + halfSize, halfSize, 0, Math.PI * 2, true);
@@ -106,6 +107,14 @@ LeafletCanvas.include({
         ctx.stroke();
       }
     }
+
+    ctx.save();
+    const bearing = this._map._bearing;
+    if (bearing) {
+      ctx.translate(p.x, p.y);
+      ctx.rotate(-bearing);
+      ctx.translate(-p.x, -p.y);
+    }
     ctx.drawImage(
       layer.imageElement,
       dx + padding,
@@ -113,5 +122,6 @@ LeafletCanvas.include({
       radius * 2 - padding * 2,
       radius * 2 - padding * 2
     );
+    ctx.restore();
   },
 });
