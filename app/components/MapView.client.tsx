@@ -145,9 +145,21 @@ export default function MapView({ area, nodes }: MapProps) {
             <Title order={3}>{selectedNode.name}</Title>
             <Text variant="gradient">{selectedNode.type}</Text>
             {selectedNode.description && (
-              <Text lineClamp={4} className="text-block">
-                {selectedNode.description}
-              </Text>
+              <Text
+                lineClamp={4}
+                className="text-block"
+                dangerouslySetInnerHTML={{ __html: selectedNode.description }}
+                sx={(theme) => ({
+                  a: {
+                    color: theme.colors.blue[4],
+                    textDecoration: "none",
+                  },
+                  "a:hover": {
+                    color: theme.colors.blue[4],
+                    textDecoration: "underline",
+                  },
+                })}
+              ></Text>
             )}
             <TextInput
               label="User-Token"
