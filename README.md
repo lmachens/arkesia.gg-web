@@ -22,7 +22,7 @@ The following list shows the variables you need to set:
 
 | KEY                 | VALUE                                                |
 | ------------------- | ---------------------------------------------------- |
-| DATABASE_URL        | URI of your MongoDB server                           |
+| DATABASE_URL        | URI of your PostgreSQL database                      |
 | DISCORD_WEBHOOK_URL | Discord webhook URL for notifications (optional)     |
 | SUPABASE_URL        | Supabase URL for storage (required for image upload) |
 | SUPABASE_KEY        | Supabase Key for storage (required for image upload) |
@@ -61,7 +61,7 @@ npx prisma studio
 
 The project is based on [Remix](https://remix.run/), a full stack [React](https://reactjs.org/) web framework focused on user experience and performance.
 For UI components, we use [Mantine](https://mantine.dev/).
-The database is connected via [Prisma](https://www.prisma.io/), an ORM which connects to [MongoDB](https://www.mongodb.com/).
+The database is connected via [Prisma](https://www.prisma.io/), an ORM which connects to [PostgreSQL](https://www.postgresql.org/).
 
 Please refer to these documentations for more information.
 

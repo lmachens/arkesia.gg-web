@@ -76,7 +76,7 @@ export const action: ActionFunction = async ({ request }) => {
       description:
         body.get("description")?.toString().replace("<p><br></p>", "") || "",
       screenshot: "",
-      userId: user?.id || "",
+      userId: user?.id || 0,
     };
 
     const fieldErrors = validateNode(partialNode);
@@ -107,7 +107,7 @@ export const action: ActionFunction = async ({ request }) => {
       });
     }
 
-    const deletedNode = await deleteNode(body.get("nodeId")!.toString());
+    const deletedNode = await deleteNode(+body.get("nodeId")!);
     if (deletedNode.screenshot) {
       await deleteNodeScreenshot(deletedNode.screenshot);
     }
