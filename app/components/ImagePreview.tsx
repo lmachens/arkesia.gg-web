@@ -23,11 +23,22 @@ export default function ImagePreview({ src }: ImagePreviewProps) {
         height={200}
         alt=""
         fit="contain"
-        radius="sm"
         onClick={() => setOpened(true)}
         withPlaceholder
-        sx={() => ({
+        sx={(theme) => ({
+          padding: theme.spacing.sm,
+          borderRadius: theme.radius.sm,
+          backgroundColor:
+            theme.colorScheme === "dark"
+              ? theme.colors.dark[6]
+              : theme.colors.gray[0],
           cursor: "pointer",
+          "&:hover": {
+            backgroundColor:
+              theme.colorScheme === "dark"
+                ? theme.colors.dark[5]
+                : theme.colors.gray[1],
+          },
         })}
       />
     </>

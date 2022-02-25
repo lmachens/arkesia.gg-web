@@ -162,6 +162,9 @@ export default function MapView({ area, nodes }: MapProps) {
                 })}
               ></Text>
             )}
+            {selectedNode.screenshot && (
+              <ImagePreview src={selectedNode.screenshot} />
+            )}
             <TextInput
               label="User-Token"
               required
@@ -171,9 +174,6 @@ export default function MapView({ area, nodes }: MapProps) {
               name="userToken"
               error={actionData?.fieldErrors?.userId}
             />
-            {selectedNode.screenshot && (
-              <ImagePreview src={selectedNode.screenshot} />
-            )}
             <input type="hidden" name="nodeId" value={selectedNode.id} />
             <Button type="submit" color="red">
               Delete
