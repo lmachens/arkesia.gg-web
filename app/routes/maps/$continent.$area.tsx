@@ -73,7 +73,8 @@ export const action: ActionFunction = async ({ request }) => {
       position: [+body.get("lat")!, +body.get("lng")!],
       type: body.get("type")!.toString(),
       name: body.get("name")!.toString(),
-      description: body.get("description")?.toString() || "",
+      description:
+        body.get("description")?.toString().replace("<p><br></p>", "") || "",
       screenshot: "",
       userId: user?.id || "",
     };
