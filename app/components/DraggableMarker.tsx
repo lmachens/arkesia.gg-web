@@ -96,6 +96,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
         </Marker>
       )}
       <Drawer
+        id="new-marker-drawer"
         opened={Boolean(latLng)}
         zIndex={700}
         noCloseOnClickOutside
