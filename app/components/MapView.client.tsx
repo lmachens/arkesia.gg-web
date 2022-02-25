@@ -33,7 +33,7 @@ export default function MapView({ area, nodes }: MapProps) {
     defaultValue: "",
   });
   const transition = useTransition();
-  const actionError = useActionData();
+  const actionData = useActionData();
   const notifications = useNotifications();
   const notificationId = useRef<string | null>(null);
   const [selectedNode, setSelectedNode] = useState<AreaNode | null>(null);
@@ -51,10 +51,10 @@ export default function MapView({ area, nodes }: MapProps) {
         disallowClose: true,
       });
     } else if (transition.state === "idle" && notificationId.current) {
-      if (actionError) {
+      if (actionData) {
         notifications.updateNotification(notificationId.current, {
           id: notificationId.current,
-          title: actionError,
+          title: "Something is wrong",
           message: "",
           color: "red",
         });
@@ -68,7 +68,7 @@ export default function MapView({ area, nodes }: MapProps) {
         setSelectedNode(null);
       }
     }
-  }, [transition.state, actionError]);
+  }, [transition.state, actionData]);
 
   const displayMap = useMemo(
     () => (
@@ -152,6 +152,7 @@ export default function MapView({ area, nodes }: MapProps) {
               value={userToken}
               onChange={(event) => setUserToken(event.target.value)}
               name="userToken"
+              error={actionData?.fieldErrors?.userId}
             />
             {selectedNode.screenshot && (
               <Image

@@ -7,6 +7,7 @@ import { Area } from "~/lib/types";
 import { Button, Drawer, Select, Textarea, TextInput } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 import ImageDropzone from "./ImageDropzone";
+import { PostNodeActionData } from "~/lib/validation";
 
 type DraggableMarkerProps = {
   area: Area;
@@ -32,7 +33,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
     key: "user-token",
     defaultValue: "",
   });
-  const actionError = useActionData();
+  const actionData = useActionData<PostNodeActionData>();
   const [screenshot, setScreenshot] = useState<File | null>(null);
 
   const eventHandlers = useMemo(
@@ -60,10 +61,10 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
         disallowClose: true,
       });
     } else if (transition.state === "idle" && notificationId.current) {
-      if (actionError) {
+      if (actionData) {
         notifications.updateNotification(notificationId.current, {
           id: notificationId.current,
-          title: actionError,
+          title: "Something is wrong",
           message: "",
           color: "red",
         });
@@ -78,7 +79,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
         setLatLng(null);
       }
     }
-  }, [transition.state, actionError]);
+  }, [transition.state, actionData]);
 
   return (
     <>
@@ -129,6 +130,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
               value={userToken}
               onChange={(event) => setUserToken(event.target.value)}
               name="userToken"
+              error={actionData?.fieldErrors?.userId}
             />
             <TextInput
               label="Name"
@@ -136,11 +138,13 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
               placeholder="A node needs a name"
               max={30}
               name="name"
+              error={actionData?.fieldErrors?.name}
             />
             <Textarea
               label="Description (optional)"
               placeholder="Additional information about this node"
               name="description"
+              error={actionData?.fieldErrors?.description}
             />
             <Select
               label="Type"
@@ -155,6 +159,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
                 label: nodeType.name,
                 group: nodeType.category,
               }))}
+              error={actionData?.fieldErrors?.type}
             />
             <ImageDropzone
               onDrop={(files) => setScreenshot(files[0])}
