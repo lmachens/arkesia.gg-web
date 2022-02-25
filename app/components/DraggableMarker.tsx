@@ -79,6 +79,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
         notificationId.current = null;
         setLatLng(null);
         setScreenshot(null);
+        setDescription("");
       }
     }
   }, [transition.state, actionData]);
@@ -107,6 +108,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
         onClose={() => {
           setLatLng(null);
           setScreenshot(null);
+          setDescription("");
         }}
       >
         {latLng && (
