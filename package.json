@@ -12,11 +12,12 @@
     "seed": "node --require esbuild-register prisma/seed.ts"
   },
   "dependencies": {
-    "@mantine/core": "^3.6.9",
-    "@mantine/dropzone": "^3.6.9",
-    "@mantine/hooks": "^3.6.9",
-    "@mantine/notifications": "^3.6.9",
-    "@mantine/ssr": "^3.6.9",
+    "@mantine/core": "^3.6.11",
+    "@mantine/dropzone": "^3.6.11",
+    "@mantine/hooks": "^3.6.11",
+    "@mantine/notifications": "^3.6.11",
+    "@mantine/rte": "^3.6.11",
+    "@mantine/ssr": "^3.6.11",
     "@modulz/radix-icons": "^4.0.0",
     "@prisma/client": "^3.9.2",
     "@remix-run/react": "^1.2.2",

@@ -4,10 +4,11 @@ import { nodeTypes } from "~/lib/static";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
 import { Area } from "~/lib/types";
-import { Button, Drawer, Select, Textarea, TextInput } from "@mantine/core";
+import { Button, Drawer, InputWrapper, Select, TextInput } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 import ImageDropzone from "./ImageDropzone";
 import { PostNodeActionData } from "~/lib/validation";
+import RichTextEditor from "@mantine/rte";
 
 type DraggableMarkerProps = {
   area: Area;
@@ -35,6 +36,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
   });
   const actionData = useActionData<PostNodeActionData>();
   const [screenshot, setScreenshot] = useState<File | null>(null);
+  const [description, setDescription] = useState("");
 
   const eventHandlers = useMemo(
     () => ({
@@ -141,12 +143,18 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
               name="name"
               error={actionData?.fieldErrors?.name}
             />
-            <Textarea
+            <InputWrapper
               label="Description (optional)"
-              placeholder="Additional information about this node"
-              name="description"
               error={actionData?.fieldErrors?.description}
-            />
+            >
+              <RichTextEditor
+                value={description}
+                onChange={setDescription}
+                placeholder="Additional information about this node"
+                controls={[["bold", "italic", "underline", "clean", "link"]]}
+              />
+              <input type="hidden" value={description} name="description" />
+            </InputWrapper>
             <Select
               label="Type"
               placeholder="Pick one"
