@@ -105,7 +105,11 @@ export default function MapView({ area, nodes }: MapProps) {
             padding={5}
             showBackground
             borderColor={nodeTypesMap[node.type]?.color || "transparent"}
-            onClick={() => setSelectedNode(node)}
+            onClick={() => {
+              if (!document.querySelector("#new-marker-drawer")) {
+                setSelectedNode(node);
+              }
+            }}
           >
             <Tooltip direction="top" offset={[0, -10]}>
               {node.name}
