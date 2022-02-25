@@ -76,7 +76,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
         });
         notificationId.current = null;
         setLatLng(null);
-        setLatLng(null);
+        setScreenshot(null);
       }
     }
   }, [transition.state, actionData]);
