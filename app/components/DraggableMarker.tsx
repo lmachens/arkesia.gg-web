@@ -117,15 +117,11 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
             className="node-form"
             encType="multipart/form-data"
             onSubmit={(event) => {
-              // ImageDropzone has no input `name`. This is a workaround to add it on submit
-              for (let input of event.currentTarget.elements) {
-                if (
-                  input instanceof HTMLInputElement &&
-                  input.type === "file"
-                ) {
-                  input.name = "screenshot";
+              event.currentTarget.onformdata = (event) => {
+                if (screenshot) {
+                  event.formData.append("screenshot", screenshot, "screenshot");
                 }
-              }
+              };
             }}
           >
             <TextInput

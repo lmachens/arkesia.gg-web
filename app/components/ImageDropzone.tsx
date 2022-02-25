@@ -7,7 +7,6 @@ import {
 import ImageUploadIcon from "./ImageUploadIcon";
 import {
   ActionIcon,
-  Button,
   Group,
   Image,
   InputWrapper,
@@ -15,7 +14,7 @@ import {
   Text,
   useMantineTheme,
 } from "@mantine/core";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { Cross2Icon } from "@modulz/radix-icons";
 
 type ImageDropzoneProps = Omit<DropzoneProps, "children"> & {
@@ -33,6 +32,27 @@ export default function ImageDropzone({
     () => image && URL.createObjectURL(image),
     [image]
   );
+
+  useEffect(() => {
+    const handlePaste = (event: ClipboardEvent) => {
+      if (!event.clipboardData) {
+        return;
+      }
+      for (const item of event.clipboardData.items) {
+        if (item.kind === "file") {
+          const file = item.getAsFile();
+          if (!file) {
+            continue;
+          }
+          props.onDrop([file]);
+        }
+      }
+    };
+    document.addEventListener("paste", handlePaste);
+    return () => {
+      document.removeEventListener("paste", handlePaste);
+    };
+  }, []);
 
   return (
     <InputWrapper
@@ -62,7 +82,7 @@ export default function ImageDropzone({
                 />
                 <div>
                   <Text size="xl" inline>
-                    Drag image here or click to select file
+                    Paste, drag image here or click to select file
                   </Text>
                   <Text size="sm" color="dimmed" inline mt={7}>
                     The image should not exceed 5mb
