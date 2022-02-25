@@ -1,4 +1,6 @@
 import { AreaNode } from "@prisma/client";
+import TurndownService from "turndown";
+const turndownService = new TurndownService();
 
 export function postToDiscord(action: "inserted" | "deleted", node: AreaNode) {
   if (!process.env.DISCORD_WEBHOOK_URL) {
@@ -44,9 +46,10 @@ export function postToDiscord(action: "inserted" | "deleted", node: AreaNode) {
     },
   ];
   if (node.description) {
+    const markdownDescription = turndownService.turndown(node.description);
     payload.embeds[0].fields.push({
       name: "Description",
-      value: node.description,
+      value: markdownDescription,
     });
   }
   if (node.screenshot) {
