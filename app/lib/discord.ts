@@ -45,13 +45,13 @@ export function postToDiscord(action: "inserted" | "deleted", node: AreaNode) {
       ],
     },
   ];
-  if (node.description) {
-    const markdownDescription = turndownService.turndown(node.description);
-    payload.embeds[0].fields.push({
-      name: "Description",
-      value: markdownDescription,
-    });
-  }
+  const markdownDescription =
+    (node.description && turndownService.turndown(node.description)) || "-";
+  payload.embeds[0].fields.push({
+    name: "Description",
+    value: markdownDescription,
+  });
+
   if (node.screenshot) {
     payload.embeds.push({
       image: {
@@ -59,8 +59,6 @@ export function postToDiscord(action: "inserted" | "deleted", node: AreaNode) {
       },
     });
   }
-
-  console.log(JSON.stringify(payload, null, 2));
 
   return fetch(process.env.DISCORD_WEBHOOK_URL, {
     method: "POST",

@@ -6,12 +6,13 @@ import L from "leaflet";
 import MousePosition from "./MousePosition";
 import { nodeTypesMap } from "~/lib/static";
 import { AreaNode } from "@prisma/client";
-import { Button, Drawer, Image, Text, TextInput, Title } from "@mantine/core";
+import { Button, Drawer, Text, TextInput, Title } from "@mantine/core";
 import { Form, useActionData, useTransition } from "remix";
 import { useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
 import CanvasMarker from "./CanvasMarker";
 import DraggableMarker from "./DraggableMarker";
+import ImagePreview from "./ImagePreview";
 
 const DefaultIcon = L.icon({
   iconUrl: "/markers/unknown.webp",
@@ -161,6 +162,9 @@ export default function MapView({ area, nodes }: MapProps) {
                 })}
               ></Text>
             )}
+            {selectedNode.screenshot && (
+              <ImagePreview src={selectedNode.screenshot} />
+            )}
             <TextInput
               label="User-Token"
               required
@@ -170,14 +174,6 @@ export default function MapView({ area, nodes }: MapProps) {
               name="userToken"
               error={actionData?.fieldErrors?.userId}
             />
-            {selectedNode.screenshot && (
-              <Image
-                src={selectedNode.screenshot}
-                alt=""
-                height={200}
-                radius="sm"
-              />
-            )}
             <input type="hidden" name="nodeId" value={selectedNode.id} />
             <Button type="submit" color="red">
               Delete
