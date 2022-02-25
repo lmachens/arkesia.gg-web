@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, TileLayer, Tooltip } from "react-leaflet";
 import { Area } from "~/lib/types";
 import L from "leaflet";
+import "leaflet-rotate";
 import MousePosition from "./MousePosition";
 import { nodeTypesMap } from "~/lib/static";
 import { AreaNode } from "@prisma/client";
@@ -84,6 +85,9 @@ export default function MapView({ area, nodes }: MapProps) {
           background: "none",
         }}
         renderer={L.canvas()}
+        rotate
+        rotateControl={false}
+        bearing={-45}
       >
         <TileLayer
           ref={tileLayerRef}
