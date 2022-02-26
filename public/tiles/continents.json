@@ -1,0 +1,7552 @@
+[
+  {
+    "name": "Trixion",
+    "areas": [
+      {
+        "name": "Trixion",
+        "tiles": [
+          {
+            "url": "/tiles/trixion/lv_trision_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/trixion/lv_trision_ark_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/trixion/lv_trision_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/trixion/lv_trision_ark_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Trixion Training Grounds",
+        "tiles": [
+          {
+            "url": "/tiles/trixion_training_grounds/lv_trision_ark_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Training Room",
+        "tiles": [
+          {
+            "url": "/tiles/training_room/lv_rvr_ruinarena_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sailing Voyage",
+        "tiles": [
+          {
+            "url": "/tiles/sailing_voyage/lv_ocn_world_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Training Area",
+        "tiles": [
+          {
+            "url": "/tiles/training_area/lv_guidingrm_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sailing Voyage",
+    "areas": [
+      {
+        "name": "Dark Chaos Gate",
+        "tiles": [
+          {
+            "url": "/tiles/dark_chaos_gate/lv_ocn_gship_fav_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "[Open Seas] Sea of Gienah",
+        "tiles": [
+          {
+            "url": "/tiles/open_seas_sea_of_gienah/lv_ocn_world_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "name": "[Open Seas] Sea of Procyon",
+        "tiles": [
+          {
+            "url": "/tiles/open_seas_sea_of_procyon/lv_ocn_world_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Somewhere in the vast sea",
+        "tiles": [
+          {
+            "url": "/tiles/somewhere_in_the_vast_sea/lv_ocn_world_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              11
+            ]
+          },
+          {
+            "url": "/tiles/somewhere_in_the_vast_sea/lv_ocn_world_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              11
+            ]
+          },
+          {
+            "url": "/tiles/somewhere_in_the_vast_sea/lv_ocn_world_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              11
+            ]
+          },
+          {
+            "url": "/tiles/somewhere_in_the_vast_sea/lv_ocn_world_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              11
+            ]
+          },
+          {
+            "url": "/tiles/somewhere_in_the_vast_sea/lv_ocn_world_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_voyage_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Goblin Island",
+        "tiles": [
+          {
+            "url": "/tiles/goblin_island/lv_ocn_roundis_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Giant Mushroom Island",
+        "tiles": [
+          {
+            "url": "/tiles/giant_mushroom_island/lv_ocn_mushroomis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/giant_mushroom_island/lv_ocn_mushroomis_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/giant_mushroom_island/lv_ocn_mushroomis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Toto Silver Island",
+        "tiles": [
+          {
+            "url": "/tiles/toto_silver_island/lv_ocn_totosilveris_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/toto_silver_island/lv_ocn_totosilveris_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/toto_silver_island/lv_ocn_totosilveris_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Totopia",
+        "tiles": [
+          {
+            "url": "/tiles/totopia/lv_ocn_totopia_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/totopia/lv_ocn_totopia_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Illusion Isle",
+        "tiles": [
+          {
+            "url": "/tiles/illusion_isle/lv_ocn_illusionis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lullaby Island",
+        "tiles": [
+          {
+            "url": "/tiles/lullaby_island/lv_ocn_sleepingis_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/lullaby_island/lv_ocn_sleepingis_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Starlight Isle",
+        "tiles": [
+          {
+            "url": "/tiles/starlight_isle/lv_ocn_starlightis_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/starlight_isle/lv_ocn_starlightis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/starlight_isle/lv_ocn_starlightis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Island of Time",
+        "tiles": [
+          {
+            "url": "/tiles/island_of_time/lv_ocn_timeis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/island_of_time/lv_ocn_timeis_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Volare Island",
+        "tiles": [
+          {
+            "url": "/tiles/volare_island/lv_ocn_volareis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tooki Island",
+        "tiles": [
+          {
+            "url": "/tiles/tooki_island/lv_ocn_dookyis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Isle of Yearning",
+        "tiles": [
+          {
+            "url": "/tiles/isle_of_yearning/lv_ocn_longingis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/isle_of_yearning/lv_ocn_longingis_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/isle_of_yearning/lv_ocn_longingis_ps_6_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Facility X-301",
+        "tiles": [
+          {
+            "url": "/tiles/facility_x-301/lv_ocn_secretbaseis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/facility_x-301/lv_ocn_secretbaseis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/facility_x-301/lv_ocn_secretbaseis_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/facility_x-301/lv_ocn_secretbaseis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Alteisen",
+        "tiles": [
+          {
+            "url": "/tiles/alteisen/lv_ocn_alteisen_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/alteisen/lv_ocn_alteisen_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Meteora",
+        "tiles": [
+          {
+            "url": "/tiles/meteora/lv_ocn_meteora_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kalthertz",
+        "tiles": [
+          {
+            "url": "/tiles/kalthertz/lv_ocn_kalthertz_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Island of Mist",
+        "tiles": [
+          {
+            "url": "/tiles/island_of_mist/lv_ocn_mistis_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Argon",
+        "tiles": [
+          {
+            "url": "/tiles/argon/lv_ocn_elpisis_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Frostfire Island",
+        "tiles": [
+          {
+            "url": "/tiles/frostfire_island/lv_ocn_icefireis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Aiwana Island",
+        "tiles": [
+          {
+            "url": "/tiles/aiwana_island/lv_ocn_bikiniis_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Fortuna",
+        "tiles": [
+          {
+            "url": "/tiles/fortuna/lv_ocn_fortunais_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Vairgrys's Nest",
+        "tiles": [
+          {
+            "url": "/tiles/vairgryss_nest/lv_ocn_evergraceis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/vairgryss_nest/lv_ocn_evergraceis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Spida Island",
+        "tiles": [
+          {
+            "url": "/tiles/spida_island/lv_ocn_spidais_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/spida_island/lv_ocn_spidais_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mercia",
+        "tiles": [
+          {
+            "url": "/tiles/mercia/lv_ocn_merciais_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Reminiscence Isle",
+        "tiles": [
+          {
+            "url": "/tiles/reminiscence_isle/lv_ocn_recallis_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Forpe",
+        "tiles": [
+          {
+            "url": "/tiles/forpe/lv_ocn_forpeis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/forpe/lv_ocn_forpeis_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/forpe/lv_ocn_forpeis_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/forpe/lv_ocn_forpeis_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/forpe/lv_ocn_forpeis_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Peyto",
+        "tiles": [
+          {
+            "url": "/tiles/peyto/lv_ocn_peyto_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/peyto/lv_ocn_peyto_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/peyto/lv_ocn_peyto_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/peyto/lv_ocn_peyto_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/peyto/lv_ocn_peyto_ps_4_{y}x{x}.webp",
+            "max": [
+              10,
+              10
+            ]
+          },
+          {
+            "url": "/tiles/peyto/lv_ocn_peyto_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/peyto/lv_ocn_peyto_ps_6_{y}x{x}.webp",
+            "max": [
+              4,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lost City",
+        "tiles": [
+          {
+            "url": "/tiles/lost_city/lv_ocn_forgottenis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Blackfang's Den",
+        "tiles": [
+          {
+            "url": "/tiles/blackfangs_den/lv_ocn_blackteethis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/blackfangs_den/lv_ocn_blackteethis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/blackfangs_den/lv_ocn_blackteethis_fav_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gravis",
+        "tiles": [
+          {
+            "url": "/tiles/gravis/lv_ocn_gravis_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/gravis/lv_ocn_gravis_ps_7_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Opher, the Lonely Island",
+        "tiles": [
+          {
+            "url": "/tiles/opher_the_lonely_island/lv_ocn_opher_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/opher_the_lonely_island/lv_ocn_opher_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sunflower Island",
+        "tiles": [
+          {
+            "url": "/tiles/sunflower_island/lv_ocn_sunfloweris_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Freedom Isle",
+        "tiles": [
+          {
+            "url": "/tiles/freedom_isle/lv_ocn_freedomis_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/freedom_isle/lv_ocn_freedomis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/freedom_isle/lv_ocn_freedomis_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/freedom_isle/lv_ocn_freedomis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/freedom_isle/lv_ocn_freedomis_ps_4_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kharmine's Lair",
+        "tiles": [
+          {
+            "url": "/tiles/kharmines_lair/lv_ocn_camainis_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Oblivion Isle",
+        "tiles": [
+          {
+            "url": "/tiles/oblivion_isle/lv_ocn_deathvalley_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Little Luck Island",
+        "tiles": [
+          {
+            "url": "/tiles/little_luck_island/lv_ocn_valtisland_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Distorted Island",
+        "tiles": [
+          {
+            "url": "/tiles/distorted_island/lv_ocn_distortedis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/distorted_island/lv_ocn_distortedis_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Erasmo's Island",
+        "tiles": [
+          {
+            "url": "/tiles/erasmos_island/lv_ocn_erasmois_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Fomona Island",
+        "tiles": [
+          {
+            "url": "/tiles/fomona_island/lv_ocn_fomonais_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Runaways Island",
+        "tiles": [
+          {
+            "url": "/tiles/runaways_island/lv_ocn_runawaysis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/runaways_island/lv_ocn_runawaysis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Medeia",
+        "tiles": [
+          {
+            "url": "/tiles/medeia/lv_ocn_medeiais_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Liebeheim",
+        "tiles": [
+          {
+            "url": "/tiles/liebeheim/lv_ocn_liebeheimis_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lush Reed Island",
+        "tiles": [
+          {
+            "url": "/tiles/lush_reed_island/lv_ocn_lushreedis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Metus Islands",
+        "tiles": [
+          {
+            "url": "/tiles/metus_islands/lv_ocn_fearis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/metus_islands/lv_ocn_fearis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Atlas",
+        "tiles": [
+          {
+            "url": "/tiles/atlas/lv_ocn_nautilusis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/atlas/lv_ocn_nautilusis_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/atlas/lv_ocn_nautilusis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/atlas/lv_ocn_nautilusis_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Wisdom Isle",
+        "tiles": [
+          {
+            "url": "/tiles/wisdom_isle/lv_ocn_wisdomis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/wisdom_isle/lv_ocn_wisdomis_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/wisdom_isle/lv_ocn_wisdomis_ps_2_{y}x{x}.webp",
+            "max": [
+              4,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/wisdom_isle/lv_ocn_wisdomis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Crescent Isle",
+        "tiles": [
+          {
+            "url": "/tiles/crescent_isle/lv_ocn_crescentis_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Serenity Isle",
+        "tiles": [
+          {
+            "url": "/tiles/serenity_isle/lv_ocn_sereneis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "White Wave Island",
+        "tiles": [
+          {
+            "url": "/tiles/white_wave_island/lv_ocn_levalis_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Outlaw Isle",
+        "tiles": [
+          {
+            "url": "/tiles/outlaw_isle/lv_ocn_narris_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Wildwater Island",
+        "tiles": [
+          {
+            "url": "/tiles/wildwater_island/lv_ocn_tronais_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Naruni Island",
+        "tiles": [
+          {
+            "url": "/tiles/naruni_island/lv_ocn_naruniis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Niheltalop's Thoughts",
+        "tiles": [
+          {
+            "url": "/tiles/niheltalops_thoughts/lv_ocn_ancientris_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Notos Island",
+        "tiles": [
+          {
+            "url": "/tiles/notos_island/lv_ocn_icebergis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Monte Island",
+        "tiles": [
+          {
+            "url": "/tiles/monte_island/lv_ocn_monteis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/monte_island/lv_ocn_monteis_ps_1_{y}x{x}.webp",
+            "max": [
+              8,
+              8
+            ]
+          },
+          {
+            "url": "/tiles/monte_island/lv_ocn_monteis_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/monte_island/lv_ocn_monteis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/monte_island/lv_ocn_monteis_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/monte_island/lv_ocn_monteis_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/monte_island/lv_ocn_monteis_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/monte_island/lv_ocn_monteis_ps_7_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/monte_island/lv_ocn_monteis_ps_8_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/monte_island/lv_ocn_monteis_ps_9_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Panda Island",
+        "tiles": [
+          {
+            "url": "/tiles/panda_island/lv_ocn_pandapupuis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/panda_island/lv_ocn_pandapupuis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/panda_island/lv_ocn_pandapupuis_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Fantasm Island",
+        "tiles": [
+          {
+            "url": "/tiles/fantasm_island/lv_ocn_fantasyis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/fantasm_island/lv_ocn_fantasyis_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/fantasm_island/lv_ocn_fantasyis_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Harmony Island",
+        "tiles": [
+          {
+            "url": "/tiles/harmony_island/lv_ocn_harmonyis_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dreamgull Island",
+        "tiles": [
+          {
+            "url": "/tiles/dreamgull_island/lv_ocn_dgullis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Glacier Isle",
+        "tiles": [
+          {
+            "url": "/tiles/glacier_isle/lv_ocn_islandbgis_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lagoon Island",
+        "tiles": [
+          {
+            "url": "/tiles/lagoon_island/lv_ocn_bhislandis_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/lagoon_island/lv_ocn_bhislandis_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/lagoon_island/lv_ocn_bhislandis_ps_6_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Turtle Island",
+        "tiles": [
+          {
+            "url": "/tiles/turtle_island/lv_ocn_ttislandis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hope Island",
+        "tiles": [
+          {
+            "url": "/tiles/hope_island/lv_ocn_islandofis_ps_2_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lopang Island",
+        "tiles": [
+          {
+            "url": "/tiles/lopang_island/lv_ocn_loislandis_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/lopang_island/lv_ocn_loislandis_ps_6_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/lopang_island/lv_ocn_loislandis_ps_8_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Eternity Isle",
+        "tiles": [
+          {
+            "url": "/tiles/eternity_isle/lv_ocn_brokengis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/eternity_isle/lv_ocn_brokengis_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/eternity_isle/lv_ocn_brokengis_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hypnos's Eyes",
+        "tiles": [
+          {
+            "url": "/tiles/hypnoss_eyes/lv_ocn_ehypnosis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hypnoss_eyes/lv_ocn_ehypnosis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hypnoss_eyes/lv_ocn_ehypnosis_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hypnoss_eyes/lv_ocn_ehypnosis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hypnoss_eyes/lv_ocn_ehypnosis_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hypnoss_eyes/lv_ocn_ehypnosis_ps_7_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hypnoss_eyes/lv_ocn_ehypnosid_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sublime Isle",
+        "tiles": [
+          {
+            "url": "/tiles/sublime_isle/lv_ocn_atalanteis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/sublime_isle/lv_ocn_atalanteis_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Death's Hold Island",
+        "tiles": [
+          {
+            "url": "/tiles/deaths_hold_island/lv_ocn_desireis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Orvis Island",
+        "tiles": [
+          {
+            "url": "/tiles/orvis_island/lv_ocn_orbisis_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/orvis_island/lv_ocn_orbisis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/orvis_island/lv_ocn_orbisis_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Astella",
+        "tiles": [
+          {
+            "url": "/tiles/astella/lv_ocn_estis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Slime Island",
+        "tiles": [
+          {
+            "url": "/tiles/slime_island/lv_ocn_slimeis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/slime_island/lv_ocn_slimeis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/slime_island/lv_ocn_slimeis_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Alakkir",
+        "tiles": [
+          {
+            "url": "/tiles/alakkir/lv_ocn_alacis_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/alakkir/lv_ocn_alacis_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Opportunity Isle",
+        "tiles": [
+          {
+            "url": "/tiles/opportunity_isle/lv_ocn_chanceis_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Primal Island",
+        "tiles": [
+          {
+            "url": "/tiles/primal_island/lv_ocn_beginningis_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/primal_island/lv_ocn_beginningis_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Golden Wave Island",
+        "tiles": [
+          {
+            "url": "/tiles/golden_wave_island/lv_ocn_goldenwis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Boombling Island",
+        "tiles": [
+          {
+            "url": "/tiles/boombling_island/lv_ocn_bombis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/boombling_island/lv_ocn_bombis_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/boombling_island/lv_ocn_bombis_ps_7_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/boombling_island/lv_ocn_bombis_ps_8_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tranquil Isle",
+        "tiles": [
+          {
+            "url": "/tiles/tranquil_isle/lv_ocn_sabbathis_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Revelry Row",
+        "tiles": [
+          {
+            "url": "/tiles/revelry_row/lv_ocn_avenueis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/revelry_row/lv_ocn_avenueis_ps_4_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Asura Island",
+        "tiles": [
+          {
+            "url": "/tiles/asura_island/lv_ocn_surais_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Promise Isle",
+        "tiles": [
+          {
+            "url": "/tiles/promise_isle/lv_ocn_promiseis_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Twilight Isle",
+        "tiles": [
+          {
+            "url": "/tiles/twilight_isle/lv_ocn_twilightis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/twilight_isle/lv_ocn_twilightis_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/twilight_isle/lv_ocn_twilightis_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Phantomwing Island",
+        "tiles": [
+          {
+            "url": "/tiles/phantomwing_island/lv_ocn_butterflyis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/phantomwing_island/lv_ocn_butterflyis_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Azure Wind Island",
+        "tiles": [
+          {
+            "url": "/tiles/azure_wind_island/lv_ocn_blueis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/azure_wind_island/lv_ocn_blueis_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/azure_wind_island/lv_ocn_blueis_ps_2_{y}x{x}.webp",
+            "max": [
+              5,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/azure_wind_island/lv_ocn_blueis_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/azure_wind_island/lv_ocn_blueis_ps_4_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/azure_wind_island/lv_ocn_blueis_ps_5_{y}x{x}.webp",
+            "max": [
+              5,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/azure_wind_island/lv_ocn_blueis_ps_6_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Shadowmoon Market",
+        "tiles": [
+          {
+            "url": "/tiles/shadowmoon_market/lv_ocn_shadowis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/shadowmoon_market/lv_ocn_shadowis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/shadowmoon_market/lv_ocn_shadowis_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/shadowmoon_market/lv_ocn_shadowis_ps_3_{y}x{x}.webp",
+            "max": [
+              5,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/shadowmoon_market/lv_ocn_shadowis_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/shadowmoon_market/lv_ocn_shadowis_ps_5_{y}x{x}.webp",
+            "max": [
+              3,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/shadowmoon_market/lv_ocn_shadowis_ps_6_{y}x{x}.webp",
+            "max": [
+              5,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Shangra",
+        "tiles": [
+          {
+            "url": "/tiles/shangra/lv_ocn_shangis_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/shangra/lv_ocn_shangis_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/shangra/lv_ocn_shangis_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/shangra/lv_ocn_shangis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/shangra/lv_ocn_shangis_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/shangra/lv_ocn_shangis_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/shangra/lv_ocn_shangis_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/shangra/lv_ocn_shangis_ps_7_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/shangra/lv_ocn_shangis_ps_8_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/shangra/lv_ocn_shangis_ps_9_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Atropos",
+        "tiles": [
+          {
+            "url": "/tiles/atropos/lv_ocn_atrois_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/atropos/lv_ocn_atrois_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/atropos/lv_ocn_atrois_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/atropos/lv_ocn_atrois_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/atropos/lv_ocn_atrois_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/atropos/lv_ocn_atrois_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/atropos/lv_ocn_atrois_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Walpurgis",
+        "tiles": [
+          {
+            "url": "/tiles/walpurgis/lv_ocn_walsis_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Unknown Island",
+        "tiles": [
+          {
+            "url": "/tiles/unknown_island/lv_ocn_unknownis_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gesbroy",
+        "tiles": [
+          {
+            "url": "/tiles/gesbroy/lv_ocn_zysbrauis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/gesbroy/lv_ocn_zysbrauis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/gesbroy/lv_ocn_zysbrauis_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/gesbroy/lv_ocn_zysbrauis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/gesbroy/lv_ocn_zysbrauis_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/gesbroy/lv_ocn_zysbrauis_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/gesbroy/lv_ocn_zysbrauis_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/gesbroy/lv_ocn_zysbrauis_ps_7_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Land of Truth",
+        "tiles": [
+          {
+            "url": "/tiles/land_of_truth/lv_ocn_bugis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/land_of_truth/lv_ocn_bugis_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/land_of_truth/lv_ocn_bugis_ps_2_{y}x{x}.webp",
+            "max": [
+              10,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/land_of_truth/lv_ocn_bugis_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/land_of_truth/lv_ocn_bugis_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/land_of_truth/lv_ocn_bugis_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/land_of_truth/lv_ocn_bugis_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/land_of_truth/lv_ocn_bugis_ps_7_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/land_of_truth/lv_ocn_bugis_ps_8_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/land_of_truth/lv_ocn_bugis_ps_9_{y}x{x}.webp",
+            "max": [
+              4,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tooki Corporation",
+        "tiles": [
+          {
+            "url": "/tiles/tooki_corporation/lv_ocn_dookypkis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/tooki_corporation/lv_ocn_dookypkis_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/tooki_corporation/lv_ocn_dookypkis_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Whispering Islet",
+        "tiles": [
+          {
+            "url": "/tiles/whispering_islet/lv_ocn_whisperis_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/whispering_islet/lv_ocn_whisperis_ps_2_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Anguished Isle",
+        "tiles": [
+          {
+            "url": "/tiles/anguished_isle/lv_ocn_griefis_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Drumbeat Island",
+        "tiles": [
+          {
+            "url": "/tiles/drumbeat_island/lv_ocn_bumbadumis_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/drumbeat_island/lv_ocn_bumbadumis_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Snowpang Island",
+        "tiles": [
+          {
+            "url": "/tiles/snowpang_island/lv_ocn_snowpis_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Past Hidden by Mikeel",
+        "tiles": [
+          {
+            "url": "/tiles/past_hidden_by_mikeel/lv_ocn_recallid_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Werner's Grand Manor",
+        "tiles": [
+          {
+            "url": "/tiles/werners_grand_manor/lv_ocn_fearid_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/werners_grand_manor/lv_ocn_fearid_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              9
+            ]
+          },
+          {
+            "url": "/tiles/werners_grand_manor/lv_ocn_fearid_ps_2_{y}x{x}.webp",
+            "max": [
+              5,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/werners_grand_manor/lv_ocn_fearid_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Shadow Island",
+        "tiles": [
+          {
+            "url": "/tiles/shadow_island/lv_ocn_rippedl_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/shadow_island/lv_ocn_rippedl_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Laboratory",
+        "tiles": [
+          {
+            "url": "/tiles/secret_laboratory/lv_ocn_brokengid_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sacrificial Altar",
+        "tiles": [
+          {
+            "url": "/tiles/sacrificial_altar/lv_ocn_desireid_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Twilight Chapel",
+        "tiles": [
+          {
+            "url": "/tiles/twilight_chapel/lv_ocn_twilightid_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Night of Walpurgis",
+        "tiles": [
+          {
+            "url": "/tiles/night_of_walpurgis/lv_ocn_walsnaid_ps_7_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Arena of Blood Low",
+        "tiles": [
+          {
+            "url": "/tiles/arena_of_blood_low/lv_ocn_suraid_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Windhaven Garden",
+        "tiles": [
+          {
+            "url": "/tiles/windhaven_garden/lv_ocn_whisperisid_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Garden of Despair",
+        "tiles": [
+          {
+            "url": "/tiles/garden_of_despair/lv_ocn_griefisid_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rohendel",
+    "areas": [
+      {
+        "name": "Rothun",
+        "tiles": [
+          {
+            "url": "/tiles/rothun/lv_rhd_loa_t_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/rothun/lv_rhd_loa_t_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rothun/lv_rhd_loa_t_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rothun/lv_rhd_loa_t_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rothun/lv_rhd_loa_t_ps_4_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rothun/lv_rhd_loa_t_ps_5_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rothun/lv_rhd_loa_t_ps_6_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rothun/lv_rhd_loa_t_ps_7_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rothun/lv_rhd_loa_t_ps_8_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Queen's Garden",
+        "tiles": [
+          {
+            "url": "/tiles/queens_garden/lv_rhd_queen_d_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lake Shiverwave",
+        "tiles": [
+          {
+            "url": "/tiles/lake_shiverwave/lv_rhd_silverl_f_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/lake_shiverwave/lv_rhd_silverl_f_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/lake_shiverwave/lv_rhd_silverl_f_ps_2_{y}x{x}.webp",
+            "max": [
+              8,
+              8
+            ]
+          },
+          {
+            "url": "/tiles/lake_shiverwave/lv_rhd_silverl_f_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Glass Lotus Lake",
+        "tiles": [
+          {
+            "url": "/tiles/glass_lotus_lake/lv_rhd_lotusap_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/glass_lotus_lake/lv_rhd_lotusap_f_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/glass_lotus_lake/lv_rhd_lotusap_f_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/glass_lotus_lake/lv_rhd_lotusap_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Breezesome Brae",
+        "tiles": [
+          {
+            "url": "/tiles/breezesome_brae/lv_rhd_breezeap_f_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/breezesome_brae/lv_rhd_breezeap_f_ps_2_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Xeneela Ruins",
+        "tiles": [
+          {
+            "url": "/tiles/xeneela_ruins/lv_rhd_zenail_f_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/xeneela_ruins/lv_rhd_zenail_f_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/xeneela_ruins/lv_rhd_zenail_f_ps_2_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/xeneela_ruins/lv_rhd_zenail_f_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/xeneela_ruins/lv_rhd_zenail_f_ps_4_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Elzowin's Shade",
+        "tiles": [
+          {
+            "url": "/tiles/elzowins_shade/lv_rhd_shadeel_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/elzowins_shade/lv_rhd_shadeel_f_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/elzowins_shade/lv_rhd_shadeel_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Rohendel Clementia",
+        "tiles": [
+          {
+            "url": "/tiles/rohendel_clementia/lv_rhd_silverl_f_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rohendel_clementia/lv_rhd_silverl_f_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/rohendel_clementia/lv_rhd_silverl_f_ps_2_{y}x{x}.webp",
+            "max": [
+              8,
+              8
+            ]
+          },
+          {
+            "url": "/tiles/rohendel_clementia/lv_rhd_silverl_f_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ruptured Seal Site",
+        "tiles": [
+          {
+            "url": "/tiles/ruptured_seal_site/lv_rhd_floodseal_i_ps_2_{y}x{x}.webp",
+            "max": [
+              8,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Storm Temple",
+        "tiles": [
+          {
+            "url": "/tiles/storm_temple/lv_rhd_templew_i_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Realm of Elementals",
+        "tiles": [
+          {
+            "url": "/tiles/realm_of_elementals/lv_rhd_spiritl_d_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Phantom Palace",
+        "tiles": [
+          {
+            "url": "/tiles/phantom_palace/lv_rhd_palacedp_c_ps_0_{y}x{x}.webp",
+            "max": [
+              10,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/phantom_palace/lv_rhd_palacedp_c_ps_1_{y}x{x}.webp",
+            "max": [
+              10,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/phantom_palace/lv_rhd_palacedp_c_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/phantom_palace/lv_rhd_palacedp_c_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/phantom_palace/lv_rhd_palacedp_c_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/phantom_palace/lv_rhd_palacedp_c_ps_5_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/phantom_palace/lv_rhd_palacedp_c_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/phantom_palace/lv_rhd_palacedp_c_ps_7_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/phantom_palace/lv_rhd_palacedp_c_ps_8_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/phantom_palace/lv_rhd_palacedp_c_ps_9_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Forbidden Altar",
+        "tiles": [
+          {
+            "url": "/tiles/forbidden_altar/lv_rhd_altar_d_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_rohendel_ps_1_{y}x{x}.webp",
+            "max": [
+              17,
+              24
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rethramis",
+    "areas": [
+      {
+        "name": "Trua, the Forgotten Land",
+        "tiles": [
+          {
+            "url": "/tiles/trua_the_forgotten_land/lv_atm_lltrua_i_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/trua_the_forgotten_land/lv_atm_lltrua_i_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/trua_the_forgotten_land/lv_atm_lltrua_i_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/trua_the_forgotten_land/lv_atm_lltrua_i_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Prideholme",
+        "tiles": [
+          {
+            "url": "/tiles/prideholme/lv_atm_leonhart_t_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/prideholme/lv_atm_leonhart_t_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/prideholme/lv_atm_leonhart_t_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/prideholme/lv_atm_leonhart_t_ps_7_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/prideholme/lv_atm_leonhart_t_ps_9_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Loghill",
+        "tiles": [
+          {
+            "url": "/tiles/loghill/lv_atm_loghill_f_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              10
+            ]
+          },
+          {
+            "url": "/tiles/loghill/lv_atm_loghill_f_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Runa Pass",
+        "tiles": [
+          {
+            "url": "/tiles/runa_pass/lv_atm_runapass_d_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/runa_pass/lv_atm_runapass_d_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Prideholme under Attack",
+        "tiles": [
+          {
+            "url": "/tiles/prideholme_under_attack/lv_atm_dleonhart_d_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/prideholme_under_attack/lv_atm_dleonhart_d_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/prideholme_under_attack/lv_atm_dleonhart_d_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/prideholme_under_attack/lv_atm_dleonhart_d_ps_7_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/prideholme_under_attack/lv_atm_dleonhart_d_ps_9_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ankumo Mountain",
+        "tiles": [
+          {
+            "url": "/tiles/ankumo_mountain/lv_atm_anguemosm_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Rethramis Border",
+        "tiles": [
+          {
+            "url": "/tiles/rethramis_border/lv_atm_border_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Aquilok's Head",
+        "tiles": [
+          {
+            "url": "/tiles/aquiloks_head/lv_atm_aguilossh_d_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Aquilok’s Tail",
+        "tiles": [
+          {
+            "url": "/tiles/aquiloks_tail/lv_atm_aguilosst_d_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/aquiloks_tail/lv_atm_aguilosst_d_ps_3_{y}x{x}.webp",
+            "max": [
+              5,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Toxiclaw Cavern",
+        "tiles": [
+          {
+            "url": "/tiles/toxiclaw_cavern/lv_atm_poisoncrd_d_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_artemis_ps_0_{y}x{x}.webp",
+            "max": [
+              10,
+              28
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shushire",
+    "areas": [
+      {
+        "name": "Rigens Village",
+        "tiles": [
+          {
+            "url": "/tiles/rigens_village/lv_shs_retown_t_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rigens_village/lv_shs_retown_t_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/rigens_village/lv_shs_retown_t_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Red Curtain Arena",
+        "tiles": [
+          {
+            "url": "/tiles/red_curtain_arena/lv_shs_rcarena_d_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Frozen Sea",
+        "tiles": [
+          {
+            "url": "/tiles/frozen_sea/lv_shs_frozens_f_ps_1_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Bitterwind Hill",
+        "tiles": [
+          {
+            "url": "/tiles/bitterwind_hill/lv_shs_hillwind_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Iceblood Plateau",
+        "tiles": [
+          {
+            "url": "/tiles/iceblood_plateau/lv_shs_frozenjp_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lake Eternity",
+        "tiles": [
+          {
+            "url": "/tiles/lake_eternity/lv_shs_laketime_f_ps_2_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Icewing Heights",
+        "tiles": [
+          {
+            "url": "/tiles/icewing_heights/lv_shs_frozencl_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "The Espada",
+        "tiles": [
+          {
+            "url": "/tiles/the_espada/lv_shs_frozens_f_ps_1_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lonely Queen's Hideout",
+        "tiles": [
+          {
+            "url": "/tiles/lonely_queens_hideout/lv_shs_frozencl_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cold Dusk Alley",
+        "tiles": [
+          {
+            "url": "/tiles/cold_dusk_alley/lv_shs_retown_t_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/cold_dusk_alley/lv_shs_retown_t_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/cold_dusk_alley/lv_shs_retown_t_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Frostpeak Temple",
+        "tiles": [
+          {
+            "url": "/tiles/frostpeak_temple/lv_shs_ccside_d_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Vrad's Hideout",
+        "tiles": [
+          {
+            "url": "/tiles/vrads_hideout/lv_shs_hideoutb_d_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Maze of Mirrors",
+        "tiles": [
+          {
+            "url": "/tiles/maze_of_mirrors/lv_shs_mazeio_d_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/maze_of_mirrors/lv_shs_mazeio_d_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/maze_of_mirrors/lv_shs_mazeio_d_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_shushire_ps_1_{y}x{x}.webp",
+            "max": [
+              10,
+              26
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arthetine",
+    "areas": [
+      {
+        "name": "Origins of Stern",
+        "tiles": [
+          {
+            "url": "/tiles/origins_of_stern/lv_att_stern_t_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/origins_of_stern/lv_att_stern_t_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/origins_of_stern/lv_att_stern_t_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/origins_of_stern/lv_att_stern_t_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/origins_of_stern/lv_att_stern_t_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/origins_of_stern/lv_att_stern_t_ps_5_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/origins_of_stern/lv_att_stern_t_ps_6_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/origins_of_stern/lv_att_stern_t_ps_7_{y}x{x}.webp",
+            "max": [
+              6,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/origins_of_stern/lv_att_stern_t_ps_8_{y}x{x}.webp",
+            "max": [
+              8,
+              10
+            ]
+          },
+          {
+            "url": "/tiles/origins_of_stern/lv_att_stern_t_ps_9_{y}x{x}.webp",
+            "max": [
+              3,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dr. Bergstrom's Laboratory",
+        "tiles": [
+          {
+            "url": "/tiles/dr_bergstroms_laboratory/lv_att_ehmlab_d_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/dr_bergstroms_laboratory/lv_att_ehmlabap_d_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Arid Path",
+        "tiles": [
+          {
+            "url": "/tiles/arid_path/lv_att_parched_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/arid_path/lv_att_parched_f_ps_2_{y}x{x}.webp",
+            "max": [
+              7,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Scraplands",
+        "tiles": [
+          {
+            "url": "/tiles/scraplands/lv_att_cracked_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nebelhorn",
+        "tiles": [
+          {
+            "url": "/tiles/nebelhorn/lv_att_nevel_f_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Windbringer Hills",
+        "tiles": [
+          {
+            "url": "/tiles/windbringer_hills/lv_att_windbring_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/windbringer_hills/lv_att_windbring_f_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Totrich",
+        "tiles": [
+          {
+            "url": "/tiles/totrich/lv_att_totrichap_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/totrich/lv_att_totrichap_f_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/totrich/lv_att_totrichap_f_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Riza Falls",
+        "tiles": [
+          {
+            "url": "/tiles/riza_falls/lv_att_riese_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/riza_falls/lv_att_riese_f_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Schreiber",
+        "tiles": [
+          {
+            "url": "/tiles/schreiber/lv_att_parched_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/schreiber/lv_att_parched_f_ps_2_{y}x{x}.webp",
+            "max": [
+              7,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Twilight Hill",
+        "tiles": [
+          {
+            "url": "/tiles/twilight_hill/lv_att_nevel_f_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Junkyard",
+        "tiles": [
+          {
+            "url": "/tiles/junkyard/lv_att_windbring_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/junkyard/lv_att_windbring_f_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Temple of Sceptrum",
+        "tiles": [
+          {
+            "url": "/tiles/temple_of_sceptrum/lv_att_titemple_d_ps_2_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Soldier Ant Nest",
+        "tiles": [
+          {
+            "url": "/tiles/soldier_ant_nest/lv_att_antnest_d_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Verdantier",
+        "tiles": [
+          {
+            "url": "/tiles/verdantier/lv_att_ehrgeiz_d_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/verdantier/lv_att_ehrgeiz_d_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/verdantier/lv_att_ehrgeiz_d_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/verdantier/lv_att_ehrgeiz_d_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Heart of Sceptrum",
+        "tiles": [
+          {
+            "url": "/tiles/heart_of_sceptrum/lv_att_heartkt_c_ps_0_{y}x{x}.webp",
+            "max": [
+              20,
+              10
+            ]
+          },
+          {
+            "url": "/tiles/heart_of_sceptrum/lv_att_heartkt_c_ps_2_{y}x{x}.webp",
+            "max": [
+              8,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/heart_of_sceptrum/lv_att_heartkt_c_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/heart_of_sceptrum/lv_att_heartkt_c_ps_4_{y}x{x}.webp",
+            "max": [
+              8,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_arthetine_ps_0_{y}x{x}.webp",
+            "max": [
+              14,
+              29
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yudia",
+    "areas": [
+      {
+        "name": "Saland Hill",
+        "tiles": [
+          {
+            "url": "/tiles/saland_hill/lv_eud_sahill_f_ps_2_{y}x{x}.webp",
+            "max": [
+              10,
+              13
+            ]
+          },
+          {
+            "url": "/tiles/saland_hill/lv_eud_sahill_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ozhorn Hill",
+        "tiles": [
+          {
+            "url": "/tiles/ozhorn_hill/lv_eud_ozhill_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sapira Cave",
+        "tiles": [
+          {
+            "url": "/tiles/sapira_cave/lv_eud_sacave_d_ps_2_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Morai Ruins",
+        "tiles": [
+          {
+            "url": "/tiles/morai_ruins/lv_eud_moray_c_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_eudia_ps_1_{y}x{x}.webp",
+            "max": [
+              11,
+              29
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anikka",
+    "areas": [
+      {
+        "name": "Port City Changhun",
+        "tiles": [
+          {
+            "url": "/tiles/port_city_changhun/lv_anh_changc_t_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/port_city_changhun/lv_anh_changc_t_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/port_city_changhun/lv_anh_changc_t_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/port_city_changhun/lv_anh_changc_t_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/port_city_changhun/lv_anh_changc_t_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/port_city_changhun/lv_anh_changc_t_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/port_city_changhun/lv_anh_changc_t_ps_8_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Clearcloud of Anikka",
+        "tiles": [
+          {
+            "url": "/tiles/clearcloud_of_anikka/lv_anh_changc_t_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/clearcloud_of_anikka/lv_anh_changc_t_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/clearcloud_of_anikka/lv_anh_changc_t_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/clearcloud_of_anikka/lv_anh_changc_t_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/clearcloud_of_anikka/lv_anh_changc_t_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/clearcloud_of_anikka/lv_anh_changc_t_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/clearcloud_of_anikka/lv_anh_changc_t_ps_8_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Delphi Inn",
+        "tiles": [
+          {
+            "url": "/tiles/delphi_inn/lv_anh_delphiinn_d_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Delphi Township",
+        "tiles": [
+          {
+            "url": "/tiles/delphi_township/lv_anh_delphica_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Rattan Hill",
+        "tiles": [
+          {
+            "url": "/tiles/rattan_hill/lv_anh_rattanh_f_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/rattan_hill/lv_anh_rattanh_f_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Melody Forest",
+        "tiles": [
+          {
+            "url": "/tiles/melody_forest/lv_anh_melodyf_f_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Prisma Valley",
+        "tiles": [
+          {
+            "url": "/tiles/prisma_valley/lv_anh_mirrorva_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Twilight Mists",
+        "tiles": [
+          {
+            "url": "/tiles/twilight_mists/lv_anh_twilightm_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Guardian Canyon",
+        "tiles": [
+          {
+            "url": "/tiles/guardian_canyon/lv_anh_gvalley_d_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Moonmist Manor",
+        "tiles": [
+          {
+            "url": "/tiles/moonmist_manor/lv_anh_fullmoonh_d_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/moonmist_manor/lv_anh_fullmoonh_d_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Yeon's Barrier",
+        "tiles": [
+          {
+            "url": "/tiles/yeons_barrier/lv_anh_barrieroy_d_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Jeok's Barrier",
+        "tiles": [
+          {
+            "url": "/tiles/jeoks_barrier/lv_anh_barrieroj_d_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Foul Hollow",
+        "tiles": [
+          {
+            "url": "/tiles/foul_hollow/lv_anh_deadsoulc_d_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Bleak Edge",
+        "tiles": [
+          {
+            "url": "/tiles/bleak_edge/lv_anh_horizonold_d_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/bleak_edge/lv_anh_horizonold_d_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_anihc_ps_2_{y}x{x}.webp",
+            "max": [
+              18,
+              12
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "East Luterra",
+    "areas": [
+      {
+        "name": "Luterra Castle",
+        "tiles": [
+          {
+            "url": "/tiles/luterra_castle/lv_lut_lucastle_t_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/luterra_castle/lv_lut_lucastle_t_ps_1_{y}x{x}.webp",
+            "max": [
+              8,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/luterra_castle/lv_lut_lucastle_t_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/luterra_castle/lv_lut_lucastle_t_ps_3_{y}x{x}.webp",
+            "max": [
+              7,
+              10
+            ]
+          },
+          {
+            "url": "/tiles/luterra_castle/lv_lut_lucastle_t_ps_4_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/luterra_castle/lv_lut_lucastle_t_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/luterra_castle/lv_lut_lucastle_t_ps_6_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/luterra_castle/lv_lut_lucastle_t_ps_7_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Wavestrand Port",
+        "tiles": [
+          {
+            "url": "/tiles/wavestrand_port/lv_lut_mawport_t_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/wavestrand_port/lv_lut_mawport_t_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/wavestrand_port/lv_lut_mawport_t_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/wavestrand_port/lv_lut_mawport_t_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/wavestrand_port/lv_lut_mawport_t_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/wavestrand_port/lv_lut_mawport_t_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/wavestrand_port/lv_lut_mawport_t_ps_7_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Luterra Flamberg",
+        "tiles": [
+          {
+            "url": "/tiles/luterra_flamberg/lv_lut_mawport_t_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/luterra_flamberg/lv_lut_mawport_t_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/luterra_flamberg/lv_lut_mawport_t_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/luterra_flamberg/lv_lut_mawport_t_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/luterra_flamberg/lv_lut_mawport_t_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/luterra_flamberg/lv_lut_mawport_t_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/luterra_flamberg/lv_lut_mawport_t_ps_7_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dyorika Plain",
+        "tiles": [
+          {
+            "url": "/tiles/dyorika_plain/lv_lut_doplain_f_ps_1_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sunbright Hill",
+        "tiles": [
+          {
+            "url": "/tiles/sunbright_hill/lv_lut_sohill_f_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Flowering Orchard",
+        "tiles": [
+          {
+            "url": "/tiles/flowering_orchard/lv_lut_pearhabit_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/flowering_orchard/lv_lut_pearhabit_f_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Blackrose Chapel",
+        "tiles": [
+          {
+            "url": "/tiles/blackrose_chapel/lv_lut_brchurch_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/blackrose_chapel/lv_lut_brchurch_f_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Leyar Terrace",
+        "tiles": [
+          {
+            "url": "/tiles/leyar_terrace/lv_lut_leterrace_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Borea's Domain",
+        "tiles": [
+          {
+            "url": "/tiles/boreas_domain/lv_lut_bodomain_f_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/boreas_domain/lv_lut_bodomain_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Croconys Seashore",
+        "tiles": [
+          {
+            "url": "/tiles/croconys_seashore/lv_lut_crseasho_f_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              11
+            ]
+          },
+          {
+            "url": "/tiles/croconys_seashore/lv_lut_crseasho_f_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/croconys_seashore/lv_lut_crseasho_f_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Blackrose Basement",
+        "tiles": [
+          {
+            "url": "/tiles/blackrose_basement/lv_lut_brcbase_d_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lostwind Cliff",
+        "tiles": [
+          {
+            "url": "/tiles/lostwind_cliff/lv_lut_bscliff_d_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Stormcry Grotto",
+        "tiles": [
+          {
+            "url": "/tiles/stormcry_grotto/lv_lut_crstorm_d_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lastra Forest",
+        "tiles": [
+          {
+            "url": "/tiles/lastra_forest/lv_lut_lutomba_c_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tomb of the Great King Luterra",
+        "tiles": [
+          {
+            "url": "/tiles/tomb_of_the_great_king_luterra/lv_lut_lutombb_c_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Festival of Madness",
+        "tiles": [
+          {
+            "url": "/tiles/festival_of_madness/lv_lut_castlebole_i_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/festival_of_madness/lv_lut_castlebole_i_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_luterane_ps_2_{y}x{x}.webp",
+            "max": [
+              9,
+              21
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "West Luterra",
+    "areas": [
+      {
+        "name": "Mount Zagoras",
+        "tiles": [
+          {
+            "url": "/tiles/mount_zagoras/lv_lut_zamount_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lakebar",
+        "tiles": [
+          {
+            "url": "/tiles/lakebar/lv_lut_lakebar_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Medrick Monastery",
+        "tiles": [
+          {
+            "url": "/tiles/medrick_monastery/lv_lut_memonast_f_ps_1_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/medrick_monastery/lv_lut_memonast_f_ps_3_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/medrick_monastery/lv_lut_memonast_f_ps_4_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Bilbrin Forest",
+        "tiles": [
+          {
+            "url": "/tiles/bilbrin_forest/lv_lut_biforest_f_ps_2_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Battlebound Plains",
+        "tiles": [
+          {
+            "url": "/tiles/battlebound_plains/lv_lut_pofbattle_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Iron Lake",
+        "tiles": [
+          {
+            "url": "/tiles/iron_lake/lv_lut_lakebar_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Brilliant Ridge",
+        "tiles": [
+          {
+            "url": "/tiles/brilliant_ridge/lv_lut_rishine_d_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gray Hammer Mine",
+        "tiles": [
+          {
+            "url": "/tiles/gray_hammer_mine/lv_lut_grayhmine_d_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Glorious Wall",
+        "tiles": [
+          {
+            "url": "/tiles/glorious_wall/lv_lut_waglory_d_ps_2_{y}x{x}.webp",
+            "max": [
+              7,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_luterans_ps_0_{y}x{x}.webp",
+            "max": [
+              9,
+              21
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Feiton",
+    "areas": [
+      {
+        "name": "Kalaja",
+        "tiles": [
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_3_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_4_{y}x{x}.webp",
+            "max": [
+              7,
+              9
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_7_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_3_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_4_{y}x{x}.webp",
+            "max": [
+              7,
+              9
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/kalaja/lv_fat_karlajavil_t_ps_7_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nameless Valley",
+        "tiles": [
+          {
+            "url": "/tiles/nameless_valley/lv_fat_unravin_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/nameless_valley/lv_fat_unravin_f_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/nameless_valley/lv_fat_unravin_f_ps_2_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/nameless_valley/lv_fat_unravin_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/nameless_valley/lv_fat_unravin_f_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Wailing Swamp",
+        "tiles": [
+          {
+            "url": "/tiles/wailing_swamp/lv_fat_wailsw_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Shady Cliff",
+        "tiles": [
+          {
+            "url": "/tiles/shady_cliff/lv_fat_shcliff_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/shady_cliff/lv_fat_shcliff_f_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/shady_cliff/lv_fat_shcliff_f_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Red Moonshade",
+        "tiles": [
+          {
+            "url": "/tiles/red_moonshade/lv_fat_prmoon_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/red_moonshade/lv_fat_prmoon_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/red_moonshade/lv_fat_prmoon_f_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/red_moonshade/lv_fat_prmoon_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/red_moonshade/lv_fat_prmoon_f_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/red_moonshade/lv_fat_prmoon_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/red_moonshade/lv_fat_prmoon_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/red_moonshade/lv_fat_prmoon_f_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/red_moonshade/lv_fat_prmoon_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/red_moonshade/lv_fat_prmoon_f_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Shadow Monastery",
+        "tiles": [
+          {
+            "url": "/tiles/shadow_monastery/lv_fat_shmonas_i_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Feiton Varukas",
+        "tiles": [
+          {
+            "url": "/tiles/feiton_varukas/lv_fat_unravin_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/feiton_varukas/lv_fat_unravin_f_ps_1_{y}x{x}.webp",
+            "max": [
+              5,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/feiton_varukas/lv_fat_unravin_f_ps_2_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/feiton_varukas/lv_fat_unravin_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/feiton_varukas/lv_fat_unravin_f_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ruined Castle",
+        "tiles": [
+          {
+            "url": "/tiles/ruined_castle/lv_fat_ocastle_d_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/ruined_castle/lv_fat_ocastle_d_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/ruined_castle/lv_fat_ocastle_d_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/ruined_castle/lv_fat_ocastle_d_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/ruined_castle/lv_fat_ocastlea_d_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/ruined_castle/lv_fat_ocastlea_d_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/ruined_castle/lv_fat_ocastlea_d_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cave of Sin",
+        "tiles": [
+          {
+            "url": "/tiles/cave_of_sin/lv_fat_caves_d_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dark Rain Plains",
+        "tiles": [
+          {
+            "url": "/tiles/dark_rain_plains/lv_fat_brainp_i_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_faten_ps_0_{y}x{x}.webp",
+            "max": [
+              14,
+              20
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tortoyk",
+    "areas": [
+      {
+        "name": "Mokoko Village",
+        "tiles": [
+          {
+            "url": "/tiles/mokoko_village/lv_tot_movillage_t_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/mokoko_village/lv_tot_movillage_t_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/mokoko_village/lv_tot_movillage_t_ps_7_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Seaswept Woods",
+        "tiles": [
+          {
+            "url": "/tiles/seaswept_woods/lv_tot_toforest_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sweetwater Forest",
+        "tiles": [
+          {
+            "url": "/tiles/sweetwater_forest/lv_tot_moforest_f_ps_2_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Skyreach Steppe",
+        "tiles": [
+          {
+            "url": "/tiles/skyreach_steppe/lv_tot_roforest_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Forest of Giants",
+        "tiles": [
+          {
+            "url": "/tiles/forest_of_giants/lv_tot_giforest_f_ps_0_{y}x{x}.webp",
+            "max": [
+              8,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tortoyk Parapara Cruise",
+        "tiles": [
+          {
+            "url": "/tiles/tortoyk_parapara_cruise/lv_tot_toforest_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Pirate Den",
+        "tiles": [
+          {
+            "url": "/tiles/pirate_den/lv_tot_pirateden_d_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/pirate_den/lv_tot_pirateden_d_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tortoyk's Heart",
+        "tiles": [
+          {
+            "url": "/tiles/tortoyks_heart/lv_tot_intortoyk_d_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_tortoyk_ps_1_{y}x{x}.webp",
+            "max": [
+              10,
+              13
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "North Vern",
+    "areas": [
+      {
+        "name": "Rania Village",
+        "tiles": [
+          {
+            "url": "/tiles/rania_village/lv_ber_raniat_t_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/rania_village/lv_ber_raniat_t_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/rania_village/lv_ber_raniat_t_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rania_village/lv_ber_raniat_t_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/rania_village/lv_ber_raniat_t_ps_5_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rania_village/lv_ber_raniat_t_ps_6_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/rania_village/lv_ber_raniat_t_ps_7_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/rania_village/lv_ber_raniat_t_ps_8_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Vern Castle",
+        "tiles": [
+          {
+            "url": "/tiles/vern_castle/lv_ber_berncastle_t_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/vern_castle/lv_ber_berncastle_t_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/vern_castle/lv_ber_berncastle_t_ps_2_{y}x{x}.webp",
+            "max": [
+              6,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/vern_castle/lv_ber_berncastle_t_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/vern_castle/lv_ber_berncastle_t_ps_5_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/vern_castle/lv_ber_berncastle_t_ps_6_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/vern_castle/lv_ber_berncastle_t_ps_7_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/vern_castle/lv_ber_berncastle_t_ps_8_{y}x{x}.webp",
+            "max": [
+              6,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/vern_castle/lv_ber_berncastle_t_ps_9_{y}x{x}.webp",
+            "max": [
+              7,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Port Krona",
+        "tiles": [
+          {
+            "url": "/tiles/port_krona/lv_ber_kronap_f_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/port_krona/lv_ber_kronap_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/port_krona/lv_ber_kronap_f_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Parna Forest",
+        "tiles": [
+          {
+            "url": "/tiles/parna_forest/lv_ber_parna_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Fesnar Highland",
+        "tiles": [
+          {
+            "url": "/tiles/fesnar_highland/lv_ber_fesnar_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Vernese Forest",
+        "tiles": [
+          {
+            "url": "/tiles/vernese_forest/lv_ber_bernilf_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Balankar Mountains",
+        "tiles": [
+          {
+            "url": "/tiles/balankar_mountains/lv_ber_valankarm_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Anemos",
+        "tiles": [
+          {
+            "url": "/tiles/anemos/lv_ber_kronap_f_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/anemos/lv_ber_kronap_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/anemos/lv_ber_kronap_f_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gorgon's Nest",
+        "tiles": [
+          {
+            "url": "/tiles/gorgons_nest/lv_ber_gorgonn_d_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ancient Elveria",
+        "tiles": [
+          {
+            "url": "/tiles/ancient_elveria/lv_ber_elveria_d_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_bern_ps_0_{y}x{x}.webp",
+            "max": [
+              10,
+              25
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yorn",
+    "areas": [
+      {
+        "name": "Great Castle",
+        "tiles": [
+          {
+            "url": "/tiles/great_castle/lv_yor_greatcs_t_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/great_castle/lv_yor_greatcs_t_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/great_castle/lv_yor_greatcs_t_ps_2_{y}x{x}.webp",
+            "max": [
+              4,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/great_castle/lv_yor_greatcs_t_ps_3_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/great_castle/lv_yor_greatcs_t_ps_4_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/great_castle/lv_yor_greatcs_t_ps_5_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/great_castle/lv_yor_greatcs_t_ps_7_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/great_castle/lv_yor_greatcs_t_ps_8_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/great_castle/lv_yor_greatcs_t_ps_9_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Yorn's Cradle",
+        "tiles": [
+          {
+            "url": "/tiles/yorns_cradle/lv_yor_lbeginning_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/yorns_cradle/lv_yor_lbeginning_f_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/yorns_cradle/lv_yor_lbeginning_f_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/yorns_cradle/lv_yor_lbeginning_f_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/yorns_cradle/lv_yor_lbeginning_f_ps_4_{y}x{x}.webp",
+            "max": [
+              8,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Unfinished Garden",
+        "tiles": [
+          {
+            "url": "/tiles/unfinished_garden/lv_yor_ugarden_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/unfinished_garden/lv_yor_ugarden_f_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/unfinished_garden/lv_yor_ugarden_f_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Black Anvil Mine",
+        "tiles": [
+          {
+            "url": "/tiles/black_anvil_mine/lv_yor_firstwp_f_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/black_anvil_mine/lv_yor_firstwp_f_ps_1_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/black_anvil_mine/lv_yor_firstwp_f_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/black_anvil_mine/lv_yor_firstwp_f_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Iron Hammer Mine",
+        "tiles": [
+          {
+            "url": "/tiles/iron_hammer_mine/lv_yor_secondwp_f_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          },
+          {
+            "url": "/tiles/iron_hammer_mine/lv_yor_secondwp_f_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/iron_hammer_mine/lv_yor_secondwp_f_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hall of Promise",
+        "tiles": [
+          {
+            "url": "/tiles/hall_of_promise/lv_yor_lpromise_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/hall_of_promise/lv_yor_lpromise_f_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hall_of_promise/lv_yor_lpromise_f_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/hall_of_promise/lv_yor_lpromise_f_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Scorched Ship",
+        "tiles": [
+          {
+            "url": "/tiles/scorched_ship/lv_yor_scorchedsp_i_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Jewelry Storage",
+        "tiles": [
+          {
+            "url": "/tiles/jewelry_storage/lv_yor_jewelah_i_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Giant Whirlpool",
+        "tiles": [
+          {
+            "url": "/tiles/giant_whirlpool/lv_yor_secondwpgv_i_ps_0_{y}x{x}.webp",
+            "max": [
+              7,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Umar Sculpture",
+        "tiles": [
+          {
+            "url": "/tiles/umar_sculpture/lv_yor_lpromisegu_i_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "The Seasmith",
+        "tiles": [
+          {
+            "url": "/tiles/the_seasmith/lv_yor_lbeginning_f_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/the_seasmith/lv_yor_lbeginning_f_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/the_seasmith/lv_yor_lbeginning_f_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/the_seasmith/lv_yor_lbeginning_f_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/the_seasmith/lv_yor_lbeginning_f_ps_4_{y}x{x}.webp",
+            "max": [
+              8,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Wonderful Brewery",
+        "tiles": [
+          {
+            "url": "/tiles/wonderful_brewery/lv_yor_awesomeb_d_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/wonderful_brewery/lv_yor_awesomeb_d_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ark of Arrogance",
+        "tiles": [
+          {
+            "url": "/tiles/ark_of_arrogance/lv_yor_arroganta_d_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/ark_of_arrogance/lv_yor_arroganta_d_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_yorn_ps_0_{y}x{x}.webp",
+            "max": [
+              15,
+              39
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Punika",
+    "areas": [
+      {
+        "name": "Nia Village",
+        "tiles": [
+          {
+            "url": "/tiles/nia_village/lv_pap_niatown_t_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/nia_village/lv_pap_niatown_t_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/nia_village/lv_pap_niatown_t_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/nia_village/lv_pap_niatown_t_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/nia_village/lv_pap_niatown_t_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/nia_village/lv_pap_niatown_t_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/nia_village/lv_pap_niatown_t_ps_6_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tideshelf Path",
+        "tiles": [
+          {
+            "url": "/tiles/tideshelf_path/lv_pap_scoast_f_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/tideshelf_path/lv_pap_scoast_f_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/tideshelf_path/lv_pap_scoast_f_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/tideshelf_path/lv_pap_scoast_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/tideshelf_path/lv_pap_scoast_f_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/tideshelf_path/lv_pap_scoast_f_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/tideshelf_path/lv_pap_scoast_f_ps_6_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Starsand Beach",
+        "tiles": [
+          {
+            "url": "/tiles/starsand_beach/lv_pap_starsb_f_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/starsand_beach/lv_pap_starsb_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/starsand_beach/lv_pap_starsb_f_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tikatika Colony",
+        "tiles": [
+          {
+            "url": "/tiles/tikatika_colony/lv_pap_ticac_f_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/tikatika_colony/lv_pap_ticac_f_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/tikatika_colony/lv_pap_ticac_f_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/tikatika_colony/lv_pap_ticac_f_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Secret Forest",
+        "tiles": [
+          {
+            "url": "/tiles/secret_forest/lv_pap_sforest_f_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/secret_forest/lv_pap_sforest_f_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/secret_forest/lv_pap_sforest_f_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Punika Kleanoi",
+        "tiles": [
+          {
+            "url": "/tiles/punika_kleanoi/lv_pap_scoast_f_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/punika_kleanoi/lv_pap_scoast_f_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/punika_kleanoi/lv_pap_scoast_f_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/punika_kleanoi/lv_pap_scoast_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/punika_kleanoi/lv_pap_scoast_f_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/punika_kleanoi/lv_pap_scoast_f_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/punika_kleanoi/lv_pap_scoast_f_ps_6_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tranquil Inath Cliff",
+        "tiles": [
+          {
+            "url": "/tiles/tranquil_inath_cliff/lv_pap_starsb_f_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/tranquil_inath_cliff/lv_pap_starsb_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/tranquil_inath_cliff/lv_pap_starsb_f_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tropical Fruit Orchard",
+        "tiles": [
+          {
+            "url": "/tiles/tropical_fruit_orchard/lv_pap_starsb_f_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/tropical_fruit_orchard/lv_pap_starsb_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/tropical_fruit_orchard/lv_pap_starsb_f_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sleepy Hot Spring Bath",
+        "tiles": [
+          {
+            "url": "/tiles/sleepy_hot_spring_bath/lv_pap_starsb_f_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/sleepy_hot_spring_bath/lv_pap_starsb_f_ps_1_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          },
+          {
+            "url": "/tiles/sleepy_hot_spring_bath/lv_pap_starsb_f_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Inside the Western Garden",
+        "tiles": [
+          {
+            "url": "/tiles/inside_the_western_garden/lv_pap_niatown_t_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/inside_the_western_garden/lv_pap_niatown_t_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/inside_the_western_garden/lv_pap_niatown_t_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/inside_the_western_garden/lv_pap_niatown_t_ps_3_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/inside_the_western_garden/lv_pap_niatown_t_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/inside_the_western_garden/lv_pap_niatown_t_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/inside_the_western_garden/lv_pap_niatown_t_ps_6_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mellow Beach",
+        "tiles": [
+          {
+            "url": "/tiles/mellow_beach/lv_pap_scoast_f_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/mellow_beach/lv_pap_scoast_f_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/mellow_beach/lv_pap_scoast_f_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/mellow_beach/lv_pap_scoast_f_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/mellow_beach/lv_pap_scoast_f_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/mellow_beach/lv_pap_scoast_f_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/mellow_beach/lv_pap_scoast_f_ps_6_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Naruna Hot Springs",
+        "tiles": [
+          {
+            "url": "/tiles/naruna_hot_springs/lv_pap_naskas_d_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/naruna_hot_springs/lv_pap_naskas_d_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Oreha's Well",
+        "tiles": [
+          {
+            "url": "/tiles/orehas_well/lv_pap_orehaw_d_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/orehas_well/lv_pap_orehaw_d_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              8
+            ]
+          },
+          {
+            "url": "/tiles/orehas_well/lv_pap_orehaw_d_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/orehas_well/lv_pap_orehaw_d_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/orehas_well/lv_pap_orehaw_d_ps_6_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arkesia",
+    "areas": [
+      {
+        "name": "Nahun's Domain",
+        "tiles": [
+          {
+            "url": "/tiles/nahuns_domain/lv_mod_platinuara_ps_3_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Old Yudian Canal",
+        "tiles": [
+          {
+            "url": "/tiles/old_yudian_canal/lv_mod_platinuarab_ps_0_{y}x{x}.webp",
+            "max": [
+              5,
+              5
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unsorted",
+    "areas": [
+      {
+        "name": "Silent Hall",
+        "tiles": [
+          {
+            "url": "/tiles/silent_hall/lv_mod_bossrush_01_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/silent_hall/lv_mod_bossrush_01_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hall of the Sun",
+        "tiles": [
+          {
+            "url": "/tiles/hall_of_the_sun/lv_mod_bossrush_02_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/hall_of_the_sun/lv_mod_bossrush_02_ps_6_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Golden Eagle Battlefield",
+        "tiles": [
+          {
+            "url": "/tiles/golden_eagle_battlefield/lv_battle_battlek_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Blue Dragon Territory",
+        "tiles": [
+          {
+            "url": "/tiles/blue_dragon_territory/lv_battle_dtarena_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ironlands",
+        "tiles": [
+          {
+            "url": "/tiles/ironlands/lv_battle_rtheide_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Co-op Fortress Battle",
+        "tiles": [
+          {
+            "url": "/tiles/co-op_fortress_battle/lv_battle_nergalsh_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Guild War",
+        "tiles": [
+          {
+            "url": "/tiles/guild_war/lv_battle_battlek_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/guild_war/lv_battle_dtarena_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/guild_war/lv_battle_rtheide_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/guild_war/lv_battle_battlefir_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/guild_war/lv_battle_battledes_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/guild_war/lv_battle_battledes_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/guild_war/lv_battle_dtarena_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Fortress Battle",
+        "tiles": [
+          {
+            "url": "/tiles/fortress_battle/lv_battle_nergalsh_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/fortress_battle/lv_battle_nergalsh_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Raid Match",
+        "tiles": [
+          {
+            "url": "/tiles/raid_match/lv_battle_forestcs_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/raid_match/lv_battle_rareap77_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/raid_match/lv_battle_sfground_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/raid_match/lv_battle_forbiddens_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/raid_match/lv_battle_shadeos_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Siege of Volare Island",
+        "tiles": [
+          {
+            "url": "/tiles/siege_of_volare_island/lv_battle_battleff_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nameless Territory",
+        "tiles": [
+          {
+            "url": "/tiles/nameless_territory/lv_twn_base00_i_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/nameless_territory/lv_twn_base00_i_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/nameless_territory/lv_twn_base00_i_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/nameless_territory/lv_twn_base00_i_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/nameless_territory/lv_twn_base00_i_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/nameless_territory/lv_twn_base00_i_ps_5_{y}x{x}.webp",
+            "max": [
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Frost Haven",
+        "tiles": [
+          {
+            "url": "/tiles/frost_haven/lv_rad_haofcold_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Foggy Ridge",
+        "tiles": [
+          {
+            "url": "/tiles/foggy_ridge/lv_rad_densefog_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Red Sand Desert",
+        "tiles": [
+          {
+            "url": "/tiles/red_sand_desert/lv_rad_redsanddst_ps_2_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Scarred Crimson Land",
+        "tiles": [
+          {
+            "url": "/tiles/scarred_crimson_land/lv_rad_drlands_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Woeful Drylands",
+        "tiles": [
+          {
+            "url": "/tiles/woeful_drylands/lv_rad_landdrysc_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sea of Indolence",
+        "tiles": [
+          {
+            "url": "/tiles/sea_of_indolence/lv_ocn_gatepara_c_01_ps_0_{y}x{x}.webp",
+            "max": [
+              4,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/sea_of_indolence/lv_ocn_gatepara_c_01_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/sea_of_indolence/lv_ocn_gatepara_c_01_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tranquil Karkosa",
+        "tiles": [
+          {
+            "url": "/tiles/tranquil_karkosa/lv_ocn_gatepara_c_02_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              5
+            ]
+          },
+          {
+            "url": "/tiles/tranquil_karkosa/lv_ocn_gatepara_c_02_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Alaric's Sanctuary",
+        "tiles": [
+          {
+            "url": "/tiles/alarics_sanctuary/lv_ocn_gatepara_c_03_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/alarics_sanctuary/lv_ocn_gatepara_c_03_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/alarics_sanctuary/lv_ocn_gatepara_c_03_ps_2_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/alarics_sanctuary/lv_ocn_gatepara_c_03_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/alarics_sanctuary/lv_ocn_gatepara_c_03_ps_4_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/alarics_sanctuary/lv_ocn_gatepara_c_03_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/alarics_sanctuary/lv_ocn_gatepara_c_03_ps_6_{y}x{x}.webp",
+            "max": [
+              7,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Demon Beast Canyon",
+        "tiles": [
+          {
+            "url": "/tiles/demon_beast_canyon/lv_ber_elveria_ed_01_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Necromancer's Origin",
+        "tiles": [
+          {
+            "url": "/tiles/necromancers_origin/lv_ber_elveria_ed_02_ps_0_{y}x{x}.webp",
+            "max": [
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hall of the Twisted Warlord",
+        "tiles": [
+          {
+            "url": "/tiles/hall_of_the_twisted_warlord/lv_rhd_palacedp_ed_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hall_of_the_twisted_warlord/lv_rhd_palacedp_ed_01_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hall_of_the_twisted_warlord/lv_rhd_palacedp_ed_01_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hildebrandt Palace",
+        "tiles": [
+          {
+            "url": "/tiles/hildebrandt_palace/lv_rhd_palacedp_ed_02_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hildebrandt_palace/lv_rhd_palacedp_ed_02_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/hildebrandt_palace/lv_rhd_palacedp_ed_02_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/hildebrandt_palace/lv_rhd_palacedp_ed_02_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Road of Lament",
+        "tiles": [
+          {
+            "url": "/tiles/road_of_lament/lv_yor_arroganta_ed_01_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Forge of Fallen Pride",
+        "tiles": [
+          {
+            "url": "/tiles/forge_of_fallen_pride/lv_yor_arroganta_ed_02_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/forge_of_fallen_pride/lv_yor_arroganta_ed_02_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Aira's Oculus",
+        "tiles": [
+          {
+            "url": "/tiles/airas_oculus/lv_pap_orehaw_ed_01_ps_1_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/airas_oculus/lv_pap_orehaw_ed_01_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Oreha Preveza",
+        "tiles": [
+          {
+            "url": "/tiles/oreha_preveza/lv_pap_orehaw_ed_02_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Chaos Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_breeze_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_zenail_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_shadeel_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_loghill_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_border_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_rcarena_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_hillwind_01_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_frozencl_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_parched_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_cracked_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_nevel_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_windbring_01_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_totrichap_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_riese_01_ps_7_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_redsanddst_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_sahill_01_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_ozhill_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_delphica_01_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_mirrorva_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_twilightm_01_ps_3_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_zamount_01_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_lakebar_01_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_memonast_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_biforest_01_ps_5_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_pofbattle_01_ps_6_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_brchurch_01_ps_7_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_bodomain_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_crseasho_01_ps_8_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_toforest_01_ps_9_{y}x{x}.webp",
+            "max": [
+              3,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_roforest_01_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_giforest_01_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_parna_01_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_fesnar_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_ugarden_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_secondwp_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_lpromise_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_roforest_02_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_delphica_02_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_mirrorva_02_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_redsanddst_02_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_hillwind_02_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_hillwind_02_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_hillwind_03_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_hillwind_03_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_hillwind_04_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_kronap_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_kronap_01_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_fesnar_02_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_fesnar_03_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_fesnar_04_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_valankarm_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_silverl_01_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_lotusap_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_breeze_02_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_zenail_02_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_firstwp_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_lpromise_02_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_lpromise_03_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_lpromise_03_ps_2_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_unravin_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_shcliff_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_shcliff_01_ps_4_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_shcliff_02_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_shcliff_02_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_prmoon_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_prmoon_02_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_ehrgeiz_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_gvalley_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_intortoyk_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_elveria_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_firstwp_02_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_arroganta_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_ocastle_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_lakeisland_01_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_ruinarena_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_plateau_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_palacedp_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_palacedp_02_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_queen_01_ps_3_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_rohendela_01_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_lbeginning_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_secondwp_02_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_wailsw_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_shcliff_03_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_scoast_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_ticac_01_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_ticac_02_ps_0_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_sforest_01_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_treasure_01_ps_5_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_treasure_02_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_treasure_03_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_kandad_01_ps_7_{y}x{x}.webp",
+            "max": [
+              1,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_kandad_02_ps_2_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_kandad_03_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_bellionr_01_ps_1_{y}x{x}.webp",
+            "max": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_bellionr_02_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_bellionr_03_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_bellionr_04_ps_0_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          },
+          {
+            "url": "/tiles/chaos_dungeon/lv_rvr_heigerm_01_ps_1_{y}x{x}.webp",
+            "max": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dark Lands",
+        "tiles": [
+          {
+            "url": "/tiles/dark_lands/lv_chs_darks_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/dark_lands/lv_chs_darks_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Phantom Lands",
+        "tiles": [
+          {
+            "url": "/tiles/phantom_lands/lv_chs_phntms_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/phantom_lands/lv_chs_phntms_ps_7_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/phantom_lands/lv_chs_phntms_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/phantom_lands/lv_chs_phntms_ps_7_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Plague Lands",
+        "tiles": [
+          {
+            "url": "/tiles/plague_lands/lv_chs_diseases_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          },
+          {
+            "url": "/tiles/plague_lands/lv_chs_diseases_ps_1_{y}x{x}.webp",
+            "max": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mayhem Lands",
+        "tiles": [
+          {
+            "url": "/tiles/mayhem_lands/lv_chs_madnesss_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          },
+          {
+            "url": "/tiles/mayhem_lands/lv_chs_madnesss_ps_0_{y}x{x}.webp",
+            "max": [
+              3,
+              3
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "South Vern",
+    "areas": [
+      {
+        "name": "Secret Dungeon",
+        "tiles": [
+          {
+            "url": "/tiles/secret_dungeon/lv_scd_bernsth_ps_0_{y}x{x}.webp",
+            "max": [
+              16,
+              25
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
