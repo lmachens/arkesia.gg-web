@@ -77,3 +77,7 @@ body {
 .text-block {
   white-space: pre;
 }
+
+.leaflet-control-layers-toggle {
+  background: none;
+}

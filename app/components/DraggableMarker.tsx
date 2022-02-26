@@ -3,7 +3,7 @@ import { Marker, Tooltip, useMapEvents } from "react-leaflet";
 import { nodeTypes } from "~/lib/static";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
-import { Area } from "~/lib/types";
+import { Area, Tile } from "~/lib/types";
 import { Button, Drawer, InputWrapper, Select, TextInput } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 import ImageDropzone from "./ImageDropzone";
@@ -12,9 +12,10 @@ import RichTextEditor from "@mantine/rte";
 
 type DraggableMarkerProps = {
   area: Area;
+  tile: Tile;
 };
 
-export default function DraggableMarker({ area }: DraggableMarkerProps) {
+export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
   const [latLng, setLatLng] = useState<L.LatLng | null>(null);
 
@@ -184,6 +185,7 @@ export default function DraggableMarker({ area }: DraggableMarkerProps) {
             <input type="hidden" name="lat" value={latLng.lat} />
             <input type="hidden" name="lng" value={latLng.lng} />
             <input type="hidden" name="areaName" value={area.name} />
+            <input type="hidden" name="tileId" value={tile.id} />
             <Button
               type="submit"
               disabled={!type || !userToken}
