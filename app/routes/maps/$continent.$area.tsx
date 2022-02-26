@@ -50,8 +50,8 @@ export const loader: LoaderFunction = async ({ params }) => {
   if (!continent || !area) {
     return redirect("/");
   }
-  const continentNames = continents.map((continent) => continent.name);
-  const areaNames = continent.areas.map((area) => area.name);
+  const continentNames = continents.map((continent) => continent.name).sort();
+  const areaNames = continent.areas.map((area) => area.name).sort();
 
   const nodes = await findNodes(area.name);
   return {
@@ -73,6 +73,7 @@ export const action: ActionFunction = async ({ request }) => {
       position: [+body.get("lat")!, +body.get("lng")!],
       type: body.get("type")!.toString(),
       name: body.get("name")!.toString(),
+      tileId: +body.get("tileId")!.toString(),
       description:
         body.get("description")?.toString().replace("<p><br></p>", "") || "",
       screenshot: "",

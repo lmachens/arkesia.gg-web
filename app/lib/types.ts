@@ -1,7 +1,13 @@
+export type Tile = {
+  id: number;
+  url: string;
+  full: string;
+  max: [number, number];
+};
+
 export type Area = {
   name: string;
-  tileURL: string;
-  tiles: [number, number];
+  tiles: Tile[];
 };
 
 export type Continent = {

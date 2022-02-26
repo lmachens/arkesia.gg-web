@@ -1,20 +1,18 @@
-import { Map } from "leaflet";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { MapContainer, TileLayer, Tooltip } from "react-leaflet";
+import { MapContainer, Tooltip } from "react-leaflet";
 import { Area } from "~/lib/types";
 import L from "leaflet";
 import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import "leaflet-rotate";
 import MousePosition from "./MousePosition";
-import { nodeTypesMap } from "~/lib/static";
 import { AreaNode } from "@prisma/client";
 import { Button, Drawer, Text, TextInput, Title } from "@mantine/core";
 import { Form, useActionData, useTransition } from "remix";
 import { useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
-import CanvasMarker from "./CanvasMarker";
-import DraggableMarker from "./DraggableMarker";
 import ImagePreview from "./ImagePreview";
+import TileControl from "./TileControl";
+import { getMapCenter } from "~/lib/map";
 
 const DefaultIcon = L.icon({
   iconUrl: "/markers/unknown.webp",
@@ -30,8 +28,6 @@ type MapProps = {
   nodes: AreaNode[];
 };
 export default function MapView({ area, nodes }: MapProps) {
-  const [map, setMap] = useState<Map | null>(null);
-  const tileLayerRef = useRef<L.TileLayer | null>(null);
   const [userToken, setUserToken] = useLocalStorageValue<string>({
     key: "user-token",
     defaultValue: "",
@@ -77,9 +73,8 @@ export default function MapView({ area, nodes }: MapProps) {
   const displayMap = useMemo(
     () => (
       <MapContainer
-        center={getMapCenter(area.tiles)}
+        center={getMapCenter(area.tiles[0])}
         zoom={1}
-        whenCreated={setMap}
         crs={L.CRS.Simple}
         zoomControl={false}
         attributionControl={false}
@@ -92,52 +87,12 @@ export default function MapView({ area, nodes }: MapProps) {
         bearing={-45}
         preferCanvas
       >
-        <TileLayer
-          ref={tileLayerRef}
-          url={area.tileURL}
-          minNativeZoom={2}
-          maxNativeZoom={2}
-          minZoom={0}
-          maxZoom={4}
-          tileSize={256}
-          bounds={getBounds(area.tiles)}
-        />
         <MousePosition />
-        <DraggableMarker area={area} />
-        {nodes.map((node) => (
-          <CanvasMarker
-            key={node.position.toString()}
-            center={node.position as [number, number]}
-            src={nodeTypesMap[node.type]?.iconUrl || "/markers/unknown.webp"}
-            radius={16}
-            padding={5}
-            showBackground
-            borderColor={nodeTypesMap[node.type]?.color || "transparent"}
-            onClick={() => {
-              if (!document.querySelector("#new-marker-drawer")) {
-                setSelectedNode(node);
-              }
-            }}
-          >
-            <Tooltip direction="top" offset={[0, -10]}>
-              {node.name}
-            </Tooltip>
-          </CanvasMarker>
-        ))}
+        <TileControl area={area} nodes={nodes} onNodeClick={setSelectedNode} />
       </MapContainer>
     ),
     [area]
   );
-
-  useEffect(() => {
-    if (map) {
-      map.panTo(getMapCenter(area.tiles));
-    }
-    if (tileLayerRef.current) {
-      tileLayerRef.current.options.bounds = getBounds(area.tiles);
-      tileLayerRef.current.setUrl(area.tileURL);
-    }
-  }, [Boolean(map), area.tiles.toString(), area.tileURL]);
 
   return (
     <>
@@ -190,17 +145,4 @@ export default function MapView({ area, nodes }: MapProps) {
       </Drawer>
     </>
   );
-}
-
-function getMapCenter(tiles: [number, number]): [number, number] {
-  return [(-64 * tiles[0]) / 2, (64 * tiles[1]) / 2];
-}
-
-function getBounds(
-  tiles: [number, number]
-): [[number, number], [number, number]] {
-  return [
-    [0, 64 * tiles[1]],
-    [-64 * tiles[0], 0],
-  ];
 }
