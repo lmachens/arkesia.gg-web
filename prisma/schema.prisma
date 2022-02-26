@@ -10,6 +10,7 @@ datasource db {
 model AreaNode {
   id          Int     @id @default(autoincrement())
   areaName    String
+  tileId      Int     @default(0)
   position    Float[]
   type        String
   name        String
