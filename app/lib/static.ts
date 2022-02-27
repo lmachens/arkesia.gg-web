@@ -11,48 +11,23 @@ export const nodeCategories: AreaNodeCategory[] = [
     color: "rgba(200, 200, 200, 0.7)",
     types: [
       {
-        name: "Collectible Card",
-        icon: "card-joker.svg",
-      },
-      {
-        name: "Mokoko Seed",
-        icon: "plant-seed.svg",
+        name: "Mokoko Seeds",
+        icon: "minimap_symbol_1_121.webp",
       },
     ],
   },
   {
     name: "Enemies",
     color: "rgba(220, 20, 60, 0.7)",
-    types: [
-      {
-        name: "Boss",
-        icon: "daemon-skull.svg",
-      },
-      {
-        name: "World Boss",
-        icon: "gooey-daemon.svg",
-      },
-    ],
+    types: [],
   },
   {
     name: "Locations",
     color: "rgba(112, 128, 144, 0.7)",
     types: [
       {
-        name: "Dungeon",
-        icon: "dungeon-gate.svg",
-      },
-      {
-        name: "Triport",
-        icon: "moebius-triangle.svg",
-      },
-      {
         name: "Portal",
-        icon: "portal.svg",
-      },
-      {
-        name: "Chaosportal",
-        icon: "magic-portal.svg",
+        icon: "minimap_symbol_7.webp",
       },
     ],
   },
@@ -62,23 +37,22 @@ export const nodeCategories: AreaNodeCategory[] = [
     types: [
       {
         name: "Chef",
-        icon: "chef-toque.svg",
+        icon: "minimap_symbol_206.webp",
+      },
+      {
+        name: "Chef's Kitchen",
+        icon: "minimap_symbol_1_302.webp",
+      },
+      {
+        name: "Trade Merchant",
+        icon: "minimap_symbol_152.webp",
       },
     ],
   },
   {
     name: "Miscellaneous",
     color: "rgba(134, 87, 229, 0.7)",
-    types: [
-      {
-        name: "Play Song",
-        icon: "double-quaver.svg",
-      },
-      {
-        name: "Vista",
-        icon: "spyglass.svg",
-      },
-    ],
+    types: [],
   },
   {
     name: "Symbols",
@@ -162,19 +136,7 @@ export const nodeCategories: AreaNodeCategory[] = [
       },
       {
         name: "Co-op Quest",
-        icon: "minimap_symbol_87.webp",
-      },
-      {
-        name: "Co-op Quest",
         icon: "minimap_symbol_242.webp",
-      },
-      {
-        name: "Co-op Quest",
-        icon: "minimap_symbol_89.webp",
-      },
-      {
-        name: "Co-op Quest",
-        icon: "minimap_symbol_86.webp",
       },
       {
         name: "252",
@@ -214,51 +176,35 @@ export const nodeCategories: AreaNodeCategory[] = [
       },
       {
         name: "Adventure Quest",
-        icon: "minimap_symbol_246.webp",
-      },
-      {
-        name: "Adventure Quest",
         icon: "minimap_symbol_239.webp",
       },
       {
-        name: "Adventure Quest",
-        icon: "minimap_symbol_248.webp",
-      },
-      {
-        name: "80",
+        name: "1_80",
         icon: "minimap_symbol_1_80.webp",
       },
       {
-        name: "55",
+        name: "1_55",
         icon: "minimap_symbol_1_55.webp",
       },
       {
-        name: "56",
+        name: "1_56",
         icon: "minimap_symbol_1_56.webp",
       },
       {
-        name: "51",
+        name: "1_51",
         icon: "minimap_symbol_1_51.webp",
       },
       {
-        name: "52",
+        name: "1_52",
         icon: "minimap_symbol_1_52.webp",
       },
       {
-        name: "53",
+        name: "1_53",
         icon: "minimap_symbol_1_53.webp",
       },
       {
-        name: "51",
-        icon: "minimap_symbol_1_51.webp",
-      },
-      {
-        name: "54",
+        name: "1_54",
         icon: "minimap_symbol_1_54.webp",
-      },
-      {
-        name: "53",
-        icon: "minimap_symbol_1_53.webp",
       },
       {
         name: "Co-op Quest",
@@ -313,15 +259,15 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_33.webp",
       },
       {
-        name: "279",
+        name: "1_279",
         icon: "minimap_symbol_1_279.webp",
       },
       {
-        name: "280",
+        name: "1_280",
         icon: "minimap_symbol_1_280.webp",
       },
       {
-        name: "281",
+        name: "1_281",
         icon: "minimap_symbol_1_281.webp",
       },
       {
@@ -353,67 +299,67 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_46.webp",
       },
       {
-        name: "47",
+        name: "1_97",
         icon: "minimap_symbol_1_97.webp",
       },
       {
-        name: "48",
+        name: "1_98",
         icon: "minimap_symbol_1_98.webp",
       },
       {
-        name: "49",
+        name: "1_99",
         icon: "minimap_symbol_1_99.webp",
       },
       {
-        name: "50",
+        name: "1_100",
         icon: "minimap_symbol_1_100.webp",
       },
       {
-        name: "51",
+        name: "1_101",
         icon: "minimap_symbol_1_101.webp",
       },
       {
-        name: "52",
+        name: "1_102",
         icon: "minimap_symbol_1_102.webp",
       },
       {
-        name: "53",
+        name: "1_103",
         icon: "minimap_symbol_1_103.webp",
       },
       {
-        name: "118",
+        name: "1_118",
         icon: "minimap_symbol_1_118.webp",
       },
       {
-        name: "119",
+        name: "1_119",
         icon: "minimap_symbol_1_119.webp",
       },
       {
-        name: "120",
+        name: "1_120",
         icon: "minimap_symbol_1_120.webp",
       },
       {
-        name: "132",
+        name: "1_132",
         icon: "minimap_symbol_1_132.webp",
       },
       {
-        name: "133",
+        name: "1_133",
         icon: "minimap_symbol_1_133.webp",
       },
       {
-        name: "134",
+        name: "1_134",
         icon: "minimap_symbol_1_134.webp",
       },
       {
-        name: "135",
+        name: "1_135",
         icon: "minimap_symbol_1_135.webp",
       },
       {
-        name: "136",
+        name: "1_136",
         icon: "minimap_symbol_1_136.webp",
       },
       {
-        name: "137",
+        name: "1_137",
         icon: "minimap_symbol_1_137.webp",
       },
       {
@@ -433,99 +379,99 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_60.webp",
       },
       {
-        name: "215",
+        name: "1_215",
         icon: "minimap_symbol_1_215.webp",
       },
       {
-        name: "216",
+        name: "1_216",
         icon: "minimap_symbol_1_216.webp",
       },
       {
-        name: "217",
+        name: "1_217",
         icon: "minimap_symbol_1_217.webp",
       },
       {
-        name: "218",
+        name: "1_218",
         icon: "minimap_symbol_1_218.webp",
       },
       {
-        name: "211",
+        name: "1_211",
         icon: "minimap_symbol_1_211.webp",
       },
       {
-        name: "212",
+        name: "1_212",
         icon: "minimap_symbol_1_212.webp",
       },
       {
-        name: "213",
+        name: "1_213",
         icon: "minimap_symbol_1_213.webp",
       },
       {
-        name: "214",
+        name: "1_214",
         icon: "minimap_symbol_1_214.webp",
       },
       {
-        name: "243",
+        name: "1_243",
         icon: "minimap_symbol_1_243.webp",
       },
       {
-        name: "244",
+        name: "1_244",
         icon: "minimap_symbol_1_244.webp",
       },
       {
-        name: "245",
+        name: "1_245",
         icon: "minimap_symbol_1_245.webp",
       },
       {
-        name: "246",
+        name: "1_246",
         icon: "minimap_symbol_1_246.webp",
       },
       {
-        name: "247",
+        name: "1_247",
         icon: "minimap_symbol_1_247.webp",
       },
       {
-        name: "248",
+        name: "1_248",
         icon: "minimap_symbol_1_248.webp",
       },
       {
-        name: "249",
+        name: "1_249",
         icon: "minimap_symbol_1_249.webp",
       },
       {
-        name: "250",
+        name: "1_250",
         icon: "minimap_symbol_1_250.webp",
       },
       {
-        name: "251",
+        name: "1_251",
         icon: "minimap_symbol_1_251.webp",
       },
       {
-        name: "252",
+        name: "1_252",
         icon: "minimap_symbol_1_252.webp",
       },
       {
-        name: "253",
+        name: "1_253",
         icon: "minimap_symbol_1_253.webp",
       },
       {
-        name: "254",
+        name: "1_254",
         icon: "minimap_symbol_1_254.webp",
       },
       {
-        name: "255",
+        name: "1_255",
         icon: "minimap_symbol_1_255.webp",
       },
       {
-        name: "256",
+        name: "1_256",
         icon: "minimap_symbol_1_256.webp",
       },
       {
-        name: "257",
+        name: "1_257",
         icon: "minimap_symbol_1_257.webp",
       },
       {
-        name: "258",
+        name: "1_258",
         icon: "minimap_symbol_1_258.webp",
       },
       {
@@ -545,7 +491,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_4.webp",
       },
       {
-        name: "204",
+        name: "1_204",
         icon: "minimap_symbol_1_204.webp",
       },
       {
@@ -589,10 +535,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_312.webp",
       },
       {
-        name: "Chaos Dungeon",
-        icon: "minimap_symbol_1_38.webp",
-      },
-      {
         name: "Tower",
         icon: "minimap_symbol_1_322.webp",
       },
@@ -621,19 +563,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_67.webp",
       },
       {
-        name: "6",
-        icon: "minimap_symbol_6.webp",
-      },
-      {
-        name: "7",
-        icon: "minimap_symbol_7.webp",
-      },
-      {
-        name: "186",
+        name: "1_186",
         icon: "minimap_symbol_1_186.webp",
       },
       {
-        name: "73",
+        name: "gray_73",
         icon: "minimap_symbol_gray_73.webp",
       },
       {
@@ -649,7 +583,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_92.webp",
       },
       {
-        name: "47",
+        name: "1_47",
         icon: "minimap_symbol_1_47.webp",
       },
       {
@@ -661,23 +595,23 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_218.webp",
       },
       {
-        name: "34",
+        name: "1_34",
         icon: "minimap_symbol_1_34.webp",
       },
       {
-        name: "36",
+        name: "1_36",
         icon: "minimap_symbol_1_36.webp",
       },
       {
-        name: "126",
+        name: "1_126",
         icon: "minimap_symbol_1_126.webp",
       },
       {
-        name: "210",
+        name: "1_210",
         icon: "minimap_symbol_1_210.webp",
       },
       {
-        name: "328",
+        name: "1_328",
         icon: "minimap_symbol_1_328.webp",
       },
       {
@@ -845,43 +779,43 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_223.webp",
       },
       {
-        name: "110",
+        name: "1_110",
         icon: "minimap_symbol_1_110.webp",
       },
       {
-        name: "109",
+        name: "1_109",
         icon: "minimap_symbol_1_109.webp",
       },
       {
-        name: "327",
+        name: "1_327",
         icon: "minimap_symbol_1_327.webp",
       },
       {
-        name: "375",
+        name: "1_375",
         icon: "minimap_symbol_1_375.webp",
       },
       {
-        name: "376",
+        name: "1_376",
         icon: "minimap_symbol_1_376.webp",
       },
       {
-        name: "377",
+        name: "1_377",
         icon: "minimap_symbol_1_377.webp",
       },
       {
-        name: "377",
+        name: "1_323",
         icon: "minimap_symbol_1_323.webp",
       },
       {
-        name: "377",
+        name: "1_324",
         icon: "minimap_symbol_1_324.webp",
       },
       {
-        name: "377",
+        name: "1_325",
         icon: "minimap_symbol_1_325.webp",
       },
       {
-        name: "377",
+        name: "1_326",
         icon: "minimap_symbol_1_326.webp",
       },
       {
@@ -901,11 +835,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_91.webp",
       },
       {
-        name: "50",
+        name: "1_50",
         icon: "minimap_symbol_1_50.webp",
       },
       {
-        name: "49",
+        name: "1_49",
         icon: "minimap_symbol_1_49.webp",
       },
       {
@@ -921,39 +855,39 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_56.webp",
       },
       {
-        name: "303",
+        name: "1_303",
         icon: "minimap_symbol_1_303.webp",
       },
       {
-        name: "307",
+        name: "1_307",
         icon: "minimap_symbol_1_307.webp",
       },
       {
-        name: "304",
+        name: "1_304",
         icon: "minimap_symbol_1_304.webp",
       },
       {
-        name: "306",
+        name: "1_306",
         icon: "minimap_symbol_1_306.webp",
       },
       {
-        name: "308",
+        name: "1_308",
         icon: "minimap_symbol_1_308.webp",
       },
       {
-        name: "305",
+        name: "1_305",
         icon: "minimap_symbol_1_305.webp",
       },
       {
-        name: "330",
+        name: "1_330",
         icon: "minimap_symbol_1_330.webp",
       },
       {
-        name: "332",
+        name: "1_332",
         icon: "minimap_symbol_1_332.webp",
       },
       {
-        name: "331",
+        name: "1_331",
         icon: "minimap_symbol_1_331.webp",
       },
       {
@@ -961,7 +895,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_229.webp",
       },
       {
-        name: "48",
+        name: "1_48",
         icon: "minimap_symbol_1_48.webp",
       },
       {
@@ -989,39 +923,35 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_233.webp",
       },
       {
-        name: "230",
-        icon: "minimap_symbol_230.webp",
-      },
-      {
-        name: "95",
+        name: "1_95",
         icon: "minimap_symbol_1_95.webp",
       },
       {
-        name: "197",
+        name: "1_197",
         icon: "minimap_symbol_1_197.webp",
       },
       {
-        name: "198",
+        name: "1_198",
         icon: "minimap_symbol_1_198.webp",
       },
       {
-        name: "199",
+        name: "1_199",
         icon: "minimap_symbol_1_199.webp",
       },
       {
-        name: "200",
+        name: "1_200",
         icon: "minimap_symbol_1_200.webp",
       },
       {
-        name: "201",
+        name: "1_201",
         icon: "minimap_symbol_1_201.webp",
       },
       {
-        name: "239",
+        name: "1_239",
         icon: "minimap_symbol_1_239.webp",
       },
       {
-        name: "162",
+        name: "1_162",
         icon: "minimap_symbol_1_162.webp",
       },
       {
@@ -1077,7 +1007,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_209.webp",
       },
       {
-        name: "290",
+        name: "1_290",
         icon: "minimap_symbol_1_290.webp",
       },
       {
@@ -1120,10 +1050,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Trading Ship",
         icon: "minimap_symbol_183.webp",
       },
-      {
-        name: "Trade Merchant",
-        icon: "minimap_symbol_152.webp",
-      },
+
       {
         name: "154",
         icon: "minimap_symbol_154.webp",
@@ -1133,7 +1060,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_228.webp",
       },
       {
-        name: "124",
+        name: "1_124",
         icon: "minimap_symbol_1_124.webp",
       },
       {
@@ -1141,7 +1068,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_153.webp",
       },
       {
-        name: "125",
+        name: "1_125",
         icon: "minimap_symbol_1_125.webp",
       },
       {
@@ -1153,11 +1080,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_190.webp",
       },
       {
-        name: "202",
+        name: "1_202",
         icon: "minimap_symbol_1_202.webp",
       },
       {
-        name: "275",
+        name: "1_275",
         icon: "minimap_symbol_1_275.webp",
       },
       {
@@ -1177,10 +1104,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_202.webp",
       },
       {
-        name: "206",
-        icon: "minimap_symbol_206.webp",
-      },
-      {
         name: "207",
         icon: "minimap_symbol_207.webp",
       },
@@ -1193,7 +1116,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_158.webp",
       },
       {
-        name: "274",
+        name: "1_274",
         icon: "minimap_symbol_1_274.webp",
       },
       {
@@ -1221,31 +1144,31 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_40.webp",
       },
       {
-        name: "39",
+        name: "1_39",
         icon: "minimap_symbol_1_39.webp",
       },
       {
-        name: "122",
+        name: "1_122",
         icon: "minimap_symbol_1_122.webp",
       },
       {
-        name: "123",
+        name: "1_123",
         icon: "minimap_symbol_1_123.webp",
       },
       {
-        name: "318",
+        name: "1_318",
         icon: "minimap_symbol_1_318.webp",
       },
       {
-        name: "320",
+        name: "1_320",
         icon: "minimap_symbol_1_320.webp",
       },
       {
-        name: "457",
+        name: "1_457",
         icon: "minimap_symbol_1_457.webp",
       },
       {
-        name: "321",
+        name: "1_321",
         icon: "minimap_symbol_1_321.webp",
       },
       {
@@ -1277,11 +1200,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_207.webp",
       },
       {
-        name: "387",
+        name: "1_387",
         icon: "minimap_symbol_1_387.webp",
       },
       {
-        name: "111",
+        name: "1_111",
         icon: "minimap_symbol_1_111.webp",
       },
       {
@@ -1305,47 +1228,39 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_43.webp",
       },
       {
-        name: "71",
-        icon: "minimap_symbol_71.webp",
-      },
-      {
         name: "72",
         icon: "minimap_symbol_72.webp",
       },
       {
-        name: "1",
+        name: "1_1",
         icon: "minimap_symbol_1_1.webp",
       },
       {
-        name: "2",
+        name: "1_2",
         icon: "minimap_symbol_1_2.webp",
       },
       {
-        name: "3",
+        name: "1_3",
         icon: "minimap_symbol_1_3.webp",
       },
       {
-        name: "4",
+        name: "1_4",
         icon: "minimap_symbol_1_4.webp",
       },
       {
-        name: "5",
+        name: "1_5",
         icon: "minimap_symbol_1_5.webp",
-      },
-      {
-        name: "111",
-        icon: "minimap_symbol_1_111.webp",
       },
       {
         name: "Other",
         icon: "",
       },
       {
-        name: "112",
+        name: "1_112",
         icon: "minimap_symbol_1_112.webp",
       },
       {
-        name: "113",
+        name: "1_113",
         icon: "minimap_symbol_1_113.webp",
       },
       {
@@ -1353,7 +1268,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_69.webp",
       },
       {
-        name: "0",
+        name: "1_0",
         icon: "minimap_symbol_1_0.webp",
       },
       {
@@ -1377,10 +1292,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_213.webp",
       },
       {
-        name: "21",
-        icon: "minimap_symbol_21.webp",
-      },
-      {
         name: "237",
         icon: "minimap_symbol_237.webp",
       },
@@ -1397,36 +1308,12 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_76.webp",
       },
       {
-        name: "71",
-        icon: "minimap_symbol_71.webp",
-      },
-      {
-        name: "74",
-        icon: "minimap_symbol_74.webp",
-      },
-      {
-        name: "76",
-        icon: "minimap_symbol_76.webp",
-      },
-      {
         name: "68",
         icon: "minimap_symbol_68.webp",
       },
       {
-        name: "75",
-        icon: "minimap_symbol_75.webp",
-      },
-      {
         name: "10",
         icon: "minimap_symbol_10.webp",
-      },
-      {
-        name: "10",
-        icon: "minimap_symbol_10.webp",
-      },
-      {
-        name: "Hazardous Waters",
-        icon: "",
       },
       {
         name: "Lab",
@@ -1444,20 +1331,17 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Manor",
         icon: "minimap_symbol_1_301.webp",
       },
-      {
-        name: "Chef's Kitchen",
-        icon: "minimap_symbol_1_302.webp",
-      },
+
       {
         name: "Trade Merchant",
         icon: "minimap_symbol_1_336.webp",
       },
       {
-        name: "338",
+        name: "1_338",
         icon: "minimap_symbol_1_338.webp",
       },
       {
-        name: "337",
+        name: "1_337",
         icon: "minimap_symbol_1_337.webp",
       },
       {
@@ -1473,11 +1357,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_386.webp",
       },
       {
-        name: "382",
+        name: "1_382",
         icon: "minimap_symbol_1_382.webp",
       },
       {
-        name: "315",
+        name: "1_315",
         icon: "minimap_symbol_1_315.webp",
       },
       {
@@ -1485,31 +1369,23 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_408.webp",
       },
       {
-        name: "40",
-        icon: "minimap_symbol_1_40.webp",
-      },
-      {
-        name: "218",
-        icon: "minimap_symbol_218.webp",
-      },
-      {
-        name: "178",
+        name: "1_178",
         icon: "minimap_symbol_1_178.webp",
       },
       {
-        name: "179",
+        name: "1_179",
         icon: "minimap_symbol_1_179.webp",
       },
       {
-        name: "180",
+        name: "1_180",
         icon: "minimap_symbol_1_180.webp",
       },
       {
-        name: "181",
+        name: "1_181",
         icon: "minimap_symbol_1_181.webp",
       },
       {
-        name: "182",
+        name: "1_182",
         icon: "minimap_symbol_1_182.webp",
       },
       {
@@ -1517,208 +1393,92 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_28.webp",
       },
       {
-        name: "96",
+        name: "1_96",
         icon: "minimap_symbol_1_96.webp",
       },
       {
-        name: "2",
-        icon: "minimap_symbol_2.webp",
-      },
-      {
-        name: "1",
+        name: "gray_1",
         icon: "minimap_symbol_gray_1.webp",
       },
       {
-        name: "185",
+        name: "1_185",
         icon: "minimap_symbol_1_185.webp",
       },
       {
-        name: "208",
+        name: "1_208",
         icon: "minimap_symbol_1_208.webp",
       },
       {
-        name: "2",
-        icon: "minimap_symbol_2.webp",
-      },
-      {
-        name: "96",
-        icon: "minimap_symbol_1_96.webp",
-      },
-      {
-        name: "55",
-        icon: "minimap_symbol_55.webp",
-      },
-      {
-        name: "233",
+        name: "1_233",
         icon: "minimap_symbol_1_233.webp",
       },
       {
-        name: "234",
+        name: "1_234",
         icon: "minimap_symbol_1_234.webp",
       },
       {
-        name: "235",
+        name: "1_235",
         icon: "minimap_symbol_1_235.webp",
       },
       {
-        name: "259",
+        name: "1_259",
         icon: "minimap_symbol_1_259.webp",
       },
       {
-        name: "260",
+        name: "1_260",
         icon: "minimap_symbol_1_260.webp",
       },
       {
-        name: "261",
+        name: "1_261",
         icon: "minimap_symbol_1_261.webp",
       },
       {
-        name: "262",
+        name: "1_262",
         icon: "minimap_symbol_1_262.webp",
       },
       {
-        name: "71",
-        icon: "minimap_symbol_71.webp",
-      },
-      {
-        name: "55",
-        icon: "minimap_symbol_56.webp",
-      },
-      {
-        name: "55",
-        icon: "minimap_symbol_55.webp",
-      },
-      {
-        name: "55",
-        icon: "minimap_symbol_55.webp",
-      },
-      {
-        name: "56",
-        icon: "minimap_symbol_56.webp",
-      },
-      {
-        name: "1",
-        icon: "minimap_symbol_1.webp",
-      },
-      {
-        name: "1",
-        icon: "minimap_symbol_1.webp",
-      },
-      {
-        name: "56",
-        icon: "minimap_symbol_56.webp",
-      },
-      {
-        name: "56",
-        icon: "minimap_symbol_56.webp",
-      },
-      {
-        name: "1",
-        icon: "minimap_symbol_1.webp",
-      },
-      {
-        name: "183",
+        name: "1_183",
         icon: "minimap_symbol_1_183.webp",
       },
       {
-        name: "315",
-        icon: "minimap_symbol_1_315.webp",
-      },
-      {
-        name: "316",
+        name: "1_316",
         icon: "minimap_symbol_1_316.webp",
       },
       {
-        name: "317",
+        name: "1_317",
         icon: "minimap_symbol_1_317.webp",
       },
       {
-        name: "162",
-        icon: "minimap_symbol_1_162.webp",
-      },
-      {
-        name: "333",
+        name: "1_333",
         icon: "minimap_symbol_1_333.webp",
-      },
-      {
-        name: "75",
-        icon: "minimap_symbol_75.webp",
-      },
-      {
-        name: "56",
-        icon: "minimap_symbol_56.webp",
-      },
-      {
-        name: "75",
-        icon: "minimap_symbol_75.webp",
-      },
-      {
-        name: "162",
-        icon: "minimap_symbol_1_162.webp",
-      },
-      {
-        name: "56",
-        icon: "minimap_symbol_56.webp",
       },
       {
         name: "33",
         icon: "minimap_symbol_33.webp",
       },
       {
-        name: "335",
+        name: "1_335",
         icon: "minimap_symbol_1_335.webp",
-      },
-      {
-        name: "75",
-        icon: "minimap_symbol_75.webp",
       },
       {
         name: "221",
         icon: "minimap_symbol_221.webp",
       },
       {
-        name: "149",
+        name: "1_149",
         icon: "minimap_symbol_1_149.webp",
       },
       {
-        name: "65",
-        icon: "minimap_symbol_65.webp",
-      },
-      {
-        name: "56",
-        icon: "minimap_symbol_56.webp",
-      },
-      {
-        name: "0",
-        icon: "minimap_symbol_1_0.webp",
-      },
-      {
-        name: "274",
-        icon: "minimap_symbol_1_274.webp",
-      },
-      {
-        name: "130",
+        name: "1_130",
         icon: "minimap_symbol_1_130.webp",
       },
       {
-        name: "92",
+        name: "1_92",
         icon: "minimap_symbol_1_92.webp",
       },
       {
-        name: "93",
+        name: "1_93",
         icon: "minimap_symbol_1_93.webp",
-      },
-      {
-        name: "75",
-        icon: "minimap_symbol_75.webp",
-      },
-      {
-        name: "69",
-        icon: "minimap_symbol_69.webp",
-      },
-      {
-        name: "130",
-        icon: "minimap_symbol_1_130.webp",
       },
       {
         name: "197",
@@ -1729,123 +1489,47 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_19.webp",
       },
       {
-        name: "197",
-        icon: "minimap_symbol_197.webp",
-      },
-      {
-        name: "197",
-        icon: "minimap_symbol_197.webp",
-      },
-      {
-        name: "338",
-        icon: "minimap_symbol_1_338.webp",
-      },
-      {
-        name: "197",
-        icon: "minimap_symbol_197.webp",
-      },
-      {
-        name: "29",
-        icon: "minimap_symbol_29.webp",
-      },
-      {
-        name: "6",
-        icon: "minimap_symbol_6.webp",
-      },
-      {
-        name: "2",
-        icon: "minimap_symbol_2.webp",
-      },
-      {
-        name: "0",
-        icon: "minimap_symbol_1_0.webp",
-      },
-      {
-        name: "75",
-        icon: "minimap_symbol_75.webp",
-      },
-      {
-        name: "56",
-        icon: "minimap_symbol_56.webp",
-      },
-      {
-        name: "143",
+        name: "1_143",
         icon: "minimap_symbol_1_143.webp",
       },
       {
-        name: "138",
+        name: "1_138",
         icon: "minimap_symbol_1_138.webp",
       },
       {
-        name: "144",
+        name: "1_144",
         icon: "minimap_symbol_1_144.webp",
       },
       {
-        name: "144",
-        icon: "minimap_symbol_1_144.webp",
-      },
-      {
-        name: "340",
+        name: "1_340",
         icon: "minimap_symbol_1_340.webp",
       },
       {
-        name: "341",
+        name: "1_341",
         icon: "minimap_symbol_1_341.webp",
       },
       {
-        name: "342",
+        name: "1_342",
         icon: "minimap_symbol_1_342.webp",
       },
       {
-        name: "145",
+        name: "1_145",
         icon: "minimap_symbol_1_145.webp",
       },
       {
-        name: "146",
+        name: "1_146",
         icon: "minimap_symbol_1_146.webp",
       },
       {
-        name: "148",
+        name: "1_148",
         icon: "minimap_symbol_1_148.webp",
       },
       {
-        name: "149",
-        icon: "minimap_symbol_1_149.webp",
-      },
-      {
-        name: "150",
+        name: "1_150",
         icon: "minimap_symbol_1_150.webp",
       },
       {
-        name: "151",
-        icon: "minimap_symbol_1_151.webp",
-      },
-      {
-        name: "0",
-        icon: "",
-      },
-      {
-        name: "145",
-        icon: "minimap_symbol_1_145.webp",
-      },
-      {
-        name: "146",
-        icon: "minimap_symbol_1_146.webp",
-      },
-      {
-        name: "148",
-        icon: "minimap_symbol_1_148.webp",
-      },
-      {
-        name: "149",
-        icon: "minimap_symbol_1_149.webp",
-      },
-      {
-        name: "150",
-        icon: "minimap_symbol_1_150.webp",
-      },
-      {
-        name: "151",
+        name: "1_151",
         icon: "minimap_symbol_1_151.webp",
       },
       {
@@ -1853,395 +1537,291 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_152.webp",
       },
       {
-        name: "153",
+        name: "1_153",
         icon: "minimap_symbol_1_153.webp",
       },
       {
-        name: "154",
+        name: "1_154",
         icon: "minimap_symbol_1_154.webp",
       },
       {
-        name: "155",
+        name: "1_155",
         icon: "minimap_symbol_1_155.webp",
       },
       {
-        name: "156",
+        name: "1_156",
         icon: "minimap_symbol_1_156.webp",
       },
       {
-        name: "157",
+        name: "1_157",
         icon: "minimap_symbol_1_157.webp",
       },
       {
-        name: "158",
+        name: "1_158",
         icon: "minimap_symbol_1_158.webp",
       },
       {
-        name: "159",
+        name: "1_159",
         icon: "minimap_symbol_1_159.webp",
       },
       {
-        name: "160",
+        name: "1_160",
         icon: "minimap_symbol_1_160.webp",
       },
       {
-        name: "162",
-        icon: "minimap_symbol_1_162.webp",
-      },
-      {
-        name: "163",
+        name: "1_163",
         icon: "minimap_symbol_1_163.webp",
       },
       {
-        name: "164",
+        name: "1_164",
         icon: "minimap_symbol_1_164.webp",
       },
       {
-        name: "165",
+        name: "1_165",
         icon: "minimap_symbol_1_165.webp",
       },
       {
-        name: "166",
+        name: "1_166",
         icon: "minimap_symbol_1_166.webp",
       },
       {
-        name: "171",
+        name: "1_171",
         icon: "minimap_symbol_1_171.webp",
       },
       {
-        name: "172",
+        name: "1_172",
         icon: "minimap_symbol_1_172.webp",
       },
       {
-        name: "173",
+        name: "1_173",
         icon: "minimap_symbol_1_173.webp",
       },
       {
-        name: "174",
+        name: "1_174",
         icon: "minimap_symbol_1_174.webp",
       },
       {
-        name: "175",
+        name: "1_175",
         icon: "minimap_symbol_1_175.webp",
       },
       {
-        name: "176",
+        name: "1_176",
         icon: "minimap_symbol_1_176.webp",
       },
       {
-        name: "177",
+        name: "1_177",
         icon: "minimap_symbol_1_177.webp",
       },
       {
-        name: "183",
-        icon: "minimap_symbol_1_183.webp",
-      },
-      {
-        name: "196",
+        name: "1_196",
         icon: "minimap_symbol_1_196.webp",
       },
       {
-        name: "206",
+        name: "1_206",
         icon: "minimap_symbol_1_206.webp",
       },
       {
-        name: "191",
+        name: "1_191",
         icon: "minimap_symbol_1_191.webp",
       },
       {
-        name: "192",
+        name: "1_192",
         icon: "minimap_symbol_1_192.webp",
       },
       {
-        name: "193",
+        name: "1_193",
         icon: "minimap_symbol_1_193.webp",
       },
       {
-        name: "225",
+        name: "1_225",
         icon: "minimap_symbol_1_225.webp",
       },
       {
-        name: "228",
+        name: "1_228",
         icon: "minimap_symbol_1_228.webp",
       },
       {
-        name: "189",
+        name: "1_189",
         icon: "minimap_symbol_1_189.webp",
       },
       {
-        name: "190",
+        name: "1_190",
         icon: "minimap_symbol_1_190.webp",
       },
       {
-        name: "194",
+        name: "1_194",
         icon: "minimap_symbol_1_194.webp",
       },
       {
-        name: "195",
+        name: "1_195",
         icon: "minimap_symbol_1_195.webp",
       },
       {
-        name: "231",
+        name: "1_231",
         icon: "minimap_symbol_1_231.webp",
       },
       {
-        name: "232",
+        name: "1_232",
         icon: "minimap_symbol_1_232.webp",
       },
       {
-        name: "236",
+        name: "1_236",
         icon: "minimap_symbol_1_236.webp",
       },
       {
-        name: "237",
+        name: "1_237",
         icon: "minimap_symbol_1_237.webp",
       },
       {
-        name: "226",
+        name: "1_226",
         icon: "minimap_symbol_1_226.webp",
       },
       {
-        name: "229",
+        name: "1_229",
         icon: "minimap_symbol_1_229.webp",
       },
       {
-        name: "227",
+        name: "1_227",
         icon: "minimap_symbol_1_227.webp",
       },
       {
-        name: "230",
+        name: "1_230",
         icon: "minimap_symbol_1_230.webp",
       },
       {
-        name: "219",
+        name: "1_219",
         icon: "minimap_symbol_1_219.webp",
       },
       {
-        name: "222",
+        name: "1_222",
         icon: "minimap_symbol_1_222.webp",
       },
       {
-        name: "220",
+        name: "1_220",
         icon: "minimap_symbol_1_220.webp",
       },
       {
-        name: "223",
+        name: "1_223",
         icon: "minimap_symbol_1_223.webp",
       },
       {
-        name: "221",
+        name: "1_221",
         icon: "minimap_symbol_1_221.webp",
       },
       {
-        name: "224",
+        name: "1_224",
         icon: "minimap_symbol_1_224.webp",
       },
       {
-        name: "240",
+        name: "1_240",
         icon: "minimap_symbol_1_240.webp",
       },
       {
-        name: "241",
+        name: "1_241",
         icon: "minimap_symbol_1_241.webp",
       },
       {
-        name: "242",
+        name: "1_242",
         icon: "minimap_symbol_1_242.webp",
       },
       {
-        name: "91",
-        icon: "minimap_symbol_91.webp",
-      },
-      {
-        name: "55",
-        icon: "minimap_symbol_55.webp",
-      },
-      {
         name: "220",
         icon: "minimap_symbol_220.webp",
       },
       {
-        name: "338",
-        icon: "minimap_symbol_1_338.webp",
-      },
-      {
-        name: "338",
-        icon: "minimap_symbol_1_338.webp",
-      },
-      {
-        name: "338",
-        icon: "minimap_symbol_1_338.webp",
-      },
-      {
-        name: "338",
-        icon: "minimap_symbol_1_338.webp",
-      },
-      {
-        name: "338",
-        icon: "minimap_symbol_1_338.webp",
-      },
-      {
-        name: "338",
-        icon: "minimap_symbol_1_338.webp",
-      },
-      {
-        name: "338",
-        icon: "minimap_symbol_1_338.webp",
-      },
-      {
-        name: "338",
-        icon: "minimap_symbol_1_338.webp",
-      },
-      {
-        name: "352",
+        name: "1_352",
         icon: "minimap_symbol_1_352.webp",
       },
       {
-        name: "353",
+        name: "1_353",
         icon: "minimap_symbol_1_353.webp",
       },
       {
-        name: "354",
+        name: "1_354",
         icon: "minimap_symbol_1_354.webp",
       },
       {
-        name: "187",
+        name: "1_187",
         icon: "minimap_symbol_1_187.webp",
       },
       {
-        name: "188",
+        name: "1_188",
         icon: "minimap_symbol_1_188.webp",
       },
       {
-        name: "84",
+        name: "1_84",
         icon: "minimap_symbol_1_84.webp",
       },
       {
-        name: "355",
+        name: "1_355",
         icon: "minimap_symbol_1_355.webp",
       },
       {
-        name: "356",
+        name: "1_356",
         icon: "minimap_symbol_1_356.webp",
       },
       {
-        name: "357",
+        name: "1_357",
         icon: "minimap_symbol_1_357.webp",
       },
       {
-        name: "358",
+        name: "1_358",
         icon: "minimap_symbol_1_358.webp",
       },
       {
-        name: "359",
+        name: "1_359",
         icon: "minimap_symbol_1_359.webp",
       },
       {
-        name: "360",
+        name: "1_360",
         icon: "minimap_symbol_1_360.webp",
       },
       {
-        name: "361",
+        name: "1_361",
         icon: "minimap_symbol_1_361.webp",
       },
       {
-        name: "362",
+        name: "1_362",
         icon: "minimap_symbol_1_362.webp",
       },
       {
-        name: "363",
+        name: "1_363",
         icon: "minimap_symbol_1_363.webp",
       },
       {
-        name: "364",
+        name: "1_364",
         icon: "minimap_symbol_1_364.webp",
       },
       {
-        name: "365",
+        name: "1_365",
         icon: "minimap_symbol_1_365.webp",
       },
       {
-        name: "351",
+        name: "1_351",
         icon: "minimap_symbol_1_351.webp",
       },
       {
-        name: "76",
-        icon: "minimap_symbol_76.webp",
-      },
-      {
-        name: "75",
-        icon: "minimap_symbol_75.webp",
-      },
-      {
-        name: "220",
-        icon: "minimap_symbol_220.webp",
-      },
-      {
-        name: "366",
+        name: "1_366",
         icon: "minimap_symbol_1_366.webp",
       },
       {
-        name: "367",
+        name: "1_367",
         icon: "minimap_symbol_1_367.webp",
       },
       {
-        name: "378",
+        name: "1_378",
         icon: "minimap_symbol_1_378.webp",
       },
       {
-        name: "379",
+        name: "1_379",
         icon: "minimap_symbol_1_379.webp",
       },
       {
-        name: "56",
-        icon: "minimap_symbol_56.webp",
-      },
-      {
-        name: "40",
-        icon: "minimap_symbol_40.webp",
-      },
-      {
-        name: "150",
-        icon: "minimap_symbol_1_150.webp",
-      },
-      {
-        name: "151",
-        icon: "minimap_symbol_1_151.webp",
-      },
-      {
-        name: "71",
-        icon: "minimap_symbol_71.webp",
-      },
-      {
-        name: "56",
-        icon: "minimap_symbol_56.webp",
-      },
-      {
-        name: "69",
-        icon: "minimap_symbol_69.webp",
-      },
-      {
-        name: "40",
-        icon: "minimap_symbol_40.webp",
-      },
-      {
-        name: "75",
-        icon: "minimap_symbol_75.webp",
-      },
-      {
-        name: "111",
-        icon: "minimap_symbol_1_111.webp",
-      },
-      {
-        name: "71",
-        icon: "minimap_symbol_71.webp",
-      },
-      {
-        name: "263",
+        name: "1_263",
         icon: "minimap_symbol_1_263.webp",
       },
       {
-        name: "265",
+        name: "1_265",
         icon: "minimap_symbol_1_265.webp",
       },
       {
@@ -2249,68 +1829,28 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_273.webp",
       },
       {
-        name: "276",
+        name: "1_276",
         icon: "minimap_symbol_1_276.webp",
       },
       {
-        name: "277",
+        name: "1_277",
         icon: "minimap_symbol_1_277.webp",
       },
       {
-        name: "278",
+        name: "1_278",
         icon: "minimap_symbol_1_278.webp",
       },
       {
-        name: "Mokoko Seeds",
-        icon: "minimap_symbol_1_121.webp",
-      },
-      {
-        name: "1",
-        icon: "minimap_symbol_1.webp",
-      },
-      {
-        name: "71",
-        icon: "minimap_symbol_71.webp",
-      },
-      {
-        name: "373",
+        name: "1_373",
         icon: "minimap_symbol_1_373.webp",
       },
       {
-        name: "371",
+        name: "1_371",
         icon: "minimap_symbol_1_371.webp",
       },
       {
-        name: "76",
-        icon: "minimap_symbol_76.webp",
-      },
-      {
-        name: "262",
-        icon: "minimap_symbol_1_262.webp",
-      },
-      {
-        name: "74",
-        icon: "minimap_symbol_74.webp",
-      },
-      {
-        name: "395",
+        name: "1_395",
         icon: "minimap_symbol_1_395.webp",
-      },
-      {
-        name: "76",
-        icon: "minimap_symbol_76.webp",
-      },
-      {
-        name: "69",
-        icon: "minimap_symbol_69.webp",
-      },
-      {
-        name: "40",
-        icon: "minimap_symbol_40.webp",
-      },
-      {
-        name: "96",
-        icon: "minimap_symbol_1_96.webp",
       },
       {
         name: "47",
@@ -2329,127 +1869,19 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_50.webp",
       },
       {
-        name: "393",
+        name: "1_393",
         icon: "minimap_symbol_1_393.webp",
       },
       {
-        name: "394",
+        name: "1_394",
         icon: "minimap_symbol_1_394.webp",
       },
       {
-        name: "392",
+        name: "1_392",
         icon: "minimap_symbol_1_392.webp",
       },
       {
-        name: "328",
-        icon: "minimap_symbol_1_328.webp",
-      },
-      {
-        name: "91",
-        icon: "minimap_symbol_91.webp",
-      },
-      {
-        name: "29",
-        icon: "minimap_symbol_29.webp",
-      },
-      {
-        name: "28",
-        icon: "minimap_symbol_28.webp",
-      },
-      {
-        name: "4",
-        icon: "minimap_symbol_1_4.webp",
-      },
-      {
-        name: "247",
-        icon: "minimap_symbol_1_247.webp",
-      },
-      {
-        name: "248",
-        icon: "minimap_symbol_1_248.webp",
-      },
-      {
-        name: "249",
-        icon: "minimap_symbol_1_249.webp",
-      },
-      {
-        name: "250",
-        icon: "minimap_symbol_1_250.webp",
-      },
-      {
-        name: "160",
-        icon: "minimap_symbol_1_160.webp",
-      },
-      {
-        name: "316",
-        icon: "minimap_symbol_1_316.webp",
-      },
-      {
-        name: "317",
-        icon: "minimap_symbol_1_317.webp",
-      },
-      {
-        name: "97",
-        icon: "minimap_symbol_1_97.webp",
-      },
-      {
-        name: "98",
-        icon: "minimap_symbol_1_98.webp",
-      },
-      {
-        name: "99",
-        icon: "minimap_symbol_1_99.webp",
-      },
-      {
-        name: "100",
-        icon: "minimap_symbol_1_100.webp",
-      },
-      {
-        name: "101",
-        icon: "minimap_symbol_1_101.webp",
-      },
-      {
-        name: "102",
-        icon: "minimap_symbol_1_102.webp",
-      },
-      {
-        name: "97",
-        icon: "minimap_symbol_1_97.webp",
-      },
-      {
-        name: "98",
-        icon: "minimap_symbol_1_98.webp",
-      },
-      {
-        name: "99",
-        icon: "minimap_symbol_1_99.webp",
-      },
-      {
-        name: "100",
-        icon: "minimap_symbol_1_100.webp",
-      },
-      {
-        name: "101",
-        icon: "minimap_symbol_1_101.webp",
-      },
-      {
-        name: "102",
-        icon: "minimap_symbol_1_102.webp",
-      },
-      {
-        name: "96",
-        icon: "minimap_symbol_1_96.webp",
-      },
-      {
-        name: "162",
-        icon: "minimap_symbol_1_162.webp",
-      },
-      {
-        name: "333",
-        icon: "minimap_symbol_1_333.webp",
-      },
-      {
-        name: "456",
+        name: "1_456",
         icon: "minimap_symbol_1_456.webp",
       },
     ],

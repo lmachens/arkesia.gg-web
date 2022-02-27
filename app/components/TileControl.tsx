@@ -81,9 +81,8 @@ export default function TileControl({
           src={`${ICON_BASE_URL}${
             nodeTypesMap[node.type]?.icon || "unknown.webp"
           }`}
-          radius={16}
-          padding={5}
-          showBackground
+          radius={15}
+          padding={0}
           borderColor={nodeTypesMap[node.type]?.color || "transparent"}
           onClick={() => {
             if (!document.querySelector("#new-marker-drawer")) {
