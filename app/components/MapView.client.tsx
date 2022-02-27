@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { MapContainer, Tooltip } from "react-leaflet";
+import { MapContainer } from "react-leaflet";
 import { Area } from "~/lib/types";
 import L from "leaflet";
 import includeCanvasTileLayer from "./includeCanvasTileLayer";
@@ -14,13 +14,6 @@ import ImagePreview from "./ImagePreview";
 import TileControl from "./TileControl";
 import { getMapCenter } from "~/lib/map";
 
-const DefaultIcon = L.icon({
-  iconUrl: "/markers/unknown.webp",
-  iconSize: [32, 32],
-  tooltipAnchor: [0, -17],
-  popupAnchor: [0, -10],
-});
-L.Marker.prototype.options.icon = DefaultIcon;
 includeCanvasTileLayer();
 
 type MapProps = {

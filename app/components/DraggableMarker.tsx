@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Marker, Tooltip, useMapEvents } from "react-leaflet";
-import { nodeTypes } from "~/lib/static";
+import { ICON_BASE_URL, nodeTypes } from "~/lib/static";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
 import { Area, Tile } from "~/lib/types";
@@ -9,6 +9,15 @@ import { useLocalStorageValue } from "@mantine/hooks";
 import ImageDropzone from "./ImageDropzone";
 import { PostNodeActionData } from "~/lib/validation";
 import RichTextEditor from "@mantine/rte";
+import L from "leaflet";
+
+const DefaultIcon = L.icon({
+  iconUrl: `${ICON_BASE_URL}unknown.webp`,
+  iconSize: [32, 32],
+  tooltipAnchor: [0, -17],
+  popupAnchor: [0, -10],
+});
+L.Marker.prototype.options.icon = DefaultIcon;
 
 type DraggableMarkerProps = {
   area: Area;
@@ -160,6 +169,7 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
               name="type"
               value={type}
               zIndex={800}
+              searchable
               onChange={(value) => setType(value || "")}
               required
               data={nodeTypes.map((nodeType) => ({
