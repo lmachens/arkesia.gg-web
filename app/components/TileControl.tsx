@@ -3,7 +3,7 @@ import { AreaNode } from "@prisma/client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { TileLayer, Tooltip, useMap } from "react-leaflet";
 import { getBounds, getMapCenter } from "~/lib/map";
-import { ICON_BASE_URL, nodeTypesMap } from "~/lib/static";
+import { ICON_BASE_URL, nodeTypesMap, TILE_BASE_URL } from "~/lib/static";
 import { Area } from "~/lib/types";
 import CanvasMarker from "./CanvasMarker";
 import DraggableMarker from "./DraggableMarker";
@@ -31,7 +31,7 @@ export default function TileControl({
     map.panTo(getMapCenter(activeTile));
     if (tileLayerRef.current) {
       tileLayerRef.current.options.bounds = getBounds(activeTile);
-      tileLayerRef.current.setUrl(activeTile.url);
+      tileLayerRef.current.setUrl(`${TILE_BASE_URL}${activeTile.tile}`);
     }
   }, [activeTile]);
 
@@ -56,7 +56,7 @@ export default function TileControl({
                 transform: "rotate(-45deg) scale(1.2)",
               },
             })}
-            src={tile.full}
+            src={`${TILE_BASE_URL}${tile.full}`}
             alt=""
             height={50}
             width={50}
@@ -66,7 +66,7 @@ export default function TileControl({
       </div>
       <TileLayer
         ref={tileLayerRef}
-        url={activeTile.url}
+        url={`${TILE_BASE_URL}${activeTile.tile}`}
         minNativeZoom={2}
         maxNativeZoom={2}
         minZoom={0}

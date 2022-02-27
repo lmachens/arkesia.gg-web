@@ -1,6 +1,6 @@
 export type Tile = {
   id: number;
-  url: string;
+  tile: string;
   full: string;
   max: [number, number];
 };
