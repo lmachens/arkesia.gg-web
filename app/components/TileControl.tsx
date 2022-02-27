@@ -1,9 +1,9 @@
-import { Box as div, Container, Image } from "@mantine/core";
+import { Image } from "@mantine/core";
 import { AreaNode } from "@prisma/client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { TileLayer, Tooltip, useMap } from "react-leaflet";
 import { getBounds, getMapCenter } from "~/lib/map";
-import { nodeTypesMap } from "~/lib/static";
+import { ICON_BASE_URL, nodeTypesMap } from "~/lib/static";
 import { Area } from "~/lib/types";
 import CanvasMarker from "./CanvasMarker";
 import DraggableMarker from "./DraggableMarker";
@@ -78,7 +78,9 @@ export default function TileControl({
         <CanvasMarker
           key={node.position.toString()}
           center={node.position as [number, number]}
-          src={nodeTypesMap[node.type]?.iconUrl || "/markers/unknown.webp"}
+          src={`${ICON_BASE_URL}${
+            nodeTypesMap[node.type]?.icon || "unknown.webp"
+          }`}
           radius={16}
           padding={5}
           showBackground

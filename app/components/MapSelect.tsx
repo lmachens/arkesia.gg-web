@@ -26,12 +26,14 @@ export default function MapSelect({
           navigate(`/maps/${encodeURIComponent(value || "")}`);
         }}
         data={continentNames}
+        searchable
       />
       <Select
         className="inline-select"
         label="Area"
         value={areaName}
         zIndex={800}
+        searchable
         onChange={(value) => {
           navigate(
             `/maps/${encodeURIComponent(continentName)}/${encodeURIComponent(

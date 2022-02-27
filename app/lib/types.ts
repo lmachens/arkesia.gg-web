@@ -18,7 +18,7 @@ export type Continent = {
 export type AreaNodeType = {
   category: string;
   name: string;
-  iconUrl: string;
+  icon: string;
   color: string;
 };
 
