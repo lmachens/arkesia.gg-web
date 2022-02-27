@@ -10,6 +10,7 @@ import ImageDropzone from "./ImageDropzone";
 import { PostNodeActionData } from "~/lib/validation";
 import RichTextEditor from "@mantine/rte";
 import L from "leaflet";
+import TypeItem from "./TypeItem";
 
 const DefaultIcon = L.icon({
   iconUrl: `${ICON_BASE_URL}unknown.webp`,
@@ -23,6 +24,13 @@ type DraggableMarkerProps = {
   area: Area;
   tile: Tile;
 };
+
+const types = nodeTypes.map((nodeType) => ({
+  image: `${ICON_BASE_URL}${nodeType.icon}`,
+  value: nodeType.name,
+  label: nodeType.name,
+  group: nodeType.category,
+}));
 
 export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
@@ -170,13 +178,14 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
               value={type}
               zIndex={800}
               searchable
+              clearable
+              autoComplete="off"
+              autoCorrect="off"
               onChange={(value) => setType(value || "")}
               required
-              data={nodeTypes.map((nodeType) => ({
-                value: nodeType.name,
-                label: nodeType.name,
-                group: nodeType.category,
-              }))}
+              itemComponent={TypeItem}
+              maxDropdownHeight={400}
+              data={types}
               error={actionData?.fieldErrors?.type}
             />
             <ImageDropzone
