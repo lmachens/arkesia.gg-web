@@ -59,51 +59,51 @@ export const nodeCategories: AreaNodeCategory[] = [
     color: "rgba(134, 87, 229, 0.7)",
     types: [
       {
-        name: "11",
+        name: "Main Quest (Available)",
         icon: "minimap_symbol_11.webp",
       },
       {
-        name: "12",
+        name: "Main Quest (InProgress)",
         icon: "minimap_symbol_12.webp",
       },
       {
-        name: "13",
+        name: "Main Quest (Complete)",
         icon: "minimap_symbol_13.webp",
       },
       {
-        name: "14",
+        name: "Side Quest (Available)",
         icon: "minimap_symbol_14.webp",
       },
       {
-        name: "18",
+        name: "Side Quest (InProgress)",
         icon: "minimap_symbol_18.webp",
       },
       {
-        name: "15",
+        name: "Side Quest (Complete)",
         icon: "minimap_symbol_15.webp",
       },
       {
-        name: "77",
+        name: "Instance Quest (Available)",
         icon: "minimap_symbol_77.webp",
       },
       {
-        name: "78",
+        name: "Instance Quest (InProgress)",
         icon: "minimap_symbol_78.webp",
       },
       {
-        name: "79",
+        name: "Instance Quest (Complete)",
         icon: "minimap_symbol_79.webp",
       },
       {
-        name: "80",
+        name: "Random Quest (Available)",
         icon: "minimap_symbol_80.webp",
       },
       {
-        name: "81",
+        name: "Random Quest (InProgress)",
         icon: "minimap_symbol_81.webp",
       },
       {
-        name: "82",
+        name: "Random Quest (Complete)",
         icon: "minimap_symbol_82.webp",
       },
       {
@@ -119,19 +119,19 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_245.webp",
       },
       {
-        name: "Co-op Quest",
+        name: "Co-op Quest (Available)",
         icon: "minimap_symbol_87.webp",
       },
       {
-        name: "Co-op Quest",
+        name: "Co-op Quest (Active)",
         icon: "minimap_symbol_88.webp",
       },
       {
-        name: "Co-op Quest",
+        name: "Co-op Quest (Complete)",
         icon: "minimap_symbol_89.webp",
       },
       {
-        name: "Co-op Quest",
+        name: "Co-op Quest (InActive)",
         icon: "minimap_symbol_86.webp",
       },
       {
@@ -179,27 +179,27 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_239.webp",
       },
       {
-        name: "1_80",
+        name: "Raport Quest (Available)",
         icon: "minimap_symbol_1_80.webp",
       },
       {
-        name: "1_55",
+        name: "Raport Quest (InProgress)",
         icon: "minimap_symbol_1_55.webp",
       },
       {
-        name: "1_56",
+        name: "Raport Quest (Complete)",
         icon: "minimap_symbol_1_56.webp",
       },
       {
-        name: "1_51",
+        name: "Una Quest (Available)",
         icon: "minimap_symbol_1_51.webp",
       },
       {
-        name: "1_52",
+        name: "Una Quest (InProgress)",
         icon: "minimap_symbol_1_52.webp",
       },
       {
-        name: "1_53",
+        name: "Una Quest (Complete)",
         icon: "minimap_symbol_1_53.webp",
       },
       {
@@ -223,39 +223,39 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_60.webp",
       },
       {
-        name: "Stronghold Quests",
+        name: "Stronghold Quests (Available)",
         icon: "minimap_symbol_1_25.webp",
       },
       {
-        name: "Stronghold Quests",
+        name: "Stronghold Quests (InProgress)",
         icon: "minimap_symbol_1_26.webp",
       },
       {
-        name: "Stronghold Quests",
+        name: "Stronghold Quests (Complete)",
         icon: "minimap_symbol_1_27.webp",
       },
       {
-        name: "Stronghold Quests",
+        name: "Stronghold Quests (Available)",
         icon: "minimap_symbol_1_28.webp",
       },
       {
-        name: "Stronghold Quests",
+        name: "Stronghold Quests (InProgress)",
         icon: "minimap_symbol_1_29.webp",
       },
       {
-        name: "Stronghold Quests",
+        name: "Stronghold Quests (Complete)",
         icon: "minimap_symbol_1_30.webp",
       },
       {
-        name: "Stronghold Quests",
+        name: "Stronghold Quests (Available)",
         icon: "minimap_symbol_1_31.webp",
       },
       {
-        name: "Stronghold Quests",
+        name: "Stronghold Quests (InProgress)",
         icon: "minimap_symbol_1_32.webp",
       },
       {
-        name: "Stronghold Quests",
+        name: "Stronghold Quests (Complete)",
         icon: "minimap_symbol_1_33.webp",
       },
       {
@@ -475,7 +475,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_258.webp",
       },
       {
-        name: "1",
+        name: "Boss (Type?)",
         icon: "minimap_symbol_1.webp",
       },
       {
@@ -491,7 +491,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_4.webp",
       },
       {
-        name: "1_204",
+        name: "Sailing Dungeon",
         icon: "minimap_symbol_1_204.webp",
       },
       {
@@ -543,23 +543,23 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_339.webp",
       },
       {
-        name: "6",
+        name: "Chaos Gate",
         icon: "minimap_symbol_6.webp",
       },
       {
-        name: "64",
+        name: "Chaos Gate - Type ?",
         icon: "minimap_symbol_64.webp",
       },
       {
-        name: "65",
+        name: "Chaos Gate - Type ?",
         icon: "minimap_symbol_65.webp",
       },
       {
-        name: "66",
+        name: "Chaos Gate - Type ?",
         icon: "minimap_symbol_66.webp",
       },
       {
-        name: "67",
+        name: "Chaos Gate - Type ?",
         icon: "minimap_symbol_67.webp",
       },
       {
@@ -567,23 +567,23 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_186.webp",
       },
       {
-        name: "gray_73",
+        name: "Triport (Undiscovered)",
         icon: "minimap_symbol_gray_73.webp",
       },
       {
-        name: "71",
+        name: "Chaos Dungeon Node",
         icon: "minimap_symbol_71.webp",
       },
       {
-        name: "73",
+        name: "Triport (Discovered)",
         icon: "minimap_symbol_73.webp",
       },
       {
-        name: "92",
+        name: "Port",
         icon: "minimap_symbol_92.webp",
       },
       {
-        name: "1_47",
+        name: "* Some kind of port",
         icon: "minimap_symbol_1_47.webp",
       },
       {
@@ -615,163 +615,163 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_328.webp",
       },
       {
-        name: "96",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_96.webp",
       },
       {
-        name: "97",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_97.webp",
       },
       {
-        name: "98",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_98.webp",
       },
       {
-        name: "99",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_99.webp",
       },
       {
-        name: "100",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_100.webp",
       },
       {
-        name: "101",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_101.webp",
       },
       {
-        name: "102",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_102.webp",
       },
       {
-        name: "103",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_103.webp",
       },
       {
-        name: "104",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_104.webp",
       },
       {
-        name: "105",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_105.webp",
       },
       {
-        name: "106",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_106.webp",
       },
       {
-        name: "107",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_107.webp",
       },
       {
-        name: "108",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_108.webp",
       },
       {
-        name: "109",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_109.webp",
       },
       {
-        name: "110",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_110.webp",
       },
       {
-        name: "111",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_111.webp",
       },
       {
-        name: "112",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_112.webp",
       },
       {
-        name: "113",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_113.webp",
       },
       {
-        name: "114",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_114.webp",
       },
       {
-        name: "115",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_115.webp",
       },
       {
-        name: "116",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_116.webp",
       },
       {
-        name: "117",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_117.webp",
       },
       {
-        name: "118",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_118.webp",
       },
       {
-        name: "119",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_119.webp",
       },
       {
-        name: "120",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_120.webp",
       },
       {
-        name: "121",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_121.webp",
       },
       {
-        name: "122",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_122.webp",
       },
       {
-        name: "123",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_123.webp",
       },
       {
-        name: "124",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_124.webp",
       },
       {
-        name: "125",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_125.webp",
       },
       {
-        name: "126",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_126.webp",
       },
       {
-        name: "127",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_127.webp",
       },
       {
-        name: "128",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_128.webp",
       },
       {
-        name: "129",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_129.webp",
       },
       {
-        name: "130",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_130.webp",
       },
       {
-        name: "131",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_131.webp",
       },
       {
-        name: "132",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_132.webp",
       },
       {
-        name: "133",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_133.webp",
       },
       {
-        name: "134",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_134.webp",
       },
       {
-        name: "135",
+        name: "* Sailing Adventure Quest",
         icon: "minimap_symbol_135.webp",
       },
       {
@@ -783,7 +783,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_110.webp",
       },
       {
-        name: "1_109",
+        name: "* Island Token Handin",
         icon: "minimap_symbol_1_109.webp",
       },
       {
@@ -859,7 +859,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_303.webp",
       },
       {
-        name: "1_307",
+        name: "* Tempest",
         icon: "minimap_symbol_1_307.webp",
       },
       {
@@ -871,7 +871,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_306.webp",
       },
       {
-        name: "1_308",
+        name: "* Some Sailing Thing",
         icon: "minimap_symbol_1_308.webp",
       },
       {
@@ -955,19 +955,19 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_162.webp",
       },
       {
-        name: "21",
+        name: "Mining Node",
         icon: "minimap_symbol_21.webp",
       },
       {
-        name: "22",
+        name: "Woodcutting Node",
         icon: "minimap_symbol_22.webp",
       },
       {
-        name: "23",
+        name: "Foraging Node",
         icon: "minimap_symbol_23.webp",
       },
       {
-        name: "24",
+        name: "Fishing Spot",
         icon: "minimap_symbol_24.webp",
       },
       {
@@ -1084,7 +1084,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_202.webp",
       },
       {
-        name: "1_275",
+        name: "* Some type of trader",
         icon: "minimap_symbol_1_275.webp",
       },
       {
@@ -1116,7 +1116,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_158.webp",
       },
       {
-        name: "1_274",
+        name: "Guardian Raid Soul",
         icon: "minimap_symbol_1_274.webp",
       },
       {
@@ -1140,7 +1140,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_38.webp",
       },
       {
-        name: "Collection Reward",
+        name: "Island Token",
         icon: "minimap_symbol_1_40.webp",
       },
       {
@@ -1148,19 +1148,19 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_39.webp",
       },
       {
-        name: "1_122",
+        name: "Giant Heart - Collectable",
         icon: "minimap_symbol_1_122.webp",
       },
       {
-        name: "1_123",
+        name: "Masterpiece - Collectable",
         icon: "minimap_symbol_1_123.webp",
       },
       {
-        name: "1_318",
+        name: "* Adventure Maps",
         icon: "minimap_symbol_1_318.webp",
       },
       {
-        name: "1_320",
+        name: "* World Leaf",
         icon: "minimap_symbol_1_320.webp",
       },
       {
@@ -1168,7 +1168,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_457.webp",
       },
       {
-        name: "1_321",
+        name: "* Ominus Star",
         icon: "minimap_symbol_1_321.webp",
       },
       {
@@ -1208,7 +1208,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_111.webp",
       },
       {
-        name: "40",
+        name: "* Boss - Type?",
         icon: "minimap_symbol_40.webp",
       },
       {
@@ -1228,15 +1228,15 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_43.webp",
       },
       {
-        name: "72",
+        name: "Water Vehicle",
         icon: "minimap_symbol_72.webp",
       },
       {
-        name: "1_1",
+        name: "Elevator",
         icon: "minimap_symbol_1_1.webp",
       },
       {
-        name: "1_2",
+        name: "Travelator",
         icon: "minimap_symbol_1_2.webp",
       },
       {
@@ -1244,11 +1244,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_3.webp",
       },
       {
-        name: "1_4",
+        name: "Stairs (Up)",
         icon: "minimap_symbol_1_4.webp",
       },
       {
-        name: "1_5",
+        name: "Stairs (Down)",
         icon: "minimap_symbol_1_5.webp",
       },
       {
@@ -1264,7 +1264,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_113.webp",
       },
       {
-        name: "69",
+        name: "Gold Named Enemy",
         icon: "minimap_symbol_69.webp",
       },
       {
@@ -1304,7 +1304,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_238.webp",
       },
       {
-        name: "76",
+        name: "Silver Named Enemy",
         icon: "minimap_symbol_76.webp",
       },
       {
@@ -1312,7 +1312,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_68.webp",
       },
       {
-        name: "10",
+        name: "Player Custom Marker",
         icon: "minimap_symbol_10.webp",
       },
       {
@@ -1389,7 +1389,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_182.webp",
       },
       {
-        name: "28",
+        name: "Gatherable Chest",
         icon: "minimap_symbol_28.webp",
       },
       {
@@ -1829,11 +1829,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_273.webp",
       },
       {
-        name: "1_276",
+        name: "Dungeon Oxygen Plant",
         icon: "minimap_symbol_1_276.webp",
       },
       {
-        name: "1_277",
+        name: "Dungeon Oxygen Bubble",
         icon: "minimap_symbol_1_277.webp",
       },
       {
