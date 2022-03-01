@@ -26,7 +26,7 @@ export const nodeCategories: AreaNodeCategory[] = [
     color: "rgba(112, 128, 144, 0.7)",
     types: [
       {
-        name: "Portal",
+        name: "Map Transition",
         icon: "minimap_symbol_7.webp",
       },
     ],
@@ -1204,7 +1204,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_387.webp",
       },
       {
-        name: "Portal",
+        name: "Turquoise Portal",
         icon: "minimap_symbol_1_111.webp",
       },
       {
@@ -1361,7 +1361,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_382.webp",
       },
       {
-        name: "Portal",
+        name: "Lime Portal",
         icon: "minimap_symbol_1_315.webp",
       },
       {
@@ -1441,11 +1441,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_183.webp",
       },
       {
-        name: "Portal",
+        name: "Yellow Portal",
         icon: "minimap_symbol_1_316.webp",
       },
       {
-        name: "Portal",
+        name: "Purple Portal",
         icon: "minimap_symbol_1_317.webp",
       },
       {
