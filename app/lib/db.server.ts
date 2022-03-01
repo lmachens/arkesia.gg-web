@@ -1,4 +1,5 @@
-import { AreaNode, PrismaClient } from "@prisma/client";
+import type { AreaNode } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 
 export let db: PrismaClient;
 

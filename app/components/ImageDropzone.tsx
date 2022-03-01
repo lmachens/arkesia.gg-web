@@ -1,16 +1,12 @@
-import {
-  Dropzone,
-  DropzoneProps,
-  DropzoneStatus,
-  IMAGE_MIME_TYPE,
-} from "@mantine/dropzone";
+import type { DropzoneProps, DropzoneStatus } from "@mantine/dropzone";
+import { Dropzone, IMAGE_MIME_TYPE } from "@mantine/dropzone";
 import ImageUploadIcon from "./ImageUploadIcon";
+import type { MantineTheme } from "@mantine/core";
 import {
   ActionIcon,
   Group,
   Image,
   InputWrapper,
-  MantineTheme,
   Text,
   useMantineTheme,
 } from "@mantine/core";
@@ -24,6 +20,7 @@ type ImageDropzoneProps = Omit<DropzoneProps, "children"> & {
 export default function ImageDropzone({
   image,
   onClear,
+  onDrop,
   ...props
 }: ImageDropzoneProps) {
   const theme = useMantineTheme();
@@ -44,7 +41,7 @@ export default function ImageDropzone({
           if (!file) {
             continue;
           }
-          props.onDrop([file]);
+          onDrop([file]);
         }
       }
     };
@@ -52,7 +49,7 @@ export default function ImageDropzone({
     return () => {
       document.removeEventListener("paste", handlePaste);
     };
-  }, []);
+  }, [onDrop]);
 
   return (
     <InputWrapper
@@ -61,7 +58,12 @@ export default function ImageDropzone({
         position: "relative",
       })}
     >
-      <Dropzone accept={IMAGE_MIME_TYPE} multiple={false} {...props}>
+      <Dropzone
+        accept={IMAGE_MIME_TYPE}
+        multiple={false}
+        onDrop={onDrop}
+        {...props}
+      >
         {(status) => (
           <Group
             position="center"

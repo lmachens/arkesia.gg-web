@@ -1,6 +1,6 @@
-import { DropzoneStatus } from "@mantine/dropzone";
+import type { DropzoneStatus } from "@mantine/dropzone";
 import { ImageIcon, UploadIcon, CrossCircledIcon } from "@modulz/radix-icons";
-import { IconProps } from "@modulz/radix-icons/dist/types";
+import type { IconProps } from "@modulz/radix-icons/dist/types";
 
 type ImageUploadIconProps = {
   status: DropzoneStatus;

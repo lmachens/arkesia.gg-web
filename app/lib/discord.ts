@@ -1,4 +1,4 @@
-import { AreaNode } from "@prisma/client";
+import type { AreaNode } from "@prisma/client";
 import TurndownService from "turndown";
 const turndownService = new TurndownService();
 

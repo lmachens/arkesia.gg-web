@@ -1,13 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Marker, Tooltip, useMapEvents } from "react-leaflet";
 import { ICON_BASE_URL, nodeTypes } from "~/lib/static";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
-import { Area, Tile } from "~/lib/types";
+import type { Area, Tile } from "~/lib/types";
 import { Button, Drawer, InputWrapper, Select, TextInput } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 import ImageDropzone from "./ImageDropzone";
-import { PostNodeActionData } from "~/lib/validation";
+import type { PostNodeActionData } from "~/lib/validation";
 import RichTextEditor from "@mantine/rte";
 import L from "leaflet";
 import TypeItem from "./TypeItem";
@@ -100,8 +100,13 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
         setDescription("");
       }
     }
-  }, [transition.state, actionData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [transition.state, actionData, transition.submission?.method]);
 
+  const handleDrop = useCallback(
+    (files: File[]) => setScreenshot(files[0]),
+    []
+  );
   return (
     <>
       {latLng && (
@@ -189,7 +194,7 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
               error={actionData?.fieldErrors?.type}
             />
             <ImageDropzone
-              onDrop={(files) => setScreenshot(files[0])}
+              onDrop={handleDrop}
               onClear={() => setScreenshot(null)}
               onReject={() =>
                 notifications.showNotification({

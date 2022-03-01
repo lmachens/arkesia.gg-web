@@ -17,4 +17,6 @@ const TypeItem = forwardRef<HTMLDivElement, TypeItemProps>(
   )
 );
 
+TypeItem.displayName = "TypeItem";
+
 export default TypeItem;
