@@ -1,10 +1,9 @@
 import { createPathComponent, updateCircle } from "@react-leaflet/core";
 import type { CircleMarkerProps } from "@react-leaflet/core";
+import type { CircleMarkerOptions, LatLngExpression } from "leaflet";
 import {
-  CircleMarker as LeafletCircleMarker,
   Canvas as LeafletCanvas,
-  CircleMarkerOptions,
-  LatLngExpression,
+  CircleMarker as LeafletCircleMarker,
 } from "leaflet";
 
 export type { CircleMarkerProps } from "@react-leaflet/core";

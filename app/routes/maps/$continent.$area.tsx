@@ -1,21 +1,18 @@
 import { badRequest, ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
+import type { ActionFunction, LoaderFunction } from "remix";
 import {
-  ActionFunction,
-  LoaderFunction,
   redirect,
   unstable_parseMultipartFormData,
-  useActionData,
-  useCatch,
   useLoaderData,
 } from "remix";
 import invariant from "tiny-invariant";
 import { continents } from "~/lib/static";
 import MapSelect from "~/components/MapSelect";
-import { Area } from "~/lib/types";
+import type { Area } from "~/lib/types";
 import { AppShell, Header } from "@mantine/core";
 import { deleteNode, findNodes, findUser, insertNode } from "~/lib/db.server";
-import { AreaNode } from "@prisma/client";
+import type { AreaNode } from "@prisma/client";
 import { postToDiscord } from "~/lib/discord";
 import {
   deleteNodeScreenshot,
@@ -24,11 +21,8 @@ import {
   uploadNodeScreenshot,
 } from "~/lib/storage.server";
 import type { NodeOnDiskFile } from "@remix-run/node";
-import {
-  AreaNodeWithoutId,
-  PostNodeActionData,
-  validateNode,
-} from "~/lib/validation";
+import type { AreaNodeWithoutId, PostNodeActionData } from "~/lib/validation";
+import { validateNode } from "~/lib/validation";
 
 type LoaderData = {
   continentName: string;

@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer } from "react-leaflet";
-import { Area } from "~/lib/types";
+import type { Area } from "~/lib/types";
 import L from "leaflet";
 import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import "leaflet-rotate";
 import MousePosition from "./MousePosition";
-import { AreaNode } from "@prisma/client";
+import type { AreaNode } from "@prisma/client";
 import { Button, Drawer, Text, TextInput, Title } from "@mantine/core";
 import { Form, useActionData, useTransition } from "remix";
 import { useLocalStorageValue } from "@mantine/hooks";
@@ -61,7 +61,8 @@ export default function MapView({ area, nodes }: MapProps) {
         setSelectedNode(null);
       }
     }
-  }, [transition.state, actionData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [transition.state, actionData, transition.submission?.method]);
 
   const displayMap = useMemo(
     () => (
@@ -84,7 +85,7 @@ export default function MapView({ area, nodes }: MapProps) {
         <TileControl area={area} nodes={nodes} onNodeClick={setSelectedNode} />
       </MapContainer>
     ),
-    [area]
+    [area, nodes]
   );
 
   return (

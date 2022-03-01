@@ -1,4 +1,4 @@
-import { Continent, AreaNodeCategory, AreaNodeType } from "./types";
+import type { Continent, AreaNodeCategory, AreaNodeType } from "./types";
 
 export const ICON_BASE_URL =
   "https://wtudsavjhvtxvqitnoxr.supabase.in/storage/v1/object/public/cdn/icons/";
