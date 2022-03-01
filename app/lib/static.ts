@@ -1043,7 +1043,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_180.webp",
       },
       {
-        name: "Luck Shop (Stone/Card) - maybe bad translation for gambling or RNG shop",
+        name: "Luck Shop",
         icon: "minimap_symbol_181.webp",
       },
       {
