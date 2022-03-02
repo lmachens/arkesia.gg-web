@@ -33,6 +33,11 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
       setLatLng(event.latlng);
     },
   });
+
+  useEffect(() => {
+    setLatLng(null);
+  }, [area.name]);
+
   const [type, setType] = useLocalStorageValue<string>({
     key: "last-type",
     defaultValue: "",
