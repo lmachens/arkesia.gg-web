@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Marker, Tooltip, useMapEvents } from "react-leaflet";
+import { Tooltip, useMapEvents } from "react-leaflet";
 import { ICON_BASE_URL, nodeTypes } from "~/lib/static";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
@@ -9,16 +9,8 @@ import { useLocalStorageValue } from "@mantine/hooks";
 import ImageDropzone from "./ImageDropzone";
 import type { PostNodeActionData } from "~/lib/validation";
 import RichTextEditor from "@mantine/rte";
-import L from "leaflet";
 import TypeItem from "./TypeItem";
-
-const DefaultIcon = L.icon({
-  iconUrl: `${ICON_BASE_URL}unknown.webp`,
-  iconSize: [32, 32],
-  tooltipAnchor: [0, -17],
-  popupAnchor: [0, -10],
-});
-L.Marker.prototype.options.icon = DefaultIcon;
+import IconMarker from "./IconMarker";
 
 type DraggableMarkerProps = {
   area: Area;
@@ -110,16 +102,17 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
   return (
     <>
       {latLng && (
-        <Marker
+        <IconMarker
+          type={type}
           draggable={true}
           eventHandlers={eventHandlers}
           position={latLng}
           ref={markerRef}
         >
           <Tooltip permanent direction="top">
-            Choose marker
+            {type || "Choose marker"}
           </Tooltip>
-        </Marker>
+        </IconMarker>
       )}
       <Drawer
         id="new-marker-drawer"

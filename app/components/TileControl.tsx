@@ -3,10 +3,10 @@ import type { AreaNode } from "@prisma/client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { TileLayer, Tooltip, useMap } from "react-leaflet";
 import { getBounds, getMapCenter } from "~/lib/map";
-import { ICON_BASE_URL, nodeTypesMap, TILE_BASE_URL } from "~/lib/static";
+import { TILE_BASE_URL } from "~/lib/static";
 import type { Area } from "~/lib/types";
-import CanvasMarker from "./CanvasMarker";
 import DraggableMarker from "./DraggableMarker";
+import IconMarker from "./IconMarker";
 
 type TileControlProps = {
   area: Area;
@@ -75,25 +75,24 @@ export default function TileControl({
         bounds={getBounds(activeTile)}
       />
       {tileNodes.map((node) => (
-        <CanvasMarker
+        <IconMarker
           key={node.position.toString()}
-          center={node.position as [number, number]}
-          src={`${ICON_BASE_URL}${
-            nodeTypesMap[node.type]?.icon || "unknown.webp"
-          }`}
-          radius={15}
-          padding={0}
-          borderColor={nodeTypesMap[node.type]?.color || "transparent"}
-          onClick={() => {
-            if (!document.querySelector("#new-marker-drawer")) {
-              onNodeClick(node);
-            }
+          position={node.position as [number, number]}
+          alt={node.type}
+          type={node.type}
+          riseOnHover
+          eventHandlers={{
+            click() {
+              if (!document.querySelector("#new-marker-drawer")) {
+                onNodeClick(node);
+              }
+            },
           }}
         >
           <Tooltip direction="top" offset={[0, -10]}>
             {node.name}
           </Tooltip>
-        </CanvasMarker>
+        </IconMarker>
       ))}
       <DraggableMarker area={area} tile={activeTile} />
     </div>
