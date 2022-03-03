@@ -10,25 +10,20 @@ import {
   Text,
   useMantineTheme,
 } from "@mantine/core";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { Cross2Icon } from "@modulz/radix-icons";
 
 type ImageDropzoneProps = Omit<DropzoneProps, "children"> & {
-  image: File | null;
+  src?: string | null;
   onClear: () => void;
 };
 export default function ImageDropzone({
-  image,
+  src,
   onClear,
   onDrop,
   ...props
 }: ImageDropzoneProps) {
   const theme = useMantineTheme();
-
-  const base64Image = useMemo(
-    () => image && URL.createObjectURL(image),
-    [image]
-  );
 
   useEffect(() => {
     const handlePaste = (event: ClipboardEvent) => {
@@ -70,8 +65,8 @@ export default function ImageDropzone({
             spacing="xl"
             style={{ minHeight: 220, pointerEvents: "none" }}
           >
-            {base64Image ? (
-              <Image src={base64Image} alt="" />
+            {src ? (
+              <Image src={src} alt="" />
             ) : (
               <>
                 <ImageUploadIcon
@@ -95,7 +90,7 @@ export default function ImageDropzone({
           </Group>
         )}
       </Dropzone>
-      {base64Image && (
+      {src && (
         <ActionIcon
           onClick={onClear}
           sx={() => ({

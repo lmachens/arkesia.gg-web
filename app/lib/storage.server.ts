@@ -10,7 +10,6 @@ export const supabase = createClient(
 
 export const imageToWebp = async (input: NodeOnDiskFile) => {
   const arrayBuffer = (await input.arrayBuffer()) as Buffer;
-
   return sharp(arrayBuffer).webp().toBuffer();
 };
 
@@ -20,7 +19,7 @@ export const uploadNodeScreenshot = async (
 ) => {
   const bucket = supabase.storage.from("nodes");
   const { data, error } = await bucket.upload(filename, buffer);
-
+  console.log(data, error, filename);
   if (error || !data?.Key) {
     throw error;
   }

@@ -1,5 +1,6 @@
 import type { AreaNode } from "@prisma/client";
 import { PrismaClient } from "@prisma/client";
+import type { AreaNodeWithoutId } from "./validation";
 
 export let db: PrismaClient;
 
@@ -46,13 +47,24 @@ export const requestDataAPI = async (resource: string, payload: any) => {
   return await request.json();
 };
 
+export const findNode = async (id: number) => {
+  const node = await db.areaNode.findUnique({ where: { id } });
+  return node;
+};
+
 export const findNodes = async (areaName: string) => {
   const nodes = await db.areaNode.findMany({ where: { areaName } });
   return nodes;
 };
 
-export const insertNode = async (node: Omit<AreaNode, "id">) => {
+export const insertNode = async (node: AreaNodeWithoutId) => {
   const result = await db.areaNode.create({ data: node });
+  return result;
+};
+
+export const updateNode = async (node: AreaNode) => {
+  const { id, ...data } = node;
+  const result = await db.areaNode.update({ where: { id }, data });
   return result;
 };
 

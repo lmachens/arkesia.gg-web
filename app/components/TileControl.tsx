@@ -1,31 +1,31 @@
 import { Image } from "@mantine/core";
 import type { AreaNode } from "@prisma/client";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { TileLayer, Tooltip, useMap } from "react-leaflet";
 import { getBounds, getMapCenter } from "~/lib/map";
 import { TILE_BASE_URL } from "~/lib/static";
-import type { Area } from "~/lib/types";
-import DraggableMarker from "./DraggableMarker";
+import type { Area, Tile } from "~/lib/types";
 import IconMarker from "./IconMarker";
 
 type TileControlProps = {
   area: Area;
+  activeTile: Tile;
+  onActiveTileChange: (activeTile: Tile) => void;
   nodes: AreaNode[];
   onNodeClick: (node: AreaNode) => void;
+  editingNode: Partial<AreaNode> | null;
 };
 
 export default function TileControl({
   area,
+  activeTile,
+  onActiveTileChange,
   nodes,
   onNodeClick,
+  editingNode,
 }: TileControlProps) {
-  const [activeTile, setActiveTile] = useState(area.tiles[0]);
   const map = useMap();
   const tileLayerRef = useRef<L.TileLayer | null>(null);
-
-  useEffect(() => {
-    setActiveTile(area.tiles[0]);
-  }, [area]);
 
   useEffect(() => {
     map.panTo(getMapCenter(activeTile));
@@ -36,8 +36,11 @@ export default function TileControl({
   }, [activeTile, map]);
 
   const tileNodes = useMemo(
-    () => nodes.filter((node) => node.tileId === activeTile.id),
-    [activeTile.id, nodes]
+    () =>
+      nodes.filter(
+        (node) => node.tileId === activeTile.id && node.id !== editingNode?.id
+      ),
+    [activeTile.id, nodes, editingNode]
   );
 
   return (
@@ -47,7 +50,7 @@ export default function TileControl({
           <Image
             m="md"
             key={tile.full}
-            onClick={() => setActiveTile(tile)}
+            onClick={() => onActiveTileChange(tile)}
             sx={() => ({
               transform: "rotate(-45deg)",
               cursor: "pointer",
@@ -94,7 +97,6 @@ export default function TileControl({
           </Tooltip>
         </IconMarker>
       ))}
-      <DraggableMarker area={area} tile={activeTile} />
     </div>
   );
 }

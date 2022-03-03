@@ -1,18 +1,28 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Tooltip, useMapEvents } from "react-leaflet";
 import { ICON_BASE_URL, nodeTypes } from "~/lib/static";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
 import type { Area, Tile } from "~/lib/types";
-import { Button, Drawer, InputWrapper, Select, TextInput } from "@mantine/core";
+import {
+  Button,
+  Drawer,
+  InputWrapper,
+  ScrollArea,
+  Select,
+  TextInput,
+} from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 import ImageDropzone from "./ImageDropzone";
 import type { PostNodeActionData } from "~/lib/validation";
 import RichTextEditor from "@mantine/rte";
 import TypeItem from "./TypeItem";
 import IconMarker from "./IconMarker";
+import type { AreaNode } from "@prisma/client";
 
 type DraggableMarkerProps = {
+  node: Partial<AreaNode> | null;
+  onChange: (node: Partial<AreaNode> | null) => void;
   area: Area;
   tile: Tile;
 };
@@ -24,24 +34,21 @@ const types = nodeTypes.map((nodeType) => ({
   group: nodeType.category,
 }));
 
-export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
+export default function DraggableMarker({
+  node,
+  onChange,
+  area,
+  tile,
+}: DraggableMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
-  const [latLng, setLatLng] = useState<L.LatLng | null>(null);
+  const [fileScreenshot, setFileScreenshot] = useState<File | null>(null);
 
   useMapEvents({
     contextmenu: (event) => {
-      setLatLng(event.latlng);
+      onChange({ ...node, position: [event.latlng.lat, event.latlng.lng] });
     },
   });
 
-  useEffect(() => {
-    setLatLng(null);
-  }, [area.name]);
-
-  const [type, setType] = useLocalStorageValue<string>({
-    key: "last-type",
-    defaultValue: "",
-  });
   const transition = useTransition();
   const notifications = useNotifications();
   const notificationId = useRef<string | null>(null);
@@ -50,20 +57,6 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
     defaultValue: "",
   });
   const actionData = useActionData<PostNodeActionData>();
-  const [screenshot, setScreenshot] = useState<File | null>(null);
-  const [description, setDescription] = useState("");
-
-  const eventHandlers = useMemo(
-    () => ({
-      dragend() {
-        const marker = markerRef.current;
-        if (marker != null) {
-          setLatLng(marker.getLatLng());
-        }
-      },
-    }),
-    []
-  );
 
   useEffect(() => {
     if (
@@ -92,132 +85,166 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
           message: "",
         });
         notificationId.current = null;
-        setLatLng(null);
-        setScreenshot(null);
-        setDescription("");
+        onChange(null);
+        setFileScreenshot(null);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [transition.state, actionData, transition.submission?.method]);
 
-  const handleDrop = useCallback(
-    (files: File[]) => setScreenshot(files[0]),
-    []
+  const base64Image = useMemo(
+    () => fileScreenshot && URL.createObjectURL(fileScreenshot),
+    [fileScreenshot]
   );
+
   return (
     <>
-      {latLng && (
+      {node?.position && (
         <IconMarker
-          type={type}
+          type={node.type}
           draggable={true}
-          eventHandlers={eventHandlers}
-          position={latLng}
+          eventHandlers={{
+            dragend() {
+              const marker = markerRef.current;
+              if (marker != null) {
+                const latLng = marker.getLatLng();
+                onChange({ ...node, position: [latLng.lat, latLng.lng] });
+              }
+            },
+          }}
+          position={node?.position as [number, number]}
           ref={markerRef}
         >
           <Tooltip permanent direction="top">
-            {type || "Choose marker"}
+            {node.type || "Choose marker"}
           </Tooltip>
         </IconMarker>
       )}
       <Drawer
         id="new-marker-drawer"
-        opened={Boolean(latLng)}
+        opened={Boolean(node?.position)}
         zIndex={700}
         noCloseOnClickOutside
         noOverlay
         padding="md"
         onClose={() => {
-          setLatLng(null);
-          setScreenshot(null);
-          setDescription("");
+          onChange(null);
+          setFileScreenshot(null);
         }}
       >
-        {latLng && (
-          <Form
-            method="post"
-            className="node-form"
-            encType="multipart/form-data"
-            onSubmit={(event) => {
-              event.currentTarget.onformdata = (event) => {
-                if (screenshot) {
-                  event.formData.append("screenshot", screenshot, "screenshot");
-                }
-              };
-            }}
-          >
-            <TextInput
-              label="User-Token"
-              required
-              placeholder="Only for moderators right now"
-              value={userToken}
-              onChange={(event) => setUserToken(event.target.value)}
-              name="userToken"
-              error={actionData?.fieldErrors?.userId}
-            />
-            <TextInput
-              label="Name"
-              required
-              placeholder="A node needs a name"
-              max={30}
-              name="name"
-              error={actionData?.fieldErrors?.name}
-            />
-            <InputWrapper
-              label="Description (optional)"
-              error={actionData?.fieldErrors?.description}
+        <ScrollArea style={{ height: "calc(100% - 50px)" }}>
+          {node?.position && (
+            <Form
+              method="post"
+              className="node-form"
+              encType="multipart/form-data"
+              onSubmit={(event) => {
+                event.currentTarget.onformdata = (event) => {
+                  if (fileScreenshot) {
+                    event.formData.append(
+                      "fileScreenshot",
+                      fileScreenshot,
+                      "fileScreenshot"
+                    );
+                  }
+                };
+              }}
             >
-              <RichTextEditor
-                value={description}
-                onChange={setDescription}
-                placeholder="Additional information about this node"
-                controls={[["bold", "italic", "underline", "clean", "link"]]}
+              <input
+                type="hidden"
+                name="_action"
+                value={node.id ? "update" : "create"}
               />
-              <input type="hidden" value={description} name="description" />
-            </InputWrapper>
-            <Select
-              label="Type"
-              placeholder="Pick one"
-              name="type"
-              value={type}
-              zIndex={800}
-              searchable
-              clearable
-              autoComplete="off"
-              autoCorrect="off"
-              onChange={(value) => setType(value || "")}
-              required
-              itemComponent={TypeItem}
-              maxDropdownHeight={400}
-              data={types}
-              error={actionData?.fieldErrors?.type}
-            />
-            <ImageDropzone
-              onDrop={handleDrop}
-              onClear={() => setScreenshot(null)}
-              onReject={() =>
-                notifications.showNotification({
-                  title: "Upload failed",
-                  message: "",
-                  color: "red",
-                })
-              }
-              image={screenshot}
-            />
-            <input type="hidden" name="_action" value="create" />
-            <input type="hidden" name="lat" value={latLng.lat} />
-            <input type="hidden" name="lng" value={latLng.lng} />
-            <input type="hidden" name="areaName" value={area.name} />
-            <input type="hidden" name="tileId" value={tile.id} />
-            <Button
-              type="submit"
-              disabled={!type || !userToken}
-              loading={transition.state !== "idle"}
-              variant="gradient"
-            >
-              Save
-            </Button>
-          </Form>
-        )}
+              <input type="hidden" name="id" value={node.id} />
+              <TextInput
+                label="User-Token"
+                required
+                placeholder="Only for moderators right now"
+                value={userToken}
+                onChange={(event) => setUserToken(event.target.value)}
+                name="userToken"
+                error={actionData?.fieldErrors?.userId}
+              />
+              <TextInput
+                label="Name"
+                required
+                placeholder="A node needs a name"
+                value={node.name || ""}
+                onChange={(event) =>
+                  onChange({ ...node, name: event.target.value })
+                }
+                max={30}
+                name="name"
+                error={actionData?.fieldErrors?.name}
+              />
+              <InputWrapper
+                label="Description (optional)"
+                error={actionData?.fieldErrors?.description}
+              >
+                <RichTextEditor
+                  value={node.description || ""}
+                  onChange={(description) => onChange({ ...node, description })}
+                  placeholder="Additional information about this node"
+                  controls={[["bold", "italic", "underline", "clean", "link"]]}
+                />
+                <input
+                  type="hidden"
+                  value={node.description || ""}
+                  name="description"
+                />
+              </InputWrapper>
+              <Select
+                label="Type"
+                placeholder="Pick one"
+                name="type"
+                zIndex={800}
+                searchable
+                clearable
+                autoComplete="off"
+                autoCorrect="off"
+                value={node.type}
+                onChange={(type) => onChange({ ...node, type: type || "" })}
+                required
+                itemComponent={TypeItem}
+                maxDropdownHeight={400}
+                data={types}
+                error={actionData?.fieldErrors?.type}
+              />
+              <ImageDropzone
+                onDrop={(files: File[]) => setFileScreenshot(files[0])}
+                onClear={() => {
+                  onChange({ ...node, screenshot: null });
+                  setFileScreenshot(null);
+                }}
+                onReject={() =>
+                  notifications.showNotification({
+                    title: "Upload failed",
+                    message: "",
+                    color: "red",
+                  })
+                }
+                src={base64Image || node.screenshot}
+              />
+              <input
+                type="hidden"
+                name="screenshot"
+                value={node.screenshot || ""}
+              />
+              <input type="hidden" name="lat" value={node.position[0]} />
+              <input type="hidden" name="lng" value={node.position[1]} />
+              <input type="hidden" name="areaName" value={area.name} />
+              <input type="hidden" name="tileId" value={tile.id} />
+              <Button
+                type="submit"
+                disabled={!node.type || !userToken}
+                loading={transition.state !== "idle"}
+                variant="gradient"
+              >
+                Save
+              </Button>
+            </Form>
+          )}
+        </ScrollArea>
       </Drawer>
     </>
   );

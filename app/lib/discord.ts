@@ -2,7 +2,10 @@ import type { AreaNode } from "@prisma/client";
 import TurndownService from "turndown";
 const turndownService = new TurndownService();
 
-export function postToDiscord(action: "inserted" | "deleted", node: AreaNode) {
+export function postToDiscord(
+  action: "inserted" | "deleted" | "updated",
+  node: AreaNode
+) {
   if (!process.env.DISCORD_WEBHOOK_URL) {
     return;
   }
@@ -15,6 +18,8 @@ export function postToDiscord(action: "inserted" | "deleted", node: AreaNode) {
 
   if (action === "inserted") {
     payload.content = `📌 There is a new node on the map!`;
+  } else if (action === "updated") {
+    payload.content = `📝 This node is updated!`;
   } else {
     payload.content = `💀 This node has been deleted!`;
   }
@@ -39,7 +44,7 @@ export function postToDiscord(action: "inserted" | "deleted", node: AreaNode) {
         },
         {
           name: "Position",
-          value: node.position.toString(),
+          value: `[${node.position.join(", ")}]`,
           inline: true,
         },
       ],

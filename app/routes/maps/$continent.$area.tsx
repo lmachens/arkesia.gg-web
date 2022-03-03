@@ -1,4 +1,4 @@
-import { badRequest, ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
 import type { ActionFunction, LoaderFunction } from "remix";
 import {
@@ -9,20 +9,20 @@ import {
 import invariant from "tiny-invariant";
 import { continents } from "~/lib/static";
 import MapSelect from "~/components/MapSelect";
-import type { Area } from "~/lib/types";
+import type { Area, CreateNodeForm, UpdateNodeForm } from "~/lib/types";
 import { AppShell, Header } from "@mantine/core";
-import { deleteNode, findNodes, findUser, insertNode } from "~/lib/db.server";
+import { findNodes } from "~/lib/db.server";
 import type { AreaNode } from "@prisma/client";
-import { postToDiscord } from "~/lib/discord";
+import { uploadHandler } from "~/lib/storage.server";
+import type { AreaNodeWithoutId } from "~/lib/validation";
 import {
-  deleteNodeScreenshot,
-  imageToWebp,
-  uploadHandler,
-  uploadNodeScreenshot,
-} from "~/lib/storage.server";
+  parseFormData,
+  requestCreateNode,
+  requestDeleteNode,
+  requestUpdateNode,
+  requestUser,
+} from "~/lib/actions.server";
 import type { NodeOnDiskFile } from "@remix-run/node";
-import type { AreaNodeWithoutId, PostNodeActionData } from "~/lib/validation";
-import { validateNode } from "~/lib/validation";
 
 type LoaderData = {
   continentName: string;
@@ -59,55 +59,85 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export const action: ActionFunction = async ({ request }) => {
   const body = await unstable_parseMultipartFormData(request, uploadHandler);
-  const user = await findUser(body.get("userToken")!.toString());
+  const user = await requestUser(body.get("userToken")?.toString());
+  if (user instanceof Response) {
+    return user;
+  }
 
-  if (request.method === "POST") {
-    const partialNode: AreaNodeWithoutId = {
-      areaName: body.get("areaName")!.toString(),
-      position: [+body.get("lat")!, +body.get("lng")!],
-      type: body.get("type")!.toString(),
-      name: body.get("name")!.toString(),
-      tileId: +body.get("tileId")!.toString(),
-      description:
-        body.get("description")?.toString().replace("<p><br></p>", "") || "",
-      screenshot: "",
-      userId: user?.id || 0,
+  const action = body.get("_action")?.toString();
+
+  if (action === "create") {
+    const formData = parseFormData<CreateNodeForm>(body, {
+      lat: "number",
+      lng: "number",
+      areaName: "string",
+      type: "string",
+      name: "string",
+      tileId: "number",
+      description: "string",
+      screenshot: "string",
+    });
+
+    if (formData instanceof Response) {
+      return formData;
+    }
+    const position = [formData.lat, formData.lng];
+    const { lat, lng, ...partialFormData } = formData;
+    const node: AreaNodeWithoutId = {
+      ...partialFormData,
+      position,
+      description: formData.description.replace("<p><br></p>", ""),
+      userId: user.id,
     };
 
-    const fieldErrors = validateNode(partialNode);
-    if (Object.keys(fieldErrors).length > 0) {
-      return badRequest<PostNodeActionData>({
-        fieldErrors,
-        fields: partialNode,
-      });
+    const fileScreenshot = body.get("fileScreenshot") as NodeOnDiskFile | null;
+    const createdNode = await requestCreateNode(node, fileScreenshot);
+    if (createdNode instanceof Response) {
+      return createdNode;
+    }
+  } else if (action === "update") {
+    const formData = parseFormData<UpdateNodeForm>(body, {
+      id: "number",
+      lat: "number",
+      lng: "number",
+      areaName: "string",
+      type: "string",
+      name: "string",
+      tileId: "number",
+      description: "string",
+      screenshot: "string",
+    });
+
+    if (formData instanceof Response) {
+      return formData;
+    }
+    const position = [formData.lat, formData.lng];
+    const { lat, lng, ...partialFormData } = formData;
+    const node: AreaNode = {
+      ...partialFormData,
+      position,
+      description: formData.description.replace("<p><br></p>", ""),
+      userId: user.id,
+    };
+    const fileScreenshot = body.get("fileScreenshot") as NodeOnDiskFile | null;
+    const createdNode = await requestUpdateNode(node, fileScreenshot);
+    if (createdNode instanceof Response) {
+      return createdNode;
+    }
+  } else if (action === "delete") {
+    const formData = parseFormData<{ id: number }>(body, {
+      id: "number",
+    });
+    if (formData instanceof Response) {
+      return formData;
     }
 
-    const screenshot = body.get("screenshot") as NodeOnDiskFile | undefined;
-    if (screenshot) {
-      const imageWebp = await imageToWebp(screenshot);
-      const filename =
-        `${partialNode.areaName}_${partialNode.type}_${partialNode.position}.webp`.replace(
-          /\s/g,
-          "_"
-        );
-      partialNode.screenshot = await uploadNodeScreenshot(filename, imageWebp);
+    const deletedNode = await requestDeleteNode(formData.id);
+    if (deletedNode instanceof Response) {
+      return deletedNode;
     }
-
-    const node = await insertNode(partialNode);
-    postToDiscord("inserted", node);
-  } else if (request.method === "DELETE") {
-    if (!user) {
-      return badRequest<PostNodeActionData>({
-        fieldErrors: { userId: "User not found" },
-      });
-    }
-
-    const deletedNode = await deleteNode(+body.get("nodeId")!);
-    if (deletedNode.screenshot) {
-      await deleteNodeScreenshot(deletedNode.screenshot);
-    }
-    postToDiscord("deleted", deletedNode);
   }
+
   return null;
 };
 

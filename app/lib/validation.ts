@@ -2,11 +2,13 @@ import type { AreaNode } from "@prisma/client";
 
 export type AreaNodeWithoutId = Omit<AreaNode, "id">;
 
+export type FieldErrors = {
+  [key: string]: string;
+};
+
 export type PostNodeActionData = {
   formError?: string;
-  fieldErrors?: {
-    [key in keyof AreaNodeWithoutId]?: string;
-  };
+  fieldErrors?: FieldErrors;
   fields?: AreaNodeWithoutId;
 };
 
