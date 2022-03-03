@@ -5,6 +5,21 @@ export type Tile = {
   max: [number, number];
 };
 
+export type CreateNodeForm = {
+  lat: number;
+  lng: number;
+  areaName: string;
+  type: string;
+  name: string;
+  tileId: number;
+  description: string;
+  screenshot: string;
+};
+
+export type UpdateNodeForm = {
+  id: number;
+} & CreateNodeForm;
+
 export type Area = {
   name: string;
   tiles: Tile[];

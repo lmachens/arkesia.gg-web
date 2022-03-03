@@ -10,10 +10,12 @@ import ImagePreview from "./ImagePreview";
 type NodeDetailsProps = {
   selectedNode: AreaNode | null;
   onClose: () => void;
+  onEdit: (node: AreaNode) => void;
 };
 export default function NodeDetails({
   selectedNode,
   onClose,
+  onEdit,
 }: NodeDetailsProps) {
   const transition = useTransition();
   const actionData = useActionData();
@@ -74,6 +76,8 @@ export default function NodeDetails({
       >
         {selectedNode && (
           <Form method="delete" className="node-form">
+            <input type="hidden" name="_action" value="delete" />
+            <input type="hidden" name="id" value={selectedNode.id} />
             <Title order={3}>{selectedNode.name}</Title>
             <Text variant="gradient">{selectedNode.type}</Text>
             {selectedNode.description && (
@@ -105,9 +109,15 @@ export default function NodeDetails({
               name="userToken"
               error={actionData?.fieldErrors?.userId}
             />
-            <input type="hidden" name="nodeId" value={selectedNode.id} />
             <Button type="submit" color="red">
               Delete
+            </Button>
+            <Button
+              type="button"
+              color="teal"
+              onClick={() => onEdit(selectedNode)}
+            >
+              Edit
             </Button>
           </Form>
         )}

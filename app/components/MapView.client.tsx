@@ -9,6 +9,7 @@ import type { AreaNode } from "@prisma/client";
 import TileControl from "./TileControl";
 import { getMapCenter } from "~/lib/map";
 import NodeDetails from "./NodeDetails";
+import DraggableMarker from "./DraggableMarker";
 
 includeCanvasTileLayer();
 
@@ -18,10 +19,19 @@ type MapProps = {
 };
 export default function MapView({ area, nodes }: MapProps) {
   const [selectedNode, setSelectedNode] = useState<AreaNode | null>(null);
+  const [activeTile, setActiveTile] = useState(area.tiles[0]);
+  const [editingNode, setEditingNode] = useState<Partial<AreaNode> | null>(
+    null
+  );
 
   useEffect(() => {
     setSelectedNode(null);
+    setEditingNode(null);
   }, [area.name]);
+
+  useEffect(() => {
+    setActiveTile(area.tiles[0]);
+  }, [area]);
 
   return (
     <MapContainer
@@ -40,10 +50,27 @@ export default function MapView({ area, nodes }: MapProps) {
       preferCanvas
     >
       <MousePosition />
-      <TileControl area={area} nodes={nodes} onNodeClick={setSelectedNode} />
+      <TileControl
+        area={area}
+        nodes={nodes}
+        editingNode={editingNode}
+        onNodeClick={setSelectedNode}
+        activeTile={activeTile}
+        onActiveTileChange={setActiveTile}
+      />
+      <DraggableMarker
+        area={area}
+        tile={activeTile}
+        node={editingNode}
+        onChange={setEditingNode}
+      />
       <NodeDetails
         selectedNode={selectedNode}
         onClose={() => setSelectedNode(null)}
+        onEdit={(node) => {
+          setEditingNode(node);
+          setSelectedNode(null);
+        }}
       />
     </MapContainer>
   );
