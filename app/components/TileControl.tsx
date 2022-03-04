@@ -1,8 +1,8 @@
 import { Image } from "@mantine/core";
 import type { AreaNode } from "@prisma/client";
 import { useEffect, useMemo, useRef } from "react";
-import { TileLayer, Tooltip, useMap } from "react-leaflet";
-import { getBounds, getMapCenter } from "~/lib/map";
+import { TileLayer, Tooltip } from "react-leaflet";
+import { getBounds } from "~/lib/map";
 import { TILE_BASE_URL } from "~/lib/static";
 import type { Area, Tile } from "~/lib/types";
 import IconMarker from "./IconMarker";
@@ -24,16 +24,14 @@ export default function TileControl({
   onNodeClick,
   editingNode,
 }: TileControlProps) {
-  const map = useMap();
   const tileLayerRef = useRef<L.TileLayer | null>(null);
 
   useEffect(() => {
-    map.panTo(getMapCenter(activeTile));
     if (tileLayerRef.current) {
       tileLayerRef.current.options.bounds = getBounds(activeTile);
       tileLayerRef.current.setUrl(`${TILE_BASE_URL}${activeTile.tile}`);
     }
-  }, [activeTile, map]);
+  }, [activeTile]);
 
   const tileNodes = useMemo(
     () =>
