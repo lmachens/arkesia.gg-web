@@ -42,7 +42,7 @@ export function postToDiscord(
         },
         {
           name: "Name",
-          value: node.name,
+          value: node.name || "-",
           inline: true,
         },
         {
