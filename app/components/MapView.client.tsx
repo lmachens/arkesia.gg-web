@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { MapContainer } from "react-leaflet";
-import type { Area, Tile } from "~/lib/types";
+import type { Tile } from "~/lib/types";
 import L from "leaflet";
 import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import "leaflet-rotate";
@@ -29,6 +29,7 @@ export default function MapView() {
   const tileIndex = tileParam ? +tileParam : 0;
   const nodeParam = searchParams.get("node");
   const nodeId = nodeParam ? +nodeParam : null;
+  const [map, setMap] = useState<L.Map | null>(null);
 
   const [activeTile, setActiveTile] = useState<Tile>(
     () => area.tiles[tileIndex]
@@ -58,21 +59,35 @@ export default function MapView() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTile, selectedNode]);
 
-  useDidUpdate(() => {
-    if (
-      tileIndex !== area.tiles.findIndex((tile) => tile.id === activeTile.id)
-    ) {
-      setActiveTile(area.tiles[tileIndex]);
-      setSelectedNode(null);
+  const initialCenter = useMemo(() => {
+    if (selectedNode) {
+      return selectedNode.position as [number, number];
     }
-    if (nodeId && selectedNode && nodeId !== selectedNode.id) {
-      setSelectedNode(nodes.find((node) => node.id === nodeId) || null);
+    return getMapCenter(area.tiles[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useDidUpdate(() => {
+    const isTileChanged =
+      tileIndex !== area.tiles.findIndex((tile) => tile.id === activeTile.id);
+    const isNodeChanged = nodeId !== selectedNode?.id;
+    if (isTileChanged) {
+      setActiveTile(area.tiles[tileIndex]);
+    }
+    if (isNodeChanged) {
+      const newSelectedNode = nodes.find((node) => node.id === nodeId) || null;
+      setSelectedNode(newSelectedNode);
+      if (newSelectedNode) {
+        map!.panTo(newSelectedNode.position as [number, number]);
+      } else if (isTileChanged) {
+        map!.panTo(getMapCenter(area.tiles[tileIndex]));
+      }
     }
   }, [tileIndex, nodeId]);
 
   return (
     <MapContainer
-      center={getMapCenter(area.tiles[0])}
+      center={initialCenter}
       zoom={1}
       crs={L.CRS.Simple}
       zoomControl={false}
@@ -85,6 +100,7 @@ export default function MapView() {
       rotateControl={false}
       bearing={-45}
       preferCanvas
+      whenCreated={setMap}
     >
       <MousePosition />
       <TileControl
