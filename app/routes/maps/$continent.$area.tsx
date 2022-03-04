@@ -10,7 +10,7 @@ import invariant from "tiny-invariant";
 import { continents } from "~/lib/static";
 import MapSelect from "~/components/MapSelect";
 import type { Area, CreateNodeForm, UpdateNodeForm } from "~/lib/types";
-import { AppShell, Header } from "@mantine/core";
+import { AppShell, Header, LoadingOverlay } from "@mantine/core";
 import { findNodes } from "~/lib/db.server";
 import type { AreaNode } from "@prisma/client";
 import { uploadHandler } from "~/lib/storage.server";
@@ -165,8 +165,8 @@ export default function MapPage() {
         },
       })}
     >
-      <ClientOnly>
-        <MapView area={area} nodes={nodes} />
+      <ClientOnly fallback={<LoadingOverlay visible />}>
+        {() => <MapView area={area} nodes={nodes} />}
       </ClientOnly>
     </AppShell>
   );
