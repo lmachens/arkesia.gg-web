@@ -1,10 +1,12 @@
 import type { AreaNode } from "@prisma/client";
 import TurndownService from "turndown";
+import { continents } from "./static";
 const turndownService = new TurndownService();
 
 export function postToDiscord(
-  action: "inserted" | "deleted" | "updated",
-  node: AreaNode
+  action: "inserted" | "deleted" | "updated" | "report",
+  node: AreaNode,
+  reason?: string
 ) {
   if (!process.env.DISCORD_WEBHOOK_URL) {
     return;
@@ -17,16 +19,27 @@ export function postToDiscord(
   };
 
   if (action === "inserted") {
-    payload.content = `📌 There is a new node on the map!`;
+    payload.content = node.userId
+      ? `📌 There is a new node on the map!`
+      : `👾 This node needs validation!`;
   } else if (action === "updated") {
     payload.content = `📝 This node is updated!`;
-  } else {
+  } else if (action === "deleted") {
     payload.content = `💀 This node has been deleted!`;
+  } else if (action === "report") {
+    payload.content = `💡 There is an issue with this node:\n\n${reason}`;
   }
 
+  const continent = continents.find((continent) =>
+    continent.areas.some((area) => area.name === node.areaName)
+  );
   payload.embeds = [
     {
       fields: [
+        {
+          name: "URL",
+          value: `https://www.arkesia.gg/maps/${continent?.name}/${node.areaName}/?tile=${node.tileId}&node=${node.id}`,
+        },
         {
           name: "Name",
           value: node.name,
@@ -35,11 +48,6 @@ export function postToDiscord(
         {
           name: "Type",
           value: node.type,
-          inline: true,
-        },
-        {
-          name: "Area",
-          value: node.areaName,
           inline: true,
         },
         {

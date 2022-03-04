@@ -12,15 +12,15 @@ import NodeDetails from "./NodeDetails";
 import DraggableMarker from "./DraggableMarker";
 import type { URLSearchParamsInit } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
-import { useDidUpdate } from "@mantine/hooks";
+import { useDidUpdate, useLocalStorageValue } from "@mantine/hooks";
+import { useLoaderData } from "remix";
+import type { LoaderData } from "~/routes/maps/$continent.$area";
 
 includeCanvasTileLayer();
 
-type MapProps = {
-  area: Area;
-  nodes: AreaNode[];
-};
-export default function MapView({ area, nodes }: MapProps) {
+export default function MapView() {
+  const { area, nodes } = useLoaderData<LoaderData>();
+
   const [searchParams, setSearchParams] = useSearchParams();
   const [editingNode, setEditingNode] = useState<Partial<AreaNode> | null>(
     null

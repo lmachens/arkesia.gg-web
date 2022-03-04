@@ -17,10 +17,7 @@ export const validateNode = (node: AreaNodeWithoutId) => {
     [key in keyof AreaNodeWithoutId]?: string;
   } = {};
 
-  if (!node.userId) {
-    result.userId = "User not found";
-  }
-  if (node.name.length < 3 || node.name.length > 30) {
+  if (node.name && (node.name.length < 3 || node.name.length > 30)) {
     result.name = "Invalid name length";
   }
   if (node.description && node.description.length > 1000) {

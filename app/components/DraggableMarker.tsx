@@ -52,7 +52,7 @@ export default function DraggableMarker({
   const transition = useTransition();
   const notifications = useNotifications();
   const notificationId = useRef<string | null>(null);
-  const [userToken, setUserToken] = useLocalStorageValue<string>({
+  const [userToken] = useLocalStorageValue<string>({
     key: "user-token",
     defaultValue: "",
   });
@@ -81,7 +81,7 @@ export default function DraggableMarker({
       } else {
         notifications.updateNotification(notificationId.current, {
           id: notificationId.current,
-          title: "Node was added 🤘",
+          title: userToken ? "Node added 🤘" : "Node added for review 🤘",
           message: "",
         });
         notificationId.current = null;
@@ -103,6 +103,7 @@ export default function DraggableMarker({
         <IconMarker
           type={node.type}
           draggable={true}
+          verified
           eventHandlers={{
             dragend() {
               const marker = markerRef.current;
@@ -156,18 +157,26 @@ export default function DraggableMarker({
                 value={node.id ? "update" : "create"}
               />
               <input type="hidden" name="id" value={node.id} />
-              <TextInput
-                label="User-Token"
+              <input type="hidden" name="userToken" value={userToken} />
+              <Select
+                label="Type"
+                placeholder="Pick one"
+                name="type"
+                zIndex={800}
+                searchable
+                clearable
+                autoComplete="off"
+                autoCorrect="off"
+                value={node.type}
+                onChange={(type) => onChange({ ...node, type: type || "" })}
                 required
-                placeholder="Only for moderators right now"
-                value={userToken}
-                onChange={(event) => setUserToken(event.target.value)}
-                name="userToken"
-                error={actionData?.fieldErrors?.userId}
+                itemComponent={TypeItem}
+                maxDropdownHeight={400}
+                data={types}
+                error={actionData?.fieldErrors?.type}
               />
               <TextInput
                 label="Name"
-                required
                 placeholder="A node needs a name"
                 value={node.name || ""}
                 onChange={(event) =>
@@ -196,23 +205,6 @@ export default function DraggableMarker({
                   name="description"
                 />
               </InputWrapper>
-              <Select
-                label="Type"
-                placeholder="Pick one"
-                name="type"
-                zIndex={800}
-                searchable
-                clearable
-                autoComplete="off"
-                autoCorrect="off"
-                value={node.type}
-                onChange={(type) => onChange({ ...node, type: type || "" })}
-                required
-                itemComponent={TypeItem}
-                maxDropdownHeight={400}
-                data={types}
-                error={actionData?.fieldErrors?.type}
-              />
               <ImageDropzone
                 onDrop={(files: File[]) => setFileScreenshot(files[0])}
                 onClear={() => {
@@ -239,11 +231,11 @@ export default function DraggableMarker({
               <input type="hidden" name="tileId" value={tile.id} />
               <Button
                 type="submit"
-                disabled={!node.type || !userToken}
+                disabled={!node.type}
                 loading={transition.state !== "idle"}
                 variant="gradient"
               >
-                Save
+                {userToken ? "Save" : "Submit for review"}
               </Button>
             </Form>
           )}

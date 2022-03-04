@@ -1,12 +1,11 @@
-import { Button, Drawer, Text, TextInput, Title } from "@mantine/core";
-import { useDidUpdate, useLocalStorageValue } from "@mantine/hooks";
+import { Button, Drawer, Space, Text, TextInput, Title } from "@mantine/core";
+import { useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
 import type { AreaNode } from "@prisma/client";
 import { useEffect, useRef } from "react";
 import { useMapEvents } from "react-leaflet";
 import { Form, useActionData, useTransition } from "remix";
 import ImagePreview from "./ImagePreview";
-import { useSearchParams } from "react-router-dom";
 import NodeDescription from "./NodeDescription";
 
 type NodeDetailsProps = {
@@ -21,7 +20,7 @@ export default function NodeDetails({
 }: NodeDetailsProps) {
   const transition = useTransition();
   const actionData = useActionData();
-  const [userToken, setUserToken] = useLocalStorageValue<string>({
+  const [userToken] = useLocalStorageValue<string>({
     key: "user-token",
     defaultValue: "",
   });
@@ -35,7 +34,7 @@ export default function NodeDetails({
     ) {
       notificationId.current = notifications.showNotification({
         loading: true,
-        title: "Removing node",
+        title: "Submitting deletion request",
         message: "",
         autoClose: false,
         disallowClose: true,
@@ -51,7 +50,7 @@ export default function NodeDetails({
       } else {
         notifications.updateNotification(notificationId.current, {
           id: notificationId.current,
-          title: "Node was removed 💀",
+          title: userToken ? "Node deleted 💀" : "Submitted for deletion 💀",
           message: "",
         });
         notificationId.current = null;
@@ -79,37 +78,48 @@ export default function NodeDetails({
         onClose={onClose}
       >
         {selectedNode && (
-          <Form method="delete" className="node-form">
-            <input type="hidden" name="_action" value="delete" />
-            <input type="hidden" name="id" value={selectedNode.id} />
-            <Title order={3}>{selectedNode.name}</Title>
-            <Text variant="gradient">{selectedNode.type}</Text>
+          <>
+            <Title order={3}>{selectedNode.name || selectedNode.type}</Title>
+            <Text color="teal">{selectedNode.type}</Text>
             {selectedNode.description && (
               <NodeDescription html={selectedNode.description} />
             )}
             {selectedNode.screenshot && (
               <ImagePreview src={selectedNode.screenshot} />
             )}
-            <TextInput
-              label="User-Token"
-              required
-              placeholder="Only for moderators right now"
-              value={userToken}
-              onChange={(event) => setUserToken(event.target.value)}
-              name="userToken"
-              error={actionData?.fieldErrors?.userId}
-            />
-            <Button type="submit" color="red">
-              Delete
-            </Button>
-            <Button
-              type="button"
-              color="teal"
-              onClick={() => onEdit(selectedNode)}
-            >
-              Edit
-            </Button>
-          </Form>
+            <Space h="md" />
+            {userToken ? (
+              <Form method="delete" className="node-form">
+                <input type="hidden" name="_action" value="delete" />
+                <input type="hidden" name="id" value={selectedNode.id} />
+                <input type="hidden" name="userToken" value={userToken} />
+                <Button type="submit" color="red">
+                  Delete
+                </Button>
+                <Button
+                  type="button"
+                  color="teal"
+                  onClick={() => onEdit(selectedNode)}
+                >
+                  Edit
+                </Button>
+              </Form>
+            ) : (
+              <Form method="post" className="node-form">
+                <input type="hidden" name="_action" value="report" />
+                <input type="hidden" name="id" value={selectedNode.id} />
+                <TextInput
+                  label="Is there any issue with this node?"
+                  placeholder="Give us details"
+                  name="reason"
+                  required
+                />
+                <Button type="submit" color="teal">
+                  Report issue
+                </Button>
+              </Form>
+            )}
+          </>
         )}
       </Drawer>
     </>

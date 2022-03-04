@@ -1,4 +1,4 @@
-import { ClientOnly } from "remix-utils";
+import { badRequest, ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
 import type { ActionFunction, LoaderFunction } from "remix";
 import {
@@ -8,23 +8,25 @@ import {
 } from "remix";
 import invariant from "tiny-invariant";
 import { continents } from "~/lib/static";
-import MapSelect from "~/components/MapSelect";
 import type { Area, CreateNodeForm, UpdateNodeForm } from "~/lib/types";
-import { AppShell, Header, LoadingOverlay } from "@mantine/core";
+import { AppShell, LoadingOverlay } from "@mantine/core";
 import { findNodes } from "~/lib/db.server";
 import type { AreaNode } from "@prisma/client";
 import { uploadHandler } from "~/lib/storage.server";
-import type { AreaNodeWithoutId } from "~/lib/validation";
+import type { AreaNodeWithoutId, PostNodeActionData } from "~/lib/validation";
 import {
   parseFormData,
   requestCreateNode,
   requestDeleteNode,
+  requestReportNode,
   requestUpdateNode,
   requestUser,
 } from "~/lib/actions.server";
 import type { NodeOnDiskFile } from "@remix-run/node";
+import AppHeader from "~/components/AppHeader";
+import { postToDiscord } from "~/lib/discord";
 
-type LoaderData = {
+export type LoaderData = {
   continentName: string;
   area: Area;
   continentNames: string[];
@@ -60,105 +62,128 @@ export const loader: LoaderFunction = async ({ params }) => {
 export const action: ActionFunction = async ({ request }) => {
   const body = await unstable_parseMultipartFormData(request, uploadHandler);
   const user = await requestUser(body.get("userToken")?.toString());
-  if (user instanceof Response) {
-    return user;
-  }
 
   const action = body.get("_action")?.toString();
 
-  if (action === "create") {
-    const formData = parseFormData<CreateNodeForm>(body, {
-      lat: "number",
-      lng: "number",
-      areaName: "string",
-      type: "string",
-      name: "string",
-      tileId: "number",
-      description: "string",
-      screenshot: "string",
-    });
+  switch (action) {
+    case "create":
+      {
+        const formData = parseFormData<CreateNodeForm>(body, {
+          lat: "number",
+          lng: "number",
+          areaName: "string",
+          type: "string",
+          name: "string",
+          tileId: "number",
+          description: "string",
+          screenshot: "string",
+        });
 
-    if (formData instanceof Response) {
-      return formData;
-    }
-    const position = [formData.lat, formData.lng];
-    const { lat, lng, ...partialFormData } = formData;
-    const node: AreaNodeWithoutId = {
-      ...partialFormData,
-      position,
-      description: formData.description.replace("<p><br></p>", ""),
-      userId: user.id,
-    };
+        if (formData instanceof Response) {
+          return formData;
+        }
+        const position = [formData.lat, formData.lng];
+        const { lat, lng, ...partialFormData } = formData;
+        const node: AreaNodeWithoutId = {
+          ...partialFormData,
+          position,
+          description: formData.description.replace("<p><br></p>", ""),
+          userId: user ? user.id : null,
+        };
 
-    const fileScreenshot = body.get("fileScreenshot") as NodeOnDiskFile | null;
-    const createdNode = await requestCreateNode(node, fileScreenshot);
-    if (createdNode instanceof Response) {
-      return createdNode;
-    }
-  } else if (action === "update") {
-    const formData = parseFormData<UpdateNodeForm>(body, {
-      id: "number",
-      lat: "number",
-      lng: "number",
-      areaName: "string",
-      type: "string",
-      name: "string",
-      tileId: "number",
-      description: "string",
-      screenshot: "string",
-    });
+        const fileScreenshot = body.get(
+          "fileScreenshot"
+        ) as NodeOnDiskFile | null;
+        const createdNode = await requestCreateNode(node, fileScreenshot);
+        if (createdNode instanceof Response) {
+          return createdNode;
+        }
+      }
+      break;
+    case "update":
+      {
+        if (!user) {
+          return badRequest<PostNodeActionData>({
+            formError: "You shall not pass",
+          });
+        }
+        const formData = parseFormData<UpdateNodeForm>(body, {
+          id: "number",
+          lat: "number",
+          lng: "number",
+          areaName: "string",
+          type: "string",
+          name: "string",
+          tileId: "number",
+          description: "string",
+          screenshot: "string",
+        });
 
-    if (formData instanceof Response) {
-      return formData;
-    }
-    const position = [formData.lat, formData.lng];
-    const { lat, lng, ...partialFormData } = formData;
-    const node: AreaNode = {
-      ...partialFormData,
-      position,
-      description: formData.description.replace("<p><br></p>", ""),
-      userId: user.id,
-    };
-    const fileScreenshot = body.get("fileScreenshot") as NodeOnDiskFile | null;
-    const createdNode = await requestUpdateNode(node, fileScreenshot);
-    if (createdNode instanceof Response) {
-      return createdNode;
-    }
-  } else if (action === "delete") {
-    const formData = parseFormData<{ id: number }>(body, {
-      id: "number",
-    });
-    if (formData instanceof Response) {
-      return formData;
-    }
+        if (formData instanceof Response) {
+          return formData;
+        }
+        const position = [formData.lat, formData.lng];
+        const { lat, lng, ...partialFormData } = formData;
+        const node: Omit<AreaNode, "validationNote"> = {
+          ...partialFormData,
+          position,
+          description: formData.description.replace("<p><br></p>", ""),
+          userId: user ? user.id : null,
+        };
+        const fileScreenshot = body.get(
+          "fileScreenshot"
+        ) as NodeOnDiskFile | null;
+        const createdNode = await requestUpdateNode(node, fileScreenshot);
+        if (createdNode instanceof Response) {
+          return createdNode;
+        }
+      }
+      break;
+    case "delete":
+      {
+        if (!user) {
+          return badRequest<PostNodeActionData>({
+            formError: "You shall not pass",
+          });
+        }
 
-    const deletedNode = await requestDeleteNode(formData.id);
-    if (deletedNode instanceof Response) {
-      return deletedNode;
-    }
+        const formData = parseFormData<{ id: number }>(body, {
+          id: "number",
+        });
+        if (formData instanceof Response) {
+          return formData;
+        }
+
+        const deletedNode = await requestDeleteNode(formData.id);
+        if (deletedNode instanceof Response) {
+          return deletedNode;
+        }
+      }
+      break;
+    case "report":
+      {
+        const formData = parseFormData<{ id: number; reason: string }>(body, {
+          id: "number",
+          reason: "string",
+        });
+        if (formData instanceof Response) {
+          return formData;
+        }
+
+        requestReportNode(formData.id, formData.reason);
+      }
+      break;
   }
 
   return null;
 };
 
 export default function MapPage() {
-  const { continentName, area, continentNames, areaNames, nodes } =
-    useLoaderData<LoaderData>();
-
   return (
     <AppShell
       padding={0}
       style={{ overflow: "hidden" }}
-      header={
-        <Header height={60} padding="xs" className="nav">
-          <MapSelect
-            continentName={continentName}
-            areaName={area.name}
-            continentNames={continentNames}
-            areaNames={areaNames}
-          />
-        </Header>
-      }
+      header={<AppHeader />}
       styles={(theme) => ({
         main: {
           backgroundColor: theme.colors.dark[5],
@@ -167,7 +192,7 @@ export default function MapPage() {
       })}
     >
       <ClientOnly fallback={<LoadingOverlay visible />}>
-        {() => <MapView area={area} nodes={nodes} />}
+        {() => <MapView />}
       </ClientOnly>
     </AppShell>
   );
