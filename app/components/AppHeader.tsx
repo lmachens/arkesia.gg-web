@@ -1,11 +1,4 @@
-import {
-  ActionIcon,
-  Dialog,
-  Group,
-  Header,
-  Text,
-  TextInput,
-} from "@mantine/core";
+import { ActionIcon, Dialog, Header, Text, TextInput } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 import { GearIcon } from "@modulz/radix-icons";
 import { useState } from "react";

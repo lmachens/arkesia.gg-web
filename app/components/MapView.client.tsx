@@ -12,7 +12,7 @@ import NodeDetails from "./NodeDetails";
 import DraggableMarker from "./DraggableMarker";
 import type { URLSearchParamsInit } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
-import { useDidUpdate, useLocalStorageValue } from "@mantine/hooks";
+import { useDidUpdate } from "@mantine/hooks";
 import { useLoaderData } from "remix";
 import type { LoaderData } from "~/routes/maps/$continent.$area";
 
@@ -25,41 +25,50 @@ export default function MapView() {
   const [editingNode, setEditingNode] = useState<Partial<AreaNode> | null>(
     null
   );
-  const [activeTile, setActiveTile] = useState<Tile>(() => {
-    const tileParam = searchParams.get("tile");
-    const tileIndex = tileParam ? +tileParam : 0;
-    return area.tiles[tileIndex];
-  });
+  const tileParam = searchParams.get("tile");
+  const tileIndex = tileParam ? +tileParam : 0;
+  const nodeParam = searchParams.get("node");
+  const nodeId = nodeParam ? +nodeParam : null;
 
-  const [selectedNode, setSelectedNode] = useState<AreaNode | null>(() => {
-    const nodeParam = searchParams.get("node");
-    const nodeId = nodeParam ? +nodeParam : null;
-    return nodes.find((node) => node.id === nodeId) || null;
-  });
+  const [activeTile, setActiveTile] = useState<Tile>(
+    () => area.tiles[tileIndex]
+  );
+  const [selectedNode, setSelectedNode] = useState<AreaNode | null>(
+    () => nodes.find((node) => node.id === nodeId) || null
+  );
 
   useDidUpdate(() => {
     if (editingNode !== null) {
       setEditingNode(null);
     }
 
-    const tileParam = searchParams.get("tile");
-    const tileIndex = tileParam ? +tileParam : 0;
     setActiveTile(area.tiles[tileIndex]);
-
-    const nodeParam = searchParams.get("node");
-    const nodeId = nodeParam ? +nodeParam : null;
     setSelectedNode(nodes.find((node) => node.id === nodeId) || null);
   }, [area.name]);
 
   useDidUpdate(() => {
     const tileIndex = area.tiles.findIndex((tile) => tile.id === activeTile.id);
-    let searchParams: URLSearchParamsInit = `tile=${tileIndex}`;
+    let newSearchParams: URLSearchParamsInit = `tile=${tileIndex}`;
     if (selectedNode) {
-      searchParams += `&node=${selectedNode.id}`;
+      newSearchParams += `&node=${selectedNode.id}`;
     }
-    setSearchParams(searchParams);
+    if (searchParams.toString() !== newSearchParams.toString()) {
+      setSearchParams(newSearchParams);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTile, selectedNode]);
+
+  useDidUpdate(() => {
+    if (
+      tileIndex !== area.tiles.findIndex((tile) => tile.id === activeTile.id)
+    ) {
+      setActiveTile(area.tiles[tileIndex]);
+      setSelectedNode(null);
+    }
+    if (nodeId && selectedNode && nodeId !== selectedNode.id) {
+      setSelectedNode(nodes.find((node) => node.id === nodeId) || null);
+    }
+  }, [tileIndex, nodeId]);
 
   return (
     <MapContainer
