@@ -34,15 +34,11 @@ export type AreaNodeType = {
   category: string;
   name: string;
   icon: string;
-  color: string;
 };
 
-type PartialAreaNodeType = Omit<AreaNodeType, "category" | "color"> & {
-  color?: string;
-};
+type PartialAreaNodeType = Omit<AreaNodeType, "category">;
 
 export type AreaNodeCategory = {
   name: string;
-  color: string;
   types: PartialAreaNodeType[];
 };

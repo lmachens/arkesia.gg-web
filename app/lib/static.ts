@@ -7,8 +7,16 @@ export const TILE_BASE_URL =
 
 export const nodeCategories: AreaNodeCategory[] = [
   {
+    name: "Areas & Orientation",
+    types: [
+      {
+        name: "Map Transition",
+        icon: "minimap_symbol_7.webp",
+      },
+    ],
+  },
+  {
     name: "Collectibles",
-    color: "rgba(200, 200, 200, 0.7)",
     types: [
       {
         name: "Mokoko Seeds",
@@ -18,22 +26,10 @@ export const nodeCategories: AreaNodeCategory[] = [
   },
   {
     name: "Enemies",
-    color: "rgba(220, 20, 60, 0.7)",
     types: [],
   },
   {
-    name: "Locations",
-    color: "rgba(112, 128, 144, 0.7)",
-    types: [
-      {
-        name: "Map Transition",
-        icon: "minimap_symbol_7.webp",
-      },
-    ],
-  },
-  {
     name: "Services",
-    color: "rgba(34, 139, 34, 0.7)",
     types: [
       {
         name: "Chef",
@@ -50,13 +46,16 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "Miscellaneous",
-    color: "rgba(134, 87, 229, 0.7)",
-    types: [],
+    name: "NPCs",
+    types: [
+      {
+        name: "Rapport",
+        icon: "minimap_symbol_84.webp",
+      },
+    ],
   },
   {
     name: "Symbols",
-    color: "rgba(134, 87, 229, 0.7)",
     types: [
       {
         name: "Main Quest (Available)",
@@ -1188,10 +1187,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_224.webp",
       },
       {
-        name: "Rapport NPC",
-        icon: "minimap_symbol_84.webp",
-      },
-      {
         name: "Pet Management",
         icon: "minimap_symbol_1_203.webp",
       },
@@ -1893,7 +1888,6 @@ export const nodeTypes = nodeCategories
     nodeCategory.types.map<AreaNodeType>((nodeType) => ({
       ...nodeType,
       category: nodeCategory.name,
-      color: nodeType.color || nodeCategory.color,
     }))
   )
   .flat();

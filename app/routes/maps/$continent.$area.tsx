@@ -144,6 +144,7 @@ export const action: ActionFunction = async ({ request }) => {
 export default function MapPage() {
   const { continentName, area, continentNames, areaNames, nodes } =
     useLoaderData<LoaderData>();
+
   return (
     <AppShell
       padding={0}

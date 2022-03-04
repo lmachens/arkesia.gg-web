@@ -1,11 +1,13 @@
 import { Button, Drawer, Text, TextInput, Title } from "@mantine/core";
-import { useLocalStorageValue } from "@mantine/hooks";
+import { useDidUpdate, useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
 import type { AreaNode } from "@prisma/client";
 import { useEffect, useRef } from "react";
 import { useMapEvents } from "react-leaflet";
 import { Form, useActionData, useTransition } from "remix";
 import ImagePreview from "./ImagePreview";
+import { useSearchParams } from "react-router-dom";
+import NodeDescription from "./NodeDescription";
 
 type NodeDetailsProps = {
   selectedNode: AreaNode | null;
@@ -25,6 +27,11 @@ export default function NodeDetails({
   });
   const notifications = useNotifications();
   const notificationId = useRef<string | null>(null);
+  const [searchParams] = useSearchParams();
+
+  useDidUpdate(() => {
+    onClose();
+  }, [searchParams.get("tile")]);
 
   useEffect(() => {
     if (
@@ -61,7 +68,9 @@ export default function NodeDetails({
 
   useMapEvents({
     click: () => {
-      onClose();
+      if (selectedNode) {
+        onClose();
+      }
     },
   });
 
@@ -81,21 +90,7 @@ export default function NodeDetails({
             <Title order={3}>{selectedNode.name}</Title>
             <Text variant="gradient">{selectedNode.type}</Text>
             {selectedNode.description && (
-              <Text
-                lineClamp={4}
-                className="text-block"
-                dangerouslySetInnerHTML={{ __html: selectedNode.description }}
-                sx={(theme) => ({
-                  a: {
-                    color: theme.colors.blue[4],
-                    textDecoration: "none",
-                  },
-                  "a:hover": {
-                    color: theme.colors.blue[4],
-                    textDecoration: "underline",
-                  },
-                })}
-              ></Text>
+              <NodeDescription html={selectedNode.description} />
             )}
             {selectedNode.screenshot && (
               <ImagePreview src={selectedNode.screenshot} />
