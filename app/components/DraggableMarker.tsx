@@ -186,6 +186,9 @@ export default function DraggableMarker({
                   onChange={(description) => onChange({ ...node, description })}
                   placeholder="Additional information about this node"
                   controls={[["bold", "italic", "underline", "clean", "link"]]}
+                  sx={() => ({
+                    zIndex: 1,
+                  })}
                 />
                 <input
                   type="hidden"

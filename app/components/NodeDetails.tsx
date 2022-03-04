@@ -7,6 +7,8 @@ import { useMapEvents } from "react-leaflet";
 import { Form, useActionData, useTransition } from "remix";
 import ImagePreview from "./ImagePreview";
 
+import NodeDescription from "./NodeDescription";
+
 type NodeDetailsProps = {
   selectedNode: AreaNode | null;
   onClose: () => void;
@@ -81,21 +83,7 @@ export default function NodeDetails({
             <Title order={3}>{selectedNode.name}</Title>
             <Text variant="gradient">{selectedNode.type}</Text>
             {selectedNode.description && (
-              <Text
-                lineClamp={4}
-                className="text-block"
-                dangerouslySetInnerHTML={{ __html: selectedNode.description }}
-                sx={(theme) => ({
-                  a: {
-                    color: theme.colors.blue[4],
-                    textDecoration: "none",
-                  },
-                  "a:hover": {
-                    color: theme.colors.blue[4],
-                    textDecoration: "underline",
-                  },
-                })}
-              ></Text>
+              <NodeDescription html={selectedNode.description} />
             )}
             {selectedNode.screenshot && (
               <ImagePreview src={selectedNode.screenshot} />
