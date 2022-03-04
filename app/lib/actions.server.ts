@@ -1,4 +1,4 @@
-import type { AreaNode } from "@prisma/client";
+import type { AreaNode, User } from "@prisma/client";
 import type { NodeOnDiskFile } from "@remix-run/node";
 import { badRequest } from "remix-utils";
 import {
@@ -52,18 +52,9 @@ export function parseFormData<T extends {}>(
 
 export async function requestUser(userToken?: string) {
   if (!userToken) {
-    return badRequest<PostNodeActionData>({
-      fieldErrors: {
-        userId: "User token is required",
-      },
-    });
+    return null;
   }
   const user = await findUser(userToken);
-  if (!user) {
-    return badRequest<PostNodeActionData>({
-      fieldErrors: { userId: "User not found" },
-    });
-  }
   return user;
 }
 
@@ -91,7 +82,7 @@ export async function requestCreateNode(
 }
 
 export async function requestUpdateNode(
-  node: AreaNode,
+  node: Omit<AreaNode, "validationNote">,
   fileScreenshot?: NodeOnDiskFile | null
 ) {
   const fieldErrors = validateNode(node);
@@ -124,12 +115,7 @@ export async function requestUpdateNode(
   postToDiscord("updated", updatedNode);
 }
 
-export async function requestDeleteNode(id?: number) {
-  if (!id) {
-    return badRequest<PostNodeActionData>({
-      formError: "Node ID is required",
-    });
-  }
+export async function requestDeleteNode(id: number) {
   try {
     const deletedNode = await deleteNode(id);
     if (deletedNode.screenshot) {
@@ -139,6 +125,22 @@ export async function requestDeleteNode(id?: number) {
   } catch (error) {
     return badRequest<PostNodeActionData>({
       formError: "Deletion failed",
+    });
+  }
+}
+
+export async function requestReportNode(id: number, reason: string) {
+  try {
+    const node = await findNode(id);
+    if (!node) {
+      return badRequest<PostNodeActionData>({
+        formError: "Can not find node",
+      });
+    }
+    postToDiscord("report", node, reason);
+  } catch (error) {
+    return badRequest<PostNodeActionData>({
+      formError: "Report failed",
     });
   }
 }

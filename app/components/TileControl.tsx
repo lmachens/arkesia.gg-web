@@ -84,6 +84,7 @@ export default function TileControl({
           alt={node.type}
           type={node.type}
           riseOnHover
+          verified={Boolean(node.userId)}
           eventHandlers={{
             click() {
               if (!document.querySelector("#new-marker-drawer")) {
@@ -93,7 +94,8 @@ export default function TileControl({
           }}
         >
           <Tooltip direction="top" offset={[0, -10]}>
-            {node.name}
+            {node.name || node.type}
+            {!node.userId && " (Not verified)"}
           </Tooltip>
         </IconMarker>
       ))}

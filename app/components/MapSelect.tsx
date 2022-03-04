@@ -28,7 +28,7 @@ export default function MapSelect({
         placeholder={continentName}
         onChange={(value) => {
           if (value) {
-            navigate(`/maps/${encodeURIComponent(value)}`);
+            navigate(`/maps/${encodeURIComponent(value)}?tile=0`);
           }
           setContinent("");
         }}
@@ -54,7 +54,7 @@ export default function MapSelect({
             navigate(
               `/maps/${encodeURIComponent(continentName)}/${encodeURIComponent(
                 value
-              )}`
+              )}?tile=0`
             );
           }
           setArea("");

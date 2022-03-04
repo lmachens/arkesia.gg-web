@@ -35,11 +35,6 @@ body {
   margin-bottom: 0;
 }
 
-.nav {
-  display: flex;
-  gap: 1rem;
-}
-
 .mantine-AppShell-root {
   height: 100vh;
   display: grid;

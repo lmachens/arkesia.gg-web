@@ -20,13 +20,15 @@ function getIcon(path: string) {
 }
 
 type IconMarkerProps = {
+  verified: boolean;
   type?: string;
 } & MarkerProps;
 const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
-  ({ type, ...props }, ref) => {
+  ({ type, verified, ...props }, ref) => {
     return (
       <Marker
         icon={getIcon((type && nodeTypesMap[type]?.icon) || "unknown.webp")}
+        opacity={verified ? 1 : 0.25}
         {...props}
         ref={ref}
       />
