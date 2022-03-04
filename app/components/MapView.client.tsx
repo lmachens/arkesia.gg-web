@@ -41,7 +41,14 @@ export default function MapView({ area, nodes }: MapProps) {
     if (editingNode !== null) {
       setEditingNode(null);
     }
-    setSearchParams(`tile=${0}`);
+
+    const tileParam = searchParams.get("tile");
+    const tileIndex = tileParam ? +tileParam : 0;
+    setActiveTile(area.tiles[tileIndex]);
+
+    const nodeParam = searchParams.get("node");
+    const nodeId = nodeParam ? +nodeParam : null;
+    setSelectedNode(nodes.find((node) => node.id === nodeId) || null);
   }, [area.name]);
 
   useDidUpdate(() => {

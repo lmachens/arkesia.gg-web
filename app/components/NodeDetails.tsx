@@ -27,11 +27,6 @@ export default function NodeDetails({
   });
   const notifications = useNotifications();
   const notificationId = useRef<string | null>(null);
-  const [searchParams] = useSearchParams();
-
-  useDidUpdate(() => {
-    onClose();
-  }, [searchParams.get("tile")]);
 
   useEffect(() => {
     if (
