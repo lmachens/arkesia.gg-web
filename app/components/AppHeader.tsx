@@ -1,19 +1,15 @@
-import { ActionIcon, Dialog, Header, Text, TextInput } from "@mantine/core";
-import { useLocalStorageValue } from "@mantine/hooks";
-import { GearIcon } from "@modulz/radix-icons";
-import { useState } from "react";
+import { Header } from "@mantine/core";
+import type { ReactNode } from "react";
 import { useLoaderData } from "remix";
 import type { LoaderData } from "~/routes/maps/$continent.$area";
 import MapSelect from "./MapSelect";
 
-export default function AppHeader() {
+type AppHeaderProps = {
+  children: ReactNode;
+};
+export default function AppHeader({ children }: AppHeaderProps) {
   const { continentName, area, continentNames, areaNames } =
     useLoaderData<LoaderData>();
-  const [opened, setOpened] = useState(false);
-  const [userToken, setUserToken] = useLocalStorageValue<string>({
-    key: "user-token",
-    defaultValue: "",
-  });
 
   return (
     <Header
@@ -31,36 +27,7 @@ export default function AppHeader() {
         continentNames={continentNames}
         areaNames={areaNames}
       />
-      <ActionIcon
-        onClick={() => setOpened((opened) => !opened)}
-        sx={{
-          marginLeft: "auto",
-        }}
-      >
-        <GearIcon />
-      </ActionIcon>
-      <Dialog
-        opened={opened}
-        withCloseButton
-        onClose={() => setOpened(false)}
-        size="lg"
-        radius="md"
-        position={{ top: 60, right: 10 }}
-        zIndex={9000}
-      >
-        <Text size="sm" style={{ marginBottom: 10 }} weight={500}>
-          Settings
-        </Text>
-
-        <TextInput
-          label="User-Token"
-          required
-          placeholder="Only for moderators right now"
-          value={userToken}
-          onChange={(event) => setUserToken(event.target.value)}
-          name="userToken"
-        />
-      </Dialog>
+      {children}
     </Header>
   );
 }

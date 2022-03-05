@@ -1,11 +1,7 @@
 import { badRequest, ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
 import type { ActionFunction, LoaderFunction } from "remix";
-import {
-  redirect,
-  unstable_parseMultipartFormData,
-  useLoaderData,
-} from "remix";
+import { redirect, unstable_parseMultipartFormData } from "remix";
 import invariant from "tiny-invariant";
 import { continents } from "~/lib/static";
 import type { Area, CreateNodeForm, UpdateNodeForm } from "~/lib/types";
@@ -24,7 +20,7 @@ import {
 } from "~/lib/actions.server";
 import type { NodeOnDiskFile } from "@remix-run/node";
 import AppHeader from "~/components/AppHeader";
-import { postToDiscord } from "~/lib/discord";
+import Settings from "~/components/Settings";
 
 export type LoaderData = {
   continentName: string;
@@ -183,7 +179,11 @@ export default function MapPage() {
     <AppShell
       padding={0}
       style={{ overflow: "hidden" }}
-      header={<AppHeader />}
+      header={
+        <AppHeader>
+          <Settings />
+        </AppHeader>
+      }
       styles={(theme) => ({
         main: {
           backgroundColor: theme.colors.dark[5],
