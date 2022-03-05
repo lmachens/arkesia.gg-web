@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef } from "react";
 import { TileLayer, Tooltip } from "react-leaflet";
 import { getBounds } from "~/lib/map";
 import { TILE_BASE_URL } from "~/lib/static";
+import { useDiscoveredNodes, useIsShowingDiscoveredNodes } from "~/lib/store";
 import type { Area, Tile } from "~/lib/types";
 import IconMarker from "./IconMarker";
 
@@ -25,6 +26,8 @@ export default function TileControl({
   editingNode,
 }: TileControlProps) {
   const tileLayerRef = useRef<L.TileLayer | null>(null);
+  const discoveredNodes = useDiscoveredNodes();
+  const isShowingDiscoveredNodes = useIsShowingDiscoveredNodes();
 
   useEffect(() => {
     if (tileLayerRef.current) {
@@ -75,28 +78,36 @@ export default function TileControl({
         tileSize={256}
         bounds={getBounds(activeTile)}
       />
-      {tileNodes.map((node) => (
-        <IconMarker
-          key={node.position.toString()}
-          position={node.position as [number, number]}
-          alt={node.type}
-          type={node.type}
-          riseOnHover
-          verified={Boolean(node.userId)}
-          eventHandlers={{
-            click() {
-              if (!document.querySelector("#new-marker-drawer")) {
-                onNodeClick(node);
-              }
-            },
-          }}
-        >
-          <Tooltip direction="top" offset={[0, -10]}>
-            {node.name || node.type}
-            {!node.userId && " (Not verified)"}
-          </Tooltip>
-        </IconMarker>
-      ))}
+      {tileNodes
+        .filter(
+          (node) =>
+            isShowingDiscoveredNodes ||
+            !discoveredNodes.some(
+              (discoveredNode) => discoveredNode.id === node.id
+            )
+        )
+        .map((node) => (
+          <IconMarker
+            key={node.position.toString()}
+            position={node.position as [number, number]}
+            alt={node.type}
+            type={node.type}
+            riseOnHover
+            verified={Boolean(node.userId)}
+            eventHandlers={{
+              click() {
+                if (!document.querySelector("#new-marker-drawer")) {
+                  onNodeClick(node);
+                }
+              },
+            }}
+          >
+            <Tooltip direction="top" offset={[0, -10]}>
+              {node.name || node.type}
+              {!node.userId && " (Not verified)"}
+            </Tooltip>
+          </IconMarker>
+        ))}
     </div>
   );
 }

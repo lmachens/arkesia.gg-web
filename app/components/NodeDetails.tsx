@@ -1,10 +1,20 @@
-import { Button, Drawer, Space, Text, TextInput, Title } from "@mantine/core";
+import {
+  Button,
+  Drawer,
+  Group,
+  Space,
+  Text,
+  TextInput,
+  Title,
+} from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
+import { EyeClosedIcon, EyeOpenIcon } from "@modulz/radix-icons";
 import type { AreaNode } from "@prisma/client";
 import { useEffect, useRef } from "react";
 import { useMapEvents } from "react-leaflet";
 import { Form, useActionData, useTransition } from "remix";
+import { useDiscoveredNodes, useToggleDiscoveredNode } from "~/lib/store";
 import ImagePreview from "./ImagePreview";
 import NodeDescription from "./NodeDescription";
 
@@ -26,6 +36,8 @@ export default function NodeDetails({
   });
   const notifications = useNotifications();
   const notificationId = useRef<string | null>(null);
+  const discoveredNodes = useDiscoveredNodes();
+  const toggleDiscoveredNode = useToggleDiscoveredNode();
 
   useEffect(() => {
     if (
@@ -69,59 +81,83 @@ export default function NodeDetails({
   });
 
   return (
-    <>
-      <Drawer
-        opened={Boolean(selectedNode)}
-        zIndex={700}
-        noOverlay
-        padding="md"
-        onClose={onClose}
-      >
-        {selectedNode && (
-          <>
-            <Title order={3}>{selectedNode.name || selectedNode.type}</Title>
-            <Text color="teal">{selectedNode.type}</Text>
-            {selectedNode.description && (
-              <NodeDescription html={selectedNode.description} />
-            )}
-            {selectedNode.screenshot && (
-              <ImagePreview src={selectedNode.screenshot} />
-            )}
-            <Space h="md" />
-            {userToken ? (
-              <Form method="delete" className="node-form">
-                <input type="hidden" name="_action" value="delete" />
-                <input type="hidden" name="id" value={selectedNode.id} />
-                <input type="hidden" name="userToken" value={userToken} />
-                <Button type="submit" color="red">
-                  Delete
-                </Button>
-                <Button
-                  type="button"
-                  color="teal"
-                  onClick={() => onEdit(selectedNode)}
-                >
-                  Edit
-                </Button>
-              </Form>
-            ) : (
-              <Form method="post" className="node-form">
-                <input type="hidden" name="_action" value="report" />
-                <input type="hidden" name="id" value={selectedNode.id} />
-                <TextInput
-                  label="Is there any issue with this node?"
-                  placeholder="Give us details"
-                  name="reason"
-                  required
-                />
-                <Button type="submit" color="teal">
-                  Report issue
-                </Button>
-              </Form>
-            )}
-          </>
-        )}
-      </Drawer>
-    </>
+    <Drawer
+      opened={Boolean(selectedNode)}
+      zIndex={700}
+      noOverlay
+      padding="md"
+      onClose={onClose}
+    >
+      {selectedNode && (
+        <>
+          <Title order={3}>{selectedNode.name || selectedNode.type}</Title>
+          <Text color="teal">{selectedNode.type}</Text>
+
+          {selectedNode.description && (
+            <NodeDescription html={selectedNode.description} />
+          )}
+          {selectedNode.screenshot && (
+            <ImagePreview src={selectedNode.screenshot} />
+          )}
+          <Space h="md" />
+          <Button
+            onClick={() => toggleDiscoveredNode(selectedNode)}
+            color="gray"
+            variant="subtle"
+            size="xs"
+            compact
+            mb="xs"
+          >
+            <Group>
+              {discoveredNodes.some(
+                (discoveredNode) => discoveredNode.id === selectedNode.id
+              ) ? (
+                <>
+                  <EyeClosedIcon /> Discovered
+                </>
+              ) : (
+                <>
+                  <EyeOpenIcon />
+                  Not discovered
+                </>
+              )}
+            </Group>
+          </Button>
+          <Text size="xs">See all discovered nodes in the settings</Text>
+          <Space h="md" />
+          {userToken ? (
+            <Form method="delete" className="node-form">
+              <input type="hidden" name="_action" value="delete" />
+              <input type="hidden" name="id" value={selectedNode.id} />
+              <input type="hidden" name="userToken" value={userToken} />
+              <Button type="submit" color="red">
+                Delete
+              </Button>
+              <Button
+                type="button"
+                color="teal"
+                onClick={() => onEdit(selectedNode)}
+              >
+                Edit
+              </Button>
+            </Form>
+          ) : (
+            <Form method="post" className="node-form">
+              <input type="hidden" name="_action" value="report" />
+              <input type="hidden" name="id" value={selectedNode.id} />
+              <TextInput
+                label="Is there any issue with this node?"
+                placeholder="Give us details"
+                name="reason"
+                required
+              />
+              <Button type="submit" color="teal">
+                Report issue
+              </Button>
+            </Form>
+          )}
+        </>
+      )}
+    </Drawer>
   );
 }
