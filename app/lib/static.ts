@@ -167,7 +167,7 @@ export const nodeCategories: AreaNodeCategory[] = [
   },
   {
     name: "Adventure Tome",
-    includes: ["Continent", "Dungeon", "Island"],
+    includes: ["Continent", "Dungeon"],
     types: [
       {
         name: "Cooking Ingredient",
