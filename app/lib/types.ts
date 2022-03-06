@@ -20,8 +20,11 @@ export type UpdateNodeForm = {
   id: number;
 } & CreateNodeForm;
 
+export type AreaCategory = "Continent" | "Dungeon" | "Island" | "World";
+
 export type Area = {
   name: string;
+  category: AreaCategory;
   tiles: Tile[];
 };
 
@@ -40,5 +43,6 @@ type PartialAreaNodeType = Omit<AreaNodeType, "category">;
 
 export type AreaNodeCategory = {
   name: string;
+  includes: AreaCategory[];
   types: PartialAreaNodeType[];
 };

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Tooltip, useMapEvents } from "react-leaflet";
-import { ICON_BASE_URL, nodeTypes } from "~/lib/static";
+import { ICON_BASE_URL, nodeCategories } from "~/lib/static";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
 import type { Area, Tile } from "~/lib/types";
@@ -27,13 +27,6 @@ type DraggableMarkerProps = {
   area: Area;
   tile: Tile;
 };
-
-const types = nodeTypes.map((nodeType) => ({
-  image: `${ICON_BASE_URL}${nodeType.icon}`,
-  value: nodeType.name,
-  label: nodeType.name,
-  group: nodeType.category,
-}));
 
 export default function DraggableMarker({
   node,
@@ -97,6 +90,23 @@ export default function DraggableMarker({
   const base64Image = useMemo(
     () => fileScreenshot && URL.createObjectURL(fileScreenshot),
     [fileScreenshot]
+  );
+
+  const types = useMemo(
+    () =>
+      nodeCategories
+        .filter((nodeCategory) => nodeCategory.includes.includes(area.category))
+        .map((nodeCategory) =>
+          nodeCategory.types.map((nodeType) => ({
+            category: nodeCategory.name,
+            image: `${ICON_BASE_URL}${nodeType.icon}`,
+            value: nodeType.name,
+            label: nodeType.name,
+            group: nodeCategory.name,
+          }))
+        )
+        .flat(),
+    [area.category]
   );
 
   return (
