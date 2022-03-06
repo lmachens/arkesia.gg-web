@@ -16,7 +16,14 @@ export default function ImagePreview({ src }: ImagePreviewProps) {
         zIndex={900}
         size="xl"
       >
-        <Image src={src} alt="" fit="contain" radius="sm" withPlaceholder />
+        <Image
+          src={src}
+          alt=""
+          fit="contain"
+          radius="sm"
+          withPlaceholder
+          sx={{ maxWidth: "max-content", margin: "0 auto" }}
+        />
       </Modal>
       <Image
         src={src}
