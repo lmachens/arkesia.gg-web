@@ -1892,6 +1892,22 @@ export const nodeTypesMap = nodeTypes.reduce(
 
 export const continents: Continent[] = [
   {
+    name: "World",
+    areas: [
+      {
+        name: "Arkesia",
+        tiles: [
+          {
+            id: 0,
+            tile: "world/lv_ocn_world_ps_0_{y}x{x}.webp",
+            full: "world/lv_ocn_world_ps_0_voyage_full.webp",
+            max: [8, 11],
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: "Trixion",
     areas: [
       {

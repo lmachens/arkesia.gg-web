@@ -42,7 +42,11 @@ export const loader: LoaderFunction = async ({ params }) => {
   if (!continent || !area) {
     return redirect("/");
   }
-  const continentNames = continents.map((continent) => continent.name).sort();
+  const [world, ...more] = continents;
+  const continentNames = [
+    world.name,
+    ...more.map((continent) => continent.name).sort(),
+  ];
   const areaNames = continent.areas.map((area) => area.name).sort();
 
   const nodes = await findNodes(area.name);

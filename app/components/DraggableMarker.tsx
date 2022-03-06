@@ -237,7 +237,6 @@ export default function DraggableMarker({
               <input type="hidden" name="tileId" value={tile.id} />
               <Button
                 type="submit"
-                disabled={!node.type}
                 loading={transition.state !== "idle"}
                 variant="gradient"
               >

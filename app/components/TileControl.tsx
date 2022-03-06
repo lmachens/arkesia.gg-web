@@ -47,26 +47,27 @@ export default function TileControl({
   return (
     <div className="leaflet-top leaflet-right">
       <div className="leaflet-control">
-        {area.tiles.map((tile) => (
-          <Image
-            m="md"
-            key={tile.full}
-            onClick={() => onActiveTileChange(tile)}
-            sx={() => ({
-              transform: "rotate(-45deg)",
-              cursor: "pointer",
-              transition: "0.2s ease",
-              "&:hover": {
-                transform: "rotate(-45deg) scale(1.2)",
-              },
-            })}
-            src={`${TILE_BASE_URL}${tile.full}`}
-            alt=""
-            height={50}
-            width={50}
-            fit="contain"
-          />
-        ))}
+        {area.name !== "Arkesia" &&
+          area.tiles.map((tile) => (
+            <Image
+              m="md"
+              key={tile.full}
+              onClick={() => onActiveTileChange(tile)}
+              sx={() => ({
+                transform: "rotate(-45deg)",
+                cursor: "pointer",
+                transition: "0.2s ease",
+                "&:hover": {
+                  transform: "rotate(-45deg) scale(1.2)",
+                },
+              })}
+              src={`${TILE_BASE_URL}${tile.full}`}
+              alt=""
+              height={50}
+              width={50}
+              fit="contain"
+            />
+          ))}
       </div>
       <TileLayer
         ref={tileLayerRef}
