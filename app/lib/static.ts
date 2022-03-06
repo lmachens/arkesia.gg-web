@@ -657,7 +657,7 @@ export const nodeCategories: AreaNodeCategory[] = [
   },
   {
     name: "Sea",
-    includes: ["Continent", "Dungeon", "Island"],
+    includes: ["World"],
     types: [
       {
         name: "Sandstorm Sea",
