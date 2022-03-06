@@ -102,7 +102,7 @@ export default function TileControl({
               },
             }}
           >
-            <Tooltip direction="top" offset={[0, -10]}>
+            <Tooltip direction="top" offset={[0, -15]}>
               {node.name || node.type}
               {!node.userId && " (Not verified)"}
             </Tooltip>
