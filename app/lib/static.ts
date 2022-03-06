@@ -471,7 +471,7 @@ export const nodeCategories: AreaNodeCategory[] = [
   },
   {
     name: "Sea Bounties",
-    includes: ["Continent", "Dungeon", "Island"],
+    includes: ["World"],
     types: [
       {
         name: "Sea Bounty - Mokoko Mushroom",
