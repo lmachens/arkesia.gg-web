@@ -7,7 +7,7 @@ import "leaflet-rotate";
 import MousePosition from "./MousePosition";
 import type { AreaNode } from "@prisma/client";
 import TileControl from "./TileControl";
-import { getMapCenter } from "~/lib/map";
+import { getBounds, getMapCenter } from "~/lib/map";
 import NodeDetails from "./NodeDetails";
 import DraggableMarker from "./DraggableMarker";
 import type { URLSearchParamsInit } from "react-router-dom";
@@ -18,6 +18,7 @@ import type { LoaderData } from "~/routes/maps/$continent.$area";
 
 includeCanvasTileLayer();
 
+const canvasRenderer = L.canvas();
 export default function MapView() {
   const { area, nodes } = useLoaderData<LoaderData>();
 
@@ -39,12 +40,25 @@ export default function MapView() {
   );
 
   useDidUpdate(() => {
+    if (!map) {
+      return;
+    }
     if (editingNode !== null) {
       setEditingNode(null);
     }
 
     setActiveTile(area.tiles[tileIndex]);
     setSelectedNode(nodes.find((node) => node.id === nodeId) || null);
+
+    const bearing = area.name !== "Arkesia" ? -45 : 0;
+    // @ts-ignore
+    if (map.options.bearing !== bearing) {
+      // @ts-ignore
+      map.options.bearing = bearing;
+      // @ts-ignore
+      map.setBearing(bearing);
+    }
+    map.panTo(getMapCenter(area.tiles[tileIndex]));
   }, [area.name]);
 
   useDidUpdate(() => {
@@ -68,19 +82,16 @@ export default function MapView() {
   }, []);
 
   useDidUpdate(() => {
-    const isTileChanged =
-      tileIndex !== area.tiles.findIndex((tile) => tile.id === activeTile.id);
-    const isNodeChanged = nodeId !== selectedNode?.id;
-    if (isTileChanged) {
-      setActiveTile(area.tiles[tileIndex]);
+    if (!map) {
+      return;
     }
+
+    const isNodeChanged = nodeId !== selectedNode?.id;
     if (isNodeChanged) {
       const newSelectedNode = nodes.find((node) => node.id === nodeId) || null;
       setSelectedNode(newSelectedNode);
       if (newSelectedNode) {
-        map!.panTo(newSelectedNode.position as [number, number]);
-      } else if (isTileChanged) {
-        map!.panTo(getMapCenter(area.tiles[tileIndex]));
+        map.panTo(newSelectedNode.position as [number, number]);
       }
     }
   }, [tileIndex, nodeId]);
@@ -89,16 +100,17 @@ export default function MapView() {
     <MapContainer
       center={initialCenter}
       zoom={1}
+      // bounds={getBounds(area.tiles[tileIndex])}
       crs={L.CRS.Simple}
       zoomControl={false}
       attributionControl={false}
       style={{
         background: "none",
       }}
-      renderer={L.canvas()}
+      renderer={canvasRenderer}
       rotate
       rotateControl={false}
-      bearing={-45}
+      bearing={area.name !== "Arkesia" ? -45 : 0}
       preferCanvas
       whenCreated={setMap}
     >
@@ -111,6 +123,7 @@ export default function MapView() {
         activeTile={activeTile}
         onActiveTileChange={(tile) => {
           setActiveTile(tile);
+          map!.panTo(getMapCenter(tile));
           setSelectedNode(null);
         }}
       />
