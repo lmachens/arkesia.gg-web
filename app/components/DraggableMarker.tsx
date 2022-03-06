@@ -19,6 +19,7 @@ import RichTextEditor from "@mantine/rte";
 import TypeItem from "./TypeItem";
 import IconMarker from "./IconMarker";
 import type { AreaNode } from "@prisma/client";
+import { useLastType } from "~/lib/store";
 
 type DraggableMarkerProps = {
   node: Partial<AreaNode> | null;
@@ -42,6 +43,7 @@ export default function DraggableMarker({
 }: DraggableMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
   const [fileScreenshot, setFileScreenshot] = useState<File | null>(null);
+  const [lastType, setLastType] = useLastType();
 
   useMapEvents({
     contextmenu: (event) => {
@@ -101,7 +103,7 @@ export default function DraggableMarker({
     <>
       {node?.position && (
         <IconMarker
-          type={node.type}
+          type={node.type || lastType}
           draggable={true}
           verified
           eventHandlers={{
@@ -116,7 +118,7 @@ export default function DraggableMarker({
           position={node?.position as [number, number]}
           ref={markerRef}
         >
-          <Tooltip permanent direction="top">
+          <Tooltip permanent direction="top" offset={[0, -15]}>
             {node.type || "Choose marker"}
           </Tooltip>
         </IconMarker>
@@ -164,11 +166,15 @@ export default function DraggableMarker({
                 name="type"
                 zIndex={800}
                 searchable
-                clearable
                 autoComplete="off"
                 autoCorrect="off"
-                value={node.type}
-                onChange={(type) => onChange({ ...node, type: type || "" })}
+                value={node.type || lastType}
+                onChange={(type) => {
+                  if (type) {
+                    onChange({ ...node, type: type });
+                    setLastType(type);
+                  }
+                }}
                 required
                 itemComponent={TypeItem}
                 maxDropdownHeight={400}

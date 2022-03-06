@@ -12,8 +12,6 @@ function getIcon(path: string) {
     icons[path] = L.icon({
       iconUrl: `${ICON_BASE_URL}${path}`,
       iconSize: [32, 32],
-      tooltipAnchor: [0, -17],
-      popupAnchor: [0, -10],
     });
   }
   return icons[path];

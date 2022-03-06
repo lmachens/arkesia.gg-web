@@ -5,6 +5,8 @@ import { persist } from "zustand/middleware";
 export type DiscoveredNode = Pick<AreaNode, "id" | "type">;
 
 type StoreProps = {
+  lastType: string;
+  setLastType: (type: string) => void;
   isShowingDiscoveredNodes: boolean;
   toggleIsShowingDiscoveredNodes: () => void;
   discoveredNodes: DiscoveredNode[];
@@ -14,6 +16,8 @@ type StoreProps = {
 export const useStore = create(
   persist<StoreProps>(
     (set) => ({
+      lastType: "Map Transition",
+      setLastType: (type: string) => set({ lastType: type }),
       isShowingDiscoveredNodes: false,
       toggleIsShowingDiscoveredNodes: () =>
         set((state) => ({
@@ -40,6 +44,12 @@ export const useStore = create(
     }
   )
 );
+
+const lastTypeSelector = (state: StoreProps) =>
+  [state.lastType, state.setLastType] as [string, (type: string) => void];
+export const useLastType = () => {
+  return useStore(lastTypeSelector);
+};
 
 const isShowingDiscoveredNodesSelector = (state: StoreProps) =>
   state.isShowingDiscoveredNodes;
