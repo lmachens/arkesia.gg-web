@@ -13,6 +13,10 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Map Transition",
         icon: "minimap_symbol_7.webp",
       },
+      {
+        name: "Viewpoint",
+        icon: "viewpoint.webp",
+      },
     ],
   },
   {
@@ -36,9 +40,13 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_206.webp",
       },
       {
+        name: "Cooking",
+        icon: "cooking.webp",
+      },
+      {
         name: "Trade Merchant",
         icon: "minimap_symbol_152.webp",
-      }
+      },
     ],
   },
   {
@@ -47,6 +55,10 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Rapport",
         icon: "minimap_symbol_84.webp",
+      },
+      {
+        name: "Hidden Story",
+        icon: "hidden_story.webp",
       },
     ],
   },
@@ -685,7 +697,7 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Siege Status Board",
         icon: "minimap_symbol_1_152.webp",
-      }
+      },
     ],
   },
 ];
