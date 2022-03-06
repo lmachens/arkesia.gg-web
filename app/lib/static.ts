@@ -683,7 +683,7 @@ export const nodeCategories: AreaNodeCategory[] = [
   },
   {
     name: "Trade Skills",
-    includes: ["Continent", "Dungeon", "Island"],
+    includes: ["Continent", "Island"],
     types: [
       {
         name: "Ore",
