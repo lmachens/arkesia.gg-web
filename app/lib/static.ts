@@ -14,120 +14,20 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_7.webp",
       },
       {
-        name: "Viewpoint",
+        name: "Vista",
         icon: "viewpoint.webp",
-      },
-    ],
-  },
-  {
-    name: "Collectibles",
-    types: [
-      {
-        name: "Mokoko Seeds",
-        icon: "minimap_symbol_1_121.webp",
-      },
-    ],
-  },
-  {
-    name: "Enemies",
-    types: [],
-  },
-  {
-    name: "Services",
-    types: [
-      {
-        name: "Chef",
-        icon: "minimap_symbol_206.webp",
-      },
-      {
-        name: "Cooking",
-        icon: "cooking.webp",
-      },
-      {
-        name: "Trade Merchant",
-        icon: "minimap_symbol_152.webp",
-      },
-    ],
-  },
-  {
-    name: "NPCs",
-    types: [
-      {
-        name: "Rapport",
-        icon: "minimap_symbol_84.webp",
-      },
-      {
-        name: "Hidden Story",
-        icon: "hidden_story.webp",
-      },
-    ],
-  },
-  {
-    name: "Symbols",
-    types: [
-      {
-        name: "Main Quest",
-        icon: "minimap_symbol_12.webp",
-      },
-      {
-        name: "Side Quest",
-        icon: "minimap_symbol_15.webp",
-      },
-      {
-        name: "Sudden Quest (InProgress)",
-        icon: "minimap_symbol_81.webp",
-      },
-      {
-        name: "World Quest",
-        icon: "minimap_symbol_244.webp",
-      },
-      {
-        name: "Co-op Quest",
-        icon: "minimap_symbol_87.webp",
       },
       {
         name: "Co-op Quest Area",
         icon: "minimap_symbol_88.webp",
       },
       {
-        name: "Chain Side Quest",
-        icon: "minimap_symbol_253.webp",
+        name: "Sudden Quest Area",
+        icon: "minimap_symbol_81.webp",
       },
       {
-        name: "Repeatable Quest",
-        icon: "minimap_symbol_249.webp",
-      },
-      {
-        name: "Adventure Quest",
-        icon: "minimap_symbol_247.webp",
-      },
-      {
-        name: "Chain Adventure Quest",
-        icon: "minimap_symbol_239.webp",
-      },
-      {
-        name: "Rapport Quest",
-        icon: "minimap_symbol_1_55.webp",
-      },
-      {
-        name: "Co-op Quest",
-        icon: "minimap_symbol_1_58.webp",
-      },
-      {
-        name: "Rapport Chain Quest",
-        icon: "minimap_symbol_1_279.webp",
-      },
-      {
-        name: "Boss 1",
-        icon: "minimap_symbol_1.webp",
-      },
-      {
-        name: "3",
+        name: "Standard Dungeon",
         icon: "minimap_symbol_3.webp",
-      },
-      {
-        name: "Story Mission Portal",
-        icon: "minimap_symbol_2.webp",
       },
       {
         name: "Ark Dungeon",
@@ -136,6 +36,172 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Sailing Dungeon",
         icon: "minimap_symbol_1_204.webp",
+      },
+      {
+        name: "Chaos Gate",
+        icon: "minimap_symbol_6.webp",
+      },
+       {
+        name: "Triport",
+        icon: "minimap_symbol_73.webp",
+      },
+      {
+        name: "Port",
+        icon: "minimap_symbol_92.webp",
+      },
+      {
+        name: "Dock",
+        icon: "minimap_symbol_1_47.webp",
+      },
+      {
+        name: "Island",
+        icon: "minimap_symbol_219.webp",
+      },
+      {
+        name: "PvP Island",
+        icon: "minimap_symbol_218.webp",
+      },
+      {
+        name: "Ghost Ship",
+        icon: "minimap_symbol_1_210.webp",
+      },
+      {
+        name: "Vast Sea",
+        icon: "minimap_symbol_1_328.webp",
+      },
+      
+      {
+        name: "Turquoise Portal",
+        icon: "minimap_symbol_1_111.webp",
+      },
+      {
+        name: "Water Vehicle",
+        icon: "minimap_symbol_72.webp",
+      },
+      {
+        name: "Elevator",
+        icon: "minimap_symbol_1_1.webp",
+      },
+      {
+        name: "Travelator",
+        icon: "minimap_symbol_1_2.webp",
+      },
+      {
+        name: "Teleport?",
+        icon: "minimap_symbol_1_3.webp",
+      },
+      {
+        name: "Stairs (Up)",
+        icon: "minimap_symbol_1_4.webp",
+      },
+      {
+        name: "Stairs (Down)",
+        icon: "minimap_symbol_1_5.webp",
+      },
+      {
+        name: "Treasure Map Location",
+        icon: "minimap_symbol_1_0.webp",
+      },
+      {
+        name: "Lime Portal",
+        icon: "minimap_symbol_1_315.webp",
+      },
+      {
+        name: "Yellow Portal",
+        icon: "minimap_symbol_1_316.webp",
+      },
+      {
+        name: "Purple Portal",
+        icon: "minimap_symbol_1_317.webp",
+      },
+    ],
+  },
+  {
+    name: "Collectibles",
+    types: [
+      {
+        name: "Mokoko Seed",
+        icon: "minimap_symbol_1_121.webp",
+      }
+    ],
+  },
+  {
+    name: "Exchange",
+    types: [
+      {
+        name: "Sea Bounty Exchange",
+        icon: "minimap_symbol_1_318.webp",
+      },
+      {
+        name: "Rapport Exchange",
+        icon: "minimap_symbol_1_275.webp",
+      },
+      {
+        name: "Island Soul Exchange",
+        icon: "minimap_symbol_1_40.webp",
+      },
+      {
+        name: "Giants' Heart Exchange",
+        icon: "minimap_symbol_1_122.webp",
+      },
+      {
+        name: "Masterpiece Exchange",
+        icon: "minimap_symbol_1_123.webp",
+      },
+      {
+        name: "World Tree Leaf Exchange",
+        icon: "minimap_symbol_1_320.webp",
+      },
+      {
+        name: "Ignea Token Exchange",
+        icon: "minimap_symbol_1_457.webp",
+      },
+      {
+        name: "Omnium Star Exchange",
+        icon: "minimap_symbol_1_321.webp",
+      },
+    ],
+  },
+  {
+    name: "Adventure Tome",
+    types: [
+      {
+        name: "Cooking Ingredient",
+        icon: "cooking.webp",
+      },
+      {
+        name: "Hidden Story",
+        icon: "hidden_story.webp",
+      },
+    ],
+  },
+  {
+    name: "Enemies",
+    types: [
+      {
+        name: "Boss 1",
+        icon: "minimap_symbol_1.webp",
+      },
+      {
+        name: "Boss 2",
+        icon: "minimap_symbol_40.webp",
+      },
+      {
+        name: "Silver Named Enemy",
+        icon: "minimap_symbol_76.webp",
+      },
+      {
+        name: "Gold Named Enemy",
+        icon: "minimap_symbol_69.webp",
+      },
+    ],
+  },
+  {
+    name: "Services",
+    types: [
+      {
+        name: "Chef",
+        icon: "minimap_symbol_206.webp",
       },
       {
         name: "Guardian Raid",
@@ -178,61 +244,225 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_339.webp",
       },
       {
-        name: "Chaos Gate",
-        icon: "minimap_symbol_6.webp",
-      },
-      {
-        name: "Crimson Chaos Gate",
-        icon: "minimap_symbol_64.webp",
-      },
-      {
-        name: "Plum Chaos Gate",
-        icon: "minimap_symbol_65.webp",
-      },
-      {
-        name: "Lime Chaos Gate",
-        icon: "minimap_symbol_66.webp",
-      },
-      {
-        name: "Pink Chaos Gate",
-        icon: "minimap_symbol_67.webp",
-      },
-      {
         name: "Portal Statue",
         icon: "minimap_symbol_1_186.webp",
       },
       {
-        name: "Chaos Dungeon Node",
-        icon: "minimap_symbol_71.webp",
+        name: "Statue of Gienah (Island Souls)",
+        icon: "minimap_symbol_1_109.webp",
       },
       {
-        name: "Triport (Discovered)",
-        icon: "minimap_symbol_73.webp",
+        name: "Marina",
+        icon: "minimap_symbol_230.webp",
+      },          
+      {
+        name: "Shipbuilder",
+        icon: "minimap_symbol_183.webp",
       },
       {
-        name: "Port",
-        icon: "minimap_symbol_92.webp",
+        name: "Wandering Merchant",
+        icon: "minimap_symbol_154.webp",
       },
       {
-        name: "Dock",
-        icon: "minimap_symbol_1_47.webp",
+        name: "Voyage Manager",
+        icon: "minimap_symbol_224.webp",
       },
       {
-        name: "Island",
-        icon: "minimap_symbol_219.webp",
+        name: "Map Exchange",
+        icon: "minimap_symbol_153.webp",
       },
       {
-        name: "PvP Island",
-        icon: "minimap_symbol_218.webp",
+        name: "Crafting and Processing",
+        icon: "minimap_symbol_202.webp",
       },
       {
-        name: "Ghost Ship (Active)",
-        icon: "minimap_symbol_1_210.webp",
+        name: "Alchemist",
+        icon: "minimap_symbol_207.webp",
       },
       {
-        name: "Vast Sea",
-        icon: "minimap_symbol_1_328.webp",
+        name: "Processing",
+        icon: "minimap_symbol_208.webp",
       },
+      {
+        name: "Repairer",
+        icon: "minimap_symbol_158.webp",
+      },
+      {
+        name: "Guardian Raid Soul",
+        icon: "minimap_symbol_1_274.webp",
+      },
+      {
+        name: "Gem Expert",
+        icon: "minimap_symbol_1_296.webp",
+      },
+      {
+        name: "Skill Tree Transfer",
+        icon: "minimap_symbol_1_314.webp",
+      },
+      {
+        name: "Storage",
+        icon: "minimap_symbol_29.webp",
+      },
+      {
+        name: "Mail",
+        icon: "minimap_symbol_35.webp",
+      },
+      {
+        name: "Stone Cutter",
+        icon: "minimap_symbol_38.webp",
+      },
+      {
+        name: "Market Broker",
+        icon: "minimap_symbol_151.webp",
+      },
+      {
+        name: "Currency Broker",
+        icon: "minimap_symbol_1_147.webp",
+      },
+      {
+        name: "Guild Manager",
+        icon: "minimap_symbol_157.webp",
+      },
+      {
+        name: "Pet Management",
+        icon: "minimap_symbol_1_203.webp",
+      },
+      {
+        name: "Gear Honing",
+        icon: "minimap_symbol_1_207.webp",
+      },
+      {
+        name: "Skin Modding",
+        icon: "minimap_symbol_1_387.webp",
+      },
+      {
+        name: "Siege Status Board",
+        icon: "minimap_symbol_1_152.webp",
+      },
+    ],
+  },
+   {
+    name: "Merchants",
+    types: [
+      {
+        name: "Trade Skill Merchant",
+        icon: "minimap_symbol_171.webp",
+      },
+      {
+        name: "General Merchant",
+        icon: "minimap_symbol_175.webp",
+      },
+      {
+        name: "Potion Merchant",
+        icon: "minimap_symbol_176.webp",
+      },
+      {
+        name: "Food Merchant 1",
+        icon: "minimap_symbol_179.webp",
+      },
+      {
+        name: "Luxury Goods Merchant",
+        icon: "minimap_symbol_180.webp",
+      },
+      {
+        name: "Luck Merchant",
+        icon: "minimap_symbol_181.webp",
+      },
+      {
+        name: "Gear Merchant",
+        icon: "minimap_symbol_162.webp",
+      },
+      {
+        name: "Trade Merchant",
+        icon: "minimap_symbol_152.webp",
+      },
+            {
+        name: "Ingredient Merchant",
+        icon: "minimap_symbol_184.webp",
+      },
+      {
+        name: "Food Merchant 2",
+        icon: "minimap_symbol_190.webp",
+      },
+      {
+        name: "Trade Skill Material Merchant",
+        icon: "minimap_symbol_228.webp",
+      },
+      {
+        name: "Unknown Merchant 1 - TBC",
+        icon: "minimap_symbol_177.webp",
+      },
+      {
+        name: "Unknown Merchant 2 - TBC",
+        icon: "minimap_symbol_1_124.webp",
+      },
+      {
+        name: "Unknown Merchant 3 - TBC",
+        icon: "minimap_symbol_1_125.webp",
+      },
+      {
+        name: "Unknown Merchant 4 - TBC",
+        icon: "minimap_symbol_1_202.webp",
+      },
+    ],
+  },
+  {
+    name: "NPCs",
+    types: [
+      {
+        name: "Rapport",
+        icon: "minimap_symbol_84.webp",
+      },
+    ],
+  },
+  {
+    name: "Quests",
+    types: [
+      {
+        name: "Adventure Quest",
+        icon: "minimap_symbol_247.webp",
+      },
+      {
+        name: "Chain Adventure Quest",
+        icon: "minimap_symbol_239.webp",
+      },
+      {
+        name: "Side Quest",
+        icon: "minimap_symbol_18.webp",
+      },
+      {
+        name: "Chain Side Quest",
+        icon: "minimap_symbol_253.webp",
+      },
+      {
+        name: "Repeatable Quest",
+        icon: "minimap_symbol_249.webp",
+      },
+      {
+        name: "Main Quest",
+        icon: "minimap_symbol_12.webp",
+      },
+      {
+        name: "World Quest",
+        icon: "minimap_symbol_244.webp",
+      },
+      {
+        name: "Co-op Quest",
+        icon: "minimap_symbol_87.webp",
+      },
+      {
+        name: "Rapport Quest",
+        icon: "minimap_symbol_1_55.webp",
+      },
+      {
+        name: "Rapport Chain Quest",
+        icon: "minimap_symbol_1_279.webp",
+      },
+    ],
+  },
+  {
+    name: "Sea Bounties",
+    types: [
       {
         name: "Sea Bounty - Mokoko Mushroom",
         icon: "minimap_symbol_96.webp",
@@ -398,10 +628,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_223.webp",
       },
       {
-        name: "Statue of Gienah (Island Souls)",
-        icon: "minimap_symbol_1_109.webp",
-      },
-      {
         name: "Sea Bounty - PhantomWing",
         icon: "minimap_symbol_1_323.webp",
       },
@@ -417,6 +643,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Sea Bounty - Ice Statue of a Woman",
         icon: "minimap_symbol_1_326.webp",
       },
+    ],
+  },
+  {
+    name: "Sea",
+    types: [
       {
         name: "Sandstorm Sea",
         icon: "minimap_symbol_1_307.webp",
@@ -437,14 +668,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Dead Waters",
         icon: "minimap_symbol_1_305.webp",
       },
-      {
-        name: "1_48",
-        icon: "minimap_symbol_1_48.webp",
-      },
-      {
-        name: "Marina",
-        icon: "minimap_symbol_230.webp",
-      },
+    ],
+  },
+  {
+    name: "Trade Skills",
+    types: [
       {
         name: "Ore",
         icon: "minimap_symbol_21.webp",
@@ -461,242 +689,26 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Fishing Spot",
         icon: "minimap_symbol_24.webp",
       },
+    ],
+  },
+  {
+    name: "Symbols",
+    types: [
       {
-        name: "1_290",
-        icon: "minimap_symbol_1_290.webp",
+        name: "Crimson Chaos Gate",
+        icon: "minimap_symbol_64.webp",
       },
       {
-        name: "162",
-        icon: "minimap_symbol_162.webp",
+        name: "Plum Chaos Gate",
+        icon: "minimap_symbol_65.webp",
       },
       {
-        name: "Trade Skill Merchant",
-        icon: "minimap_symbol_171.webp",
+        name: "Lime Chaos Gate",
+        icon: "minimap_symbol_66.webp",
       },
       {
-        name: "General Merchant",
-        icon: "minimap_symbol_175.webp",
-      },
-      {
-        name: "Potion Merchant",
-        icon: "minimap_symbol_176.webp",
-      },
-      {
-        name: "177",
-        icon: "minimap_symbol_177.webp",
-      },
-      {
-        name: "Food Merchant 1",
-        icon: "minimap_symbol_179.webp",
-      },
-      {
-        name: "Luxury Goods Merchant",
-        icon: "minimap_symbol_180.webp",
-      },
-      {
-        name: "Luck Shop",
-        icon: "minimap_symbol_181.webp",
-      },
-      {
-        name: "Shipbuilder",
-        icon: "minimap_symbol_183.webp",
-      },
-
-      {
-        name: "Wandering Merchant",
-        icon: "minimap_symbol_154.webp",
-      },
-      {
-        name: "Trade Skill Material Merchant",
-        icon: "minimap_symbol_228.webp",
-      },
-      {
-        name: "1_124",
-        icon: "minimap_symbol_1_124.webp",
-      },
-      {
-        name: "Voyage Manager",
-        icon: "minimap_symbol_224.webp",
-      },
-      {
-        name: "Map Exchange",
-        icon: "minimap_symbol_153.webp",
-      },
-      {
-        name: "1_125",
-        icon: "minimap_symbol_1_125.webp",
-      },
-      {
-        name: "Ingredient Merchant",
-        icon: "minimap_symbol_184.webp",
-      },
-      {
-        name: "Food Merchant 2",
-        icon: "minimap_symbol_190.webp",
-      },
-      {
-        name: "1_202",
-        icon: "minimap_symbol_1_202.webp",
-      },
-      {
-        name: "Rapport Exchange",
-        icon: "minimap_symbol_1_275.webp",
-      },
-      {
-        name: "Crafting and Processing",
-        icon: "minimap_symbol_202.webp",
-      },
-      {
-        name: "Alchemist",
-        icon: "minimap_symbol_207.webp",
-      },
-      {
-        name: "Processing",
-        icon: "minimap_symbol_208.webp",
-      },
-      {
-        name: "Repairer",
-        icon: "minimap_symbol_158.webp",
-      },
-      {
-        name: "Guardian Raid Soul",
-        icon: "minimap_symbol_1_274.webp",
-      },
-      {
-        name: "Gem Expert",
-        icon: "minimap_symbol_1_296.webp",
-      },
-      {
-        name: "Transfer Skill Tree",
-        icon: "minimap_symbol_1_314.webp",
-      },
-      {
-        name: "Storage",
-        icon: "minimap_symbol_29.webp",
-      },
-      {
-        name: "Mail",
-        icon: "minimap_symbol_35.webp",
-      },
-      {
-        name: "Stone Cutter",
-        icon: "minimap_symbol_38.webp",
-      },
-      {
-        name: "Island Soul - Collectable",
-        icon: "minimap_symbol_1_40.webp",
-      },
-      {
-        name: "1_39",
-        icon: "minimap_symbol_1_39.webp",
-      },
-      {
-        name: "Giants' Heart - Collectable",
-        icon: "minimap_symbol_1_122.webp",
-      },
-      {
-        name: "Masterpiece - Collectable",
-        icon: "minimap_symbol_1_123.webp",
-      },
-      {
-        name: "Sea Bounty",
-        icon: "minimap_symbol_1_318.webp",
-      },
-      {
-        name: "World Tree Leaf",
-        icon: "minimap_symbol_1_320.webp",
-      },
-      {
-        name: "Ignea Token",
-        icon: "minimap_symbol_1_457.webp",
-      },
-      {
-        name: "Omnium Star",
-        icon: "minimap_symbol_1_321.webp",
-      },
-      {
-        name: "Market Broker",
-        icon: "minimap_symbol_151.webp",
-      },
-      {
-        name: "Currency Broker",
-        icon: "minimap_symbol_1_147.webp",
-      },
-      {
-        name: "Guild Manager",
-        icon: "minimap_symbol_157.webp",
-      },
-      {
-        name: "Pet Management",
-        icon: "minimap_symbol_1_203.webp",
-      },
-      {
-        name: "Gear Honing",
-        icon: "minimap_symbol_1_207.webp",
-      },
-      {
-        name: "Skin Modding",
-        icon: "minimap_symbol_1_387.webp",
-      },
-      {
-        name: "Turquoise Portal",
-        icon: "minimap_symbol_1_111.webp",
-      },
-      {
-        name: "Boss 2",
-        icon: "minimap_symbol_40.webp",
-      },
-      {
-        name: "Water Vehicle",
-        icon: "minimap_symbol_72.webp",
-      },
-      {
-        name: "Elevator",
-        icon: "minimap_symbol_1_1.webp",
-      },
-      {
-        name: "Travelator",
-        icon: "minimap_symbol_1_2.webp",
-      },
-      {
-        name: "1_3",
-        icon: "minimap_symbol_1_3.webp",
-      },
-      {
-        name: "Stairs (Up)",
-        icon: "minimap_symbol_1_4.webp",
-      },
-      {
-        name: "Stairs (Down)",
-        icon: "minimap_symbol_1_5.webp",
-      },
-      {
-        name: "Gold Named Enemy",
-        icon: "minimap_symbol_69.webp",
-      },
-      {
-        name: "X",
-        icon: "minimap_symbol_1_0.webp",
-      },
-      {
-        name: "Silver Named Enemy",
-        icon: "minimap_symbol_76.webp",
-      },
-      {
-        name: "Lime Portal",
-        icon: "minimap_symbol_1_315.webp",
-      },
-      {
-        name: "Yellow Portal",
-        icon: "minimap_symbol_1_316.webp",
-      },
-      {
-        name: "Purple Portal",
-        icon: "minimap_symbol_1_317.webp",
-      },
-      {
-        name: "Siege Status Board",
-        icon: "minimap_symbol_1_152.webp",
+        name: "Pink Chaos Gate",
+        icon: "minimap_symbol_67.webp",
       },
     ],
   },
