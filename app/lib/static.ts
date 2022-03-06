@@ -36,17 +36,9 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_206.webp",
       },
       {
-        name: "Chef's Kitchen",
-        icon: "minimap_symbol_1_302.webp",
-      },
-      {
         name: "Trade Merchant",
         icon: "minimap_symbol_152.webp",
-      },
-      {
-        name: "Trade Merchant Building",
-        icon: "minimap_symbol_1_336.webp",
-      },
+      }
     ],
   },
   {
@@ -62,420 +54,56 @@ export const nodeCategories: AreaNodeCategory[] = [
     name: "Symbols",
     types: [
       {
-        name: "Main Quest (Available)",
-        icon: "minimap_symbol_11.webp",
-      },
-      {
-        name: "Main Quest (InProgress)",
+        name: "Main Quest",
         icon: "minimap_symbol_12.webp",
       },
       {
-        name: "Main Quest (Complete)",
-        icon: "minimap_symbol_13.webp",
-      },
-      {
-        name: "Regular Quest (Available)",
-        icon: "minimap_symbol_14.webp",
-      },
-      {
-        name: "Regular Quest (InProgress)",
-        icon: "minimap_symbol_18.webp",
-      },
-      {
-        name: "Regular Quest (Complete)",
+        name: "Side Quest",
         icon: "minimap_symbol_15.webp",
-      },
-      {
-        name: "Dungeon Quest (Available)",
-        icon: "minimap_symbol_77.webp",
-      },
-      {
-        name: "Dungeon Quest (InProgress)",
-        icon: "minimap_symbol_78.webp",
-      },
-      {
-        name: "Dungeon Quest (Complete)",
-        icon: "minimap_symbol_79.webp",
-      },
-      {
-        name: "Sudden Quest (Available)",
-        icon: "minimap_symbol_80.webp",
       },
       {
         name: "Sudden Quest (InProgress)",
         icon: "minimap_symbol_81.webp",
       },
       {
-        name: "Sudden Quest (Complete)",
-        icon: "minimap_symbol_82.webp",
-      },
-      {
-        name: "World Quest 1",
-        icon: "minimap_symbol_243.webp",
-      },
-      {
-        name: "World Quest 2",
+        name: "World Quest",
         icon: "minimap_symbol_244.webp",
       },
       {
-        name: "World Quest 3",
-        icon: "minimap_symbol_245.webp",
-      },
-      {
-        name: "Co-op Quest (Available)",
+        name: "Co-op Quest",
         icon: "minimap_symbol_87.webp",
       },
       {
-        name: "Co-op Quest (Active)",
+        name: "Co-op Quest Area",
         icon: "minimap_symbol_88.webp",
       },
       {
-        name: "Co-op Quest (Complete)",
-        icon: "minimap_symbol_89.webp",
-      },
-      {
-        name: "Co-op Quest (InActive)",
-        icon: "minimap_symbol_86.webp",
-      },
-      {
-        name: "Co-op Quest",
-        icon: "minimap_symbol_242.webp",
-      },
-      {
-        name: "252",
-        icon: "minimap_symbol_252.webp",
-      },
-      {
-        name: "253",
+        name: "Chain Side Quest",
         icon: "minimap_symbol_253.webp",
       },
       {
-        name: "254",
-        icon: "minimap_symbol_254.webp",
-      },
-      {
-        name: "Regular Repeatable Quest (Available)",
+        name: "Repeatable Quest",
         icon: "minimap_symbol_249.webp",
       },
       {
-        name: "Regular Repeatable Quest (InProgress)",
-        icon: "minimap_symbol_250.webp",
-      },
-      {
-        name: "Regular Repeatable Quest (Complete)",
-        icon: "minimap_symbol_251.webp",
-      },
-      {
-        name: "Adventure Quest (Available)",
-        icon: "minimap_symbol_246.webp",
-      },
-      {
-        name: "Adventure Quest (InProgress) 1",
+        name: "Adventure Quest",
         icon: "minimap_symbol_247.webp",
       },
       {
-        name: "Adventure Quest (Complete)",
-        icon: "minimap_symbol_248.webp",
-      },
-      {
-        name: "Adventure Quest (InProgress) 2",
+        name: "Chain Adventure Quest",
         icon: "minimap_symbol_239.webp",
       },
       {
-        name: "Rapport Quest (Available)",
-        icon: "minimap_symbol_1_80.webp",
-      },
-      {
-        name: "Rapport Quest (InProgress)",
+        name: "Rapport Quest",
         icon: "minimap_symbol_1_55.webp",
       },
       {
-        name: "Rapport Quest (Complete)",
-        icon: "minimap_symbol_1_56.webp",
-      },
-      {
-        name: "Una Daily Task (Available)",
-        icon: "minimap_symbol_1_51.webp",
-      },
-      {
-        name: "Una Daily Task (InProgress)",
-        icon: "minimap_symbol_1_52.webp",
-      },
-      {
-        name: "Una Daily Task (Complete)",
-        icon: "minimap_symbol_1_53.webp",
-      },
-      {
-        name: "Una Weekly Task (InProgress)",
-        icon: "minimap_symbol_1_54.webp",
-      },
-      {
-        name: "Co-op Quest 1",
-        icon: "minimap_symbol_1_57.webp",
-      },
-      {
-        name: "Co-op Quest 2",
+        name: "Co-op Quest",
         icon: "minimap_symbol_1_58.webp",
       },
       {
-        name: "Co-op Quest 3",
-        icon: "minimap_symbol_1_59.webp",
-      },
-      {
-        name: "Co-op Quest 4",
-        icon: "minimap_symbol_1_60.webp",
-      },
-      {
-        name: "Main Stronghold Quest (Available)",
-        icon: "minimap_symbol_1_25.webp",
-      },
-      {
-        name: "Main Stronghold Quest (InProgress)",
-        icon: "minimap_symbol_1_26.webp",
-      },
-      {
-        name: "Main Stronghold Quest (Complete)",
-        icon: "minimap_symbol_1_27.webp",
-      },
-      {
-        name: "Regular Stronghold Quest (Available) 1",
-        icon: "minimap_symbol_1_28.webp",
-      },
-      {
-        name: "Regular Stronghold Quest (InProgress)",
-        icon: "minimap_symbol_1_29.webp",
-      },
-      {
-        name: "Regular Stronghold Quest (Complete)",
-        icon: "minimap_symbol_1_30.webp",
-      },
-      {
-        name: "Regular Stronghold Quest (Available) 2",
-        icon: "minimap_symbol_1_31.webp",
-      },
-      {
-        name: "Stronghold Quests (InProgress)",
-        icon: "minimap_symbol_1_32.webp",
-      },
-      {
-        name: "Stronghold Quests (Complete)",
-        icon: "minimap_symbol_1_33.webp",
-      },
-      {
-        name: "1_279",
+        name: "Rapport Chain Quest",
         icon: "minimap_symbol_1_279.webp",
-      },
-      {
-        name: "1_280",
-        icon: "minimap_symbol_1_280.webp",
-      },
-      {
-        name: "1_281",
-        icon: "minimap_symbol_1_281.webp",
-      },
-      {
-        name: "Stronghold Quests 1",
-        icon: "minimap_symbol_1_285.webp",
-      },
-      {
-        name: "Stronghold Quests 2",
-        icon: "minimap_symbol_1_286.webp",
-      },
-      {
-        name: "Stronghold Quests 3",
-        icon: "minimap_symbol_1_287.webp",
-      },
-      {
-        name: "Stronghold Quests 4",
-        icon: "minimap_symbol_1_282.webp",
-      },
-      {
-        name: "Stronghold Quests 5",
-        icon: "minimap_symbol_1_283.webp",
-      },
-      {
-        name: "Stronghold Quests 6",
-        icon: "minimap_symbol_1_284.webp",
-      },
-      {
-        name: "46",
-        icon: "minimap_symbol_46.webp",
-      },
-      {
-        name: "1_97",
-        icon: "minimap_symbol_1_97.webp",
-      },
-      {
-        name: "1_98",
-        icon: "minimap_symbol_1_98.webp",
-      },
-      {
-        name: "1_99",
-        icon: "minimap_symbol_1_99.webp",
-      },
-      {
-        name: "1_100",
-        icon: "minimap_symbol_1_100.webp",
-      },
-      {
-        name: "1_101",
-        icon: "minimap_symbol_1_101.webp",
-      },
-      {
-        name: "1_102",
-        icon: "minimap_symbol_1_102.webp",
-      },
-      {
-        name: "1_103",
-        icon: "minimap_symbol_1_103.webp",
-      },
-      {
-        name: "1_118",
-        icon: "minimap_symbol_1_118.webp",
-      },
-      {
-        name: "1_119",
-        icon: "minimap_symbol_1_119.webp",
-      },
-      {
-        name: "1_120",
-        icon: "minimap_symbol_1_120.webp",
-      },
-      {
-        name: "1_132",
-        icon: "minimap_symbol_1_132.webp",
-      },
-      {
-        name: "1_133",
-        icon: "minimap_symbol_1_133.webp",
-      },
-      {
-        name: "1_134",
-        icon: "minimap_symbol_1_134.webp",
-      },
-      {
-        name: "1_135",
-        icon: "minimap_symbol_1_135.webp",
-      },
-      {
-        name: "1_136",
-        icon: "minimap_symbol_1_136.webp",
-      },
-      {
-        name: "1_137",
-        icon: "minimap_symbol_1_137.webp",
-      },
-      {
-        name: "Number 1",
-        icon: "minimap_symbol_0.webp",
-      },
-      {
-        name: "58",
-        icon: "minimap_symbol_58.webp",
-      },
-      {
-        name: "59",
-        icon: "minimap_symbol_59.webp",
-      },
-      {
-        name: "60",
-        icon: "minimap_symbol_60.webp",
-      },
-      {
-        name: "1_215",
-        icon: "minimap_symbol_1_215.webp",
-      },
-      {
-        name: "1_216",
-        icon: "minimap_symbol_1_216.webp",
-      },
-      {
-        name: "1_217",
-        icon: "minimap_symbol_1_217.webp",
-      },
-      {
-        name: "1_218",
-        icon: "minimap_symbol_1_218.webp",
-      },
-      {
-        name: "1_211",
-        icon: "minimap_symbol_1_211.webp",
-      },
-      {
-        name: "1_212",
-        icon: "minimap_symbol_1_212.webp",
-      },
-      {
-        name: "1_213",
-        icon: "minimap_symbol_1_213.webp",
-      },
-      {
-        name: "1_214",
-        icon: "minimap_symbol_1_214.webp",
-      },
-      {
-        name: "1_243",
-        icon: "minimap_symbol_1_243.webp",
-      },
-      {
-        name: "1_244",
-        icon: "minimap_symbol_1_244.webp",
-      },
-      {
-        name: "1_245",
-        icon: "minimap_symbol_1_245.webp",
-      },
-      {
-        name: "1_246",
-        icon: "minimap_symbol_1_246.webp",
-      },
-      {
-        name: "1_247",
-        icon: "minimap_symbol_1_247.webp",
-      },
-      {
-        name: "1_248",
-        icon: "minimap_symbol_1_248.webp",
-      },
-      {
-        name: "1_249",
-        icon: "minimap_symbol_1_249.webp",
-      },
-      {
-        name: "1_250",
-        icon: "minimap_symbol_1_250.webp",
-      },
-      {
-        name: "1_251",
-        icon: "minimap_symbol_1_251.webp",
-      },
-      {
-        name: "1_252",
-        icon: "minimap_symbol_1_252.webp",
-      },
-      {
-        name: "1_253",
-        icon: "minimap_symbol_1_253.webp",
-      },
-      {
-        name: "1_254",
-        icon: "minimap_symbol_1_254.webp",
-      },
-      {
-        name: "1_255",
-        icon: "minimap_symbol_1_255.webp",
-      },
-      {
-        name: "1_256",
-        icon: "minimap_symbol_1_256.webp",
-      },
-      {
-        name: "1_257",
-        icon: "minimap_symbol_1_257.webp",
-      },
-      {
-        name: "1_258",
-        icon: "minimap_symbol_1_258.webp",
       },
       {
         name: "Boss 1",
@@ -514,14 +142,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_34.webp",
       },
       {
-        name: "Abyssal Dungeon 4",
-        icon: "minimap_symbol_1_209.webp",
-      },
-      {
-        name: "Abyss Raid",
-        icon: "minimap_symbol_1_238.webp",
-      },
-      {
         name: "Cube",
         icon: "minimap_symbol_1_309.webp",
       },
@@ -534,7 +154,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_311.webp",
       },
       {
-        name: "Abyssal Dungeon 1",
+        name: "Abyssal Dungeon",
         icon: "minimap_symbol_1_312.webp",
       },
       {
@@ -550,28 +170,24 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_6.webp",
       },
       {
-        name: "Chaos Gate - 1",
+        name: "Crimson Chaos Gate",
         icon: "minimap_symbol_64.webp",
       },
       {
-        name: "Chaos Gate - 2",
+        name: "Plum Chaos Gate",
         icon: "minimap_symbol_65.webp",
       },
       {
-        name: "Chaos Gate - 3",
+        name: "Lime Chaos Gate",
         icon: "minimap_symbol_66.webp",
       },
       {
-        name: "Chaos Gate - 4",
+        name: "Pink Chaos Gate",
         icon: "minimap_symbol_67.webp",
       },
       {
         name: "Portal Statue",
         icon: "minimap_symbol_1_186.webp",
-      },
-      {
-        name: "Triport (Undiscovered)",
-        icon: "minimap_symbol_gray_73.webp",
       },
       {
         name: "Chaos Dungeon Node",
@@ -598,18 +214,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_218.webp",
       },
       {
-        name: "1_34",
-        icon: "minimap_symbol_1_34.webp",
-      },
-      {
-        name: "1_36",
-        icon: "minimap_symbol_1_36.webp",
-      },
-      {
-        name: "1_126",
-        icon: "minimap_symbol_1_126.webp",
-      },
-      {
         name: "Ghost Ship (Active)",
         icon: "minimap_symbol_1_210.webp",
       },
@@ -626,7 +230,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_97.webp",
       },
       {
-        name: "Sea Bounty - Turtle",
+        name: "Sea Bounty - Red Sea Turtle",
         icon: "minimap_symbol_98.webp",
       },
       {
@@ -778,32 +382,12 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_135.webp",
       },
       {
-        name: "223",
+        name: "Sea Bounty - Whale?",
         icon: "minimap_symbol_223.webp",
-      },
-      {
-        name: "1_110",
-        icon: "minimap_symbol_1_110.webp",
       },
       {
         name: "Statue of Gienah (Island Souls)",
         icon: "minimap_symbol_1_109.webp",
-      },
-      {
-        name: "1_327",
-        icon: "minimap_symbol_1_327.webp",
-      },
-      {
-        name: "1_375",
-        icon: "minimap_symbol_1_375.webp",
-      },
-      {
-        name: "1_376",
-        icon: "minimap_symbol_1_376.webp",
-      },
-      {
-        name: "1_377",
-        icon: "minimap_symbol_1_377.webp",
       },
       {
         name: "Sea Bounty - PhantomWing",
@@ -820,46 +404,6 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Sea Bounty - Ice Statue of a Woman",
         icon: "minimap_symbol_1_326.webp",
-      },
-      {
-        name: "Barrel in Water",
-        icon: "minimap_symbol_93.webp",
-      },
-      {
-        name: "94",
-        icon: "minimap_symbol_94.webp",
-      },
-      {
-        name: "95",
-        icon: "minimap_symbol_95.webp",
-      },
-      {
-        name: "91",
-        icon: "minimap_symbol_91.webp",
-      },
-      {
-        name: "1_50",
-        icon: "minimap_symbol_1_50.webp",
-      },
-      {
-        name: "1_49",
-        icon: "minimap_symbol_1_49.webp",
-      },
-      {
-        name: "75",
-        icon: "minimap_symbol_75.webp",
-      },
-      {
-        name: "55",
-        icon: "minimap_symbol_55.webp",
-      },
-      {
-        name: "56",
-        icon: "minimap_symbol_56.webp",
-      },
-      {
-        name: "1_303",
-        icon: "minimap_symbol_1_303.webp",
       },
       {
         name: "Sandstorm Sea",
@@ -882,80 +426,12 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_305.webp",
       },
       {
-        name: "1_330",
-        icon: "minimap_symbol_1_330.webp",
-      },
-      {
-        name: "1_332",
-        icon: "minimap_symbol_1_332.webp",
-      },
-      {
-        name: "1_331",
-        icon: "minimap_symbol_1_331.webp",
-      },
-      {
-        name: "229",
-        icon: "minimap_symbol_229.webp",
-      },
-      {
         name: "1_48",
         icon: "minimap_symbol_1_48.webp",
       },
       {
-        name: "235",
-        icon: "minimap_symbol_235.webp",
-      },
-      {
-        name: "Ocean Activity",
-        icon: "minimap_symbol_231.webp",
-      },
-      {
         name: "Marina",
         icon: "minimap_symbol_230.webp",
-      },
-      {
-        name: "232",
-        icon: "minimap_symbol_232.webp",
-      },
-      {
-        name: "234",
-        icon: "minimap_symbol_234.webp",
-      },
-      {
-        name: "233",
-        icon: "minimap_symbol_233.webp",
-      },
-      {
-        name: "1_95",
-        icon: "minimap_symbol_1_95.webp",
-      },
-      {
-        name: "1_197",
-        icon: "minimap_symbol_1_197.webp",
-      },
-      {
-        name: "1_198",
-        icon: "minimap_symbol_1_198.webp",
-      },
-      {
-        name: "1_199",
-        icon: "minimap_symbol_1_199.webp",
-      },
-      {
-        name: "1_200",
-        icon: "minimap_symbol_1_200.webp",
-      },
-      {
-        name: "1_201",
-        icon: "minimap_symbol_1_201.webp",
-      },
-      {
-        name: "1_239",
-        icon: "minimap_symbol_1_239.webp",
-      },
-      {
-        name: "1_162",
-        icon: "minimap_symbol_1_162.webp",
       },
       {
         name: "Ore",
@@ -974,48 +450,8 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_24.webp",
       },
       {
-        name: "140",
-        icon: "minimap_symbol_140.webp",
-      },
-      {
-        name: "141",
-        icon: "minimap_symbol_141.webp",
-      },
-      {
-        name: "142",
-        icon: "minimap_symbol_142.webp",
-      },
-      {
-        name: "143",
-        icon: "minimap_symbol_143.webp",
-      },
-      {
-        name: "Hunting",
-        icon: "minimap_symbol_144.webp",
-      },
-      {
-        name: "145",
-        icon: "minimap_symbol_145.webp",
-      },
-      {
-        name: "146",
-        icon: "minimap_symbol_146.webp",
-      },
-      {
-        name: "147",
-        icon: "minimap_symbol_147.webp",
-      },
-      {
-        name: "209",
-        icon: "minimap_symbol_209.webp",
-      },
-      {
         name: "1_290",
         icon: "minimap_symbol_1_290.webp",
-      },
-      {
-        name: "Ruins",
-        icon: "minimap_symbol_150.webp",
       },
       {
         name: "162",
@@ -1055,7 +491,7 @@ export const nodeCategories: AreaNodeCategory[] = [
       },
 
       {
-        name: "154",
+        name: "Wandering Merchant",
         icon: "minimap_symbol_154.webp",
       },
       {
@@ -1065,6 +501,10 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "1_124",
         icon: "minimap_symbol_1_124.webp",
+      },
+      {
+        name: "Voyage Manager",
+        icon: "minimap_symbol_224.webp",
       },
       {
         name: "Map Exchange",
@@ -1089,18 +529,6 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Rapport Exchange",
         icon: "minimap_symbol_1_275.webp",
-      },
-      {
-        name: "193",
-        icon: "minimap_symbol_193.webp",
-      },
-      {
-        name: "200",
-        icon: "minimap_symbol_200.webp",
-      },
-      {
-        name: "8",
-        icon: "minimap_symbol_8.webp",
       },
       {
         name: "Crafting and Processing",
@@ -1187,10 +615,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_157.webp",
       },
       {
-        name: "Voyage Manager",
-        icon: "minimap_symbol_224.webp",
-      },
-      {
         name: "Pet Management",
         icon: "minimap_symbol_1_203.webp",
       },
@@ -1209,22 +633,6 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Boss 2",
         icon: "minimap_symbol_40.webp",
-      },
-      {
-        name: "Chaos Gate Player Icon",
-        icon: "minimap_symbol_74.webp",
-      },
-      {
-        name: "42",
-        icon: "minimap_symbol_42.webp",
-      },
-      {
-        name: "41",
-        icon: "minimap_symbol_41.webp",
-      },
-      {
-        name: "43",
-        icon: "minimap_symbol_43.webp",
       },
       {
         name: "Water Vehicle",
@@ -1259,169 +667,12 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_0.webp",
       },
       {
-        name: "90",
-        icon: "minimap_symbol_90.webp",
-      },
-      {
-        name: "210",
-        icon: "minimap_symbol_210.webp",
-      },
-      {
-        name: "211",
-        icon: "minimap_symbol_211.webp",
-      },
-      {
-        name: "212",
-        icon: "minimap_symbol_212.webp",
-      },
-      {
-        name: "213",
-        icon: "minimap_symbol_213.webp",
-      },
-      {
-        name: "237",
-        icon: "minimap_symbol_237.webp",
-      },
-      {
-        name: "236",
-        icon: "minimap_symbol_236.webp",
-      },
-      {
-        name: "238",
-        icon: "minimap_symbol_238.webp",
-      },
-      {
         name: "Silver Named Enemy",
         icon: "minimap_symbol_76.webp",
       },
       {
-        name: "68",
-        icon: "minimap_symbol_68.webp",
-      },
-      {
-        name: "Player Custom Marker",
-        icon: "minimap_symbol_10.webp",
-      },
-      {
-        name: "Lab",
-        icon: "minimap_symbol_1_298.webp",
-      },
-      {
-        name: "Craft Shop",
-        icon: "minimap_symbol_1_299.webp",
-      },
-      {
-        name: "Dispatch Station",
-        icon: "minimap_symbol_1_300.webp",
-      },
-      {
-        name: "Manor",
-        icon: "minimap_symbol_1_301.webp",
-      },
-
-      {
-        name: "1_338",
-        icon: "minimap_symbol_1_338.webp",
-      },
-      {
-        name: "1_337",
-        icon: "minimap_symbol_1_337.webp",
-      },
-      {
-        name: "Training Camp",
-        icon: "minimap_symbol_1_381.webp",
-      },
-      {
-        name: "Knowledge Vault",
-        icon: "minimap_symbol_1_397.webp",
-      },
-      {
-        name: "Farm",
-        icon: "minimap_symbol_1_386.webp",
-      },
-      {
-        name: "1_382",
-        icon: "minimap_symbol_1_382.webp",
-      },
-      {
         name: "Lime Portal",
         icon: "minimap_symbol_1_315.webp",
-      },
-      {
-        name: "Pet Ranch",
-        icon: "minimap_symbol_1_408.webp",
-      },
-      {
-        name: "Up and Down",
-        icon: "minimap_symbol_1_178.webp",
-      },
-      {
-        name: "1_179",
-        icon: "minimap_symbol_1_179.webp",
-      },
-      {
-        name: "1_180",
-        icon: "minimap_symbol_1_180.webp",
-      },
-      {
-        name: "1_181",
-        icon: "minimap_symbol_1_181.webp",
-      },
-      {
-        name: "1_182",
-        icon: "minimap_symbol_1_182.webp",
-      },
-      {
-        name: "Gatherable Chest",
-        icon: "minimap_symbol_28.webp",
-      },
-      {
-        name: "1_96",
-        icon: "minimap_symbol_1_96.webp",
-      },
-      {
-        name: "gray_1",
-        icon: "minimap_symbol_gray_1.webp",
-      },
-      {
-        name: "1_185",
-        icon: "minimap_symbol_1_185.webp",
-      },
-      {
-        name: "Left and Right",
-        icon: "minimap_symbol_1_208.webp",
-      },
-      {
-        name: "1_233",
-        icon: "minimap_symbol_1_233.webp",
-      },
-      {
-        name: "1_234",
-        icon: "minimap_symbol_1_234.webp",
-      },
-      {
-        name: "1_235",
-        icon: "minimap_symbol_1_235.webp",
-      },
-      {
-        name: "1_259",
-        icon: "minimap_symbol_1_259.webp",
-      },
-      {
-        name: "1_260",
-        icon: "minimap_symbol_1_260.webp",
-      },
-      {
-        name: "1_261",
-        icon: "minimap_symbol_1_261.webp",
-      },
-      {
-        name: "1_262",
-        icon: "minimap_symbol_1_262.webp",
-      },
-      {
-        name: "1_183",
-        icon: "minimap_symbol_1_183.webp",
       },
       {
         name: "Yellow Portal",
@@ -1432,441 +683,9 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_317.webp",
       },
       {
-        name: "1_333",
-        icon: "minimap_symbol_1_333.webp",
-      },
-      {
-        name: "33",
-        icon: "minimap_symbol_33.webp",
-      },
-      {
-        name: "1_335",
-        icon: "minimap_symbol_1_335.webp",
-      },
-      {
-        name: "221",
-        icon: "minimap_symbol_221.webp",
-      },
-      {
-        name: "1_149",
-        icon: "minimap_symbol_1_149.webp",
-      },
-      {
-        name: "Quest Pickup Location",
-        icon: "minimap_symbol_1_130.webp",
-      },
-      {
-        name: "1_92",
-        icon: "minimap_symbol_1_92.webp",
-      },
-      {
-        name: "1_93",
-        icon: "minimap_symbol_1_93.webp",
-      },
-      {
-        name: "197",
-        icon: "minimap_symbol_197.webp",
-      },
-      {
-        name: "19",
-        icon: "minimap_symbol_19.webp",
-      },
-      {
-        name: "1_143",
-        icon: "minimap_symbol_1_143.webp",
-      },
-      {
-        name: "1_138",
-        icon: "minimap_symbol_1_138.webp",
-      },
-      {
-        name: "1_144",
-        icon: "minimap_symbol_1_144.webp",
-      },
-      {
-        name: "Player Marker - Rank 1",
-        icon: "minimap_symbol_1_340.webp",
-      },
-      {
-        name: "Player Marker - Rank 2",
-        icon: "minimap_symbol_1_341.webp",
-      },
-      {
-        name: "Player Marker - Rank 3",
-        icon: "minimap_symbol_1_342.webp",
-      },
-      {
-        name: "1_145",
-        icon: "minimap_symbol_1_145.webp",
-      },
-      {
-        name: "1_146",
-        icon: "minimap_symbol_1_146.webp",
-      },
-      {
-        name: "1_148",
-        icon: "minimap_symbol_1_148.webp",
-      },
-      {
-        name: "1_150",
-        icon: "minimap_symbol_1_150.webp",
-      },
-      {
-        name: "1_151",
-        icon: "minimap_symbol_1_151.webp",
-      },
-      {
         name: "Siege Status Board",
         icon: "minimap_symbol_1_152.webp",
-      },
-      {
-        name: "1_153",
-        icon: "minimap_symbol_1_153.webp",
-      },
-      {
-        name: "1_154",
-        icon: "minimap_symbol_1_154.webp",
-      },
-      {
-        name: "1_155",
-        icon: "minimap_symbol_1_155.webp",
-      },
-      {
-        name: "1_156",
-        icon: "minimap_symbol_1_156.webp",
-      },
-      {
-        name: "1_157",
-        icon: "minimap_symbol_1_157.webp",
-      },
-      {
-        name: "1_158",
-        icon: "minimap_symbol_1_158.webp",
-      },
-      {
-        name: "1_159",
-        icon: "minimap_symbol_1_159.webp",
-      },
-      {
-        name: "1_160",
-        icon: "minimap_symbol_1_160.webp",
-      },
-      {
-        name: "1_163",
-        icon: "minimap_symbol_1_163.webp",
-      },
-      {
-        name: "1_164",
-        icon: "minimap_symbol_1_164.webp",
-      },
-      {
-        name: "1_165",
-        icon: "minimap_symbol_1_165.webp",
-      },
-      {
-        name: "1_166",
-        icon: "minimap_symbol_1_166.webp",
-      },
-      {
-        name: "1_171",
-        icon: "minimap_symbol_1_171.webp",
-      },
-      {
-        name: "1_172",
-        icon: "minimap_symbol_1_172.webp",
-      },
-      {
-        name: "1_173",
-        icon: "minimap_symbol_1_173.webp",
-      },
-      {
-        name: "1_174",
-        icon: "minimap_symbol_1_174.webp",
-      },
-      {
-        name: "1_175",
-        icon: "minimap_symbol_1_175.webp",
-      },
-      {
-        name: "1_176",
-        icon: "minimap_symbol_1_176.webp",
-      },
-      {
-        name: "1_177",
-        icon: "minimap_symbol_1_177.webp",
-      },
-      {
-        name: "1_196",
-        icon: "minimap_symbol_1_196.webp",
-      },
-      {
-        name: "1_206",
-        icon: "minimap_symbol_1_206.webp",
-      },
-      {
-        name: "1_191",
-        icon: "minimap_symbol_1_191.webp",
-      },
-      {
-        name: "1_192",
-        icon: "minimap_symbol_1_192.webp",
-      },
-      {
-        name: "1_193",
-        icon: "minimap_symbol_1_193.webp",
-      },
-      {
-        name: "1_225",
-        icon: "minimap_symbol_1_225.webp",
-      },
-      {
-        name: "1_228",
-        icon: "minimap_symbol_1_228.webp",
-      },
-      {
-        name: "1_189",
-        icon: "minimap_symbol_1_189.webp",
-      },
-      {
-        name: "1_190",
-        icon: "minimap_symbol_1_190.webp",
-      },
-      {
-        name: "1_194",
-        icon: "minimap_symbol_1_194.webp",
-      },
-      {
-        name: "1_195",
-        icon: "minimap_symbol_1_195.webp",
-      },
-      {
-        name: "1_231",
-        icon: "minimap_symbol_1_231.webp",
-      },
-      {
-        name: "1_232",
-        icon: "minimap_symbol_1_232.webp",
-      },
-      {
-        name: "1_236",
-        icon: "minimap_symbol_1_236.webp",
-      },
-      {
-        name: "1_237",
-        icon: "minimap_symbol_1_237.webp",
-      },
-      {
-        name: "1_226",
-        icon: "minimap_symbol_1_226.webp",
-      },
-      {
-        name: "1_229",
-        icon: "minimap_symbol_1_229.webp",
-      },
-      {
-        name: "1_227",
-        icon: "minimap_symbol_1_227.webp",
-      },
-      {
-        name: "1_230",
-        icon: "minimap_symbol_1_230.webp",
-      },
-      {
-        name: "1_219",
-        icon: "minimap_symbol_1_219.webp",
-      },
-      {
-        name: "1_222",
-        icon: "minimap_symbol_1_222.webp",
-      },
-      {
-        name: "1_220",
-        icon: "minimap_symbol_1_220.webp",
-      },
-      {
-        name: "1_223",
-        icon: "minimap_symbol_1_223.webp",
-      },
-      {
-        name: "1_221",
-        icon: "minimap_symbol_1_221.webp",
-      },
-      {
-        name: "1_224",
-        icon: "minimap_symbol_1_224.webp",
-      },
-      {
-        name: "1_240",
-        icon: "minimap_symbol_1_240.webp",
-      },
-      {
-        name: "1_241",
-        icon: "minimap_symbol_1_241.webp",
-      },
-      {
-        name: "1_242",
-        icon: "minimap_symbol_1_242.webp",
-      },
-      {
-        name: "220",
-        icon: "minimap_symbol_220.webp",
-      },
-      {
-        name: "1_352",
-        icon: "minimap_symbol_1_352.webp",
-      },
-      {
-        name: "1_353",
-        icon: "minimap_symbol_1_353.webp",
-      },
-      {
-        name: "1_354",
-        icon: "minimap_symbol_1_354.webp",
-      },
-      {
-        name: "1_187",
-        icon: "minimap_symbol_1_187.webp",
-      },
-      {
-        name: "1_188",
-        icon: "minimap_symbol_1_188.webp",
-      },
-      {
-        name: "1_84",
-        icon: "minimap_symbol_1_84.webp",
-      },
-      {
-        name: "1_355",
-        icon: "minimap_symbol_1_355.webp",
-      },
-      {
-        name: "1_356",
-        icon: "minimap_symbol_1_356.webp",
-      },
-      {
-        name: "1_357",
-        icon: "minimap_symbol_1_357.webp",
-      },
-      {
-        name: "1_358",
-        icon: "minimap_symbol_1_358.webp",
-      },
-      {
-        name: "1_359",
-        icon: "minimap_symbol_1_359.webp",
-      },
-      {
-        name: "1_360",
-        icon: "minimap_symbol_1_360.webp",
-      },
-      {
-        name: "1_361",
-        icon: "minimap_symbol_1_361.webp",
-      },
-      {
-        name: "1_362",
-        icon: "minimap_symbol_1_362.webp",
-      },
-      {
-        name: "1_363",
-        icon: "minimap_symbol_1_363.webp",
-      },
-      {
-        name: "1_364",
-        icon: "minimap_symbol_1_364.webp",
-      },
-      {
-        name: "1_365",
-        icon: "minimap_symbol_1_365.webp",
-      },
-      {
-        name: "1_351",
-        icon: "minimap_symbol_1_351.webp",
-      },
-      {
-        name: "1_366",
-        icon: "minimap_symbol_1_366.webp",
-      },
-      {
-        name: "1_367",
-        icon: "minimap_symbol_1_367.webp",
-      },
-      {
-        name: "1_378",
-        icon: "minimap_symbol_1_378.webp",
-      },
-      {
-        name: "1_379",
-        icon: "minimap_symbol_1_379.webp",
-      },
-      {
-        name: "1_263",
-        icon: "minimap_symbol_1_263.webp",
-      },
-      {
-        name: "1_265",
-        icon: "minimap_symbol_1_265.webp",
-      },
-      {
-        name: "Abyssal Dungeon 3",
-        icon: "minimap_symbol_1_273.webp",
-      },
-      {
-        name: "Dungeon Oxygen Plant",
-        icon: "minimap_symbol_1_276.webp",
-      },
-      {
-        name: "Dungeon Oxygen Bubble",
-        icon: "minimap_symbol_1_277.webp",
-      },
-      {
-        name: "1_278",
-        icon: "minimap_symbol_1_278.webp",
-      },
-      {
-        name: "1_373",
-        icon: "minimap_symbol_1_373.webp",
-      },
-      {
-        name: "1_371",
-        icon: "minimap_symbol_1_371.webp",
-      },
-      {
-        name: "1_395",
-        icon: "minimap_symbol_1_395.webp",
-      },
-      {
-        name: "47",
-        icon: "minimap_symbol_47.webp",
-      },
-      {
-        name: "48",
-        icon: "minimap_symbol_48.webp",
-      },
-      {
-        name: "49",
-        icon: "minimap_symbol_49.webp",
-      },
-      {
-        name: "50",
-        icon: "minimap_symbol_50.webp",
-      },
-      {
-        name: "1_393",
-        icon: "minimap_symbol_1_393.webp",
-      },
-      {
-        name: "1_394",
-        icon: "minimap_symbol_1_394.webp",
-      },
-      {
-        name: "1_392",
-        icon: "minimap_symbol_1_392.webp",
-      },
-      {
-        name: "1_456",
-        icon: "minimap_symbol_1_456.webp",
-      },
+      }
     ],
   },
 ];
