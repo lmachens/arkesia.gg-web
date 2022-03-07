@@ -22,7 +22,6 @@ export default function NodeDescription({ html }: NodeDescriptionProps) {
   return (
     <Text
       lineClamp={4}
-      className="text-block"
       sx={(theme) => ({
         a: {
           color: theme.colors.blue[4],
