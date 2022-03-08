@@ -2,6 +2,7 @@ import {
   Button,
   Drawer,
   Group,
+  ScrollArea,
   Space,
   Text,
   TextInput,
@@ -88,76 +89,78 @@ export default function NodeDetails({
       padding="md"
       onClose={onClose}
     >
-      {selectedNode && (
-        <>
-          <Title order={3}>{selectedNode.name || selectedNode.type}</Title>
-          <Text color="teal">{selectedNode.type}</Text>
+      <ScrollArea style={{ height: "calc(100% - 50px)" }}>
+        {selectedNode && (
+          <>
+            <Title order={3}>{selectedNode.name || selectedNode.type}</Title>
+            <Text color="teal">{selectedNode.type}</Text>
 
-          {selectedNode.description && (
-            <NodeDescription html={selectedNode.description} />
-          )}
-          {selectedNode.screenshot && (
-            <ImagePreview src={selectedNode.screenshot} />
-          )}
-          <Space h="md" />
-          <Button
-            onClick={() => toggleDiscoveredNode(selectedNode)}
-            color="gray"
-            variant="subtle"
-            size="xs"
-            compact
-            mb="xs"
-          >
-            <Group>
-              {discoveredNodes.some(
-                (discoveredNode) => discoveredNode.id === selectedNode.id
-              ) ? (
-                <>
-                  <EyeClosedIcon /> Discovered
-                </>
-              ) : (
-                <>
-                  <EyeOpenIcon />
-                  Not discovered
-                </>
-              )}
-            </Group>
-          </Button>
-          <Text size="xs">See all discovered nodes in the settings</Text>
-          <Space h="md" />
-          {userToken ? (
-            <Form method="delete" className="node-form">
-              <input type="hidden" name="_action" value="delete" />
-              <input type="hidden" name="id" value={selectedNode.id} />
-              <input type="hidden" name="userToken" value={userToken} />
-              <Button type="submit" color="red">
-                Delete
-              </Button>
-              <Button
-                type="button"
-                color="teal"
-                onClick={() => onEdit(selectedNode)}
-              >
-                Edit
-              </Button>
-            </Form>
-          ) : (
-            <Form method="post" className="node-form">
-              <input type="hidden" name="_action" value="report" />
-              <input type="hidden" name="id" value={selectedNode.id} />
-              <TextInput
-                label="Is there any issue with this node?"
-                placeholder="Give us details"
-                name="reason"
-                required
-              />
-              <Button type="submit" color="teal">
-                Report issue
-              </Button>
-            </Form>
-          )}
-        </>
-      )}
+            {selectedNode.description && (
+              <NodeDescription html={selectedNode.description} />
+            )}
+            {selectedNode.screenshot && (
+              <ImagePreview src={selectedNode.screenshot} />
+            )}
+            <Space h="md" />
+            <Button
+              onClick={() => toggleDiscoveredNode(selectedNode)}
+              color="gray"
+              variant="subtle"
+              size="xs"
+              compact
+              mb="xs"
+            >
+              <Group>
+                {discoveredNodes.some(
+                  (discoveredNode) => discoveredNode.id === selectedNode.id
+                ) ? (
+                  <>
+                    <EyeClosedIcon /> Discovered
+                  </>
+                ) : (
+                  <>
+                    <EyeOpenIcon />
+                    Not discovered
+                  </>
+                )}
+              </Group>
+            </Button>
+            <Text size="xs">See all discovered nodes in the settings</Text>
+            <Space h="md" />
+            {userToken ? (
+              <Form method="delete" className="node-form">
+                <input type="hidden" name="_action" value="delete" />
+                <input type="hidden" name="id" value={selectedNode.id} />
+                <input type="hidden" name="userToken" value={userToken} />
+                <Button type="submit" color="red">
+                  Delete
+                </Button>
+                <Button
+                  type="button"
+                  color="teal"
+                  onClick={() => onEdit(selectedNode)}
+                >
+                  Edit
+                </Button>
+              </Form>
+            ) : (
+              <Form method="post" className="node-form">
+                <input type="hidden" name="_action" value="report" />
+                <input type="hidden" name="id" value={selectedNode.id} />
+                <TextInput
+                  label="Is there any issue with this node?"
+                  placeholder="Give us details"
+                  name="reason"
+                  required
+                />
+                <Button type="submit" color="teal">
+                  Report issue
+                </Button>
+              </Form>
+            )}
+          </>
+        )}
+      </ScrollArea>
     </Drawer>
   );
 }
