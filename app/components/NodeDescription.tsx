@@ -21,7 +21,6 @@ type NodeDescriptionProps = {
 export default function NodeDescription({ html }: NodeDescriptionProps) {
   return (
     <Text
-      lineClamp={4}
       sx={(theme) => ({
         a: {
           color: theme.colors.blue[4],
