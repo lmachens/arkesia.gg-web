@@ -4,7 +4,11 @@ import { useEffect, useMemo, useRef } from "react";
 import { TileLayer, Tooltip } from "react-leaflet";
 import { getBounds } from "~/lib/map";
 import { TILE_BASE_URL } from "~/lib/static";
-import { useDiscoveredNodes, useIsShowingDiscoveredNodes } from "~/lib/store";
+import {
+  useDiscoveredNodes,
+  useDrawerPosition,
+  useIsShowingDiscoveredNodes,
+} from "~/lib/store";
 import type { Area, Tile } from "~/lib/types";
 import IconMarker from "./IconMarker";
 
@@ -35,6 +39,7 @@ export default function TileControl({
       tileLayerRef.current.setUrl(`${TILE_BASE_URL}${activeTile.tile}`);
     }
   }, [activeTile]);
+  const drawerPosition = useDrawerPosition();
 
   const tileNodes = useMemo(
     () =>
@@ -45,7 +50,11 @@ export default function TileControl({
   );
 
   return (
-    <div className="leaflet-top leaflet-right">
+    <div
+      className={`leaflet-top leaflet-${
+        drawerPosition === "left" ? "right" : "left"
+      }`}
+    >
       <div className="leaflet-control">
         {area.name !== "Arkesia" &&
           area.tiles.map((tile) => (

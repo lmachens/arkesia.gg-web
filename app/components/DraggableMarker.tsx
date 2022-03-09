@@ -19,7 +19,7 @@ import RichTextEditor from "@mantine/rte";
 import TypeItem from "./TypeItem";
 import IconMarker from "./IconMarker";
 import type { AreaNode } from "@prisma/client";
-import { useLastType } from "~/lib/store";
+import { useDrawerPosition, useLastType } from "~/lib/store";
 
 type DraggableMarkerProps = {
   node: Partial<AreaNode> | null;
@@ -52,6 +52,7 @@ export default function DraggableMarker({
     defaultValue: "",
   });
   const actionData = useActionData<PostNodeActionData>();
+  const drawerPosition = useDrawerPosition();
 
   useEffect(() => {
     if (
@@ -140,6 +141,7 @@ export default function DraggableMarker({
         noCloseOnClickOutside
         noOverlay
         padding="md"
+        position={drawerPosition}
         onClose={() => {
           onChange(null);
           setFileScreenshot(null);
