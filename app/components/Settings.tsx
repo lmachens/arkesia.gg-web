@@ -1,6 +1,7 @@
 import {
   ActionIcon,
   Dialog,
+  SegmentedControl,
   Space,
   Switch,
   Text,
@@ -10,7 +11,9 @@ import { useLocalStorageValue } from "@mantine/hooks";
 import { GearIcon } from "@modulz/radix-icons";
 import { useState } from "react";
 import {
+  useDrawerPosition,
   useIsShowingDiscoveredNodes,
+  useSetDrawerPosition,
   useToggleIsShowingDiscoveredNodes,
 } from "~/lib/store";
 import { DiscoveredNodes } from "./DiscoveredNodes";
@@ -23,6 +26,8 @@ export default function Settings() {
   });
   const isShowingDiscoveredNodes = useIsShowingDiscoveredNodes();
   const toggleIsShowingDiscoveredNodes = useToggleIsShowingDiscoveredNodes();
+  const drawerPosition = useDrawerPosition();
+  const setDrawerPosition = useSetDrawerPosition();
 
   return (
     <>
@@ -62,6 +67,19 @@ export default function Settings() {
         />
         <Space h="md" />
         <DiscoveredNodes />
+        <Text style={{ marginBottom: 10 }} weight={500}>
+          Drawer position
+        </Text>
+        <SegmentedControl
+          size="sm"
+          value={drawerPosition}
+          onChange={(value: "left" | "right") => setDrawerPosition(value)}
+          sx={{ width: "100%" }}
+          data={[
+            { label: "Left", value: "left" },
+            { label: "Right", value: "right" },
+          ]}
+        />
       </Dialog>
     </>
   );

@@ -15,7 +15,11 @@ import type { AreaNode } from "@prisma/client";
 import { useEffect, useRef } from "react";
 import { useMapEvents } from "react-leaflet";
 import { Form, useActionData, useTransition } from "remix";
-import { useDiscoveredNodes, useToggleDiscoveredNode } from "~/lib/store";
+import {
+  useDiscoveredNodes,
+  useDrawerPosition,
+  useToggleDiscoveredNode,
+} from "~/lib/store";
 import ImagePreview from "./ImagePreview";
 import NodeDescription from "./NodeDescription";
 
@@ -39,6 +43,7 @@ export default function NodeDetails({
   const notificationId = useRef<string | null>(null);
   const discoveredNodes = useDiscoveredNodes();
   const toggleDiscoveredNode = useToggleDiscoveredNode();
+  const drawerPosition = useDrawerPosition();
 
   useEffect(() => {
     if (
@@ -87,6 +92,7 @@ export default function NodeDetails({
       zIndex={700}
       noOverlay
       padding="md"
+      position={drawerPosition}
       onClose={onClose}
     >
       <ScrollArea style={{ height: "calc(100% - 50px)" }}>

@@ -11,6 +11,8 @@ type StoreProps = {
   toggleIsShowingDiscoveredNodes: () => void;
   discoveredNodes: DiscoveredNode[];
   toggleDiscoveredNode: (node: AreaNode) => void;
+  drawerPosition: "left" | "right";
+  setDrawerPosition: (drawerPosition: "left" | "right") => void;
 };
 
 export const useStore = create(
@@ -37,6 +39,9 @@ export const useStore = create(
           }
           return { discoveredNodes: discoveredNodes };
         }),
+      drawerPosition: "left",
+      setDrawerPosition: (drawerPosition) =>
+        set((state) => ({ drawerPosition })),
     }),
     {
       name: "persistent-storage",
@@ -72,4 +77,15 @@ const toggleDiscoveredNodeSelector = (state: StoreProps) =>
   state.toggleDiscoveredNode;
 export const useToggleDiscoveredNode = () => {
   return useStore(toggleDiscoveredNodeSelector);
+};
+
+const drawerPositionSelector = (state: StoreProps) => state.drawerPosition;
+export const useDrawerPosition = () => {
+  return useStore(drawerPositionSelector);
+};
+
+const setDrawerPositionSelector = (state: StoreProps) =>
+  state.setDrawerPosition;
+export const useSetDrawerPosition = () => {
+  return useStore(setDrawerPositionSelector);
 };
