@@ -99,6 +99,10 @@ export async function requestUpdateNode(
     });
   }
 
+  if (oldNode.screenshot && oldNode.screenshot !== node.screenshot) {
+    await deleteNodeScreenshot(oldNode.screenshot);
+  }
+
   if (fileScreenshot) {
     const imageWebp = await imageToWebp(fileScreenshot);
     const filename =
@@ -107,10 +111,6 @@ export async function requestUpdateNode(
   }
 
   const updatedNode = await updateNode(node);
-
-  if (oldNode.screenshot && oldNode.screenshot !== node.screenshot) {
-    await deleteNodeScreenshot(oldNode.screenshot);
-  }
 
   postToDiscord("updated", updatedNode);
 }
