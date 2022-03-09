@@ -19,7 +19,6 @@ export const uploadNodeScreenshot = async (
 ) => {
   const bucket = supabase.storage.from("nodes");
   const { data, error } = await bucket.upload(filename, buffer);
-  console.log(data, error, filename);
   if (error || !data?.Key) {
     throw error;
   }
