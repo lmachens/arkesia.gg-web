@@ -100,6 +100,7 @@ export default function NodeDetails({
           <>
             <Title order={3}>{selectedNode.name || selectedNode.type}</Title>
             <Text color="teal">{selectedNode.type}</Text>
+            <Text size="xs">Node ID: {selectedNode.id}</Text>
 
             {selectedNode.description && (
               <NodeDescription html={selectedNode.description} />

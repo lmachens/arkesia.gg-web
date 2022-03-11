@@ -53,7 +53,10 @@ export const findNode = async (id: number) => {
 };
 
 export const findNodes = async (areaName: string) => {
-  const nodes = await db.areaNode.findMany({ where: { areaName } });
+  const nodes = await db.areaNode.findMany({
+    where: { areaName },
+    include: { transitTo: true },
+  });
   return nodes;
 };
 

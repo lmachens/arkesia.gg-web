@@ -223,6 +223,17 @@ export default function DraggableMarker({
                   name="description"
                 />
               </InputWrapper>
+              <TextInput
+                label="Transit to node ID (optional)"
+                placeholder="Enter node ID"
+                type="number"
+                value={node.transitToId || "0"}
+                onChange={(event) =>
+                  onChange({ ...node, transitToId: +event.target.value })
+                }
+                name="transitToId"
+                error={actionData?.fieldErrors?.transitToId}
+              />
               <ImageDropzone
                 onDrop={(files: File[]) => setFileScreenshot(files[0])}
                 onClear={() => {

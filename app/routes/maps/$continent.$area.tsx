@@ -4,7 +4,12 @@ import type { ActionFunction, LoaderFunction } from "remix";
 import { redirect, unstable_parseMultipartFormData } from "remix";
 import invariant from "tiny-invariant";
 import { continents } from "~/lib/static";
-import type { Area, CreateNodeForm, UpdateNodeForm } from "~/lib/types";
+import type {
+  Area,
+  AreaNodeDTO,
+  CreateNodeForm,
+  UpdateNodeForm,
+} from "~/lib/types";
 import { AppShell, LoadingOverlay } from "@mantine/core";
 import { findNodes } from "~/lib/db.server";
 import type { AreaNode } from "@prisma/client";
@@ -27,7 +32,7 @@ export type LoaderData = {
   area: Area;
   continentNames: string[];
   areaNames: string[];
-  nodes: AreaNode[];
+  nodes: AreaNodeDTO[];
 };
 
 export const loader: LoaderFunction = async ({ params }) => {
@@ -77,6 +82,7 @@ export const action: ActionFunction = async ({ request }) => {
           tileId: "number",
           description: "string",
           screenshot: "string",
+          transitToId: "number",
         });
 
         if (formData instanceof Response) {
@@ -89,6 +95,7 @@ export const action: ActionFunction = async ({ request }) => {
           position,
           description: formData.description.replace("<p><br></p>", ""),
           userId: user ? user.id : null,
+          transitToId: formData.transitToId || null,
         };
 
         const fileScreenshot = body.get(
@@ -117,6 +124,7 @@ export const action: ActionFunction = async ({ request }) => {
           tileId: "number",
           description: "string",
           screenshot: "string",
+          transitToId: "number",
         });
 
         if (formData instanceof Response) {
@@ -129,6 +137,7 @@ export const action: ActionFunction = async ({ request }) => {
           position,
           description: formData.description.replace("<p><br></p>", ""),
           userId: user ? user.id : null,
+          transitToId: formData.transitToId || null,
         };
         const fileScreenshot = body.get(
           "fileScreenshot"
