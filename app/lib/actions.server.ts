@@ -1,5 +1,7 @@
-import type { AreaNode, User } from "@prisma/client";
+import type { AreaNode } from "@prisma/client";
 import type { NodeOnDiskFile } from "@remix-run/node";
+import type { ActionFunction } from "remix";
+import { unstable_parseMultipartFormData } from "remix";
 import { badRequest } from "remix-utils";
 import {
   deleteNode,
@@ -12,8 +14,10 @@ import { postToDiscord } from "./discord";
 import {
   deleteNodeScreenshot,
   imageToWebp,
+  uploadHandler,
   uploadNodeScreenshot,
 } from "./storage.server";
+import type { CreateNodeForm, UpdateNodeForm } from "./types";
 import type {
   AreaNodeWithoutId,
   FieldErrors,
@@ -144,3 +148,126 @@ export async function requestReportNode(id: number, reason: string) {
     });
   }
 }
+
+export const nodeAction: ActionFunction = async ({ request }) => {
+  const body = await unstable_parseMultipartFormData(request, uploadHandler);
+  const user = await requestUser(body.get("userToken")?.toString());
+
+  const action = body.get("_action")?.toString();
+
+  switch (action) {
+    case "create":
+      {
+        const formData = parseFormData<CreateNodeForm>(body, {
+          lat: "number",
+          lng: "number",
+          areaName: "string",
+          type: "string",
+          name: "string",
+          tileId: "number",
+          description: "string",
+          screenshot: "string",
+          transitToId: "number",
+        });
+
+        if (formData instanceof Response) {
+          return formData;
+        }
+        const position = [formData.lat, formData.lng];
+        const { lat, lng, ...partialFormData } = formData;
+        const node: AreaNodeWithoutId = {
+          ...partialFormData,
+          position,
+          description: formData.description.replace("<p><br></p>", ""),
+          userId: user ? user.id : null,
+          transitToId: formData.transitToId || null,
+        };
+
+        const fileScreenshot = body.get(
+          "fileScreenshot"
+        ) as NodeOnDiskFile | null;
+        const createdNode = await requestCreateNode(node, fileScreenshot);
+        if (createdNode instanceof Response) {
+          return createdNode;
+        }
+      }
+      break;
+    case "update":
+      {
+        if (!user) {
+          return badRequest<PostNodeActionData>({
+            formError: "You shall not pass",
+          });
+        }
+        const formData = parseFormData<UpdateNodeForm>(body, {
+          id: "number",
+          lat: "number",
+          lng: "number",
+          areaName: "string",
+          type: "string",
+          name: "string",
+          tileId: "number",
+          description: "string",
+          screenshot: "string",
+          transitToId: "number",
+        });
+
+        if (formData instanceof Response) {
+          return formData;
+        }
+        const position = [formData.lat, formData.lng];
+        const { lat, lng, ...partialFormData } = formData;
+        const node: Omit<AreaNode, "validationNote"> = {
+          ...partialFormData,
+          position,
+          description: formData.description.replace("<p><br></p>", ""),
+          userId: user ? user.id : null,
+          transitToId: formData.transitToId || null,
+        };
+        const fileScreenshot = body.get(
+          "fileScreenshot"
+        ) as NodeOnDiskFile | null;
+        const createdNode = await requestUpdateNode(node, fileScreenshot);
+        if (createdNode instanceof Response) {
+          return createdNode;
+        }
+      }
+      break;
+    case "delete":
+      {
+        if (!user) {
+          return badRequest<PostNodeActionData>({
+            formError: "You shall not pass",
+          });
+        }
+
+        const formData = parseFormData<{ id: number }>(body, {
+          id: "number",
+        });
+        if (formData instanceof Response) {
+          return formData;
+        }
+
+        const deletedNode = await requestDeleteNode(formData.id);
+        if (deletedNode instanceof Response) {
+          return deletedNode;
+        }
+      }
+      break;
+    case "report":
+      {
+        const formData = parseFormData<{ id: number; reason: string }>(body, {
+          id: "number",
+          reason: "string",
+        });
+        if (formData instanceof Response) {
+          return formData;
+        }
+
+        requestReportNode(formData.id, formData.reason);
+      }
+      break;
+  }
+
+  return null;
+};

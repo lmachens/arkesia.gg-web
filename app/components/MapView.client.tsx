@@ -1,11 +1,10 @@
 import { useMemo, useState } from "react";
 import { MapContainer } from "react-leaflet";
-import type { Tile } from "~/lib/types";
+import type { AreaNodeDTO, Tile } from "~/lib/types";
 import L from "leaflet";
 import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import "leaflet-rotate";
 import MousePosition from "./MousePosition";
-import type { AreaNode } from "@prisma/client";
 import TileControl from "./TileControl";
 import { getMapCenter } from "~/lib/map";
 import NodeDetails from "./NodeDetails";
@@ -14,7 +13,7 @@ import type { URLSearchParamsInit } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useDidUpdate } from "@mantine/hooks";
 import { useLoaderData } from "remix";
-import type { LoaderData } from "~/routes/maps/$continent.$area";
+import type { LoaderData } from "~/lib/loaders.server";
 
 includeCanvasTileLayer();
 
@@ -23,19 +22,20 @@ export default function MapView() {
   const { area, nodes } = useLoaderData<LoaderData>();
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const [editingNode, setEditingNode] = useState<Partial<AreaNode> | null>(
+  const [editingNode, setEditingNode] = useState<Partial<AreaNodeDTO> | null>(
     null
   );
   const tileParam = searchParams.get("tile");
   const tileIndex = tileParam ? +tileParam : 0;
   const nodeParam = searchParams.get("node");
+  const hideDetails = searchParams.get("hideDetails");
   const nodeId = nodeParam ? +nodeParam : null;
   const [map, setMap] = useState<L.Map | null>(null);
 
   const [activeTile, setActiveTile] = useState<Tile>(
     () => area.tiles[tileIndex]
   );
-  const [selectedNode, setSelectedNode] = useState<AreaNode | null>(
+  const [selectedNode, setSelectedNode] = useState<AreaNodeDTO | null>(
     () => nodes.find((node) => node.id === nodeId) || null
   );
 
@@ -48,7 +48,9 @@ export default function MapView() {
     }
 
     setActiveTile(area.tiles[tileIndex]);
-    setSelectedNode(nodes.find((node) => node.id === nodeId) || null);
+    if (hideDetails) {
+      setSelectedNode(null);
+    }
 
     const bearing = area.name !== "Arkesia" ? -45 : 0;
     // @ts-ignore
@@ -59,7 +61,7 @@ export default function MapView() {
       map.setBearing(bearing);
     }
     map.panTo(getMapCenter(area.tiles[tileIndex]));
-  }, [area.name]);
+  }, [area.name, tileIndex]);
 
   useDidUpdate(() => {
     const tileIndex = area.tiles.findIndex((tile) => tile.id === activeTile.id);
@@ -89,7 +91,11 @@ export default function MapView() {
     const isNodeChanged = nodeId !== selectedNode?.id;
     if (isNodeChanged) {
       const newSelectedNode = nodes.find((node) => node.id === nodeId) || null;
-      setSelectedNode(newSelectedNode);
+      if (hideDetails) {
+        setSelectedNode(null);
+      } else {
+        setSelectedNode(newSelectedNode);
+      }
       if (newSelectedNode) {
         map.panTo(newSelectedNode.position as [number, number]);
       }
@@ -100,7 +106,6 @@ export default function MapView() {
     <MapContainer
       center={initialCenter}
       zoom={1}
-      // bounds={getBounds(area.tiles[tileIndex])}
       crs={L.CRS.Simple}
       zoomControl={false}
       attributionControl={false}
