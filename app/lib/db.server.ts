@@ -80,3 +80,17 @@ export const findUser = async (token: string) => {
   const user = await db.user.findFirst({ where: { token } });
   return user;
 };
+
+export const countNodesByArea = async () => {
+  const nodesByAreaCount = await db.areaNode.groupBy({
+    by: ["areaName", "type"],
+    _count: true,
+  });
+  return nodesByAreaCount
+    .map((nodeAreaCount) => ({
+      areaName: nodeAreaCount.areaName,
+      type: nodeAreaCount.type,
+      count: nodeAreaCount._count,
+    }))
+    .sort((a, b) => a.type.localeCompare(b.type));
+};

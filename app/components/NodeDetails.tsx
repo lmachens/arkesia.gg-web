@@ -11,7 +11,6 @@ import {
 import { useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
 import { EyeClosedIcon, EyeOpenIcon } from "@modulz/radix-icons";
-import type { AreaNode } from "@prisma/client";
 import { useEffect, useRef } from "react";
 import { useMapEvents } from "react-leaflet";
 import { Form, useActionData, useTransition } from "remix";
@@ -20,13 +19,15 @@ import {
   useDrawerPosition,
   useToggleDiscoveredNode,
 } from "~/lib/store";
+import type { AreaNodeDTO } from "~/lib/types";
+import { AvailableNodes } from "./AvailableNodes";
 import ImagePreview from "./ImagePreview";
 import NodeDescription from "./NodeDescription";
 
 type NodeDetailsProps = {
-  selectedNode: AreaNode | null;
+  selectedNode: AreaNodeDTO | null;
   onClose: () => void;
-  onEdit: (node: AreaNode) => void;
+  onEdit: (node: AreaNodeDTO) => void;
 };
 export default function NodeDetails({
   selectedNode,
@@ -107,6 +108,10 @@ export default function NodeDetails({
             )}
             {selectedNode.screenshot && (
               <ImagePreview src={selectedNode.screenshot} />
+            )}
+            <Space h="md" />
+            {selectedNode.transitTo && (
+              <AvailableNodes node={selectedNode.transitTo} />
             )}
             <Space h="md" />
             <Button

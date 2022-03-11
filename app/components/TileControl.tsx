@@ -118,7 +118,7 @@ export default function TileControl({
 
                 const continent = areaContinents[node.transitTo.areaName];
                 navigate(
-                  `/maps/${continent}/${node.transitTo.areaName}?tile=${node.transitTo.tileId}&node=${node.transitTo.id}`
+                  `/maps/${continent}/${node.transitTo.areaName}?tile=${node.transitTo.tileId}&node=${node.transitTo.id}&hideDetails=true`
                 );
               },
             }}
