@@ -7689,3 +7689,13 @@ export const continents: Continent[] = [
     ],
   },
 ];
+
+export const areaContinents: {
+  [areaName: string]: string;
+} = {};
+
+continents.forEach((continent) => {
+  continent.areas.forEach((area) => {
+    areaContinents[area.name] = continent.name;
+  });
+});

@@ -1,24 +1,24 @@
-import { Image } from "@mantine/core";
-import type { AreaNode } from "@prisma/client";
+import { Image, Text } from "@mantine/core";
 import { useEffect, useMemo, useRef } from "react";
 import { TileLayer, Tooltip } from "react-leaflet";
+import { useNavigate } from "react-router-dom";
 import { getBounds } from "~/lib/map";
-import { TILE_BASE_URL } from "~/lib/static";
+import { areaContinents, TILE_BASE_URL } from "~/lib/static";
 import {
   useDiscoveredNodes,
   useDrawerPosition,
   useIsShowingDiscoveredNodes,
 } from "~/lib/store";
-import type { Area, Tile } from "~/lib/types";
+import type { Area, AreaNodeDTO, Tile } from "~/lib/types";
 import IconMarker from "./IconMarker";
 
 type TileControlProps = {
   area: Area;
   activeTile: Tile;
   onActiveTileChange: (activeTile: Tile) => void;
-  nodes: AreaNode[];
-  onNodeClick: (node: AreaNode) => void;
-  editingNode: Partial<AreaNode> | null;
+  nodes: AreaNodeDTO[];
+  onNodeClick: (node: AreaNodeDTO) => void;
+  editingNode: Partial<AreaNodeDTO> | null;
 };
 
 export default function TileControl({
@@ -32,6 +32,7 @@ export default function TileControl({
   const tileLayerRef = useRef<L.TileLayer | null>(null);
   const discoveredNodes = useDiscoveredNodes();
   const isShowingDiscoveredNodes = useIsShowingDiscoveredNodes();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (tileLayerRef.current) {
@@ -110,11 +111,26 @@ export default function TileControl({
                   onNodeClick(node);
                 }
               },
+              contextmenu() {
+                if (!node.transitTo) {
+                  return;
+                }
+
+                const continent = areaContinents[node.transitTo.areaName];
+                navigate(
+                  `/maps/${continent}/${node.transitTo.areaName}?tile=${node.transitTo.tileId}&node=${node.transitTo.id}`
+                );
+              },
             }}
           >
             <Tooltip direction="top" offset={[0, -15]}>
-              {node.name || node.type}
-              {!node.userId && " (Not verified)"}
+              <Text size="md" align="center">
+                {node.name || node.type}
+                {!node.userId && " (Not verified)"}
+              </Text>
+              <Text size="xs" color="blue">
+                {node.transitTo && "Right-click to transit"}
+              </Text>
             </Tooltip>
           </IconMarker>
         ))}

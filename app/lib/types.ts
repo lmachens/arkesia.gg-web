@@ -1,3 +1,5 @@
+import type { AreaNode } from "@prisma/client";
+
 export type Tile = {
   id: number;
   tile: string;
@@ -14,6 +16,7 @@ export type CreateNodeForm = {
   tileId: number;
   description: string;
   screenshot: string;
+  transitToId: number;
 };
 
 export type UpdateNodeForm = {
@@ -45,4 +48,8 @@ export type AreaNodeCategory = {
   name: string;
   includes: AreaCategory[];
   types: PartialAreaNodeType[];
+};
+
+export type AreaNodeDTO = AreaNode & {
+  transitTo: AreaNode | null;
 };

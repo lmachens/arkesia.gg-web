@@ -7,7 +7,7 @@ import "leaflet-rotate";
 import MousePosition from "./MousePosition";
 import type { AreaNode } from "@prisma/client";
 import TileControl from "./TileControl";
-import { getBounds, getMapCenter } from "~/lib/map";
+import { getMapCenter } from "~/lib/map";
 import NodeDetails from "./NodeDetails";
 import DraggableMarker from "./DraggableMarker";
 import type { URLSearchParamsInit } from "react-router-dom";
