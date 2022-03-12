@@ -26,14 +26,14 @@ export default function MapView() {
     null
   );
   const tileParam = searchParams.get("tile");
-  const tileIndex = tileParam ? +tileParam : 0;
+  const tileId = tileParam ? +tileParam : 0;
   const nodeParam = searchParams.get("node");
   const hideDetails = searchParams.get("hideDetails");
   const nodeId = nodeParam ? +nodeParam : null;
   const [map, setMap] = useState<L.Map | null>(null);
 
   const [activeTile, setActiveTile] = useState<Tile>(
-    () => area.tiles[tileIndex]
+    () => area.tiles.find((tile) => tile.id === tileId) || area.tiles[0]
   );
   const [selectedNode, setSelectedNode] = useState<AreaNodeDTO | null>(
     () => nodes.find((node) => node.id === nodeId) || null
@@ -46,8 +46,8 @@ export default function MapView() {
     if (editingNode !== null) {
       setEditingNode(null);
     }
-
-    setActiveTile(area.tiles[tileIndex]);
+    const tile = area.tiles.find((tile) => tile.id === tileId) || area.tiles[0];
+    setActiveTile(tile);
     if (hideDetails) {
       setSelectedNode(null);
     }
@@ -60,12 +60,11 @@ export default function MapView() {
       // @ts-ignore
       map.setBearing(bearing);
     }
-    map.panTo(getMapCenter(area.tiles[tileIndex]));
-  }, [area.name, tileIndex]);
+    map.panTo(getMapCenter(tile));
+  }, [area.name, tileId]);
 
   useDidUpdate(() => {
-    const tileIndex = area.tiles.findIndex((tile) => tile.id === activeTile.id);
-    let newSearchParams: URLSearchParamsInit = `tile=${tileIndex}`;
+    let newSearchParams: URLSearchParamsInit = `tile=${activeTile.id}`;
     if (selectedNode) {
       newSearchParams += `&node=${selectedNode.id}`;
     }
@@ -100,7 +99,7 @@ export default function MapView() {
         map.panTo(newSelectedNode.position as [number, number]);
       }
     }
-  }, [tileIndex, nodeId]);
+  }, [tileId, nodeId]);
 
   return (
     <MapContainer
