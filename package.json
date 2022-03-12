@@ -17,6 +17,7 @@
     "@mantine/hooks": "^4.0.2",
     "@mantine/notifications": "^4.0.2",
     "@mantine/rte": "^4.0.2",
+    "@mantine/spotlight": "^4.0.2",
     "@mantine/ssr": "^4.0.2",
     "@modulz/radix-icons": "^4.0.0",
     "@prisma/client": "^3.10.0",

@@ -60,8 +60,8 @@ body {
 .mouse-position {
   position: absolute;
   z-index: 630;
-  right: 1rem;
-  bottom: 1rem;
+  right: 40px;
+  bottom: 10px;
 }
 
 .node-form {

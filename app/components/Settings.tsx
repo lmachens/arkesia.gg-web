@@ -33,11 +33,17 @@ export default function Settings() {
     <>
       <ActionIcon
         onClick={() => setOpened((opened) => !opened)}
+        size="lg"
+        p={4}
         sx={{
-          marginLeft: "auto",
+          position: "absolute",
+          bottom: 32,
+          right: drawerPosition === "left" ? 5 : "auto",
+          left: drawerPosition === "left" ? "auto" : 5,
+          zIndex: 8900,
         }}
       >
-        <GearIcon />
+        <GearIcon width="100%" height="100%" />
       </ActionIcon>
       <Dialog
         opened={opened}
@@ -45,7 +51,11 @@ export default function Settings() {
         onClose={() => setOpened(false)}
         size="lg"
         radius="md"
-        position={{ top: 60, right: 10 }}
+        position={{
+          bottom: 65,
+          right: drawerPosition === "left" ? 5 : "auto",
+          left: drawerPosition === "left" ? "auto" : 5,
+        }}
         zIndex={9000}
       >
         <TextInput
