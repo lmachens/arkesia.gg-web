@@ -1,7 +1,7 @@
 import { Header } from "@mantine/core";
 import type { ReactNode } from "react";
 import { useLoaderData } from "remix";
-import type { LoaderData } from "~/routes/maps/$continent.$area";
+import type { LoaderData } from "~/lib/loaders.server";
 import MapSelect from "./MapSelect";
 
 type AppHeaderProps = {
@@ -14,7 +14,7 @@ export default function AppHeader({ children }: AppHeaderProps) {
   return (
     <Header
       height={60}
-      padding="xs"
+      p="xs"
       sx={{
         display: "flex",
         gap: "1rem",

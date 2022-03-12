@@ -91,7 +91,7 @@ export default function NodeDetails({
     <Drawer
       opened={Boolean(selectedNode)}
       zIndex={700}
-      noOverlay
+      withOverlay={false}
       padding="md"
       position={drawerPosition}
       onClose={onClose}
