@@ -3622,7 +3622,7 @@ export const continents: Continent[] = [
             id: 1,
             tile: "toxiclaw_cavern/lv_atm_poisoncrd_d_ps_1_{y}x{x}.webp",
             full: "toxiclaw_cavern/lv_atm_poisoncrd_d_ps_1_full.webp",
-            max: [6, 6],
+            max: [3, 3],
           },
         ],
       },
@@ -5205,7 +5205,7 @@ export const continents: Continent[] = [
             id: 0,
             tile: "feiton_varukas/lv_fat_unravin_f_ps_0_{y}x{x}.webp",
             full: "feiton_varukas/lv_fat_unravin_f_ps_0_full.webp",
-            max: [6, 6],
+            max: [3, 3],
           },
           {
             id: 1,
