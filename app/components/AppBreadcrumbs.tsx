@@ -26,7 +26,6 @@ export default function AppBreadcrumbs() {
         styles={{
           separator: { color: "inherit" },
         }}
-        separator="→"
       >
         <Text>{continentName}</Text>
         {area && continentName !== "World" && <Text>{area.name}</Text>}

@@ -13,6 +13,8 @@ type StoreProps = {
   toggleDiscoveredNode: (node: AreaNode) => void;
   drawerPosition: "left" | "right";
   setDrawerPosition: (drawerPosition: "left" | "right") => void;
+  lastAreaNames: string[];
+  addLastAreaName: (areaName: string) => void;
 };
 
 export const useStore = create(
@@ -40,8 +42,13 @@ export const useStore = create(
           return { discoveredNodes: discoveredNodes };
         }),
       drawerPosition: "left",
-      setDrawerPosition: (drawerPosition) =>
-        set((state) => ({ drawerPosition })),
+      setDrawerPosition: (drawerPosition) => set(() => ({ drawerPosition })),
+      lastAreaNames: [],
+      addLastAreaName: (areaName: string) =>
+        set((state) => {
+          const newAreaNames = new Set([areaName, ...state.lastAreaNames]);
+          return { lastAreaNames: Array.from(newAreaNames).slice(0, 5) };
+        }),
     }),
     {
       name: "persistent-storage",
@@ -88,4 +95,12 @@ const setDrawerPositionSelector = (state: StoreProps) =>
   state.setDrawerPosition;
 export const useSetDrawerPosition = () => {
   return useStore(setDrawerPositionSelector);
+};
+
+const lastAreaNamesSelector = (state: StoreProps) => ({
+  lastAreaNames: state.lastAreaNames,
+  addLastAreaName: state.addLastAreaName,
+});
+export const useLastAreaNames = () => {
+  return useStore(lastAreaNamesSelector);
 };

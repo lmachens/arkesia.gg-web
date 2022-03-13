@@ -945,12 +945,6 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "lullaby_island/lv_ocn_sleepingis_ps_0_{y}x{x}.webp",
-            full: "lullaby_island/lv_ocn_sleepingis_ps_0_full.webp",
-            max: [4, 5],
-          },
-          {
             id: 3,
             tile: "lullaby_island/lv_ocn_sleepingis_ps_3_{y}x{x}.webp",
             full: "lullaby_island/lv_ocn_sleepingis_ps_3_full.webp",
