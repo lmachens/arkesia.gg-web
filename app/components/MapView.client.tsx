@@ -80,6 +80,9 @@ export default function MapView() {
     if (selectedNode) {
       return selectedNode.position as [number, number];
     }
+    if (area.name === "Arkesia") {
+      return [-677, 545] as [number, number];
+    }
     return getMapCenter(area.tiles[0]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
