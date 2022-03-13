@@ -8,6 +8,7 @@ import { areaContinents, continents, TILE_BASE_URL } from "~/lib/static";
 import { useNavigate } from "react-router-dom";
 import { useLastAreaNames } from "~/lib/store";
 import {
+  Badge,
   Center,
   createStyles,
   Group,
@@ -15,6 +16,7 @@ import {
   Text,
   UnstyledButton,
 } from "@mantine/core";
+import { useHotkeys } from "@mantine/hooks";
 
 type AppSpotlightProviderProps = {
   children: ReactNode;
@@ -25,6 +27,13 @@ export default function AppSpotlightProvider({
 }: AppSpotlightProviderProps) {
   const navigate = useNavigate();
   const { addLastAreaName } = useLastAreaNames();
+  useHotkeys([
+    [
+      "ctrl+space",
+      () =>
+        navigate(`/maps/${continents[0].name}/${continents[0].areas[0].name}`),
+    ],
+  ]);
 
   const actions = useMemo(() => {
     const actions: SpotlightAction[] = [];
@@ -189,6 +198,19 @@ function CustomAction({
             </Text>
           )}
         </div>
+        {action.title === "Arkesia" && (
+          <Text
+            size="xs"
+            sx={(theme) => ({
+              marginLeft: 8,
+              padding: "2px 4px",
+              borderRadius: theme.radius.xs,
+              background: "#0000005e",
+            })}
+          >
+            CTRL + Space
+          </Text>
+        )}
       </Group>
     </UnstyledButton>
   );
