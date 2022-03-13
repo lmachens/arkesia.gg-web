@@ -20,9 +20,9 @@ export default function AppBreadcrumbs() {
       }}
       variant="gradient"
       gradient={{ from: "teal", to: "blue", deg: 60 }}
+      onClick={spotlight.openSpotlight}
     >
       <Breadcrumbs
-        onClick={spotlight.openSpotlight}
         styles={{
           separator: { color: "inherit" },
         }}

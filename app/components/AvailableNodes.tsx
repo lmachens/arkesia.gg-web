@@ -33,7 +33,6 @@ export function AvailableNodes({ node }: AvailableNodesProps) {
           {areaNodeCount.type}: {areaNodeCount.count}
         </List.Item>
       ))}
-      1
     </List>
   );
 }
