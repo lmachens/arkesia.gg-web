@@ -787,9 +787,9 @@ export const continents: Continent[] = [
         tiles: [
           {
             id: 0,
-            tile: "world/lv_ocn_world_ps_0_{y}x{x}.webp",
+            tile: "world/lv_ocn_world_ps_0_{y}x{x}_voyage.webp",
             full: "world/lv_ocn_world_ps_0_voyage_full.webp",
-            max: [8, 11],
+            max: [12, 16],
           },
         ],
       },

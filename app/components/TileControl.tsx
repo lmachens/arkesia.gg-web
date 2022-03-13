@@ -11,6 +11,7 @@ import {
 } from "~/lib/store";
 import type { Area, AreaNodeDTO, Tile } from "~/lib/types";
 import IconMarker from "./IconMarker";
+import L from "leaflet";
 
 type TileControlProps = {
   area: Area;
@@ -37,6 +38,8 @@ export default function TileControl({
   useEffect(() => {
     if (tileLayerRef.current) {
       tileLayerRef.current.options.bounds = getBounds(activeTile);
+      tileLayerRef.current.options.tileSize =
+        area.category === "World" ? L.point(980, 752) : 256;
       tileLayerRef.current.setUrl(`${TILE_BASE_URL}${activeTile.tile}`);
     }
   }, [activeTile]);
@@ -86,7 +89,7 @@ export default function TileControl({
         maxNativeZoom={2}
         minZoom={0}
         maxZoom={4}
-        tileSize={256}
+        tileSize={area.category === "World" ? L.point(980, 752) : 256}
         bounds={getBounds(activeTile)}
       />
       {tileNodes
