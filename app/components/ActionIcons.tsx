@@ -1,6 +1,7 @@
 import {
   ActionIcon,
   Dialog,
+  Group,
   SegmentedControl,
   Space,
   Switch,
@@ -8,7 +9,7 @@ import {
   TextInput,
 } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
-import { GearIcon } from "@modulz/radix-icons";
+import { GearIcon, GitHubLogoIcon } from "@modulz/radix-icons";
 import { useState } from "react";
 import {
   useDrawerPosition,
@@ -16,9 +17,10 @@ import {
   useSetDrawerPosition,
   useToggleIsShowingDiscoveredNodes,
 } from "~/lib/store";
+import { DiscordIcon } from "./DiscordIcon";
 import { DiscoveredNodes } from "./DiscoveredNodes";
 
-export default function Settings() {
+export default function ActionIcons() {
   const [opened, setOpened] = useState(false);
   const [userToken, setUserToken] = useLocalStorageValue<string>({
     key: "user-token",
@@ -30,20 +32,45 @@ export default function Settings() {
   const setDrawerPosition = useSetDrawerPosition();
 
   return (
-    <>
+    <Group
+      sx={{
+        position: "absolute",
+        bottom: 34,
+        right: drawerPosition === "left" ? 10 : "auto",
+        left: drawerPosition === "left" ? "auto" : 10,
+        zIndex: 8900,
+      }}
+      spacing="xs"
+    >
       <ActionIcon
         onClick={() => setOpened((opened) => !opened)}
-        size="lg"
+        size="md"
         p={4}
-        sx={{
-          position: "absolute",
-          bottom: 32,
-          right: drawerPosition === "left" ? 5 : "auto",
-          left: drawerPosition === "left" ? "auto" : 5,
-          zIndex: 8900,
-        }}
       >
         <GearIcon width="100%" height="100%" />
+      </ActionIcon>
+      <ActionIcon
+        component="a"
+        href="https://github.com/lmachens/arkesia.gg-web"
+        target="_blank"
+        size="md"
+        p={4}
+      >
+        <GitHubLogoIcon width="100%" height="100%" />
+      </ActionIcon>
+      <ActionIcon
+        component="a"
+        href="https://discord.gg/GSmAWG2M"
+        target="_blank"
+        size="md"
+        sx={{
+          "&:hover": {
+            backgroundColor: "#5865f2",
+          },
+        }}
+        p={4}
+      >
+        <DiscordIcon width="100%" height="100%" />
       </ActionIcon>
       <Dialog
         opened={opened}
@@ -91,6 +118,6 @@ export default function Settings() {
           ]}
         />
       </Dialog>
-    </>
+    </Group>
   );
 }

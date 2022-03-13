@@ -57,13 +57,6 @@ body {
   height: 100%;
 }
 
-.mouse-position {
-  position: absolute;
-  z-index: 630;
-  right: 40px;
-  bottom: 10px;
-}
-
 .node-form {
   display: grid;
   gap: 1rem;

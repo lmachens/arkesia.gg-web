@@ -2,7 +2,7 @@ import { ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
 import { AppShell, LoadingOverlay } from "@mantine/core";
 import { nodeAction } from "~/lib/actions.server";
-import Settings from "~/components/Settings";
+import ActionIcons from "~/components/ActionIcons";
 import { areaLoader } from "~/lib/loaders.server";
 import AppBreadcrumbs from "~/components/AppBreadcrumbs";
 
@@ -23,7 +23,7 @@ export default function MapPage() {
       })}
     >
       <AppBreadcrumbs />
-      <Settings />
+      <ActionIcons />
       <ClientOnly fallback={<LoadingOverlay visible />}>
         {() => <MapView />}
       </ClientOnly>
