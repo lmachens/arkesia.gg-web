@@ -40,6 +40,7 @@ export type AreaNodeType = {
   category: string;
   name: string;
   icon: string;
+  size?: "lg";
 };
 
 type PartialAreaNodeType = Omit<AreaNodeType, "category">;

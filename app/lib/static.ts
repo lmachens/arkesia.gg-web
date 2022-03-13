@@ -7,6 +7,22 @@ export const TILE_BASE_URL =
 
 export const nodeCategories: AreaNodeCategory[] = [
   {
+    name: "World Areas",
+    includes: ["World"],
+    types: [
+      {
+        name: "Prideholme",
+        icon: "prideholme.webp",
+        size: "lg",
+      },
+      {
+        name: "Loghill",
+        icon: "loghill.webp",
+        size: "lg",
+      },
+    ],
+  },
+  {
     name: "Areas & Orientation",
     includes: ["Continent", "Dungeon", "Island", "World"],
     types: [
