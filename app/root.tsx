@@ -11,6 +11,7 @@ import styles from "~/styles/global.css";
 import leafletStyles from "leaflet/dist/leaflet.css";
 import { MantineProvider } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
+import AppSpotlightProvider from "./components/AppSpotlightProvider";
 
 export function links() {
   return [
@@ -41,7 +42,9 @@ export default function App() {
             position="top-right"
             autoClose={2500}
           >
-            <Outlet />
+            <AppSpotlightProvider>
+              <Outlet />
+            </AppSpotlightProvider>
           </NotificationsProvider>
         </MantineProvider>
         <ScrollRestoration />

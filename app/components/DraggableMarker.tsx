@@ -138,8 +138,8 @@ export default function DraggableMarker({
         id="new-marker-drawer"
         opened={Boolean(node?.position)}
         zIndex={700}
-        noCloseOnClickOutside
-        noOverlay
+        closeOnClickOutside={false}
+        withOverlay={false}
         padding="md"
         position={drawerPosition}
         onClose={() => {

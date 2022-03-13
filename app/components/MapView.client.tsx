@@ -64,12 +64,14 @@ export default function MapView() {
   }, [area.name, tileId]);
 
   useDidUpdate(() => {
+    let replace = tileId === activeTile.id;
     let newSearchParams: URLSearchParamsInit = `tile=${activeTile.id}`;
     if (selectedNode) {
       newSearchParams += `&node=${selectedNode.id}`;
+      replace = selectedNode.id === nodeId;
     }
     if (searchParams.toString() !== newSearchParams.toString()) {
-      setSearchParams(newSearchParams);
+      setSearchParams(newSearchParams, { replace });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTile, selectedNode]);
