@@ -810,18 +810,6 @@ export const continents: Continent[] = [
         ],
       },
       {
-        name: "Sailing Voyage",
-        category: "Continent",
-        tiles: [
-          {
-            id: 0,
-            tile: "sailing_voyage/lv_ocn_world_ps_0_{y}x{x}.webp",
-            full: "sailing_voyage/lv_ocn_world_ps_0_full.webp",
-            max: [8, 11],
-          },
-        ],
-      },
-      {
         name: "Training Area",
         category: "Continent",
         tiles: [
@@ -847,42 +835,6 @@ export const continents: Continent[] = [
             tile: "dark_chaos_gate/lv_ocn_gship_fav_ps_0_{y}x{x}.webp",
             full: "dark_chaos_gate/lv_ocn_gship_fav_ps_0_full.webp",
             max: [3, 3],
-          },
-        ],
-      },
-      {
-        name: "[Open Seas] Sea of Gienah",
-        category: "Continent",
-        tiles: [
-          {
-            id: 0,
-            tile: "open_seas_sea_of_gienah/lv_ocn_world_ps_0_{y}x{x}.webp",
-            full: "open_seas_sea_of_gienah/lv_ocn_world_ps_0_full.webp",
-            max: [8, 11],
-          },
-        ],
-      },
-      {
-        name: "[Open Seas] Sea of Procyon",
-        category: "Continent",
-        tiles: [
-          {
-            id: 0,
-            tile: "open_seas_sea_of_procyon/lv_ocn_world_ps_0_{y}x{x}.webp",
-            full: "open_seas_sea_of_procyon/lv_ocn_world_ps_0_full.webp",
-            max: [8, 11],
-          },
-        ],
-      },
-      {
-        name: "Somewhere in the vast sea",
-        category: "Continent",
-        tiles: [
-          {
-            id: 0,
-            tile: "somewhere_in_the_vast_sea/lv_ocn_world_ps_0_{y}x{x}.webp",
-            full: "somewhere_in_the_vast_sea/lv_ocn_world_ps_0_full.webp",
-            max: [8, 11],
           },
         ],
       },

@@ -29,7 +29,7 @@ export default function AppBreadcrumbs() {
         separator="→"
       >
         <Text>{continentName}</Text>
-        {area && <Text>{area.name}</Text>}
+        {area && continentName !== "World" && <Text>{area.name}</Text>}
       </Breadcrumbs>
       <Text
         size="xs"
