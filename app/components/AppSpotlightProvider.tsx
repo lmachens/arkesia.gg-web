@@ -8,7 +8,6 @@ import { areaContinents, continents, TILE_BASE_URL } from "~/lib/static";
 import { useNavigate } from "react-router-dom";
 import { useLastAreaNames } from "~/lib/store";
 import {
-  Badge,
   Center,
   createStyles,
   Group,
