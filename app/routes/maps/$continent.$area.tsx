@@ -16,7 +16,7 @@ export default function MapPage() {
       style={{ overflow: "hidden" }}
       styles={(theme) => ({
         main: {
-          backgroundColor: theme.colors.dark[5],
+          backgroundColor: theme.colors.dark[8],
           color: theme.colors.dark[0],
           height: "100vh",
         },

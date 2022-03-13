@@ -11,6 +11,11 @@ export const nodeCategories: AreaNodeCategory[] = [
     includes: ["World"],
     types: [
       {
+        name: "Ankumo Mountain",
+        icon: "ankumo-mountain.webp",
+        size: "lg",
+      },
+      {
         name: "Prideholme",
         icon: "prideholme.webp",
         size: "lg",
@@ -18,6 +23,11 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Loghill",
         icon: "loghill.webp",
+        size: "lg",
+      },
+      {
+        name: "Rethramis Border",
+        icon: "rethramis-border.webp",
         size: "lg",
       },
     ],
