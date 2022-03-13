@@ -70,7 +70,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Vast Sea",
         icon: "minimap_symbol_1_328.webp",
       },
-
       {
         name: "Turquoise Portal",
         icon: "minimap_symbol_1_111.webp",
@@ -114,6 +113,14 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Purple Portal",
         icon: "minimap_symbol_1_317.webp",
+      },
+      {
+        name: "Secret Passage",
+        icon: "secret-door.webp",
+      },
+      {
+        name: "Secret Mechanics",
+        icon: "lever.webp",
       },
     ],
   },
@@ -174,8 +181,16 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "cooking.webp",
       },
       {
+        name: "Another Story",
+        icon: "book-cover.webp",
+      },
+      {
         name: "Hidden Story",
         icon: "hidden_story.webp",
+      },
+      {
+        name: "Music",
+        icon: "double-quaver.webp",
       },
     ],
   },
