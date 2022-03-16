@@ -26,6 +26,8 @@ The following list shows the variables you need to set:
 | DISCORD_WEBHOOK_URL | Discord webhook URL for notifications (optional)     |
 | SUPABASE_URL        | Supabase URL for storage (required for image upload) |
 | SUPABASE_KEY        | Supabase Key for storage (required for image upload) |
+| PLAUSIBLE_API_HOST  | Plausible API host (optional)                        |
+| PLAUSIBLE_DOMAIN    | Plausible domain (optional)                          |
 
 In order for the screenshot file upload to work locally, you need to create a [Supabase](https://supabase.com/) account, activate the [storage](https://supabase.com/storage) feature, [create a new bucket](https://supabase.com/docs/guides/storage#create-a-bucket) called `nodes` and make it public.
 

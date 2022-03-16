@@ -35,7 +35,6 @@ export function DiscoveredNodes() {
             {type}: {count}
           </List.Item>
         ))}
-        1
       </List>
     </ScrollArea>
   );

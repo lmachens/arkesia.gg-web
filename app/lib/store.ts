@@ -1,6 +1,7 @@
 import type { AreaNode } from "@prisma/client";
 import create from "zustand";
 import { persist } from "zustand/middleware";
+import { trackHideDiscoveredNodes, trackShowDiscoveredNodes } from "./stats";
 
 export type DiscoveredNode = Pick<AreaNode, "id" | "type">;
 
@@ -24,9 +25,16 @@ export const useStore = create(
       setLastType: (type: string) => set({ lastType: type }),
       isShowingDiscoveredNodes: false,
       toggleIsShowingDiscoveredNodes: () =>
-        set((state) => ({
-          isShowingDiscoveredNodes: !state.isShowingDiscoveredNodes,
-        })),
+        set((state) => {
+          if (state.isShowingDiscoveredNodes) {
+            trackHideDiscoveredNodes();
+          } else {
+            trackShowDiscoveredNodes();
+          }
+          return {
+            isShowingDiscoveredNodes: !state.isShowingDiscoveredNodes,
+          };
+        }),
       discoveredNodes: [],
       toggleDiscoveredNode: (node) =>
         set((state) => {
@@ -39,6 +47,7 @@ export const useStore = create(
           } else {
             discoveredNodes.push(node);
           }
+
           return { discoveredNodes: discoveredNodes };
         }),
       drawerPosition: "left",

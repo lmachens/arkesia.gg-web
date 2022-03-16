@@ -1,4 +1,5 @@
 import {
+  json,
   Links,
   LiveReload,
   Meta,
@@ -12,6 +13,7 @@ import leafletStyles from "leaflet/dist/leaflet.css";
 import { MantineProvider } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
 import AppSpotlightProvider from "./components/AppSpotlightProvider";
+import Plausible from "./components/Plausible";
 
 export function links() {
   return [
@@ -23,6 +25,15 @@ export function links() {
 export const meta: MetaFunction = () => {
   return { title: "Arkesia - Lost Ark Map" };
 };
+
+export async function loader() {
+  return json({
+    ENV: {
+      PLAUSIBLE_API_HOST: process.env.PLAUSIBLE_API_HOST,
+      PLAUSIBLE_DOMAIN: process.env.PLAUSIBLE_DOMAIN,
+    },
+  });
+}
 
 export default function App() {
   return (
@@ -48,6 +59,7 @@ export default function App() {
           </NotificationsProvider>
         </MantineProvider>
         <ScrollRestoration />
+        <Plausible />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
