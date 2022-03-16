@@ -16,8 +16,48 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
-        name: "Prideholme",
-        icon: "prideholme.webp",
+        name: "Battlebound Plains",
+        icon: "battlebound-plains.webp",
+        size: "lg",
+      },
+      {
+        name: "Bilbrin Forest",
+        icon: "bilbrin-forest.webp",
+        size: "lg",
+      },
+      {
+        name: "Blackrose Chapel",
+        icon: "blackrose-chapel.webp",
+        size: "lg",
+      },
+      {
+        name: "Borea's Domain",
+        icon: "boreas-domain.webp",
+        size: "lg",
+      },
+      {
+        name: "Croconys Seashore",
+        icon: "croconys-seashore.webp",
+        size: "lg",
+      },
+      {
+        name: "Dyorika Plain",
+        icon: "dyorika-plain.webp",
+        size: "lg",
+      },
+      {
+        name: "Flowering Orchard",
+        icon: "flowering-orchard.webp",
+        size: "lg",
+      },
+      {
+        name: "Lakebar",
+        icon: "lakebar.webp",
+        size: "lg",
+      },
+      {
+        name: "Leyar Terrace",
+        icon: "leyar-terrace.webp",
         size: "lg",
       },
       {
@@ -26,8 +66,48 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
+        name: "Luterra Castle",
+        icon: "luterra-castle.webp",
+        size: "lg",
+      },
+      {
+        name: "Medrick Monastery",
+        icon: "medrick-monastery.webp",
+        size: "lg",
+      },
+      {
+        name: "Mount Zagoras",
+        icon: "mount-zagoras.webp",
+        size: "lg",
+      },
+      {
+        name: "Ozhorn Hill",
+        icon: "ozhorn-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Prideholme",
+        icon: "prideholme.webp",
+        size: "lg",
+      },
+      {
         name: "Rethramis Border",
         icon: "rethramis-border.webp",
+        size: "lg",
+      },
+      {
+        name: "Saland Hill",
+        icon: "saland-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Sunbright Hill",
+        icon: "sunbright-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Wavestrand Port",
+        icon: "wavestrand-port.webp",
         size: "lg",
       },
     ],
@@ -4596,8 +4676,15 @@ export const continents: Continent[] = [
         name: "Wavestrand Port",
         category: "Continent",
         tiles: [
+          // 7 is the main tile -> changed to id 0
           {
             id: 0,
+            tile: "wavestrand_port/lv_lut_mawport_t_ps_7_{y}x{x}.webp",
+            full: "wavestrand_port/lv_lut_mawport_t_ps_7_full.webp",
+            max: [4, 3],
+          },
+          {
+            id: 1,
             tile: "wavestrand_port/lv_lut_mawport_t_ps_0_{y}x{x}.webp",
             full: "wavestrand_port/lv_lut_mawport_t_ps_0_full.webp",
             max: [3, 2],
@@ -4631,12 +4718,6 @@ export const continents: Continent[] = [
             tile: "wavestrand_port/lv_lut_mawport_t_ps_6_{y}x{x}.webp",
             full: "wavestrand_port/lv_lut_mawport_t_ps_6_full.webp",
             max: [2, 2],
-          },
-          {
-            id: 7,
-            tile: "wavestrand_port/lv_lut_mawport_t_ps_7_{y}x{x}.webp",
-            full: "wavestrand_port/lv_lut_mawport_t_ps_7_full.webp",
-            max: [4, 3],
           },
         ],
       },

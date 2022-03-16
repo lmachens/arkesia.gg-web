@@ -6,7 +6,6 @@ export const initPlausible = (domain: string, apiHost: string) => {
   plausible = Plausible({
     domain,
     apiHost,
-    trackLocalhost: true,
   });
   plausible.enableAutoPageviews();
 };
