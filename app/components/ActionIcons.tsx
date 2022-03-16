@@ -11,6 +11,7 @@ import {
 import { useLocalStorageValue } from "@mantine/hooks";
 import { GearIcon, GitHubLogoIcon } from "@modulz/radix-icons";
 import { useState } from "react";
+import { trackEvent, trackOutboundLinkClick } from "~/lib/stats";
 import {
   useDrawerPosition,
   useIsShowingDiscoveredNodes,
@@ -55,6 +56,9 @@ export default function ActionIcons() {
         target="_blank"
         size="md"
         p={4}
+        onClick={() =>
+          trackOutboundLinkClick("https://github.com/lmachens/arkesia.gg-web")
+        }
       >
         <GitHubLogoIcon width="100%" height="100%" />
       </ActionIcon>
@@ -69,6 +73,7 @@ export default function ActionIcons() {
           },
         }}
         p={4}
+        onClick={() => trackOutboundLinkClick("https://discord.gg/GSmAWG2M")}
       >
         <DiscordIcon width="100%" height="100%" />
       </ActionIcon>
@@ -100,7 +105,7 @@ export default function ActionIcons() {
         <Switch
           label="Show discovered nodes"
           checked={isShowingDiscoveredNodes}
-          onChange={() => toggleIsShowingDiscoveredNodes()}
+          onChange={toggleIsShowingDiscoveredNodes}
         />
         <Space h="md" />
         <DiscoveredNodes />
