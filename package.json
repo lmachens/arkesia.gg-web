@@ -26,6 +26,7 @@
     "@remix-run/vercel": "^1.2.3",
     "@supabase/supabase-js": "^1.31.1",
     "dotenv": "^16.0.0",
+    "fuse.js": "^6.5.3",
     "html-react-parser": "^1.4.8",
     "leaflet": "^1.7.1",
     "leaflet-rotate": "^0.1.3",

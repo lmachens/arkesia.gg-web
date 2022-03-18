@@ -115,7 +115,7 @@ export default function TileControl({
             verified={Boolean(node.userId)}
             eventHandlers={{
               click() {
-                if (!document.querySelector("#new-marker-drawer")) {
+                if (!document.querySelector("#upsert-marker-drawer")) {
                   onNodeClick(node);
                 }
               },

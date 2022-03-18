@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Tooltip, useMapEvents } from "react-leaflet";
-import { ICON_BASE_URL, nodeCategories } from "~/lib/static";
+import { Tooltip } from "react-leaflet";
 import { Form, useActionData, useTransition } from "remix";
 import { useNotifications } from "@mantine/notifications";
 import type { Area, Tile } from "~/lib/types";
@@ -9,14 +8,12 @@ import {
   Drawer,
   InputWrapper,
   ScrollArea,
-  Select,
   TextInput,
 } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 import ImageDropzone from "./ImageDropzone";
 import type { PostNodeActionData } from "~/lib/validation";
 import RichTextEditor from "@mantine/rte";
-import TypeItem from "./TypeItem";
 import IconMarker from "./IconMarker";
 import {
   useDrawerPosition,
@@ -24,18 +21,19 @@ import {
   useLastType,
   useSetEditingNode,
 } from "~/lib/store";
+import TypeSelect from "./TypeSelect";
 
-type DraggableMarkerProps = {
+type UpsertMarkerProps = {
   area: Area;
   tile: Tile;
 };
 
-export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
+export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
   const [fileScreenshot, setFileScreenshot] = useState<File | null>(null);
-  const [lastType, setLastType] = useLastType();
   const node = useEditingNode();
   const setEditingNode = useSetEditingNode();
+  const [lastType, setLastType] = useLastType();
 
   const transition = useTransition();
   const notifications = useNotifications();
@@ -86,23 +84,6 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
     [fileScreenshot]
   );
 
-  const types = useMemo(
-    () =>
-      nodeCategories
-        .filter((nodeCategory) => nodeCategory.includes.includes(area.category))
-        .map((nodeCategory) =>
-          nodeCategory.types.map((nodeType) => ({
-            category: nodeCategory.name,
-            image: `${ICON_BASE_URL}${nodeType.icon}`,
-            value: nodeType.name,
-            label: nodeType.name,
-            group: nodeCategory.name,
-          }))
-        )
-        .flat(),
-    [area.category]
-  );
-
   return (
     <>
       {node?.position && (
@@ -129,7 +110,7 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
         </IconMarker>
       )}
       <Drawer
-        id="new-marker-drawer"
+        id="upsert-marker-drawer"
         opened={Boolean(node?.position)}
         zIndex={700}
         closeOnClickOutside={false}
@@ -166,14 +147,9 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
               />
               <input type="hidden" name="id" value={node.id} />
               <input type="hidden" name="userToken" value={userToken} />
-              <Select
-                label="Type"
-                placeholder="Pick one"
+              <TypeSelect
                 name="type"
                 zIndex={800}
-                searchable
-                autoComplete="off"
-                autoCorrect="off"
                 value={node.type || lastType}
                 onChange={(type) => {
                   if (type) {
@@ -181,11 +157,6 @@ export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
                     setLastType(type);
                   }
                 }}
-                required
-                itemComponent={TypeItem}
-                maxDropdownHeight={400}
-                data={types}
-                error={actionData?.fieldErrors?.type}
               />
               <TextInput
                 label="Name"
