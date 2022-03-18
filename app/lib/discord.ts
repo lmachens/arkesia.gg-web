@@ -38,7 +38,13 @@ export function postToDiscord(
       fields: [
         {
           name: "URL",
-          value: `https://www.arkesia.gg/maps/${continent?.name}/${node.areaName}/?tile=${node.tileId}&node=${node.id}`,
+          value: continent
+            ? `https://www.arkesia.gg/maps/${encodeURIComponent(
+                continent.name
+              )}/${encodeURIComponent(node.areaName)}/?tile=${
+                node.tileId
+              }&node=${node.id}`
+            : "",
         },
         {
           name: "Name",
