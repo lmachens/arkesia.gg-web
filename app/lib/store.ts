@@ -17,6 +17,8 @@ type PersistentStoreProps = {
   setDrawerPosition: (drawerPosition: "left" | "right") => void;
   lastAreaNames: string[];
   addLastAreaName: (areaName: string) => void;
+  showNameOnMap: boolean;
+  toggleShowNameOnMap: () => void;
 };
 
 export const usePersistentStore = create(
@@ -59,6 +61,9 @@ export const usePersistentStore = create(
           const newAreaNames = new Set([areaName, ...state.lastAreaNames]);
           return { lastAreaNames: Array.from(newAreaNames).slice(0, 5) };
         }),
+      showNameOnMap: true,
+      toggleShowNameOnMap: () =>
+        set((store) => ({ showNameOnMap: !store.showNameOnMap })),
     }),
     {
       name: "persistent-storage",
@@ -134,6 +139,18 @@ const lastAreaNamesSelector = (state: PersistentStoreProps) => ({
 });
 export const useLastAreaNames = () => {
   return usePersistentStore(lastAreaNamesSelector);
+};
+
+const showNameOnMapSelector = (state: PersistentStoreProps) =>
+  state.showNameOnMap;
+export const useShowNameOnMap = () => {
+  return usePersistentStore(showNameOnMapSelector);
+};
+
+const toggleShowNameOnMapSelector = (state: PersistentStoreProps) =>
+  state.toggleShowNameOnMap;
+export const useToggleShowNameOnMap = () => {
+  return usePersistentStore(toggleShowNameOnMapSelector);
 };
 
 const editingNodeSelector = (state: SessionStoreProps) => state.editingNode;

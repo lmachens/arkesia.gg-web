@@ -19,7 +19,9 @@ import {
   useIsShowingDiscoveredNodes,
   useSetDrawerPosition,
   useSetEditingNode,
+  useShowNameOnMap,
   useToggleIsShowingDiscoveredNodes,
+  useToggleShowNameOnMap,
 } from "~/lib/store";
 import { DiscordIcon } from "./DiscordIcon";
 import { DiscoveredNodes } from "./DiscoveredNodes";
@@ -36,6 +38,8 @@ export default function ActionIcons() {
   const setDrawerPosition = useSetDrawerPosition();
   const setEditingNode = useSetEditingNode();
   const map = useMap();
+  const showNameOnMap = useShowNameOnMap();
+  const toggleShowNameOnMap = useToggleShowNameOnMap();
 
   useMapEvents({
     click: (event) => {
@@ -146,6 +150,15 @@ export default function ActionIcons() {
           value={userToken}
           onChange={(event) => setUserToken(event.target.value)}
           name="userToken"
+        />
+        <Space h="md" />
+        <Text style={{ marginBottom: 10 }} weight={500}>
+          Map
+        </Text>
+        <Switch
+          label="Show name on map"
+          checked={showNameOnMap}
+          onChange={toggleShowNameOnMap}
         />
         <Space h="md" />
         <Text style={{ marginBottom: 10 }} weight={500}>

@@ -111,6 +111,7 @@ export default function TileControl({
             position={node.position as [number, number]}
             alt={node.type}
             type={node.type}
+            name={node.name}
             riseOnHover
             verified={Boolean(node.userId)}
             eventHandlers={{
@@ -136,9 +137,16 @@ export default function TileControl({
                 {node.name || node.type}
                 {!node.userId && " (Not verified)"}
               </Text>
-              <Text size="xs" color="blue">
-                {node.transitTo && "Right-click to transit"}
-              </Text>
+              {node.name && node.name !== node.type && (
+                <Text size="xs" color="teal" align="center">
+                  {node.type}
+                </Text>
+              )}
+              {node.transitTo && (
+                <Text size="xs" color="cyan" align="center">
+                  Right-click to transit
+                </Text>
+              )}
             </Tooltip>
           </IconMarker>
         ))}

@@ -65,3 +65,12 @@ body {
 .leaflet-control-layers-toggle {
   background: none;
 }
+
+.text-below-marker {
+  width: 300px;
+  text-align: center;
+  left: -150px !important;
+  color: var(--color-shade-1);
+  text-shadow: 1px 1px var(--color-shade-5), -1px -1px var(--color-shade-5),
+    1px -1px var(--color-shade-5), -1px 1px var(--color-shade-5);
+}
