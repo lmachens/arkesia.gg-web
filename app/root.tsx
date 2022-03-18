@@ -50,7 +50,6 @@ export default function App() {
     refreshNodes();
   }, []);
 
-  console.log("INIT");
   return (
     <html lang="en">
       <head>
