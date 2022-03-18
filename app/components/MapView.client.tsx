@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { MapContainer } from "react-leaflet";
 import type { AreaNodeDTO, Tile } from "~/lib/types";
 import L from "leaflet";
@@ -6,7 +6,7 @@ import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import "leaflet-rotate";
 import MousePosition from "./MousePosition";
 import TileControl from "./TileControl";
-import { getMapCenter } from "~/lib/map";
+import { getBounds, getMapCenter } from "~/lib/map";
 import NodeDetails from "./NodeDetails";
 import DraggableMarker from "./DraggableMarker";
 import type { URLSearchParamsInit } from "react-router-dom";
@@ -14,6 +14,7 @@ import { useSearchParams } from "react-router-dom";
 import { useDidUpdate } from "@mantine/hooks";
 import { useLoaderData } from "remix";
 import type { LoaderData } from "~/lib/loaders.server";
+import { useLastAreaNames } from "~/lib/store";
 
 includeCanvasTileLayer();
 
@@ -31,6 +32,7 @@ export default function MapView() {
   const hideDetails = searchParams.get("hideDetails");
   const nodeId = nodeParam ? +nodeParam : null;
   const [map, setMap] = useState<L.Map | null>(null);
+  const { addLastAreaName } = useLastAreaNames();
 
   const [activeTile, setActiveTile] = useState<Tile>(
     () => area.tiles.find((tile) => tile.id === tileId) || area.tiles[0]
@@ -39,6 +41,12 @@ export default function MapView() {
     () => nodes.find((node) => node.id === nodeId) || null
   );
 
+  useEffect(() => {
+    if (area.name !== "Arkesia") {
+      addLastAreaName(area.name);
+    }
+  }, [area.name]);
+
   useDidUpdate(() => {
     if (!map) {
       return;
@@ -46,8 +54,11 @@ export default function MapView() {
     if (editingNode !== null) {
       setEditingNode(null);
     }
+
     const tile = area.tiles.find((tile) => tile.id === tileId) || area.tiles[0];
-    setActiveTile(tile);
+    if (activeTile.tile !== tile.tile) {
+      setActiveTile(tile);
+    }
     if (hideDetails) {
       setSelectedNode(null);
     }
@@ -60,7 +71,11 @@ export default function MapView() {
       // @ts-ignore
       map.setBearing(bearing);
     }
-    map.panTo(getMapCenter(tile), { animate: false });
+    if (area.name === "Arkesia") {
+      map.flyTo([-710, 600] as [number, number], 1, { animate: false });
+    } else {
+      map.flyToBounds(getBounds(tile), { animate: false });
+    }
   }, [area.name, tileId]);
 
   useDidUpdate(() => {
@@ -81,7 +96,7 @@ export default function MapView() {
       return selectedNode.position as [number, number];
     }
     if (area.name === "Arkesia") {
-      return [-677, 545] as [number, number];
+      return [-710, 600] as [number, number];
     }
     return getMapCenter(area.tiles[0]);
     // eslint-disable-next-line react-hooks/exhaustive-deps

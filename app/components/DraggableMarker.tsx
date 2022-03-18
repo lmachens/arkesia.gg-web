@@ -38,12 +38,6 @@ export default function DraggableMarker({
   const [fileScreenshot, setFileScreenshot] = useState<File | null>(null);
   const [lastType, setLastType] = useLastType();
 
-  useMapEvents({
-    contextmenu: (event) => {
-      onChange({ ...node, position: [event.latlng.lat, event.latlng.lng] });
-    },
-  });
-
   const transition = useTransition();
   const notifications = useNotifications();
   const notificationId = useRef<string | null>(null);

@@ -1,9 +1,9 @@
 import { Image, Text } from "@mantine/core";
 import { useEffect, useMemo, useRef } from "react";
-import { TileLayer, Tooltip } from "react-leaflet";
+import { TileLayer, Tooltip, useMapEvents } from "react-leaflet";
 import { useNavigate } from "react-router-dom";
 import { getBounds } from "~/lib/map";
-import { areaContinents, TILE_BASE_URL } from "~/lib/static";
+import { areaContinents, continents, TILE_BASE_URL } from "~/lib/static";
 import {
   useDiscoveredNodes,
   useDrawerPosition,
@@ -52,6 +52,11 @@ export default function TileControl({
       ),
     [activeTile.id, nodes, editingNode]
   );
+
+  useMapEvents({
+    contextmenu: () =>
+      navigate(`/maps/${continents[0].name}/${continents[0].areas[0].name}`),
+  });
 
   return (
     <div
