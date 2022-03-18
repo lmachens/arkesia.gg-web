@@ -60,7 +60,7 @@ export default function MapView() {
       // @ts-ignore
       map.setBearing(bearing);
     }
-    map.panTo(getMapCenter(tile));
+    map.panTo(getMapCenter(tile), { animate: false });
   }, [area.name, tileId]);
 
   useDidUpdate(() => {
@@ -101,7 +101,9 @@ export default function MapView() {
         setSelectedNode(newSelectedNode);
       }
       if (newSelectedNode) {
-        map.panTo(newSelectedNode.position as [number, number]);
+        map.panTo(newSelectedNode.position as [number, number], {
+          animate: false,
+        });
       }
     }
   }, [tileId, nodeId]);
@@ -132,7 +134,7 @@ export default function MapView() {
         activeTile={activeTile}
         onActiveTileChange={(tile) => {
           setActiveTile(tile);
-          map!.panTo(getMapCenter(tile));
+          map!.panTo(getMapCenter(tile), { animate: false });
           setSelectedNode(null);
         }}
       />
