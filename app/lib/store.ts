@@ -19,6 +19,8 @@ type PersistentStoreProps = {
   addLastAreaName: (areaName: string) => void;
   showNameOnMap: boolean;
   toggleShowNameOnMap: () => void;
+  markerSize: number;
+  setMarkerSize: (markerSize: number) => void;
 };
 
 export const usePersistentStore = create(
@@ -64,6 +66,8 @@ export const usePersistentStore = create(
       showNameOnMap: true,
       toggleShowNameOnMap: () =>
         set((store) => ({ showNameOnMap: !store.showNameOnMap })),
+      markerSize: 35,
+      setMarkerSize: (markerSize) => set({ markerSize }),
     }),
     {
       name: "persistent-storage",
@@ -151,6 +155,17 @@ const toggleShowNameOnMapSelector = (state: PersistentStoreProps) =>
   state.toggleShowNameOnMap;
 export const useToggleShowNameOnMap = () => {
   return usePersistentStore(toggleShowNameOnMapSelector);
+};
+
+const markerSizeSelector = (state: PersistentStoreProps) => state.markerSize;
+export const useMarkerSize = () => {
+  return usePersistentStore(markerSizeSelector);
+};
+
+const setMarkerSizeSelector = (state: PersistentStoreProps) =>
+  state.setMarkerSize;
+export const useSetMarkerSize = () => {
+  return usePersistentStore(setMarkerSizeSelector);
 };
 
 const editingNodeSelector = (state: SessionStoreProps) => state.editingNode;

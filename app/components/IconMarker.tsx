@@ -4,16 +4,23 @@ import { ICON_BASE_URL, nodeTypesMap } from "~/lib/static";
 import L from "leaflet";
 import { forwardRef } from "react";
 import type { AreaNodeType } from "~/lib/types";
-import { useShowNameOnMap } from "~/lib/store";
+import { useMarkerSize, useShowNameOnMap } from "~/lib/store";
 
-const icons: {
+let icons: {
   [path: string]: L.Icon;
 } = {};
-function getIcon(type?: AreaNodeType) {
+let lastMarkerSize: number | null = null;
+function getIcon(markerSize: number, type?: AreaNodeType) {
+  if (lastMarkerSize !== markerSize) {
+    icons = {};
+    lastMarkerSize = markerSize;
+  }
   const path = type ? type.icon : "unknown.webp";
   if (!icons[path]) {
     const iconSize: L.PointExpression =
-      type?.size === "lg" ? [48, 48] : [32, 32];
+      type?.size === "lg"
+        ? [markerSize * 1.3, markerSize * 1.3]
+        : [markerSize, markerSize];
     icons[path] = L.icon({
       iconUrl: `${ICON_BASE_URL}${path}`,
       iconSize,
@@ -46,11 +53,12 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
   ({ type, verified, name, ...props }, ref) => {
     const areaNodeType = type ? nodeTypesMap[type] : undefined;
     const showNameOnMap = useShowNameOnMap();
+    const markerSize = useMarkerSize();
 
     return (
       <>
         <Marker
-          icon={getIcon(areaNodeType)}
+          icon={getIcon(markerSize, areaNodeType)}
           opacity={verified ? 1 : 0.25}
           {...props}
           ref={ref}
