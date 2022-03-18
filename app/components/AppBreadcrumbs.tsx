@@ -1,10 +1,10 @@
 import { useSpotlight } from "@mantine/spotlight";
 import { Breadcrumbs, Button, Text } from "@mantine/core";
-import { useLoaderData } from "remix";
-import type { LoaderData } from "~/lib/loaders.server";
+import { useParams } from "remix";
+import type { Area } from "~/lib/types";
 
-export default function AppBreadcrumbs() {
-  const { continentName, area } = useLoaderData<LoaderData>();
+export default function AppBreadcrumbs({ area }: { area: Area }) {
+  const params = useParams();
   const spotlight = useSpotlight();
 
   return (
@@ -27,8 +27,8 @@ export default function AppBreadcrumbs() {
           separator: { color: "inherit" },
         }}
       >
-        <Text>{continentName}</Text>
-        {area && continentName !== "World" && <Text>{area.name}</Text>}
+        <Text>{params.continent}</Text>
+        {area && params.continent !== "World" && <Text>{area.name}</Text>}
       </Breadcrumbs>
       <Text
         size="xs"

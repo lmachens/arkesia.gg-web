@@ -19,6 +19,7 @@ import {
   useDrawerPosition,
   useEditingNode,
   useLastType,
+  useRefreshNodes,
   useSetEditingNode,
 } from "~/lib/store";
 import TypeSelect from "./TypeSelect";
@@ -44,6 +45,7 @@ export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
   });
   const actionData = useActionData<PostNodeActionData>();
   const drawerPosition = useDrawerPosition();
+  const refreshNodes = useRefreshNodes();
 
   useEffect(() => {
     if (
@@ -72,8 +74,9 @@ export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
           message: "",
         });
         notificationId.current = null;
-        setEditingNode(null);
+        refreshNodes();
         setFileScreenshot(null);
+        setEditingNode(null);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -148,6 +151,7 @@ export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
               <input type="hidden" name="id" value={node.id} />
               <input type="hidden" name="userToken" value={userToken} />
               <TypeSelect
+                category={area.category}
                 name="type"
                 zIndex={800}
                 value={node.type || lastType}

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { MapContainer } from "react-leaflet";
-import type { AreaNodeDTO, Tile } from "~/lib/types";
+import type { Area, AreaNodeDTO, Tile } from "~/lib/types";
 import L from "leaflet";
 import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import "leaflet-rotate";
@@ -12,16 +12,18 @@ import UpsertMarker from "./UpsertMarker";
 import type { URLSearchParamsInit } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useDidUpdate } from "@mantine/hooks";
-import { useLoaderData } from "remix";
-import type { LoaderData } from "~/lib/loaders.server";
-import { useLastAreaNames, useSetEditingNode } from "~/lib/store";
+import { useLastAreaNames, useNodes, useSetEditingNode } from "~/lib/store";
 import ActionIcons from "./ActionIcons";
 
 includeCanvasTileLayer();
 
 const canvasRenderer = L.canvas();
-export default function MapView() {
-  const { area, nodes } = useLoaderData<LoaderData>();
+export default function MapView({ area }: { area: Area }) {
+  const allNodes = useNodes();
+  const nodes = useMemo(
+    () => allNodes.filter((node) => node.areaName === area.name),
+    [allNodes, area.name]
+  );
 
   const [searchParams, setSearchParams] = useSearchParams();
   const setEditingNode = useSetEditingNode();

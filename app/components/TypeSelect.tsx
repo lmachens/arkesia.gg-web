@@ -4,17 +4,18 @@ import { useMemo, useState } from "react";
 import Fuse from "fuse.js";
 import TypeItem from "./TypeItem";
 import { ICON_BASE_URL, nodeCategories } from "~/lib/static";
-import { useLoaderData } from "remix";
-import type { LoaderData } from "~/lib/loaders.server";
+import type { AreaCategory } from "~/lib/types";
 
-const TypeSelect = (props: Omit<SelectProps, "data">) => {
+const TypeSelect = ({
+  category,
+  ...props
+}: Omit<SelectProps, "data"> & { category: AreaCategory }) => {
   const [query, setQuery] = useState("");
-  const { area } = useLoaderData<LoaderData>();
 
   const types = useMemo(
     () =>
       nodeCategories
-        .filter((nodeCategory) => nodeCategory.includes.includes(area.category))
+        .filter((nodeCategory) => nodeCategory.includes.includes(category))
         .map((nodeCategory) =>
           nodeCategory.types.map((nodeType) => ({
             category: nodeCategory.name,
@@ -24,7 +25,7 @@ const TypeSelect = (props: Omit<SelectProps, "data">) => {
           }))
         )
         .flat(),
-    [area.category]
+    [category]
   );
 
   const sortedTypes = useMemo(() => {

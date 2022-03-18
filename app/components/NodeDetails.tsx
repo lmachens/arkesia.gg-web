@@ -17,6 +17,7 @@ import { Form, useActionData, useTransition } from "remix";
 import {
   useDiscoveredNodes,
   useDrawerPosition,
+  useRefreshNodes,
   useToggleDiscoveredNode,
 } from "~/lib/store";
 import type { AreaNodeDTO } from "~/lib/types";
@@ -45,6 +46,7 @@ export default function NodeDetails({
   const discoveredNodes = useDiscoveredNodes();
   const toggleDiscoveredNode = useToggleDiscoveredNode();
   const drawerPosition = useDrawerPosition();
+  const refreshNodes = useRefreshNodes();
 
   useEffect(() => {
     if (
@@ -74,6 +76,7 @@ export default function NodeDetails({
         });
         notificationId.current = null;
         onClose();
+        refreshNodes();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
