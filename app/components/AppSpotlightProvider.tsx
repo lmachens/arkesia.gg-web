@@ -25,7 +25,6 @@ export default function AppSpotlightProvider({
   children,
 }: AppSpotlightProviderProps) {
   const navigate = useNavigate();
-  const { addLastAreaName } = useLastAreaNames();
   useHotkeys([
     [
       "ctrl+space",
@@ -38,7 +37,6 @@ export default function AppSpotlightProvider({
     const actions: SpotlightAction[] = [];
     const handleTrigger = (action: SpotlightAction) => {
       navigate(action.url);
-      addLastAreaName(action.title);
     };
 
     actions.push({

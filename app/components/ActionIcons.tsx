@@ -7,15 +7,18 @@ import {
   Switch,
   Text,
   TextInput,
+  Tooltip,
 } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
-import { GearIcon, GitHubLogoIcon } from "@modulz/radix-icons";
+import { DrawingPinIcon, GearIcon, GitHubLogoIcon } from "@modulz/radix-icons";
 import { useState } from "react";
-import { trackEvent, trackOutboundLinkClick } from "~/lib/stats";
+import { useMap, useMapEvents } from "react-leaflet";
+import { trackOutboundLinkClick } from "~/lib/stats";
 import {
   useDrawerPosition,
   useIsShowingDiscoveredNodes,
   useSetDrawerPosition,
+  useSetEditingNode,
   useToggleIsShowingDiscoveredNodes,
 } from "~/lib/store";
 import { DiscordIcon } from "./DiscordIcon";
@@ -31,6 +34,16 @@ export default function ActionIcons() {
   const toggleIsShowingDiscoveredNodes = useToggleIsShowingDiscoveredNodes();
   const drawerPosition = useDrawerPosition();
   const setDrawerPosition = useSetDrawerPosition();
+  const setEditingNode = useSetEditingNode();
+  const map = useMap();
+
+  useMapEvents({
+    click: (event) => {
+      if (event.originalEvent.ctrlKey) {
+        setEditingNode({ position: [event.latlng.lat, event.latlng.lng] });
+      }
+    },
+  });
 
   return (
     <Group
@@ -43,40 +56,76 @@ export default function ActionIcons() {
       }}
       spacing="xs"
     >
-      <ActionIcon
-        onClick={() => setOpened((opened) => !opened)}
-        size="md"
-        p={4}
-      >
-        <GearIcon width="100%" height="100%" />
-      </ActionIcon>
-      <ActionIcon
-        component="a"
-        href="https://github.com/lmachens/arkesia.gg-web"
-        target="_blank"
-        size="md"
-        p={4}
-        onClick={() =>
-          trackOutboundLinkClick("https://github.com/lmachens/arkesia.gg-web")
+      <Tooltip
+        zIndex={9100}
+        label={
+          <Group>
+            <Text>Propose a node</Text>
+            <Text
+              size="xs"
+              sx={(theme) => ({
+                marginLeft: 8,
+                padding: "2px 4px",
+                borderRadius: theme.radius.xs,
+                background: "#0000005e",
+              })}
+            >
+              CTRL + Click
+            </Text>
+          </Group>
         }
       >
-        <GitHubLogoIcon width="100%" height="100%" />
-      </ActionIcon>
-      <ActionIcon
-        component="a"
-        href="https://discord.gg/GSmAWG2M"
-        target="_blank"
-        size="md"
-        sx={{
-          "&:hover": {
-            backgroundColor: "#5865f2",
-          },
-        }}
-        p={4}
-        onClick={() => trackOutboundLinkClick("https://discord.gg/GSmAWG2M")}
-      >
-        <DiscordIcon width="100%" height="100%" />
-      </ActionIcon>
+        <ActionIcon
+          onClick={() => {
+            const mapCenter = map.getCenter();
+            setEditingNode({ position: [mapCenter.lat, mapCenter.lng] });
+          }}
+          size="md"
+          p={4}
+        >
+          <DrawingPinIcon color="#ced4da" width="100%" height="100%" />
+        </ActionIcon>
+      </Tooltip>
+      <Tooltip zIndex={9100} label={<Text>Settings</Text>}>
+        <ActionIcon
+          onClick={() => setOpened((opened) => !opened)}
+          size="md"
+          p={4}
+        >
+          <GearIcon color="#ced4da" width="100%" height="100%" />
+        </ActionIcon>
+      </Tooltip>
+      <Tooltip zIndex={9100} label={<Text>Contribute or give feedback</Text>}>
+        <ActionIcon
+          component="a"
+          href="https://github.com/lmachens/arkesia.gg-web"
+          target="_blank"
+          size="md"
+          p={4}
+          onClick={() =>
+            trackOutboundLinkClick("https://github.com/lmachens/arkesia.gg-web")
+          }
+        >
+          <GitHubLogoIcon color="#ced4da" width="100%" height="100%" />
+        </ActionIcon>
+      </Tooltip>
+      <Tooltip zIndex={9100} label={<Text>Join the community</Text>}>
+        <ActionIcon
+          component="a"
+          href="https://discord.gg/GSmAWG2M"
+          target="_blank"
+          size="md"
+          sx={{
+            "&:hover": {
+              backgroundColor: "#5865f2",
+            },
+          }}
+          p={4}
+          onClick={() => trackOutboundLinkClick("https://discord.gg/GSmAWG2M")}
+        >
+          <DiscordIcon color="#ced4da" width="100%" height="100%" />
+        </ActionIcon>
+      </Tooltip>
       <Dialog
         opened={opened}
         withCloseButton
