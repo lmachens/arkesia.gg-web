@@ -2,7 +2,9 @@ import {
   ActionIcon,
   Dialog,
   Group,
+  InputWrapper,
   SegmentedControl,
+  Slider,
   Space,
   Switch,
   Text,
@@ -17,8 +19,10 @@ import { trackOutboundLinkClick } from "~/lib/stats";
 import {
   useDrawerPosition,
   useIsShowingDiscoveredNodes,
+  useMarkerSize,
   useSetDrawerPosition,
   useSetEditingNode,
+  useSetMarkerSize,
   useShowNameOnMap,
   useToggleIsShowingDiscoveredNodes,
   useToggleShowNameOnMap,
@@ -40,6 +44,8 @@ export default function ActionIcons() {
   const map = useMap();
   const showNameOnMap = useShowNameOnMap();
   const toggleShowNameOnMap = useToggleShowNameOnMap();
+  const markerSize = useMarkerSize();
+  const setMarkerSize = useSetMarkerSize();
 
   useMapEvents({
     click: (event) => {
@@ -160,6 +166,15 @@ export default function ActionIcons() {
           checked={showNameOnMap}
           onChange={toggleShowNameOnMap}
         />
+        <InputWrapper label="Marker size" style={{ marginTop: 5 }}>
+          <Slider
+            value={markerSize}
+            onChange={setMarkerSize}
+            min={15}
+            max={60}
+            label={null}
+          />
+        </InputWrapper>
         <Space h="md" />
         <Text style={{ marginBottom: 10 }} weight={500}>
           Discovered Nodes
