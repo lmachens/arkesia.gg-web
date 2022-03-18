@@ -14,7 +14,8 @@ import { useSearchParams } from "react-router-dom";
 import { useDidUpdate } from "@mantine/hooks";
 import { useLoaderData } from "remix";
 import type { LoaderData } from "~/lib/loaders.server";
-import { useLastAreaNames } from "~/lib/store";
+import { useLastAreaNames, useSetEditingNode } from "~/lib/store";
+import ActionIcons from "./ActionIcons";
 
 includeCanvasTileLayer();
 
@@ -23,9 +24,8 @@ export default function MapView() {
   const { area, nodes } = useLoaderData<LoaderData>();
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const [editingNode, setEditingNode] = useState<Partial<AreaNodeDTO> | null>(
-    null
-  );
+  const setEditingNode = useSetEditingNode();
+
   const tileParam = searchParams.get("tile");
   const tileId = tileParam ? +tileParam : 0;
   const nodeParam = searchParams.get("node");
@@ -51,9 +51,7 @@ export default function MapView() {
     if (!map) {
       return;
     }
-    if (editingNode !== null) {
-      setEditingNode(null);
-    }
+    setEditingNode(null);
 
     const tile = area.tiles.find((tile) => tile.id === tileId) || area.tiles[0];
     if (activeTile.tile !== tile.tile) {
@@ -144,7 +142,6 @@ export default function MapView() {
       <TileControl
         area={area}
         nodes={nodes}
-        editingNode={editingNode}
         onNodeClick={setSelectedNode}
         activeTile={activeTile}
         onActiveTileChange={(tile) => {
@@ -153,12 +150,7 @@ export default function MapView() {
           setSelectedNode(null);
         }}
       />
-      <DraggableMarker
-        area={area}
-        tile={activeTile}
-        node={editingNode}
-        onChange={setEditingNode}
-      />
+      <DraggableMarker area={area} tile={activeTile} />
       <NodeDetails
         selectedNode={selectedNode}
         onClose={() => setSelectedNode(null)}
@@ -167,6 +159,7 @@ export default function MapView() {
           setSelectedNode(null);
         }}
       />
+      <ActionIcons />
     </MapContainer>
   );
 }

@@ -7,6 +7,7 @@ import { areaContinents, continents, TILE_BASE_URL } from "~/lib/static";
 import {
   useDiscoveredNodes,
   useDrawerPosition,
+  useEditingNode,
   useIsShowingDiscoveredNodes,
 } from "~/lib/store";
 import type { Area, AreaNodeDTO, Tile } from "~/lib/types";
@@ -19,7 +20,6 @@ type TileControlProps = {
   onActiveTileChange: (activeTile: Tile) => void;
   nodes: AreaNodeDTO[];
   onNodeClick: (node: AreaNodeDTO) => void;
-  editingNode: Partial<AreaNodeDTO> | null;
 };
 
 export default function TileControl({
@@ -28,12 +28,12 @@ export default function TileControl({
   onActiveTileChange,
   nodes,
   onNodeClick,
-  editingNode,
 }: TileControlProps) {
   const tileLayerRef = useRef<L.TileLayer | null>(null);
   const discoveredNodes = useDiscoveredNodes();
   const isShowingDiscoveredNodes = useIsShowingDiscoveredNodes();
   const navigate = useNavigate();
+  const editingNode = useEditingNode();
 
   useEffect(() => {
     if (tileLayerRef.current) {

@@ -18,25 +18,24 @@ import type { PostNodeActionData } from "~/lib/validation";
 import RichTextEditor from "@mantine/rte";
 import TypeItem from "./TypeItem";
 import IconMarker from "./IconMarker";
-import type { AreaNode } from "@prisma/client";
-import { useDrawerPosition, useLastType } from "~/lib/store";
+import {
+  useDrawerPosition,
+  useEditingNode,
+  useLastType,
+  useSetEditingNode,
+} from "~/lib/store";
 
 type DraggableMarkerProps = {
-  node: Partial<AreaNode> | null;
-  onChange: (node: Partial<AreaNode> | null) => void;
   area: Area;
   tile: Tile;
 };
 
-export default function DraggableMarker({
-  node,
-  onChange,
-  area,
-  tile,
-}: DraggableMarkerProps) {
+export default function DraggableMarker({ area, tile }: DraggableMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
   const [fileScreenshot, setFileScreenshot] = useState<File | null>(null);
   const [lastType, setLastType] = useLastType();
+  const node = useEditingNode();
+  const setEditingNode = useSetEditingNode();
 
   const transition = useTransition();
   const notifications = useNotifications();
@@ -75,7 +74,7 @@ export default function DraggableMarker({
           message: "",
         });
         notificationId.current = null;
-        onChange(null);
+        setEditingNode(null);
         setFileScreenshot(null);
       }
     }
@@ -111,12 +110,13 @@ export default function DraggableMarker({
           type={node.type || lastType}
           draggable={true}
           verified
+          zIndexOffset={9000}
           eventHandlers={{
             dragend() {
               const marker = markerRef.current;
               if (marker != null) {
                 const latLng = marker.getLatLng();
-                onChange({ ...node, position: [latLng.lat, latLng.lng] });
+                setEditingNode({ ...node, position: [latLng.lat, latLng.lng] });
               }
             },
           }}
@@ -137,7 +137,7 @@ export default function DraggableMarker({
         padding="md"
         position={drawerPosition}
         onClose={() => {
-          onChange(null);
+          setEditingNode(null);
           setFileScreenshot(null);
         }}
       >
@@ -177,7 +177,7 @@ export default function DraggableMarker({
                 value={node.type || lastType}
                 onChange={(type) => {
                   if (type) {
-                    onChange({ ...node, type: type });
+                    setEditingNode({ ...node, type: type });
                     setLastType(type);
                   }
                 }}
@@ -192,7 +192,7 @@ export default function DraggableMarker({
                 placeholder="A node needs a name"
                 value={node.name || ""}
                 onChange={(event) =>
-                  onChange({ ...node, name: event.target.value })
+                  setEditingNode({ ...node, name: event.target.value })
                 }
                 max={30}
                 name="name"
@@ -204,7 +204,9 @@ export default function DraggableMarker({
               >
                 <RichTextEditor
                   value={node.description || ""}
-                  onChange={(description) => onChange({ ...node, description })}
+                  onChange={(description) =>
+                    setEditingNode({ ...node, description })
+                  }
                   placeholder="Additional information about this node"
                   controls={[["bold", "italic", "underline", "clean", "link"]]}
                   sx={() => ({
@@ -223,7 +225,7 @@ export default function DraggableMarker({
                 type="number"
                 value={node.transitToId || "0"}
                 onChange={(event) =>
-                  onChange({ ...node, transitToId: +event.target.value })
+                  setEditingNode({ ...node, transitToId: +event.target.value })
                 }
                 name="transitToId"
                 error={actionData?.fieldErrors?.transitToId}
@@ -231,7 +233,7 @@ export default function DraggableMarker({
               <ImageDropzone
                 onDrop={(files: File[]) => setFileScreenshot(files[0])}
                 onClear={() => {
-                  onChange({ ...node, screenshot: null });
+                  setEditingNode({ ...node, screenshot: null });
                   setFileScreenshot(null);
                 }}
                 onReject={() =>

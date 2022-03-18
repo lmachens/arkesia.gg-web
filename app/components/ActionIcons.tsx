@@ -9,13 +9,15 @@ import {
   TextInput,
 } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
-import { GearIcon, GitHubLogoIcon } from "@modulz/radix-icons";
+import { DrawingPinIcon, GearIcon, GitHubLogoIcon } from "@modulz/radix-icons";
 import { useState } from "react";
-import { trackEvent, trackOutboundLinkClick } from "~/lib/stats";
+import { useMap, useMapEvents } from "react-leaflet";
+import { trackOutboundLinkClick } from "~/lib/stats";
 import {
   useDrawerPosition,
   useIsShowingDiscoveredNodes,
   useSetDrawerPosition,
+  useSetEditingNode,
   useToggleIsShowingDiscoveredNodes,
 } from "~/lib/store";
 import { DiscordIcon } from "./DiscordIcon";
@@ -31,6 +33,16 @@ export default function ActionIcons() {
   const toggleIsShowingDiscoveredNodes = useToggleIsShowingDiscoveredNodes();
   const drawerPosition = useDrawerPosition();
   const setDrawerPosition = useSetDrawerPosition();
+  const setEditingNode = useSetEditingNode();
+  const map = useMap();
+
+  useMapEvents({
+    click: (event) => {
+      if (event.originalEvent.ctrlKey) {
+        setEditingNode({ position: [event.latlng.lat, event.latlng.lng] });
+      }
+    },
+  });
 
   return (
     <Group
@@ -44,11 +56,21 @@ export default function ActionIcons() {
       spacing="xs"
     >
       <ActionIcon
+        onClick={() => {
+          const mapCenter = map.getCenter();
+          setEditingNode({ position: [mapCenter.lat, mapCenter.lng] });
+        }}
+        size="md"
+        p={4}
+      >
+        <DrawingPinIcon color="#ced4da" width="100%" height="100%" />
+      </ActionIcon>
+      <ActionIcon
         onClick={() => setOpened((opened) => !opened)}
         size="md"
         p={4}
       >
-        <GearIcon width="100%" height="100%" />
+        <GearIcon color="#ced4da" width="100%" height="100%" />
       </ActionIcon>
       <ActionIcon
         component="a"
@@ -60,7 +82,7 @@ export default function ActionIcons() {
           trackOutboundLinkClick("https://github.com/lmachens/arkesia.gg-web")
         }
       >
-        <GitHubLogoIcon width="100%" height="100%" />
+        <GitHubLogoIcon color="#ced4da" width="100%" height="100%" />
       </ActionIcon>
       <ActionIcon
         component="a"
@@ -75,7 +97,7 @@ export default function ActionIcons() {
         p={4}
         onClick={() => trackOutboundLinkClick("https://discord.gg/GSmAWG2M")}
       >
-        <DiscordIcon width="100%" height="100%" />
+        <DiscordIcon color="#ced4da" width="100%" height="100%" />
       </ActionIcon>
       <Dialog
         opened={opened}

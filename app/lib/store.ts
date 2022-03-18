@@ -2,10 +2,11 @@ import type { AreaNode } from "@prisma/client";
 import create from "zustand";
 import { persist } from "zustand/middleware";
 import { trackHideDiscoveredNodes, trackShowDiscoveredNodes } from "./stats";
+import type { AreaNodeDTO } from "./types";
 
 export type DiscoveredNode = Pick<AreaNode, "id" | "type">;
 
-type StoreProps = {
+type PersistentStoreProps = {
   lastType: string;
   setLastType: (type: string) => void;
   isShowingDiscoveredNodes: boolean;
@@ -18,8 +19,8 @@ type StoreProps = {
   addLastAreaName: (areaName: string) => void;
 };
 
-export const useStore = create(
-  persist<StoreProps>(
+export const usePersistentStore = create(
+  persist<PersistentStoreProps>(
     (set) => ({
       lastType: "Map Transition",
       setLastType: (type: string) => set({ lastType: type }),
@@ -66,50 +67,82 @@ export const useStore = create(
   )
 );
 
-const lastTypeSelector = (state: StoreProps) =>
+type SessionStoreProps = {
+  editingNode: Partial<AreaNodeDTO> | null;
+  setEditingNode: (editingNode: Partial<AreaNodeDTO> | null) => void;
+};
+
+export const useSessionStore = create(
+  persist<SessionStoreProps>(
+    (set) => ({
+      editingNode: null,
+      setEditingNode: (editingNode: Partial<AreaNodeDTO> | null) =>
+        set({ editingNode }),
+    }),
+    {
+      name: "session-storage",
+      getStorage: () => sessionStorage,
+    }
+  )
+);
+
+const lastTypeSelector = (state: PersistentStoreProps) =>
   [state.lastType, state.setLastType] as [string, (type: string) => void];
 export const useLastType = () => {
-  return useStore(lastTypeSelector);
+  return usePersistentStore(lastTypeSelector);
 };
 
-const isShowingDiscoveredNodesSelector = (state: StoreProps) =>
+const isShowingDiscoveredNodesSelector = (state: PersistentStoreProps) =>
   state.isShowingDiscoveredNodes;
 export const useIsShowingDiscoveredNodes = () => {
-  return useStore(isShowingDiscoveredNodesSelector);
+  return usePersistentStore(isShowingDiscoveredNodesSelector);
 };
 
-const toggleIsShowingDiscoveredNodesSelector = (state: StoreProps) =>
+const toggleIsShowingDiscoveredNodesSelector = (state: PersistentStoreProps) =>
   state.toggleIsShowingDiscoveredNodes;
 export const useToggleIsShowingDiscoveredNodes = () => {
-  return useStore(toggleIsShowingDiscoveredNodesSelector);
+  return usePersistentStore(toggleIsShowingDiscoveredNodesSelector);
 };
 
-const discoveredNodesSelector = (state: StoreProps) => state.discoveredNodes;
+const discoveredNodesSelector = (state: PersistentStoreProps) =>
+  state.discoveredNodes;
 export const useDiscoveredNodes = () => {
-  return useStore(discoveredNodesSelector);
+  return usePersistentStore(discoveredNodesSelector);
 };
 
-const toggleDiscoveredNodeSelector = (state: StoreProps) =>
+const toggleDiscoveredNodeSelector = (state: PersistentStoreProps) =>
   state.toggleDiscoveredNode;
 export const useToggleDiscoveredNode = () => {
-  return useStore(toggleDiscoveredNodeSelector);
+  return usePersistentStore(toggleDiscoveredNodeSelector);
 };
 
-const drawerPositionSelector = (state: StoreProps) => state.drawerPosition;
+const drawerPositionSelector = (state: PersistentStoreProps) =>
+  state.drawerPosition;
 export const useDrawerPosition = () => {
-  return useStore(drawerPositionSelector);
+  return usePersistentStore(drawerPositionSelector);
 };
 
-const setDrawerPositionSelector = (state: StoreProps) =>
+const setDrawerPositionSelector = (state: PersistentStoreProps) =>
   state.setDrawerPosition;
 export const useSetDrawerPosition = () => {
-  return useStore(setDrawerPositionSelector);
+  return usePersistentStore(setDrawerPositionSelector);
 };
 
-const lastAreaNamesSelector = (state: StoreProps) => ({
+const lastAreaNamesSelector = (state: PersistentStoreProps) => ({
   lastAreaNames: state.lastAreaNames,
   addLastAreaName: state.addLastAreaName,
 });
 export const useLastAreaNames = () => {
-  return useStore(lastAreaNamesSelector);
+  return usePersistentStore(lastAreaNamesSelector);
+};
+
+const editingNodeSelector = (state: SessionStoreProps) => state.editingNode;
+export const useEditingNode = () => {
+  return useSessionStore(editingNodeSelector);
+};
+
+const setEditingNodeSelector = (state: SessionStoreProps) =>
+  state.setEditingNode;
+export const useSetEditingNode = () => {
+  return useSessionStore(setEditingNodeSelector);
 };
