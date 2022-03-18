@@ -8,7 +8,7 @@ import MousePosition from "./MousePosition";
 import TileControl from "./TileControl";
 import { getBounds, getMapCenter } from "~/lib/map";
 import NodeDetails from "./NodeDetails";
-import DraggableMarker from "./DraggableMarker";
+import UpsertMarker from "./UpsertMarker";
 import type { URLSearchParamsInit } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useDidUpdate } from "@mantine/hooks";
@@ -150,7 +150,7 @@ export default function MapView() {
           setSelectedNode(null);
         }}
       />
-      <DraggableMarker area={area} tile={activeTile} />
+      <UpsertMarker area={area} tile={activeTile} />
       <NodeDetails
         selectedNode={selectedNode}
         onClose={() => setSelectedNode(null)}
