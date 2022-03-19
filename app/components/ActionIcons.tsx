@@ -92,6 +92,7 @@ export default function ActionIcons() {
             setEditingNode({ position: [mapCenter.lat, mapCenter.lng] });
           }}
           size="md"
+          aria-label="Propose a node"
           p={4}
         >
           <DrawingPinIcon color="#ced4da" width="100%" height="100%" />
@@ -101,6 +102,7 @@ export default function ActionIcons() {
         <ActionIcon
           onClick={() => setOpened((opened) => !opened)}
           size="md"
+          aria-label="Settings"
           p={4}
         >
           <GearIcon color="#ced4da" width="100%" height="100%" />
@@ -112,6 +114,7 @@ export default function ActionIcons() {
           href="https://github.com/lmachens/arkesia.gg-web"
           target="_blank"
           size="md"
+          aria-label="Contribute or give feedback"
           p={4}
           onClick={() =>
             trackOutboundLinkClick("https://github.com/lmachens/arkesia.gg-web")
@@ -131,6 +134,7 @@ export default function ActionIcons() {
               backgroundColor: "#5865f2",
             },
           }}
+          aria-label="Join the community"
           p={4}
           onClick={() => trackOutboundLinkClick("https://discord.gg/GSmAWG2M")}
         >
