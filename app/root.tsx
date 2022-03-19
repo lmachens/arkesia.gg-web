@@ -6,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "~/styles/global.css";
@@ -14,6 +15,9 @@ import { MantineProvider } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
 import AppSpotlightProvider from "./components/AppSpotlightProvider";
 import Plausible from "./components/Plausible";
+import { initSupabase } from "./lib/supabase";
+import { useEffect } from "react";
+import { useRefreshNodes } from "./lib/store";
 
 export function links() {
   return [
@@ -35,6 +39,8 @@ export const meta: MetaFunction = () => {
 export async function loader() {
   return json({
     ENV: {
+      SUPABASE_URL: process.env.SUPABASE_URL,
+      SUPABASE_PUBLIC_KEY: process.env.SUPABASE_PUBLIC_KEY,
       PLAUSIBLE_API_HOST: process.env.PLAUSIBLE_API_HOST,
       PLAUSIBLE_DOMAIN: process.env.PLAUSIBLE_DOMAIN,
     },
@@ -42,6 +48,14 @@ export async function loader() {
 }
 
 export default function App() {
+  const { ENV } = useLoaderData();
+  const refreshNodes = useRefreshNodes();
+
+  useEffect(() => {
+    initSupabase(ENV.SUPABASE_URL, ENV.SUPABASE_PUBLIC_KEY);
+    refreshNodes();
+  }, []);
+
   return (
     <html lang="en">
       <head>

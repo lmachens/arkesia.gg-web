@@ -4,9 +4,15 @@ import type { ReactNode } from "react";
 import { useEffect } from "react";
 import { useMemo } from "react";
 import type { SpotlightAction, SpotlightActionProps } from "@mantine/spotlight";
-import { areaContinents, continents, TILE_BASE_URL } from "~/lib/static";
+import {
+  areaContinents,
+  continents,
+  ICON_BASE_URL,
+  nodeTypesMap,
+  TILE_BASE_URL,
+} from "~/lib/static";
 import { useNavigate } from "react-router-dom";
-import { useLastAreaNames } from "~/lib/store";
+import { useLastAreaNames, useNodes } from "~/lib/store";
 import {
   Center,
   createStyles,
@@ -25,6 +31,8 @@ export default function AppSpotlightProvider({
   children,
 }: AppSpotlightProviderProps) {
   const navigate = useNavigate();
+  const nodes = useNodes();
+
   useHotkeys([
     [
       "ctrl+space",
@@ -60,29 +68,45 @@ export default function AppSpotlightProvider({
         });
       });
     });
+
+    nodes.forEach((node) => {
+      if (node.name) {
+        const continent = areaContinents[node.areaName];
+        const nodeType = nodeTypesMap[node.type];
+        actions.push({
+          title: node.name,
+          group: "node",
+          description: `${node.type} in ${continent} / ${node.areaName}`,
+          url: `/maps/${continent}/${node.areaName}?tile=${node.tileId}&node=${node.id}`,
+          image: ICON_BASE_URL + nodeType.icon,
+          onTrigger: handleTrigger,
+        });
+      }
+    });
     return actions;
-  }, []);
+  }, [nodes]);
 
   return (
     <SpotlightProvider
       actions={actions}
       searchIcon={<MagnifyingGlassIcon />}
-      searchPlaceholder="Search..."
+      searchPlaceholder="Search for areas and nodes..."
       shortcut="ctrl + f"
       nothingFoundMessage="Nothing found..."
       zIndex={10000}
+      limit={6}
       filter={(query, actions) => {
         if (query === "") {
           return actions.filter(
-            (action) => action.group === "latest" || action.group === "popular"
+            (action) =>
+              action.group === "latest areas" || action.group === "popular"
           );
         }
         return actions.filter(
           (action) =>
-            action.group !== "latest" &&
+            action.group !== "latest areas" &&
             action.group !== "popular" &&
-            (action.title.toLowerCase().includes(query.toLowerCase()) ||
-              action.description?.toLowerCase().includes(query.toLowerCase()))
+            action.title.toLowerCase().includes(query.toLowerCase())
         );
       }}
       actionComponent={CustomAction}
@@ -113,7 +137,7 @@ function LatestAreaNames() {
       return {
         id: lastAreaName,
         title: lastAreaName,
-        group: "latest",
+        group: "latest areas",
         description: `Continent: ${continentName}`,
         url: `/maps/${continentName}/${lastAreaName}`,
         image: TILE_BASE_URL + area?.tiles[0].full,

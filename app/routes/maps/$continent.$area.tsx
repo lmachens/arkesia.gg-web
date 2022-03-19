@@ -1,12 +1,13 @@
 import { ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
-import { AppShell, LoadingOverlay } from "@mantine/core";
+import { AppShell, LoadingOverlay, Text } from "@mantine/core";
 import { nodeAction } from "~/lib/actions.server";
-import { areaLoader } from "~/lib/loaders.server";
 import AppBreadcrumbs from "~/components/AppBreadcrumbs";
+import { useParams } from "react-router-dom";
+import { continents } from "~/lib/static";
+import { useMemo } from "react";
 import type { MetaFunction } from "remix";
 
-export const loader = areaLoader;
 export const action = nodeAction;
 
 export const meta: MetaFunction = ({ params }) => {
@@ -24,6 +25,15 @@ export const meta: MetaFunction = ({ params }) => {
 };
 
 export default function MapPage() {
+  const params = useParams();
+
+  const area = useMemo(() => {
+    const continent = continents.find(
+      (mapData) => mapData.name === params.continent
+    );
+    return continent?.areas.find((area) => area.name === params.area);
+  }, [params.area]);
+
   return (
     <AppShell
       padding={0}
@@ -36,10 +46,15 @@ export default function MapPage() {
         },
       })}
     >
-      <AppBreadcrumbs />
-      <ClientOnly fallback={<LoadingOverlay visible />}>
-        {() => <MapView />}
-      </ClientOnly>
+      {!area && <Text>Huh? What the heck is "{params.area}"?</Text>}
+      {area && (
+        <>
+          <AppBreadcrumbs area={area} />
+          <ClientOnly fallback={<LoadingOverlay visible />}>
+            {() => <MapView area={area} />}
+          </ClientOnly>
+        </>
+      )}
     </AppShell>
   );
 }

@@ -74,3 +74,13 @@ body {
   text-shadow: 1px 1px var(--color-shade-5), -1px -1px var(--color-shade-5),
     1px -1px var(--color-shade-5), -1px 1px var(--color-shade-5);
 }
+
+.seo-anchor {
+  text-decoration: none;
+  color: #22b8cf !important;
+}
+
+.seo-anchor-lg {
+  text-decoration: none;
+  color: var(--color-shade-1) !important;
+}

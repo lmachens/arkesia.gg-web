@@ -3,10 +3,10 @@ import { useLoaderData } from "remix";
 import { initPlausible } from "~/lib/stats";
 
 export default function Plausible() {
-  const data = useLoaderData();
+  const { ENV } = useLoaderData();
 
   useEffect(() => {
-    initPlausible(data.ENV.PLAUSIBLE_DOMAIN, data.ENV.PLAUSIBLE_API_HOST);
+    initPlausible(ENV.PLAUSIBLE_DOMAIN, ENV.PLAUSIBLE_API_HOST);
   }, []);
 
   return <></>;
