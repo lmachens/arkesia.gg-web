@@ -31,7 +31,6 @@ export default function AppSpotlightProvider({
   children,
 }: AppSpotlightProviderProps) {
   const navigate = useNavigate();
-  const nodes = useNodes();
 
   useHotkeys([
     [
@@ -69,22 +68,8 @@ export default function AppSpotlightProvider({
       });
     });
 
-    nodes.forEach((node) => {
-      if (node.name) {
-        const continent = areaContinents[node.areaName];
-        const nodeType = nodeTypesMap[node.type];
-        actions.push({
-          title: node.name,
-          group: "node",
-          description: `${node.type} in ${continent} / ${node.areaName}`,
-          url: `/maps/${continent}/${node.areaName}?tile=${node.tileId}&node=${node.id}`,
-          image: ICON_BASE_URL + nodeType.icon,
-          onTrigger: handleTrigger,
-        });
-      }
-    });
     return actions;
-  }, [nodes]);
+  }, []);
 
   return (
     <SpotlightProvider
@@ -113,8 +98,45 @@ export default function AppSpotlightProvider({
     >
       {children}
       <LatestAreaNames />
+      <AdditionalActions />
     </SpotlightProvider>
   );
+}
+
+function AdditionalActions() {
+  const nodes = useNodes();
+  const spotlight = useSpotlight();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleTrigger = (action: SpotlightAction) => {
+      navigate(action.url);
+    };
+
+    const nodeActions = nodes
+      .filter((node) => node.name)
+      .map((node) => {
+        const continent = areaContinents[node.areaName];
+        const nodeType = nodeTypesMap[node.type];
+
+        return {
+          id: node.id.toString(),
+          title: node.name!,
+          group: "node",
+          description: `${node.type} in ${continent} / ${node.areaName}`,
+          url: `/maps/${continent}/${node.areaName}?tile=${node.tileId}&node=${node.id}`,
+          image: ICON_BASE_URL + nodeType.icon,
+          onTrigger: handleTrigger,
+        };
+      });
+    spotlight.registerActions(nodeActions);
+
+    return () => {
+      spotlight.removeActions(nodeActions.map((node) => node.id.toString()));
+    };
+  }, [nodes]);
+
+  return <></>;
 }
 
 function LatestAreaNames() {
