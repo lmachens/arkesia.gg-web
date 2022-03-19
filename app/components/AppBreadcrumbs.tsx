@@ -27,8 +27,14 @@ export default function AppBreadcrumbs({ area }: { area: Area }) {
           separator: { color: "inherit" },
         }}
       >
-        <Text>{params.continent}</Text>
-        {area && params.continent !== "World" && <Text>{area.name}</Text>}
+        <Text component="h1" sx={{ margin: 0 }}>
+          {params.continent}
+        </Text>
+        {area && params.continent !== "World" && (
+          <Text component="h2" sx={{ margin: 0 }}>
+            {area.name}
+          </Text>
+        )}
       </Breadcrumbs>
       <Text
         size="xs"
