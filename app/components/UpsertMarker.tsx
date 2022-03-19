@@ -153,7 +153,7 @@ export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
               <TypeSelect
                 category={area.category}
                 name="type"
-                zIndex={800}
+                zIndex={8960}
                 value={node.type || lastType}
                 onChange={(type) => {
                   if (type) {

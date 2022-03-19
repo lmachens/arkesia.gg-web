@@ -50,7 +50,6 @@ const TypeSelect = ({
       label="Type"
       placeholder="Pick one"
       name="type"
-      zIndex={800}
       searchable
       filter={() => true}
       onSearchChange={setQuery}
