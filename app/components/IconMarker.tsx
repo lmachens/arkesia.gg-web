@@ -1,10 +1,11 @@
 import type { MarkerProps } from "react-leaflet";
 import { Marker } from "react-leaflet";
-import { ICON_BASE_URL, nodeTypesMap } from "~/lib/static";
+import { areaContinents, ICON_BASE_URL, nodeTypesMap } from "~/lib/static";
 import L from "leaflet";
 import { forwardRef } from "react";
 import type { AreaNodeType } from "~/lib/types";
 import { useMarkerSize, useShowNameOnMap } from "~/lib/store";
+import type { AreaNode } from "@prisma/client";
 
 let icons: {
   [path: string]: L.Icon;
@@ -32,25 +33,43 @@ function getIcon(markerSize: number, type?: AreaNodeType) {
 const labels: {
   [path: string]: L.DivIcon;
 } = {};
-function getLabel(label: string) {
-  if (!labels[label]) {
-    labels[label] = L.divIcon({
-      html: label,
+function getLabel(
+  label: string,
+  type?: string,
+  transitTo?: AreaNode | null,
+  size?: string | null
+) {
+  const key = type + label;
+  if (!labels[key]) {
+    let href = "";
+    if (transitTo) {
+      const continent = areaContinents[transitTo.areaName];
+      href = `/maps/${continent}/${transitTo.areaName}?tile=${transitTo.tileId}`;
+    }
+
+    labels[key] = L.divIcon({
+      // Anchors are for SEO only (not clickable)
+      html: href
+        ? `<a href="${href}" class="${
+            size === "lg" ? "seo-anchor-lg" : "seo-anchor"
+          }">${label}</a>`
+        : label,
       className: "text-below-marker",
       iconAnchor: [0, -24],
       iconSize: undefined,
     });
   }
-  return labels[label];
+  return labels[key];
 }
 
 type IconMarkerProps = {
+  transitTo?: AreaNode | null;
   verified: boolean;
   type?: string;
   name?: string | null;
 } & MarkerProps;
 const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
-  ({ type, verified, name, ...props }, ref) => {
+  ({ type, verified, name, transitTo, ...props }, ref) => {
     const areaNodeType = type ? nodeTypesMap[type] : undefined;
     const showNameOnMap = useShowNameOnMap();
     const markerSize = useMarkerSize();
@@ -65,7 +84,7 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
         />
         {showNameOnMap && name && (
           <Marker
-            icon={getLabel(name)}
+            icon={getLabel(name, type, transitTo, areaNodeType?.size)}
             opacity={verified ? 1 : 0.25}
             interactive={false}
             position={props.position}

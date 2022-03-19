@@ -110,6 +110,7 @@ export default function TileControl({
             name={node.name}
             riseOnHover
             verified={Boolean(node.userId)}
+            transitTo={node.transitTo}
             eventHandlers={{
               click() {
                 if (!document.querySelector("#upsert-marker-drawer")) {
