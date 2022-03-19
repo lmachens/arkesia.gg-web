@@ -11,7 +11,7 @@ import {
   TextInput,
   Tooltip,
 } from "@mantine/core";
-import { useLocalStorageValue } from "@mantine/hooks";
+import { useLocalStorageValue, useMediaQuery } from "@mantine/hooks";
 import { DrawingPinIcon, GearIcon, GitHubLogoIcon } from "@modulz/radix-icons";
 import { useState } from "react";
 import { useMap, useMapEvents } from "react-leaflet";
@@ -46,6 +46,7 @@ export default function ActionIcons() {
   const toggleShowNameOnMap = useToggleShowNameOnMap();
   const markerSize = useMarkerSize();
   const setMarkerSize = useSetMarkerSize();
+  const largeScreen = useMediaQuery("(min-width: 900px)");
 
   useMapEvents({
     click: (event) => {
@@ -140,7 +141,7 @@ export default function ActionIcons() {
         opened={opened}
         withCloseButton
         onClose={() => setOpened(false)}
-        size="lg"
+        size={largeScreen ? "lg" : "md"}
         radius="md"
         position={{
           bottom: 65,

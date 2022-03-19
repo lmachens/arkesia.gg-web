@@ -59,11 +59,7 @@ export default function TileControl({
   });
 
   return (
-    <div
-      className={`leaflet-top leaflet-${
-        drawerPosition === "left" ? "right" : "left"
-      }`}
-    >
+    <div className={`leaflet-bottom leaflet-${drawerPosition}`}>
       <div className="leaflet-control">
         {area.name !== "Arkesia" &&
           area.tiles.map((tile) => (
