@@ -27,7 +27,13 @@ export function links() {
 }
 
 export const meta: MetaFunction = () => {
-  return { title: "Arkesia - Lost Ark Map" };
+  return {
+    title: "Arkesia.gg - Lost Ark Map",
+    charset: "utf-8",
+    description:
+      "Arkesia.gg is an interactive map with mokoko seeds, hidden stories and more for Lost Ark.",
+    keywords: "Lost Ark,Arkesia,Map,World,Mokoko seeds",
+  };
 };
 
 export async function loader() {
@@ -55,6 +61,7 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+
         <Meta />
         <Links />
       </head>

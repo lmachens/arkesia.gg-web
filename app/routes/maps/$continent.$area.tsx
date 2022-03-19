@@ -6,8 +6,23 @@ import AppBreadcrumbs from "~/components/AppBreadcrumbs";
 import { useParams } from "react-router-dom";
 import { continents } from "~/lib/static";
 import { useMemo } from "react";
+import type { MetaFunction } from "remix";
 
 export const action = nodeAction;
+
+export const meta: MetaFunction = ({ params }) => {
+  if (params.continent === "World") {
+    return {
+      title: "Lost Ark Map - Arkesia.gg",
+      description:
+        "Arkesia is an interactive map with mokoko seeds, hidden stories and more for Lost Ark.",
+    };
+  }
+  return {
+    title: `${params.area} in ${params.continent} - Arkesia.gg`,
+    description: `Interactive map with mokoko seeds, hidden stories and more resources in ${params.continent} / ${params.area} for Lost Ark.`,
+  };
+};
 
 export default function MapPage() {
   const params = useParams();

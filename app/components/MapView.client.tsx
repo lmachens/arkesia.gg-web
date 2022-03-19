@@ -127,6 +127,7 @@ export default function MapView({ area }: { area: Area }) {
     <MapContainer
       center={initialCenter}
       zoom={1}
+      tap={false}
       crs={L.CRS.Simple}
       zoomControl={false}
       attributionControl={false}

@@ -115,7 +115,7 @@ export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
       <Drawer
         id="upsert-marker-drawer"
         opened={Boolean(node?.position)}
-        zIndex={700}
+        zIndex={8950}
         closeOnClickOutside={false}
         withOverlay={false}
         padding="md"
