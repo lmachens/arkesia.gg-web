@@ -90,7 +90,7 @@ export default function NodeDetails({
   return (
     <Drawer
       opened={Boolean(selectedNode)}
-      zIndex={700}
+      zIndex={8950}
       withOverlay={false}
       padding="md"
       position={drawerPosition}
