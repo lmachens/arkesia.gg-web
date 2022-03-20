@@ -12,8 +12,9 @@ import UpsertMarker from "./UpsertMarker";
 import type { URLSearchParamsInit } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useDidUpdate } from "@mantine/hooks";
-import { useLastAreaNames, useNodes, useSetEditingNode } from "~/lib/store";
+import { useLastAreaNames, useSetEditingNode } from "~/lib/store";
 import ActionIcons from "./ActionIcons";
+import { useNodes } from "~/lib/loaders";
 
 includeCanvasTileLayer();
 

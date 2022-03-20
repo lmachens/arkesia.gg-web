@@ -2,14 +2,11 @@ import type { AreaNode } from "@prisma/client";
 import create from "zustand";
 import { persist } from "zustand/middleware";
 import { trackHideDiscoveredNodes, trackShowDiscoveredNodes } from "./stats";
-import { findNodes } from "./supabase";
 import type { AreaNodeDTO } from "./types";
 
 export type DiscoveredNode = Pick<AreaNode, "id" | "type">;
 
 type PersistentStoreProps = {
-  nodes: AreaNodeDTO[];
-  refreshNodes: () => void;
   lastType: string;
   setLastType: (type: string) => void;
   isShowingDiscoveredNodes: boolean;
@@ -28,12 +25,7 @@ type PersistentStoreProps = {
 
 export const usePersistentStore = create(
   persist<PersistentStoreProps>(
-    (set, get) => ({
-      nodes: [],
-      refreshNodes: async () => {
-        const nodes = await findNodes();
-        set({ nodes });
-      },
+    (set) => ({
       lastType: "Map Transition",
       setLastType: (type: string) => set({ lastType: type }),
       isShowingDiscoveredNodes: false,
@@ -102,17 +94,6 @@ export const useSessionStore = create(
     }
   )
 );
-
-const nodesSelector = (state: PersistentStoreProps) => state.nodes;
-export const useNodes = () => {
-  return usePersistentStore(nodesSelector);
-};
-
-const refreshNodesSelector = (state: PersistentStoreProps) =>
-  state.refreshNodes;
-export const useRefreshNodes = () => {
-  return usePersistentStore(refreshNodesSelector);
-};
 
 const lastTypeSelector = (state: PersistentStoreProps) =>
   [state.lastType, state.setLastType] as [string, (type: string) => void];

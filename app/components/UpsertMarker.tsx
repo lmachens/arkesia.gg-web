@@ -19,7 +19,6 @@ import {
   useDrawerPosition,
   useEditingNode,
   useLastType,
-  useRefreshNodes,
   useSetEditingNode,
 } from "~/lib/store";
 import TypeSelect from "./TypeSelect";
@@ -45,7 +44,6 @@ export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
   });
   const actionData = useActionData<PostNodeActionData>();
   const drawerPosition = useDrawerPosition();
-  const refreshNodes = useRefreshNodes();
 
   useEffect(() => {
     if (
@@ -74,7 +72,6 @@ export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
           message: "",
         });
         notificationId.current = null;
-        refreshNodes();
         setFileScreenshot(null);
         setEditingNode(null);
       }
