@@ -7,7 +7,9 @@ import { useParams } from "react-router-dom";
 import { continents } from "~/lib/static";
 import { useMemo } from "react";
 import type { MetaFunction } from "remix";
+import { areaLoader } from "~/lib/loaders.server";
 
+export const loader = areaLoader;
 export const action = nodeAction;
 
 export const meta: MetaFunction = ({ params }) => {

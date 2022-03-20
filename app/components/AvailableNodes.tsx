@@ -1,8 +1,8 @@
 import { Avatar, List } from "@mantine/core";
 import type { AreaNode } from "@prisma/client";
 import { useMemo } from "react";
+import { useNodes } from "~/lib/loaders";
 import { ICON_BASE_URL, nodeTypesMap } from "~/lib/static";
-import { useNodes } from "~/lib/store";
 
 type AvailableNodesProps = {
   node: AreaNode;

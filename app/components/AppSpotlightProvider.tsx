@@ -1,6 +1,7 @@
 import { SpotlightProvider, useSpotlight } from "@mantine/spotlight";
 import { MagnifyingGlassIcon } from "@modulz/radix-icons";
 import type { ReactNode } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { useMemo } from "react";
 import type { SpotlightAction, SpotlightActionProps } from "@mantine/spotlight";
@@ -12,7 +13,7 @@ import {
   TILE_BASE_URL,
 } from "~/lib/static";
 import { useNavigate } from "react-router-dom";
-import { useLastAreaNames, useNodes } from "~/lib/store";
+import { useLastAreaNames } from "~/lib/store";
 import {
   Center,
   createStyles,
@@ -21,7 +22,10 @@ import {
   Text,
   UnstyledButton,
 } from "@mantine/core";
-import { useHotkeys } from "@mantine/hooks";
+import { useDidUpdate, useHotkeys } from "@mantine/hooks";
+import { findNodes } from "~/lib/supabase";
+import type { AreaNode } from "@prisma/client";
+import useThrottle from "~/lib/useThrottle";
 
 type AppSpotlightProviderProps = {
   children: ReactNode;
@@ -55,19 +59,6 @@ export default function AppSpotlightProvider({
       onTrigger: handleTrigger,
     });
 
-    continents.forEach((continent) => {
-      continent.areas.forEach((area) => {
-        actions.push({
-          title: area.name,
-          group: "area",
-          description: `Continent: ${continent.name}`,
-          url: `/maps/${continent.name}/${area.name}`,
-          image: TILE_BASE_URL + area.tiles[0].full,
-          onTrigger: handleTrigger,
-        });
-      });
-    });
-
     return actions;
   }, []);
 
@@ -89,9 +80,7 @@ export default function AppSpotlightProvider({
         }
         return actions.filter(
           (action) =>
-            action.group !== "latest areas" &&
-            action.group !== "popular" &&
-            action.title.toLowerCase().includes(query.toLowerCase())
+            action.group !== "latest areas" && action.group !== "popular"
         );
       }}
       actionComponent={CustomAction}
@@ -104,15 +93,21 @@ export default function AppSpotlightProvider({
 }
 
 function AdditionalActions() {
-  const nodes = useNodes();
+  const [nodes, setNodes] = useState<AreaNode[]>([]);
+
   const spotlight = useSpotlight();
   const navigate = useNavigate();
+  const query = useThrottle(spotlight.query, 200);
+
+  useDidUpdate(() => {
+    findNodes(query).then(setNodes);
+  }, [query]);
 
   useEffect(() => {
     const handleTrigger = (action: SpotlightAction) => {
       navigate(action.url);
     };
-
+    const lowerCaseQuery = query.toLowerCase();
     const nodeActions = nodes
       .filter((node) => node.name)
       .map((node) => {
@@ -122,13 +117,34 @@ function AdditionalActions() {
         return {
           id: node.id.toString(),
           title: node.name!,
-          group: "node",
           description: `${node.type} in ${continent} / ${node.areaName}`,
           url: `/maps/${continent}/${node.areaName}?tile=${node.tileId}&node=${node.id}`,
           image: ICON_BASE_URL + nodeType.icon,
           onTrigger: handleTrigger,
         };
       });
+
+    for (let continent of continents) {
+      for (let area of continent.areas) {
+        if (area.name.toLowerCase().includes(lowerCaseQuery)) {
+          nodeActions.push({
+            id: `${continent.name}-${area.name}`,
+            title: area.name,
+            description: `Continent: ${continent.name}`,
+            url: `/maps/${continent.name}/${area.name}`,
+            image: TILE_BASE_URL + area.tiles[0].full,
+            onTrigger: handleTrigger,
+          });
+          if (nodeActions.length >= 6) {
+            break;
+          }
+        }
+      }
+      if (nodeActions.length >= 6) {
+        break;
+      }
+    }
+
     spotlight.registerActions(nodeActions);
 
     return () => {
