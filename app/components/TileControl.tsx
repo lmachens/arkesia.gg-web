@@ -1,7 +1,7 @@
 import { Image, Text } from "@mantine/core";
 import { useEffect, useMemo, useRef } from "react";
 import { TileLayer, Tooltip, useMapEvents } from "react-leaflet";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { getBounds } from "~/lib/map";
 import { areaContinents, continents, TILE_BASE_URL } from "~/lib/static";
 import {
@@ -34,6 +34,7 @@ export default function TileControl({
   const isShowingDiscoveredNodes = useIsShowingDiscoveredNodes();
   const navigate = useNavigate();
   const editingNode = useEditingNode();
+  const [, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     if (tileLayerRef.current) {
@@ -54,8 +55,14 @@ export default function TileControl({
   );
 
   useMapEvents({
-    contextmenu: () =>
-      navigate(`/maps/${continents[0].name}/${continents[0].areas[0].name}`),
+    contextmenu: () => {
+      const index = area.tiles.findIndex((tile) => tile.id === activeTile.id);
+      if (index !== 0) {
+        setSearchParams({});
+      } else {
+        navigate(`/maps/${continents[0].name}/${continents[0].areas[0].name}`);
+      }
+    },
   });
 
   return (
