@@ -10,3 +10,8 @@ export const useNodes = () => {
   const { nodes } = useLoaderData<AreaLoaderData>();
   return nodes;
 };
+
+export const useNodesByArea = () => {
+  const { nodesByArea } = useLoaderData<AreaLoaderData>();
+  return nodesByArea;
+};
