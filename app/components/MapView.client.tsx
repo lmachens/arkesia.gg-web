@@ -81,9 +81,15 @@ export default function MapView({ area }: { area: Area }) {
 
   useDidUpdate(() => {
     let replace = tileId === activeTile.id;
-    let newSearchParams: URLSearchParamsInit = `tile=${activeTile.id}`;
+    let newSearchParams: URLSearchParamsInit = "";
+    if (activeTile.id !== 0) {
+      newSearchParams = `tile=${activeTile.id}`;
+    }
     if (selectedNode) {
-      newSearchParams += `&node=${selectedNode.id}`;
+      newSearchParams +=
+        activeTile.id !== 0
+          ? `&node=${selectedNode.id}`
+          : `node=${selectedNode.id}`;
       replace = selectedNode.id === nodeId;
     }
     if (searchParams.toString() !== newSearchParams.toString()) {
