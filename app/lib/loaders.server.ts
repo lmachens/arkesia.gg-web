@@ -33,5 +33,11 @@ export const areaLoader: LoaderFunction = async ({ params }) => {
   const nodes = await findNodes(params.area);
   return json({
     nodes,
+    ENV: {
+      SUPABASE_URL: process.env.SUPABASE_URL,
+      SUPABASE_PUBLIC_KEY: process.env.SUPABASE_PUBLIC_KEY,
+      PLAUSIBLE_API_HOST: process.env.PLAUSIBLE_API_HOST,
+      PLAUSIBLE_DOMAIN: process.env.PLAUSIBLE_DOMAIN,
+    },
   } as AreaLoaderData);
 };

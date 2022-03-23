@@ -1,5 +1,4 @@
 import type { LoaderFunction } from "remix";
-import { continents } from "~/lib/static";
 
 export const loader: LoaderFunction = async () => {
   const robotText = `
