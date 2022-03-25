@@ -42,7 +42,7 @@ npm install
 Then you need to synchronize the Prisma schema with the PostgreSQL database schema:
 
 ```sh
-npx prisma db push
+npx prisma migrate dev
 ```
 
 Now you are ready to start the app in development mode:
