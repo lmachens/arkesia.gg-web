@@ -19,18 +19,18 @@ import {
   useDrawerPosition,
   useToggleDiscoveredNode,
 } from "~/lib/store";
-import type { AreaNodeDTO } from "~/lib/types";
+import type { AreaNodeLocationDTO } from "~/lib/types";
 import { AvailableNodes } from "./AvailableNodes";
 import ImagePreview from "./ImagePreview";
 import NodeDescription from "./NodeDescription";
 
 type NodeDetailsProps = {
-  selectedNode: AreaNodeDTO | null;
+  selectedNodeLocation: AreaNodeLocationDTO | null;
   onClose: () => void;
-  onEdit: (node: AreaNodeDTO) => void;
+  onEdit: (nodeLocation: AreaNodeLocationDTO) => void;
 };
 export default function NodeDetails({
-  selectedNode,
+  selectedNodeLocation,
   onClose,
   onEdit,
 }: NodeDetailsProps) {
@@ -81,7 +81,7 @@ export default function NodeDetails({
 
   useMapEvents({
     click: () => {
-      if (selectedNode) {
+      if (selectedNodeLocation) {
         onClose();
       }
     },
@@ -89,7 +89,7 @@ export default function NodeDetails({
 
   return (
     <Drawer
-      opened={Boolean(selectedNode)}
+      opened={Boolean(selectedNodeLocation)}
       zIndex={8950}
       withOverlay={false}
       padding="md"
@@ -97,25 +97,35 @@ export default function NodeDetails({
       onClose={onClose}
     >
       <ScrollArea style={{ height: "calc(100% - 50px)" }}>
-        {selectedNode && (
+        {selectedNodeLocation && (
           <>
-            <Title order={3}>{selectedNode.name || selectedNode.type}</Title>
-            <Text color="teal">{selectedNode.type}</Text>
-            <Text size="xs">Node ID: {selectedNode.id}</Text>
+            <Title order={3}>
+              {selectedNodeLocation.areaNode.name ||
+                selectedNodeLocation.areaNode.type}
+            </Title>
+            <Text color="teal">{selectedNodeLocation.areaNode.type}</Text>
+            <Text size="xs">
+              Node ID: {selectedNodeLocation.areaNodeId} Location ID:{" "}
+              {selectedNodeLocation.id}
+            </Text>
 
-            {selectedNode.description && (
-              <NodeDescription html={selectedNode.description} />
+            {selectedNodeLocation.areaNode.description && (
+              <NodeDescription
+                html={selectedNodeLocation.areaNode.description}
+              />
             )}
-            {selectedNode.screenshot && (
-              <ImagePreview src={selectedNode.screenshot} />
+            {selectedNodeLocation.areaNode.screenshot && (
+              <ImagePreview src={selectedNodeLocation.areaNode.screenshot} />
             )}
             <Space h="md" />
-            {selectedNode.transitTo && (
-              <AvailableNodes node={selectedNode.transitTo} />
+            {selectedNodeLocation.areaNode.transitTo && (
+              <AvailableNodes node={selectedNodeLocation.areaNode.transitTo} />
             )}
             <Space h="md" />
             <Button
-              onClick={() => toggleDiscoveredNode(selectedNode)}
+              onClick={() =>
+                toggleDiscoveredNode(selectedNodeLocation.areaNode)
+              }
               color="gray"
               variant="subtle"
               size="xs"
@@ -124,7 +134,8 @@ export default function NodeDetails({
             >
               <Group>
                 {discoveredNodes.some(
-                  (discoveredNode) => discoveredNode.id === selectedNode.id
+                  (discoveredNode) =>
+                    discoveredNode.id === selectedNodeLocation.id
                 ) ? (
                   <>
                     <EyeClosedIcon /> Discovered
@@ -142,7 +153,11 @@ export default function NodeDetails({
             {userToken ? (
               <Form method="delete" className="node-form">
                 <input type="hidden" name="_action" value="delete" />
-                <input type="hidden" name="id" value={selectedNode.id} />
+                <input
+                  type="hidden"
+                  name="id"
+                  value={selectedNodeLocation.id}
+                />
                 <input type="hidden" name="userToken" value={userToken} />
                 <Button type="submit" color="red">
                   Delete
@@ -150,7 +165,7 @@ export default function NodeDetails({
                 <Button
                   type="button"
                   color="teal"
-                  onClick={() => onEdit(selectedNode)}
+                  onClick={() => onEdit(selectedNodeLocation)}
                 >
                   Edit
                 </Button>
@@ -158,7 +173,11 @@ export default function NodeDetails({
             ) : (
               <Form method="post" className="node-form">
                 <input type="hidden" name="_action" value="report" />
-                <input type="hidden" name="id" value={selectedNode.id} />
+                <input
+                  type="hidden"
+                  name="id"
+                  value={selectedNodeLocation.id}
+                />
                 <TextInput
                   label="Is there any issue with this node?"
                   placeholder="Give us details"

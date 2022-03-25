@@ -1,4 +1,4 @@
-import type { AreaNode } from "@prisma/client";
+import type { AreaNode, AreaNodeLocation } from "@prisma/client";
 
 export type Tile = {
   id: number;
@@ -19,8 +19,17 @@ export type CreateNodeForm = {
   transitToId: number;
 };
 
+export type CreateNodeLocationForm = {
+  nodeId: number;
+  lat: number;
+  lng: number;
+  areaName: string;
+  tileId: number;
+};
+
 export type UpdateNodeForm = {
   id: number;
+  locationId: number;
 } & CreateNodeForm;
 
 export type AreaCategory = "Continent" | "Dungeon" | "Island" | "World";
@@ -51,6 +60,14 @@ export type AreaNodeCategory = {
   types: PartialAreaNodeType[];
 };
 
+export type TransitTo = AreaNode & {
+  areaNodeLocations: AreaNodeLocation[];
+};
+
 export type AreaNodeDTO = AreaNode & {
-  transitTo: AreaNode | null;
+  transitTo: TransitTo | null;
+};
+
+export type AreaNodeLocationDTO = AreaNodeLocation & {
+  areaNode: AreaNodeDTO;
 };

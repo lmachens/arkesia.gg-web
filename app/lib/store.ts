@@ -1,8 +1,8 @@
-import type { AreaNode } from "@prisma/client";
+import type { AreaNode, AreaNodeLocation } from "@prisma/client";
 import create from "zustand";
 import { persist } from "zustand/middleware";
 import { trackHideDiscoveredNodes, trackShowDiscoveredNodes } from "./stats";
-import type { AreaNodeDTO } from "./types";
+import type { AreaNodeDTO, AreaNodeLocationDTO } from "./types";
 
 export type DiscoveredNode = Pick<AreaNode, "id" | "type">;
 
@@ -76,17 +76,22 @@ export const usePersistentStore = create(
   )
 );
 
+type EditingNodeLocation = Partial<AreaNodeLocation> & {
+  areaNode: Partial<AreaNode>;
+};
+
 type SessionStoreProps = {
-  editingNode: Partial<AreaNodeDTO> | null;
-  setEditingNode: (editingNode: Partial<AreaNodeDTO> | null) => void;
+  editingNodeLocation: EditingNodeLocation | null;
+  setEditingNodeLocation: (editingNode: EditingNodeLocation | null) => void;
 };
 
 export const useSessionStore = create(
   persist<SessionStoreProps>(
     (set) => ({
-      editingNode: null,
-      setEditingNode: (editingNode: Partial<AreaNodeDTO> | null) =>
-        set({ editingNode }),
+      editingNodeLocation: null,
+      setEditingNodeLocation: (
+        editingNodeLocation: EditingNodeLocation | null
+      ) => set({ editingNodeLocation }),
     }),
     {
       name: "session-storage",
@@ -168,13 +173,14 @@ export const useSetMarkerSize = () => {
   return usePersistentStore(setMarkerSizeSelector);
 };
 
-const editingNodeSelector = (state: SessionStoreProps) => state.editingNode;
-export const useEditingNode = () => {
-  return useSessionStore(editingNodeSelector);
+const editingNodeLocationSelector = (state: SessionStoreProps) =>
+  state.editingNodeLocation;
+export const useEditingNodeLocation = () => {
+  return useSessionStore(editingNodeLocationSelector);
 };
 
-const setEditingNodeSelector = (state: SessionStoreProps) =>
-  state.setEditingNode;
-export const useSetEditingNode = () => {
-  return useSessionStore(setEditingNodeSelector);
+const setEditingNodeLocationSelector = (state: SessionStoreProps) =>
+  state.setEditingNodeLocation;
+export const useSetEditingNodeLocation = () => {
+  return useSessionStore(setEditingNodeLocationSelector);
 };

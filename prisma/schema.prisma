@@ -8,21 +8,17 @@ datasource db {
 }
 
 model AreaNode {
-  id          Int        @id @default(autoincrement())
-  areaName    String
-  tileId      Int        @default(0)
-  position    Float[]
-  type        String
-  name        String?
-  description String?
-  screenshot  String?
-  userId      Int?
-  user        User?      @relation(fields: [userId], references: [id])
-  transitToId Int?
-  transitTo   AreaNode?  @relation("AreaNodeToAreaNode", fields: [transitToId], references: [id])
-  transitFrom AreaNode[] @relation("AreaNodeToAreaNode")
-
-  @@index([areaName])
+  id                Int                @id @default(autoincrement())
+  type              String
+  name              String?
+  description       String?
+  screenshot        String?
+  userId            Int?
+  user              User?              @relation(fields: [userId], references: [id])
+  transitToId       Int?
+  transitTo         AreaNode?          @relation("AreaNodeToAreaNode", fields: [transitToId], references: [id])
+  transitFrom       AreaNode[]         @relation("AreaNodeToAreaNode")
+  areaNodeLocations AreaNodeLocation[]
 }
 
 model User {
@@ -31,4 +27,15 @@ model User {
   nodes AreaNode[]
 
   @@index([token])
+}
+
+model AreaNodeLocation {
+  id         Int      @id @default(autoincrement())
+  areaNodeId Int
+  areaNode   AreaNode @relation(fields: [areaNodeId], references: [id])
+  areaName   String
+  tileId     Int      @default(0)
+  position   Float[]
+
+  @@index([areaName])
 }

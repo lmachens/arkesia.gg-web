@@ -1,4 +1,4 @@
-import type { AreaNode } from "@prisma/client";
+import type { AreaNode, AreaNodeLocation } from "@prisma/client";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { createClient } from "@supabase/supabase-js";
 
@@ -24,5 +24,19 @@ export const findNodes = async (query: string) => {
     )
     .ilike("name", `%${query}%`)
     .limit(5);
+  return result.data || [];
+};
+
+export const countNodes = async (areaName: string) => {
+  const result = await supabase
+    .from<AreaNodeLocation>("AreaNodeLocation")
+    .select(
+      `
+    areaNode {
+      type
+    }
+  `
+    )
+    .eq("areaName", areaName);
   return result.data || [];
 };
