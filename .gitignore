@@ -10,3 +10,7 @@ node_modules
 /api/_build
 
 .env
+# Supabase
+**/supabase/.branches
+**/supabase/.temp
+**/supabase/.env
