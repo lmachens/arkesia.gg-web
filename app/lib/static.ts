@@ -231,7 +231,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_154.webp",
       },
     ]
-  }
+  },
   {
     name: "Land Services",
     includes: ["Continent"],
@@ -371,7 +371,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_109.webp",
       },
     ]
-  }
+  },
   {
     name: "Merchants",
     includes: ["Continent", "Island"],
