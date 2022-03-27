@@ -55,7 +55,7 @@ export default function TileControl({
           nodeLocation.tileId === activeTile.id &&
           (isShowingDiscoveredNodes ||
             !discoveredNodes.some(
-              (discoveredNode) => discoveredNode.id === nodeLocation.id
+              (discoveredNode) => discoveredNode.id === nodeLocation.areaNodeId
             ))
       ),
     [
