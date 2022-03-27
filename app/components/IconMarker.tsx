@@ -10,23 +10,25 @@ let icons: {
   [path: string]: L.Icon;
 } = {};
 let lastMarkerSize: number | null = null;
-function getIcon(markerSize: number, type?: AreaNodeType) {
+function getIcon(markerSize: number, type?: AreaNodeType, highlight?: boolean) {
   if (lastMarkerSize !== markerSize) {
     icons = {};
     lastMarkerSize = markerSize;
   }
   const path = type ? type.icon : "unknown.webp";
-  if (!icons[path]) {
+  const identifier = path + (highlight ? "-highlight" : "");
+  if (!icons[identifier]) {
     const iconSize: L.PointExpression =
       type?.size === "lg"
         ? [markerSize * 1.3, markerSize * 1.3]
         : [markerSize, markerSize];
-    icons[path] = L.icon({
+    icons[identifier] = L.icon({
       iconUrl: `${ICON_BASE_URL}${path}`,
       iconSize,
+      className: highlight ? "marker-highlight" : "",
     });
   }
-  return icons[path];
+  return icons[identifier];
 }
 
 const labels: {
@@ -69,9 +71,10 @@ type IconMarkerProps = {
   verified: boolean;
   type?: string;
   name?: string | null;
+  highlight?: boolean;
 } & MarkerProps;
 const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
-  ({ type, verified, name, transitTo, ...props }, ref) => {
+  ({ type, verified, name, transitTo, highlight, ...props }, ref) => {
     const areaNodeType = type ? nodeTypesMap[type] : undefined;
     const showNameOnMap = useShowNameOnMap();
     const markerSize = useMarkerSize();
@@ -79,8 +82,9 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
     return (
       <>
         <Marker
-          icon={getIcon(markerSize, areaNodeType)}
+          icon={getIcon(markerSize, areaNodeType, highlight)}
           opacity={verified ? 1 : 0.5}
+          zIndexOffset={highlight ? 1000 : 0}
           {...props}
           ref={ref}
         />
@@ -89,6 +93,7 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
             icon={getLabel(name, type, transitTo, areaNodeType?.size)}
             opacity={verified ? 1 : 0.5}
             interactive={false}
+            zIndexOffset={highlight ? 1000 : 0}
             position={props.position}
           />
         )}

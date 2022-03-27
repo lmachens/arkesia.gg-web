@@ -164,6 +164,7 @@ export default function MapView({ area }: { area: Area }) {
         nodeLocations={nodeLocations}
         onNodeLocationClick={setSelectedNodeLocation}
         activeTile={activeTile}
+        selectedNodeLocation={selectedNodeLocation}
         onActiveTileChange={(tile) => {
           setActiveTile(tile);
           map!.panTo(getMapCenter(tile), { animate: false });
