@@ -51,6 +51,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
+        name: "Forest of Giants",
+        icon: "forest-of-giants.webp",
+        size: "lg",
+      },
+      {
         name: "Lakebar",
         icon: "lakebar.webp",
         size: "lg",
@@ -73,6 +78,11 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Medrick Monastery",
         icon: "medrick-monastery.webp",
+        size: "lg",
+      },
+      {
+        name: "Mokoko Village",
+        icon: "mokoko-village.webp",
         size: "lg",
       },
       {
@@ -101,8 +111,23 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
+        name: "Seasweapt Woods",
+        icon: "seasweapt-woods.webp",
+        size: "lg",
+      },
+      {
+        name: "Skyreach Steppe",
+        icon: "skyreach-steppe.webp",
+        size: "lg",
+      },
+      {
         name: "Sunbright Hill",
         icon: "sunbright-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Sweetwater Forest",
+        icon: "sweetwater-forest.webp",
         size: "lg",
       },
       {
