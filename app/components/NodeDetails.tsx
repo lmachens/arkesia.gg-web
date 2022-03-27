@@ -119,7 +119,12 @@ export default function NodeDetails({
             )}
             <Space h="md" />
             {selectedNodeLocation.areaNode.transitTo && (
-              <AvailableNodes areaName={selectedNodeLocation.areaNode.transitTo.areaNodeLocations[0].areaName} />
+              <AvailableNodes
+                areaName={
+                  selectedNodeLocation.areaNode.transitTo.areaNodeLocations[0]
+                    .areaName
+                }
+              />
             )}
             <Space h="md" />
             <Button
@@ -135,7 +140,7 @@ export default function NodeDetails({
               <Group>
                 {discoveredNodes.some(
                   (discoveredNode) =>
-                    discoveredNode.id === selectedNodeLocation.id
+                    discoveredNode.id === selectedNodeLocation.areaNodeId
                 ) ? (
                   <>
                     <EyeClosedIcon /> Discovered
