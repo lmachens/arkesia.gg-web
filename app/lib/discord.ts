@@ -1,4 +1,4 @@
-import type { AreaNode } from "@prisma/client";
+import type { AreaNode, AreaNodeLocation } from "@prisma/client";
 import TurndownService from "turndown";
 import { continents } from "./static";
 const turndownService = new TurndownService();
@@ -6,6 +6,7 @@ const turndownService = new TurndownService();
 export function postToDiscord(
   action: "inserted" | "deleted" | "updated" | "report",
   node: AreaNode,
+  nodeLocation: AreaNodeLocation,
   reason?: string
 ) {
   if (!process.env.DISCORD_WEBHOOK_URL) {
@@ -31,7 +32,7 @@ export function postToDiscord(
   }
 
   const continent = continents.find((continent) =>
-    continent.areas.some((area) => area.name === node.areaName)
+    continent.areas.some((area) => area.name === nodeLocation.areaName)
   );
   payload.embeds = [
     {
@@ -41,9 +42,9 @@ export function postToDiscord(
           value: continent
             ? `https://www.arkesia.gg/maps/${encodeURIComponent(
                 continent.name
-              )}/${encodeURIComponent(node.areaName)}/?tile=${
-                node.tileId
-              }&node=${node.id}`
+              )}/${encodeURIComponent(nodeLocation.areaName)}/?tile=${
+                nodeLocation.tileId
+              }&node=${nodeLocation.areaNodeId}`
             : "",
         },
         {
@@ -58,7 +59,7 @@ export function postToDiscord(
         },
         {
           name: "Position",
-          value: `[${node.position.join(", ")}]`,
+          value: `[${nodeLocation.position.join(", ")}]`,
           inline: true,
         },
       ],

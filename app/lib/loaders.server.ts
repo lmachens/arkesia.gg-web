@@ -1,8 +1,8 @@
 import type { LoaderFunction } from "remix";
 import { json } from "remix";
 import invariant from "tiny-invariant";
-import { countNodesByArea, findNodes } from "./db.server";
-import type { AreaNodeDTO } from "./types";
+import { findNodeLocations } from "./db.server";
+import type { AreaNodeLocationDTO } from "./types";
 
 export type EnvLoaderData = {
   ENV: {
@@ -25,24 +25,15 @@ export const envLoader: LoaderFunction = async () => {
 };
 
 export type AreaLoaderData = {
-  nodes: AreaNodeDTO[];
-  nodesByArea: {
-    areaName: string;
-    type: string;
-    count: number;
-  }[];
+  nodeLocations: AreaNodeLocationDTO[];
 };
 
 export const areaLoader: LoaderFunction = async ({ params }) => {
   invariant(params.area, "Expected params.area");
-  const [nodes, nodesByArea] = await Promise.all([
-    findNodes(params.area),
-    countNodesByArea(),
-  ]);
+  const nodeLocations = await findNodeLocations({ areaName: params.area });
 
   return json({
-    nodes,
-    nodesByArea,
+    nodeLocations,
     ENV: {
       SUPABASE_URL: process.env.SUPABASE_URL,
       SUPABASE_PUBLIC_KEY: process.env.SUPABASE_PUBLIC_KEY,

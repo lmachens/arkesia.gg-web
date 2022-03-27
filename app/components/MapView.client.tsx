@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { MapContainer } from "react-leaflet";
-import type { Area, AreaNodeDTO, Tile } from "~/lib/types";
+import type { Area, AreaNodeLocationDTO, Tile } from "~/lib/types";
 import L from "leaflet";
 import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import "leaflet-rotate";
@@ -12,22 +12,18 @@ import UpsertMarker from "./UpsertMarker";
 import type { URLSearchParamsInit } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useDidUpdate } from "@mantine/hooks";
-import { useLastAreaNames, useSetEditingNode } from "~/lib/store";
+import { useLastAreaNames, useSetEditingNodeLocation } from "~/lib/store";
 import ActionIcons from "./ActionIcons";
-import { useNodes } from "~/lib/loaders";
+import { useNodeLocations } from "~/lib/loaders";
 
 includeCanvasTileLayer();
 
 const canvasRenderer = L.canvas();
 export default function MapView({ area }: { area: Area }) {
-  const allNodes = useNodes();
-  const nodes = useMemo(
-    () => allNodes.filter((node) => node.areaName === area.name),
-    [allNodes, area.name]
-  );
+  const nodeLocations = useNodeLocations();
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const setEditingNode = useSetEditingNode();
+  const setEditingNodeLocation = useSetEditingNodeLocation();
 
   const tileParam = searchParams.get("tile");
   const tileId = tileParam ? +tileParam : 0;
@@ -40,9 +36,13 @@ export default function MapView({ area }: { area: Area }) {
   const [activeTile, setActiveTile] = useState<Tile>(
     () => area.tiles.find((tile) => tile.id === tileId) || area.tiles[0]
   );
-  const [selectedNode, setSelectedNode] = useState<AreaNodeDTO | null>(
-    () => nodes.find((node) => node.id === nodeId) || null
-  );
+  const [selectedNodeLocation, setSelectedNodeLocation] =
+    useState<AreaNodeLocationDTO | null>(
+      () =>
+        nodeLocations.find(
+          (nodeLocation) => nodeLocation.areaNodeId === nodeId
+        ) || null
+    );
 
   useEffect(() => {
     if (area.name !== "Arkesia") {
@@ -54,14 +54,14 @@ export default function MapView({ area }: { area: Area }) {
     if (!map) {
       return;
     }
-    setEditingNode(null);
+    setEditingNodeLocation(null);
 
     const tile = area.tiles.find((tile) => tile.id === tileId) || area.tiles[0];
     if (activeTile.tile !== tile.tile) {
       setActiveTile(tile);
     }
     if (hideDetails) {
-      setSelectedNode(null);
+      setSelectedNodeLocation(null);
     }
 
     const bearing = area.name !== "Arkesia" ? -45 : 0;
@@ -85,22 +85,22 @@ export default function MapView({ area }: { area: Area }) {
     if (activeTile.id !== 0) {
       newSearchParams = `tile=${activeTile.id}`;
     }
-    if (selectedNode) {
+    if (selectedNodeLocation) {
       newSearchParams +=
         activeTile.id !== 0
-          ? `&node=${selectedNode.id}`
-          : `node=${selectedNode.id}`;
-      replace = selectedNode.id === nodeId;
+          ? `&node=${selectedNodeLocation.id}`
+          : `node=${selectedNodeLocation.id}`;
+      replace = selectedNodeLocation.id === nodeId;
     }
     if (searchParams.toString() !== newSearchParams.toString()) {
       setSearchParams(newSearchParams, { replace });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeTile, selectedNode]);
+  }, [activeTile, selectedNodeLocation]);
 
   const initialCenter = useMemo(() => {
-    if (selectedNode) {
-      return selectedNode.position as [number, number];
+    if (selectedNodeLocation) {
+      return selectedNodeLocation.position as [number, number];
     }
     if (area.name === "Arkesia") {
       return [-710, 600] as [number, number];
@@ -114,16 +114,19 @@ export default function MapView({ area }: { area: Area }) {
       return;
     }
 
-    const isNodeChanged = nodeId !== selectedNode?.id;
+    const isNodeChanged = nodeId !== selectedNodeLocation?.id;
     if (isNodeChanged) {
-      const newSelectedNode = nodes.find((node) => node.id === nodeId) || null;
+      const newSelectedLocation =
+        nodeLocations.find(
+          (nodeLocation) => nodeLocation.areaNodeId === nodeId
+        ) || null;
       if (hideDetails) {
-        setSelectedNode(null);
+        setSelectedNodeLocation(null);
       } else {
-        setSelectedNode(newSelectedNode);
+        setSelectedNodeLocation(newSelectedLocation);
       }
-      if (newSelectedNode) {
-        map.panTo(newSelectedNode.position as [number, number], {
+      if (newSelectedLocation) {
+        map.panTo(newSelectedLocation.position as [number, number], {
           animate: false,
         });
       }
@@ -151,22 +154,22 @@ export default function MapView({ area }: { area: Area }) {
       <MousePosition />
       <TileControl
         area={area}
-        nodes={nodes}
-        onNodeClick={setSelectedNode}
+        nodeLocations={nodeLocations}
+        onNodeLocationClick={setSelectedNodeLocation}
         activeTile={activeTile}
         onActiveTileChange={(tile) => {
           setActiveTile(tile);
           map!.panTo(getMapCenter(tile), { animate: false });
-          setSelectedNode(null);
+          setSelectedNodeLocation(null);
         }}
       />
       <UpsertMarker area={area} tile={activeTile} />
       <NodeDetails
-        selectedNode={selectedNode}
-        onClose={() => setSelectedNode(null)}
+        selectedNodeLocation={selectedNodeLocation}
+        onClose={() => setSelectedNodeLocation(null)}
         onEdit={(node) => {
-          setEditingNode(node);
-          setSelectedNode(null);
+          setEditingNodeLocation(node);
+          setSelectedNodeLocation(null);
         }}
       />
       <ActionIcons />

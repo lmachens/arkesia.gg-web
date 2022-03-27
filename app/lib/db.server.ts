@@ -1,6 +1,10 @@
-import type { AreaNode } from "@prisma/client";
+import type { AreaNode, AreaNodeLocation, Prisma } from "@prisma/client";
 import { PrismaClient } from "@prisma/client";
-import type { AreaNodeWithoutId } from "./validation";
+import type { AreaNodeLocationDTO } from "./types";
+import type {
+  AreaNodeLocationWithoutId,
+  AreaNodeWithoutId,
+} from "./validation";
 
 export let db: PrismaClient;
 
@@ -52,12 +56,31 @@ export const findNode = async (id: number) => {
   return node;
 };
 
-export const findNodes = async (areaName: string) => {
-  const nodes = await db.areaNode.findMany({
-    where: { areaName },
-    include: { transitTo: true },
+export const findNodeLocation = async (id: number) => {
+  return await db.areaNodeLocation.findUnique({
+    where: { id },
+    include: { areaNode: true },
   });
-  return nodes;
+};
+
+export const findNodeLocations = async (
+  where: Prisma.AreaNodeLocationWhereInput
+): Promise<AreaNodeLocationDTO[]> => {
+  const locations = await db.areaNodeLocation.findMany({
+    where,
+    include: {
+      areaNode: {
+        include: {
+          transitTo: {
+            include: {
+              areaNodeLocations: true,
+            },
+          },
+        },
+      },
+    },
+  });
+  return locations;
 };
 
 export const insertNode = async (node: AreaNodeWithoutId) => {
@@ -76,21 +99,27 @@ export const deleteNode = async (nodeId: number) => {
   return result;
 };
 
+export const insertNodeLocation = async (
+  nodeLocation: AreaNodeLocationWithoutId
+) => {
+  const result = await db.areaNodeLocation.create({ data: nodeLocation });
+  return result;
+};
+
+export const updateNodeLocation = async (nodeLocation: AreaNodeLocation) => {
+  const { id, ...data } = nodeLocation;
+  const result = await db.areaNodeLocation.update({ where: { id }, data });
+  return result;
+};
+
+export const deleteNodeLocation = async (nodeLocationId: number) => {
+  const result = await db.areaNodeLocation.delete({
+    where: { id: nodeLocationId },
+  });
+  return result;
+};
+
 export const findUser = async (token: string) => {
   const user = await db.user.findFirst({ where: { token } });
   return user;
-};
-
-export const countNodesByArea = async () => {
-  const nodesByAreaCount = await db.areaNode.groupBy({
-    by: ["areaName", "type"],
-    _count: true,
-  });
-  return nodesByAreaCount
-    .map((nodeAreaCount) => ({
-      areaName: nodeAreaCount.areaName,
-      type: nodeAreaCount.type,
-      count: nodeAreaCount._count,
-    }))
-    .sort((a, b) => a.type.localeCompare(b.type));
 };

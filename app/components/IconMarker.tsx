@@ -3,9 +3,8 @@ import { Marker } from "react-leaflet";
 import { areaContinents, ICON_BASE_URL, nodeTypesMap } from "~/lib/static";
 import L from "leaflet";
 import { forwardRef } from "react";
-import type { AreaNodeType } from "~/lib/types";
+import type { AreaNodeType, TransitTo } from "~/lib/types";
 import { useMarkerSize, useShowNameOnMap } from "~/lib/store";
-import type { AreaNode } from "@prisma/client";
 
 let icons: {
   [path: string]: L.Icon;
@@ -36,15 +35,18 @@ const labels: {
 function getLabel(
   label: string,
   type?: string,
-  transitTo?: AreaNode | null,
+  transitTo?: TransitTo | null,
   size?: string | null
 ) {
   const key = type + label;
   if (!labels[key]) {
     let href = "";
     if (transitTo) {
-      const continent = areaContinents[transitTo.areaName];
-      href = `/maps/${continent}/${transitTo.areaName}?tile=${transitTo.tileId}`;
+      const transitToLocation = transitTo.areaNodeLocations[0];
+      if (transitToLocation) {
+        const continent = areaContinents[transitToLocation.areaName];
+        href = `/maps/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}`;
+      }
     }
 
     labels[key] = L.divIcon({
@@ -63,7 +65,7 @@ function getLabel(
 }
 
 type IconMarkerProps = {
-  transitTo?: AreaNode | null;
+  transitTo?: TransitTo | null;
   verified: boolean;
   type?: string;
   name?: string | null;

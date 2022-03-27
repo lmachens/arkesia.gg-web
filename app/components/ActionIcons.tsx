@@ -21,7 +21,7 @@ import {
   useIsShowingDiscoveredNodes,
   useMarkerSize,
   useSetDrawerPosition,
-  useSetEditingNode,
+  useSetEditingNodeLocation,
   useSetMarkerSize,
   useShowNameOnMap,
   useToggleIsShowingDiscoveredNodes,
@@ -40,7 +40,7 @@ export default function ActionIcons() {
   const toggleIsShowingDiscoveredNodes = useToggleIsShowingDiscoveredNodes();
   const drawerPosition = useDrawerPosition();
   const setDrawerPosition = useSetDrawerPosition();
-  const setEditingNode = useSetEditingNode();
+  const setEditingNodeLocation = useSetEditingNodeLocation();
   const map = useMap();
   const showNameOnMap = useShowNameOnMap();
   const toggleShowNameOnMap = useToggleShowNameOnMap();
@@ -51,7 +51,10 @@ export default function ActionIcons() {
   useMapEvents({
     click: (event) => {
       if (event.originalEvent.ctrlKey) {
-        setEditingNode({ position: [event.latlng.lat, event.latlng.lng] });
+        setEditingNodeLocation({
+          position: [event.latlng.lat, event.latlng.lng],
+          areaNode: {},
+        });
       }
     },
   });
@@ -89,7 +92,10 @@ export default function ActionIcons() {
         <ActionIcon
           onClick={() => {
             const mapCenter = map.getCenter();
-            setEditingNode({ position: [mapCenter.lat, mapCenter.lng] });
+            setEditingNodeLocation({
+              position: [mapCenter.lat, mapCenter.lng],
+              areaNode: {},
+            });
           }}
           size="md"
           aria-label="Propose a node"

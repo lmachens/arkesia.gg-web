@@ -6,12 +6,7 @@ export const useEnv = () => {
   return ENV;
 };
 
-export const useNodes = () => {
-  const { nodes } = useLoaderData<AreaLoaderData>();
-  return nodes;
-};
-
-export const useNodesByArea = () => {
-  const { nodesByArea } = useLoaderData<AreaLoaderData>();
-  return nodesByArea;
+export const useNodeLocations = () => {
+  const { nodeLocations } = useLoaderData<AreaLoaderData>();
+  return nodeLocations;
 };
