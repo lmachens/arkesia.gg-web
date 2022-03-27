@@ -132,7 +132,7 @@ export default function ActionIcons() {
       <Tooltip zIndex={9100} label={<Text>Join the community</Text>}>
         <ActionIcon
           component="a"
-          href="https://discord.gg/GSmAWG2M"
+          href="https://discord.com/invite/NTZu8Px"
           target="_blank"
           size="md"
           sx={{
@@ -142,7 +142,9 @@ export default function ActionIcons() {
           }}
           aria-label="Join the community"
           p={4}
-          onClick={() => trackOutboundLinkClick("https://discord.gg/GSmAWG2M")}
+          onClick={() =>
+            trackOutboundLinkClick("https://discord.com/invite/NTZu8Px")
+          }
         >
           <DiscordIcon color="#ced4da" width="100%" height="100%" />
         </ActionIcon>
