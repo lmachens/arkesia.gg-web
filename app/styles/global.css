@@ -66,6 +66,15 @@ body {
   background: none;
 }
 
+.leaflet-marker-icon {
+  transition: 0.5s;
+}
+
+.marker-highlight {
+  filter: drop-shadow(0 0 1px #000000) drop-shadow(0 0 2px #22b8cf)
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.75));
+}
+
 .text-below-marker {
   width: 300px;
   text-align: center;
