@@ -44,7 +44,7 @@ export function postToDiscord(
                 continent.name
               )}/${encodeURIComponent(nodeLocation.areaName)}/?tile=${
                 nodeLocation.tileId
-              }&node=${nodeLocation.areaNodeId}`
+              }&node=${nodeLocation.areaNodeId}&location=${nodeLocation.id}`
             : "",
         },
         {

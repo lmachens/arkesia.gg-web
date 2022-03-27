@@ -137,7 +137,7 @@ export default function TileControl({
                 nodeLocation.areaNode.transitTo.areaNodeLocations[0];
               const continent = areaContinents[transitToLocation.areaName];
               navigate(
-                `/maps/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}&node=${nodeLocation.areaNode.transitTo.id}&hideDetails=true`
+                `/maps/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}&node=${nodeLocation.areaNode.transitTo.id}&location=${transitToLocation.id}&hideDetails=true`
               );
             },
           }}

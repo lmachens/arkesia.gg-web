@@ -119,7 +119,7 @@ function AdditionalActions() {
           id: node.id.toString(),
           title: node.name!,
           description: `${node.type} in ${continent} / ${nodeLocation.areaName}`,
-          url: `/maps/${continent}/${nodeLocation.areaName}?tile=${nodeLocation.tileId}&node=${node.id}`,
+          url: `/maps/${continent}/${nodeLocation.areaName}?tile=${nodeLocation.tileId}&node=${node.id}&location=${nodeLocation.id}`,
           image: ICON_BASE_URL + nodeType.icon,
           onTrigger: handleTrigger,
         };

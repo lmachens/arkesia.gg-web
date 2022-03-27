@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { MapContainer } from "react-leaflet";
 import type { Area, AreaNodeLocationDTO, Tile } from "~/lib/types";
 import L from "leaflet";
@@ -27,21 +27,28 @@ export default function MapView({ area }: { area: Area }) {
 
   const tileParam = searchParams.get("tile");
   const tileId = tileParam ? +tileParam : 0;
-  const nodeParam = searchParams.get("node");
   const hideDetails = searchParams.get("hideDetails");
+  const nodeParam = searchParams.get("node");
   const nodeId = nodeParam ? +nodeParam : null;
+  const locationParam = searchParams.get("location");
+  const locationId = locationParam ? +locationParam : null;
   const [map, setMap] = useState<L.Map | null>(null);
   const { addLastAreaName } = useLastAreaNames();
+
+  const isSelectedLocation = useCallback(
+    (nodeLocation: AreaNodeLocationDTO) =>
+      locationId
+        ? nodeLocation.id === locationId
+        : nodeLocation.areaNodeId === nodeId,
+    [nodeId, locationId]
+  );
 
   const [activeTile, setActiveTile] = useState<Tile>(
     () => area.tiles.find((tile) => tile.id === tileId) || area.tiles[0]
   );
   const [selectedNodeLocation, setSelectedNodeLocation] =
     useState<AreaNodeLocationDTO | null>(
-      () =>
-        nodeLocations.find(
-          (nodeLocation) => nodeLocation.areaNodeId === nodeId
-        ) || null
+      () => nodeLocations.find(isSelectedLocation) || null
     );
 
   useEffect(() => {
@@ -86,10 +93,10 @@ export default function MapView({ area }: { area: Area }) {
       newSearchParams = `tile=${activeTile.id}`;
     }
     if (selectedNodeLocation) {
-      newSearchParams +=
-        activeTile.id !== 0
-          ? `&node=${selectedNodeLocation.areaNodeId}`
-          : `node=${selectedNodeLocation.areaNodeId}`;
+      if (activeTile.id !== 0) {
+        newSearchParams += "&";
+      }
+      newSearchParams += `node=${selectedNodeLocation.areaNodeId}&location=${selectedNodeLocation.id}`;
       replace = selectedNodeLocation.areaNodeId === nodeId;
     }
     if (searchParams.toString() !== newSearchParams.toString()) {
@@ -114,12 +121,12 @@ export default function MapView({ area }: { area: Area }) {
       return;
     }
 
-    const isNodeChanged = nodeId !== selectedNodeLocation?.areaNodeId;
+    const isNodeChanged = selectedNodeLocation
+      ? !isSelectedLocation(selectedNodeLocation)
+      : nodeId !== null;
     if (isNodeChanged) {
       const newSelectedLocation =
-        nodeLocations.find(
-          (nodeLocation) => nodeLocation.areaNodeId === nodeId
-        ) || null;
+        nodeLocations.find(isSelectedLocation) || null;
       if (hideDetails) {
         setSelectedNodeLocation(null);
       } else {
@@ -131,7 +138,7 @@ export default function MapView({ area }: { area: Area }) {
         });
       }
     }
-  }, [tileId, nodeId]);
+  }, [tileId, nodeId, locationId]);
 
   return (
     <MapContainer
