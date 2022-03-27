@@ -24,8 +24,8 @@ import {
 } from "@mantine/core";
 import { useDidUpdate, useHotkeys } from "@mantine/hooks";
 import { findNodes } from "~/lib/supabase";
-import type { AreaNode } from "@prisma/client";
 import useThrottle from "~/lib/useThrottle";
+import type { TransitTo } from "~/lib/types";
 
 type AppSpotlightProviderProps = {
   children: ReactNode;
@@ -93,7 +93,7 @@ export default function AppSpotlightProvider({
 }
 
 function AdditionalActions() {
-  const [nodes, setNodes] = useState<AreaNode[]>([]);
+  const [nodes, setNodes] = useState<TransitTo[]>([]);
 
   const spotlight = useSpotlight();
   const navigate = useNavigate();
@@ -111,14 +111,15 @@ function AdditionalActions() {
     const nodeActions = nodes
       .filter((node) => node.name)
       .map((node) => {
-        const continent = areaContinents[node.areaName];
+        const nodeLocation = node.areaNodeLocations[0];
+        const continent = areaContinents[nodeLocation.areaName];
         const nodeType = nodeTypesMap[node.type];
 
         return {
           id: node.id.toString(),
           title: node.name!,
-          description: `${node.type} in ${continent} / ${node.areaName}`,
-          url: `/maps/${continent}/${node.areaName}?tile=${node.tileId}&node=${node.id}`,
+          description: `${node.type} in ${continent} / ${nodeLocation.areaName}`,
+          url: `/maps/${continent}/${nodeLocation.areaName}?tile=${nodeLocation.tileId}&node=${node.id}`,
           image: ICON_BASE_URL + nodeType.icon,
           onTrigger: handleTrigger,
         };

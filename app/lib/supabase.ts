@@ -1,7 +1,6 @@
-import type { AreaNode } from "@prisma/client";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { createClient } from "@supabase/supabase-js";
-import type { AreaNodeLocationDTO } from "./types";
+import type { AreaNodeLocationDTO, TransitTo } from "./types";
 
 export let supabase: SupabaseClient;
 export const initSupabase = (supabaseUrl: string, supabaseKey: string) => {
@@ -13,14 +12,16 @@ export const initSupabase = (supabaseUrl: string, supabaseKey: string) => {
 
 export const findNodes = async (query: string) => {
   const result = await supabase
-    .from<AreaNode>("AreaNode")
+    .from<TransitTo>("AreaNode")
     .select(
       `
       id,
       name,
-      areaName,
       type,
-      tileId
+      areaNodeLocations:AreaNodeLocation (
+        areaName,
+        tileId
+      )
     `
     )
     .ilike("name", `%${query}%`)
