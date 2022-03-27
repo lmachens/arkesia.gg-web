@@ -219,7 +219,21 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "Services",
+    name: "General Services",
+    includes: ["Continent", "Island"],
+    types: [
+      {
+        name: "Repairer",
+        icon: "minimap_symbol_158.webp",
+      },
+      {
+        name: "Wandering Merchant",
+        icon: "minimap_symbol_154.webp",
+      },
+    ]
+  }
+  {
+    name: "Land Services",
     includes: ["Continent"],
     types: [
       {
@@ -271,20 +285,8 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_186.webp",
       },
       {
-        name: "Statue of Gienah (Island Souls)",
-        icon: "minimap_symbol_1_109.webp",
-      },
-      {
-        name: "Marina",
-        icon: "minimap_symbol_230.webp",
-      },
-      {
         name: "Shipbuilder",
         icon: "minimap_symbol_183.webp",
-      },
-      {
-        name: "Wandering Merchant",
-        icon: "minimap_symbol_154.webp",
       },
       {
         name: "Voyage Manager",
@@ -305,14 +307,6 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Processing",
         icon: "minimap_symbol_208.webp",
-      },
-      {
-        name: "Repairer",
-        icon: "minimap_symbol_158.webp",
-      },
-      {
-        name: "Guardian Raid Soul",
-        icon: "minimap_symbol_1_274.webp",
       },
       {
         name: "Gem Expert",
@@ -364,6 +358,20 @@ export const nodeCategories: AreaNodeCategory[] = [
       },
     ],
   },
+  {
+    name: "World Services",
+    includes: ["World"],
+    types: [
+      {
+        name: "Marina",
+        icon: "minimap_symbol_230.webp",
+      },
+      {
+        name: "Statue of Gienah (Island Souls)",
+        icon: "minimap_symbol_1_109.webp",
+      },
+    ]
+  }
   {
     name: "Merchants",
     includes: ["Continent", "Island"],
