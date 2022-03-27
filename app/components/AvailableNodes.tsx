@@ -1,34 +1,34 @@
 import { Avatar, List } from "@mantine/core";
-import type { AreaNode } from "@prisma/client";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { ICON_BASE_URL, nodeTypesMap } from "~/lib/static";
+import { countTypesByLocation } from "~/lib/supabase";
 
 type AvailableNodesProps = {
-  node: AreaNode;
+  areaName: string;
 };
-export function AvailableNodes({ node }: AvailableNodesProps) {
-  const nodesByArea = useNodesByArea();
+export function AvailableNodes({ areaName }: AvailableNodesProps) {
+  const [typesCount, setTypesCount] = useState<
+    { type: string; count: number }[]
+  >([]);
 
-  const areaNodesCount = useMemo(
-    () =>
-      nodesByArea.filter((nodeByArea) => nodeByArea.areaName === node.areaName),
-    [nodesByArea, node.areaName]
-  );
-
+  useEffect(() => {
+    countTypesByLocation(areaName).then(setTypesCount);
+  }, [areaName]);
+  console.log(typesCount);
   return (
     <List center size="sm">
-      {areaNodesCount.map((areaNodeCount) => (
+      {typesCount.map(({ type, count }) => (
         <List.Item
-          key={areaNodeCount.type}
+          key={type}
           icon={
             <Avatar
-              src={`${ICON_BASE_URL}${nodeTypesMap[areaNodeCount.type].icon}`}
+              src={`${ICON_BASE_URL}${nodeTypesMap[type]?.icon}`}
               alt=""
               size="sm"
             />
           }
         >
-          {areaNodeCount.type}: {areaNodeCount.count}
+          {type}: {count}
         </List.Item>
       ))}
     </List>

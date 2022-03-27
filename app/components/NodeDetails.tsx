@@ -119,7 +119,7 @@ export default function NodeDetails({
             )}
             <Space h="md" />
             {selectedNodeLocation.areaNode.transitTo && (
-              <AvailableNodes node={selectedNodeLocation.areaNode.transitTo} />
+              <AvailableNodes areaName={selectedNodeLocation.areaNode.transitTo.areaNodeLocations[0].areaName} />
             )}
             <Space h="md" />
             <Button
