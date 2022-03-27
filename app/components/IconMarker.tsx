@@ -80,14 +80,14 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
       <>
         <Marker
           icon={getIcon(markerSize, areaNodeType)}
-          opacity={verified ? 1 : 0.25}
+          opacity={verified ? 1 : 0.5}
           {...props}
           ref={ref}
         />
         {showNameOnMap && name && (
           <Marker
             icon={getLabel(name, type, transitTo, areaNodeType?.size)}
-            opacity={verified ? 1 : 0.25}
+            opacity={verified ? 1 : 0.5}
             interactive={false}
             position={props.position}
           />
