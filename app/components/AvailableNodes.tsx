@@ -12,9 +12,10 @@ export function AvailableNodes({ areaName }: AvailableNodesProps) {
   >([]);
 
   useEffect(() => {
+    setTypesCount([]);
     countTypesByLocation(areaName).then(setTypesCount);
   }, [areaName]);
-  console.log(typesCount);
+
   return (
     <List center size="sm">
       {typesCount.map(({ type, count }) => (
