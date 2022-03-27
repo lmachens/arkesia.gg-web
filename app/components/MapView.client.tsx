@@ -88,9 +88,9 @@ export default function MapView({ area }: { area: Area }) {
     if (selectedNodeLocation) {
       newSearchParams +=
         activeTile.id !== 0
-          ? `&node=${selectedNodeLocation.id}`
-          : `node=${selectedNodeLocation.id}`;
-      replace = selectedNodeLocation.id === nodeId;
+          ? `&node=${selectedNodeLocation.areaNodeId}`
+          : `node=${selectedNodeLocation.areaNodeId}`;
+      replace = selectedNodeLocation.areaNodeId === nodeId;
     }
     if (searchParams.toString() !== newSearchParams.toString()) {
       setSearchParams(newSearchParams, { replace });
@@ -114,7 +114,7 @@ export default function MapView({ area }: { area: Area }) {
       return;
     }
 
-    const isNodeChanged = nodeId !== selectedNodeLocation?.id;
+    const isNodeChanged = nodeId !== selectedNodeLocation?.areaNodeId;
     if (isNodeChanged) {
       const newSelectedLocation =
         nodeLocations.find(
