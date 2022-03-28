@@ -865,7 +865,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
-        name: "Seaswept Woods",
+        name: "Seasweapt Woods",
         icon: "seasweapt-woods.webp",
         size: "lg",
       },
