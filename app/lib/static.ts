@@ -7,219 +7,38 @@ export const TILE_BASE_URL =
 
 export const nodeCategories: AreaNodeCategory[] = [
   {
-    name: "World Areas",
-    includes: ["World"],
+    name: "Collectibles",
+    includes: ["Continent", "Dungeon", "Island"],
     types: [
       {
-        name: "Ankumo Mountain",
-        icon: "ankumo-mountain.webp",
-        size: "lg",
-      },
-      {
-        name: "Battlebound Plains",
-        icon: "battlebound-plains.webp",
-        size: "lg",
-      },
-      {
-        name: "Bilbrin Forest",
-        icon: "bilbrin-forest.webp",
-        size: "lg",
-      },
-      {
-        name: "Blackrose Chapel",
-        icon: "blackrose-chapel.webp",
-        size: "lg",
-      },
-      {
-        name: "Borea's Domain",
-        icon: "boreas-domain.webp",
-        size: "lg",
-      },
-      {
-        name: "Croconys Seashore",
-        icon: "croconys-seashore.webp",
-        size: "lg",
-      },
-      {
-        name: "Dyorika Plain",
-        icon: "dyorika-plain.webp",
-        size: "lg",
-      },
-      {
-        name: "Flowering Orchard",
-        icon: "flowering-orchard.webp",
-        size: "lg",
-      },
-      {
-        name: "Forest of Giants",
-        icon: "forest-of-giants.webp",
-        size: "lg",
-      },
-      {
-        name: "Lakebar",
-        icon: "lakebar.webp",
-        size: "lg",
-      },
-      {
-        name: "Leyar Terrace",
-        icon: "leyar-terrace.webp",
-        size: "lg",
-      },
-      {
-        name: "Loghill",
-        icon: "loghill.webp",
-        size: "lg",
-      },
-      {
-        name: "Luterra Castle",
-        icon: "luterra-castle.webp",
-        size: "lg",
-      },
-      {
-        name: "Medrick Monastery",
-        icon: "medrick-monastery.webp",
-        size: "lg",
-      },
-      {
-        name: "Mokoko Village",
-        icon: "mokoko-village.webp",
-        size: "lg",
-      },
-      {
-        name: "Mount Zagoras",
-        icon: "mount-zagoras.webp",
-        size: "lg",
-      },
-      {
-        name: "Ozhorn Hill",
-        icon: "ozhorn-hill.webp",
-        size: "lg",
-      },
-      {
-        name: "Prideholme",
-        icon: "prideholme.webp",
-        size: "lg",
-      },
-      {
-        name: "Rethramis Border",
-        icon: "rethramis-border.webp",
-        size: "lg",
-      },
-      {
-        name: "Saland Hill",
-        icon: "saland-hill.webp",
-        size: "lg",
-      },
-      {
-        name: "Seasweapt Woods",
-        icon: "seasweapt-woods.webp",
-        size: "lg",
-      },
-      {
-        name: "Skyreach Steppe",
-        icon: "skyreach-steppe.webp",
-        size: "lg",
-      },
-      {
-        name: "Sunbright Hill",
-        icon: "sunbright-hill.webp",
-        size: "lg",
-      },
-      {
-        name: "Sweetwater Forest",
-        icon: "sweetwater-forest.webp",
-        size: "lg",
-      },
-      {
-        name: "Wavestrand Port",
-        icon: "wavestrand-port.webp",
-        size: "lg",
+        name: "Mokoko Seed",
+        icon: "minimap_symbol_1_121.webp",
       },
     ],
   },
   {
-    name: "Areas & Orientation",
-    includes: ["Continent", "Dungeon", "Island", "World"],
+    name: "General Orientation",
+    includes: ["Continent", "Dungeon", "Island"],
     types: [
       {
         name: "Map Transition",
         icon: "minimap_symbol_7.webp",
       },
       {
-        name: "Vista",
-        icon: "viewpoint.webp",
+        name: "Secret Passage",
+        icon: "secret-door.webp",
       },
       {
-        name: "Co-op Quest Area",
-        icon: "minimap_symbol_88.webp",
+        name: "Secret Mechanics",
+        icon: "lever.webp",
       },
       {
-        name: "Sudden Quest Area",
-        icon: "minimap_symbol_81.webp",
+        name: "Music",
+        icon: "double-quaver.webp",
       },
       {
         name: "Standard Dungeon",
         icon: "minimap_symbol_3.webp",
-      },
-      {
-        name: "Ark Dungeon",
-        icon: "minimap_symbol_4.webp",
-      },
-      {
-        name: "Sailing Dungeon",
-        icon: "minimap_symbol_1_204.webp",
-      },
-      {
-        name: "Chaos Gate",
-        icon: "minimap_symbol_6.webp",
-      },
-      {
-        name: "Triport",
-        icon: "minimap_symbol_73.webp",
-      },
-      {
-        name: "Port",
-        icon: "minimap_symbol_92.webp",
-      },
-      {
-        name: "Dock",
-        icon: "minimap_symbol_1_47.webp",
-      },
-      {
-        name: "Island",
-        icon: "minimap_symbol_219.webp",
-      },
-      {
-        name: "PvP Island",
-        icon: "minimap_symbol_218.webp",
-      },
-      {
-        name: "Ghost Ship",
-        icon: "minimap_symbol_1_210.webp",
-      },
-      {
-        name: "Vast Sea",
-        icon: "minimap_symbol_1_328.webp",
-      },
-      {
-        name: "Turquoise Portal",
-        icon: "minimap_symbol_1_111.webp",
-      },
-      {
-        name: "Water Vehicle",
-        icon: "minimap_symbol_72.webp",
-      },
-      {
-        name: "Elevator",
-        icon: "minimap_symbol_1_1.webp",
-      },
-      {
-        name: "Travelator",
-        icon: "minimap_symbol_1_2.webp",
-      },
-      {
-        name: "Teleport?",
-        icon: "minimap_symbol_1_3.webp",
       },
       {
         name: "Stairs (Up)",
@@ -230,8 +49,24 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_5.webp",
       },
       {
-        name: "Treasure Map Location",
-        icon: "minimap_symbol_1_0.webp",
+        name: "Elevator",
+        icon: "minimap_symbol_1_1.webp",
+      },
+      {
+        name: "Travelator",
+        icon: "minimap_symbol_1_2.webp",
+      },
+      {
+        name: "Turquoise Portal",
+        icon: "minimap_symbol_1_111.webp",
+      },
+      {
+        name: "Water Vehicle",
+        icon: "minimap_symbol_72.webp",
+      },
+      {
+        name: "Teleport?",
+        icon: "minimap_symbol_1_3.webp",
       },
       {
         name: "Lime Portal",
@@ -245,37 +80,63 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Purple Portal",
         icon: "minimap_symbol_1_317.webp",
       },
-      {
-        name: "Secret Passage",
-        icon: "secret-door.webp",
-      },
-      {
-        name: "Secret Mechanics",
-        icon: "lever.webp",
-      },
     ],
   },
   {
-    name: "Collectibles",
-    includes: ["Continent", "Dungeon", "Island"],
+    name: "Land Orientation",
+    includes: ["Continent"],
     types: [
       {
-        name: "Mokoko Seed",
-        icon: "minimap_symbol_1_121.webp",
+        name: "Triport",
+        icon: "minimap_symbol_73.webp",
       },
-    ],
+      {
+        name: "Ark Dungeon",
+        icon: "minimap_symbol_4.webp",
+      },
+    ]
   },
   {
-    name: "Exchange",
-    includes: ["Continent", "Dungeon", "Island"],
+    name: "World Orientation",
+    includes: ["World"],
+    types: [
+      {
+        name: "Island",
+        icon: "minimap_symbol_219.webp",
+      },
+      {
+        name: "PvP Island",
+        icon: "minimap_symbol_218.webp",
+      },
+      {
+        name: "Port",
+        icon: "minimap_symbol_92.webp",
+      },
+      {
+        name: "Dock",
+        icon: "minimap_symbol_1_47.webp",
+      },
+      {
+        name: "Ghost Ship",
+        icon: "minimap_symbol_1_210.webp",
+      },
+      {
+        name: "Vast Sea",
+        icon: "minimap_symbol_1_328.webp",
+      },
+      {
+        name: "Sailing Dungeon",
+        icon: "minimap_symbol_1_204.webp",
+      },
+    ]
+  },  
+  {
+    name: "Island Exchange",
+    includes: ["Island"],
     types: [
       {
         name: "Sea Bounty Exchange",
         icon: "minimap_symbol_1_318.webp",
-      },
-      {
-        name: "Rapport Exchange",
-        icon: "minimap_symbol_1_275.webp",
       },
       {
         name: "Island Soul Exchange",
@@ -289,6 +150,16 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Masterpiece Exchange",
         icon: "minimap_symbol_1_123.webp",
       },
+    ],
+  },
+  {
+    name: "Land Exchange",
+    includes: ["Continent"],
+    types: [
+      {
+        name: "Rapport Exchange",
+        icon: "minimap_symbol_1_275.webp",
+      }, 
       {
         name: "World Tree Leaf Exchange",
         icon: "minimap_symbol_1_320.webp",
@@ -320,26 +191,8 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "hidden_story.webp",
       },
       {
-        name: "Music",
-        icon: "double-quaver.webp",
-      },
-    ],
-  },
-  {
-    name: "Enemies",
-    includes: ["Continent", "Dungeon", "Island"],
-    types: [
-      {
-        name: "Boss 1",
-        icon: "minimap_symbol_1.webp",
-      },
-      {
-        name: "Boss 2",
-        icon: "minimap_symbol_40.webp",
-      },
-      {
-        name: "Silver Named Enemy",
-        icon: "minimap_symbol_76.webp",
+        name: "Vista",
+        icon: "viewpoint.webp",
       },
       {
         name: "Gold Named Enemy",
@@ -348,7 +201,39 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "Services",
+    name: "Enemies",
+    includes: ["Continent", "Dungeon", "Island"],
+    types: [
+      {
+        name: "Boss",
+        icon: "minimap_symbol_1.webp",
+      },
+      {
+        name: "World Boss",
+        icon: "minimap_symbol_40.webp",
+      },
+      {
+        name: "Silver Named Enemy",
+        icon: "minimap_symbol_76.webp",
+      },
+    ],
+  },
+  {
+    name: "General Services",
+    includes: ["Continent", "Island"],
+    types: [
+      {
+        name: "Repairer",
+        icon: "minimap_symbol_158.webp",
+      },
+      {
+        name: "Wandering Merchant",
+        icon: "minimap_symbol_154.webp",
+      },
+    ]
+  },
+  {
+    name: "Land Services",
     includes: ["Continent"],
     types: [
       {
@@ -400,20 +285,8 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_186.webp",
       },
       {
-        name: "Statue of Gienah (Island Souls)",
-        icon: "minimap_symbol_1_109.webp",
-      },
-      {
-        name: "Marina",
-        icon: "minimap_symbol_230.webp",
-      },
-      {
         name: "Shipbuilder",
         icon: "minimap_symbol_183.webp",
-      },
-      {
-        name: "Wandering Merchant",
-        icon: "minimap_symbol_154.webp",
       },
       {
         name: "Voyage Manager",
@@ -434,14 +307,6 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Processing",
         icon: "minimap_symbol_208.webp",
-      },
-      {
-        name: "Repairer",
-        icon: "minimap_symbol_158.webp",
-      },
-      {
-        name: "Guardian Raid Soul",
-        icon: "minimap_symbol_1_274.webp",
       },
       {
         name: "Gem Expert",
@@ -494,8 +359,22 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
+    name: "World Services",
+    includes: ["World"],
+    types: [
+      {
+        name: "Marina",
+        icon: "minimap_symbol_230.webp",
+      },
+      {
+        name: "Statue of Gienah (Island Souls)",
+        icon: "minimap_symbol_1_109.webp",
+      },
+    ]
+  },
+  {
     name: "Merchants",
-    includes: ["Continent", "Dungeon", "Island"],
+    includes: ["Continent", "Island"],
     types: [
       {
         name: "Trade Skill Merchant",
@@ -550,7 +429,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_1_124.webp",
       },
       {
-        name: "Unknown Merchant 3 - TBC",
+        name: "Proving Grounds Merchant",
         icon: "minimap_symbol_1_125.webp",
       },
       {
@@ -561,7 +440,7 @@ export const nodeCategories: AreaNodeCategory[] = [
   },
   {
     name: "NPCs",
-    includes: ["Continent", "Dungeon", "Island"],
+    includes: ["Continent", "Island"],
     types: [
       {
         name: "Rapport",
@@ -571,23 +450,15 @@ export const nodeCategories: AreaNodeCategory[] = [
   },
   {
     name: "Quests",
-    includes: ["Continent", "Dungeon", "Island"],
+    includes: ["Continent", "Island"],
     types: [
       {
         name: "Adventure Quest",
         icon: "minimap_symbol_247.webp",
       },
       {
-        name: "Chain Adventure Quest",
-        icon: "minimap_symbol_239.webp",
-      },
-      {
         name: "Side Quest",
         icon: "minimap_symbol_18.webp",
-      },
-      {
-        name: "Chain Side Quest",
-        icon: "minimap_symbol_253.webp",
       },
       {
         name: "Repeatable Quest",
@@ -850,11 +721,25 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "Symbols",
-    includes: ["Continent", "Dungeon", "Island"],
+    name: "General Event",
+    includes: ["Continent", "Island"],
     types: [
       {
-        name: "Crimson Chaos Gate",
+        name: "Co-op Quest Area",
+        icon: "minimap_symbol_88.webp",
+      },
+    ]
+  },
+  {
+    name: "Land Event",
+    includes: ["Continent"],
+    types: [
+      {
+        name: "Chaos Gate",
+        icon: "minimap_symbol_6.webp",
+      },
+      {
+        name: "Mayhem Chaos Gate",
         icon: "minimap_symbol_64.webp",
       },
       {
@@ -868,6 +753,141 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Pink Chaos Gate",
         icon: "minimap_symbol_67.webp",
+      },
+      {
+        name: "Sudden Quest Area",
+        icon: "minimap_symbol_81.webp",
+      },
+    ],
+  },
+  {
+    name: "World Areas",
+    includes: ["World"],
+    types: [
+      {
+        name: "Ankumo Mountain",
+        icon: "ankumo-mountain.webp",
+        size: "lg",
+      },
+      {
+        name: "Battlebound Plains",
+        icon: "battlebound-plains.webp",
+        size: "lg",
+      },
+      {
+        name: "Bilbrin Forest",
+        icon: "bilbrin-forest.webp",
+        size: "lg",
+      },
+      {
+        name: "Blackrose Chapel",
+        icon: "blackrose-chapel.webp",
+        size: "lg",
+      },
+      {
+        name: "Borea's Domain",
+        icon: "boreas-domain.webp",
+        size: "lg",
+      },
+      {
+        name: "Croconys Seashore",
+        icon: "croconys-seashore.webp",
+        size: "lg",
+      },
+      {
+        name: "Dyorika Plain",
+        icon: "dyorika-plain.webp",
+        size: "lg",
+      },
+      {
+        name: "Flowering Orchard",
+        icon: "flowering-orchard.webp",
+        size: "lg",
+      },
+      {
+        name: "Forest of Giants",
+        icon: "forest-of-giants.webp",
+        size: "lg",
+      },
+      {
+        name: "Lakebar",
+        icon: "lakebar.webp",
+        size: "lg",
+      },
+      {
+        name: "Leyar Terrace",
+        icon: "leyar-terrace.webp",
+        size: "lg",
+      },
+      {
+        name: "Loghill",
+        icon: "loghill.webp",
+        size: "lg",
+      },
+      {
+        name: "Luterra Castle",
+        icon: "luterra-castle.webp",
+        size: "lg",
+      },
+      {
+        name: "Medrick Monastery",
+        icon: "medrick-monastery.webp",
+        size: "lg",
+      },
+      {
+        name: "Mokoko Village",
+        icon: "mokoko-village.webp",
+        size: "lg",
+      },
+      {
+        name: "Mount Zagoras",
+        icon: "mount-zagoras.webp",
+        size: "lg",
+      },
+      {
+        name: "Ozhorn Hill",
+        icon: "ozhorn-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Prideholme",
+        icon: "prideholme.webp",
+        size: "lg",
+      },
+      {
+        name: "Rethramis Border",
+        icon: "rethramis-border.webp",
+        size: "lg",
+      },
+      {
+        name: "Saland Hill",
+        icon: "saland-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Seasweapt Woods",
+        icon: "seasweapt-woods.webp",
+        size: "lg",
+      },
+      {
+        name: "Skyreach Steppe",
+        icon: "skyreach-steppe.webp",
+        size: "lg",
+      },
+      {
+        name: "Sunbright Hill",
+        icon: "sunbright-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Sweetwater Forest",
+        icon: "sweetwater-forest.webp",
+        size: "lg",
+      },
+      {
+        name: "Wavestrand Port",
+        icon: "wavestrand-port.webp",
+        size: "lg",
       },
     ],
   },
