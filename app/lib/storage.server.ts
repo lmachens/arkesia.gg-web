@@ -5,7 +5,7 @@ import type { NodeOnDiskFile } from "@remix-run/node";
 
 export const supabase = createClient(
   process.env.SUPABASE_URL || "https://URL.supabase.co",
-  process.env.SUPABASE_KEY || "SUPABASE_KEY"
+  process.env.SUPABASE_SECRET_KEY || "SUPABASE_SECRET_KEY"
 );
 
 export const imageToWebp = async (input: NodeOnDiskFile) => {
