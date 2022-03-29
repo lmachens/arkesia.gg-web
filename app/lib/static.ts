@@ -94,7 +94,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Ark Dungeon",
         icon: "minimap_symbol_4.webp",
       },
-    ]
+    ],
   },
   {
     name: "World Orientation",
@@ -128,8 +128,8 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Sailing Dungeon",
         icon: "minimap_symbol_1_204.webp",
       },
-    ]
-  },  
+    ],
+  },
   {
     name: "Island Exchange",
     includes: ["Island"],
@@ -159,7 +159,7 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Rapport Exchange",
         icon: "minimap_symbol_1_275.webp",
-      }, 
+      },
       {
         name: "World Tree Leaf Exchange",
         icon: "minimap_symbol_1_320.webp",
@@ -230,7 +230,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Wandering Merchant",
         icon: "minimap_symbol_154.webp",
       },
-    ]
+    ],
   },
   {
     name: "Land Services",
@@ -370,7 +370,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Statue of Gienah (Island Souls)",
         icon: "minimap_symbol_1_109.webp",
       },
-    ]
+    ],
   },
   {
     name: "Merchants",
@@ -728,7 +728,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Co-op Quest Area",
         icon: "minimap_symbol_88.webp",
       },
-    ]
+    ],
   },
   {
     name: "Land Event",
@@ -5498,18 +5498,6 @@ export const continents: Continent[] = [
             tile: "forest_of_giants/lv_tot_giforest_f_ps_0_{y}x{x}.webp",
             full: "forest_of_giants/lv_tot_giforest_f_ps_0_full.webp",
             max: [8, 8],
-          },
-        ],
-      },
-      {
-        name: "Tortoyk Parapara Cruise",
-        category: "Continent",
-        tiles: [
-          {
-            id: 0,
-            tile: "tortoyk_parapara_cruise/lv_tot_toforest_f_ps_0_{y}x{x}.webp",
-            full: "tortoyk_parapara_cruise/lv_tot_toforest_f_ps_0_full.webp",
-            max: [6, 6],
           },
         ],
       },
