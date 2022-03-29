@@ -6,7 +6,7 @@ import AppBreadcrumbs from "~/components/AppBreadcrumbs";
 import { useParams } from "react-router-dom";
 import { continents } from "~/lib/static";
 import { useMemo } from "react";
-import type { MetaFunction } from "remix";
+import type { MetaFunction, ShouldReloadFunction } from "remix";
 import { areaLoader } from "~/lib/loaders.server";
 
 export const loader = areaLoader;
@@ -24,6 +24,11 @@ export const meta: MetaFunction = ({ params }) => {
     title: `${params.area} in ${params.continent} - Arkesia.gg`,
     description: `Interactive map with mokoko seeds, hidden stories and more resources in ${params.continent} / ${params.area} for Lost Ark.`,
   };
+};
+
+// Only reload on submission (like updating, creating or deleting a node)
+export const unstable_shouldReload: ShouldReloadFunction = ({ submission }) => {
+  return Boolean(submission);
 };
 
 export default function MapPage() {
