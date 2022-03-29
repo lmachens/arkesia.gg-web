@@ -5440,12 +5440,6 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "mokoko_village/lv_tot_movillage_t_ps_0_{y}x{x}.webp",
-            full: "mokoko_village/lv_tot_movillage_t_ps_0_full.webp",
-            max: [1, 2],
-          },
-          {
             id: 7,
             tile: "mokoko_village/lv_tot_movillage_t_ps_7_{y}x{x}.webp",
             full: "mokoko_village/lv_tot_movillage_t_ps_7_full.webp",
