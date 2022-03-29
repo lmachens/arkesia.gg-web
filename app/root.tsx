@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "remix";
-import type { MetaFunction } from "remix";
+import type { MetaFunction, ShouldReloadFunction } from "remix";
 import styles from "~/styles/global.css";
 import leafletStyles from "leaflet/dist/leaflet.css";
 import { MantineProvider } from "@mantine/core";
@@ -33,6 +33,9 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader = envLoader;
+
+// Only load `envLoader` once
+export const unstable_shouldReload: ShouldReloadFunction = () => false;
 
 export default function App() {
   return (
