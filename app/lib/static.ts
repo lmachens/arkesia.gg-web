@@ -770,6 +770,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
+        name: "Arid Path",
+        icon: "arid-path.webp",
+        size: "lg",
+      },
+      {
         name: "Battlebound Plains",
         icon: "battlebound-plains.webp",
         size: "lg",
@@ -792,6 +797,11 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Croconys Seashore",
         icon: "croconys-seashore.webp",
+        size: "lg",
+      },
+      {
+        name: "Delphi Township",
+        icon: "delphi-township.webp",
         size: "lg",
       },
       {
@@ -835,6 +845,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
+        name: "Melody Forest",
+        icon: "melody-forest.webp",
+        size: "lg",
+      },
+      {
         name: "Mokoko Village",
         icon: "mokoko-village.webp",
         size: "lg",
@@ -845,8 +860,18 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
+        name: "Nebelhorn",
+        icon: "nebelhorn.webp",
+        size: "lg",
+      },
+      {
         name: "Ozhorn Hill",
         icon: "ozhorn-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Port City Changhun",
+        icon: "port-city-changhun.webp",
         size: "lg",
       },
       {
@@ -855,13 +880,38 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
+        name: "Prisma Valley",
+        icon: "prisma-valley.webp",
+        size: "lg",
+      },
+      {
+        name: "Rattan Hill",
+        icon: "rattan-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Red Sand Desert",
+        icon: "red-sand-desert.webp",
+        size: "lg",
+      },
+      {
         name: "Rethramis Border",
         icon: "rethramis-border.webp",
         size: "lg",
       },
       {
+        name: "Riza Falls",
+        icon: "riza-falls.webp",
+        size: "lg",
+      },
+      {
         name: "Saland Hill",
         icon: "saland-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Scraplands",
+        icon: "scraplands.webp",
         size: "lg",
       },
       {
@@ -875,6 +925,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
+        name: "Stern",
+        icon: "stern.webp",
+        size: "lg",
+      },
+      {
         name: "Sunbright Hill",
         icon: "sunbright-hill.webp",
         size: "lg",
@@ -885,8 +940,23 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
+        name: "Totrich",
+        icon: "totrich.webp",
+        size: "lg",
+      },
+      {
+        name: "Twilight Mists",
+        icon: "twilight-mists.webp",
+        size: "lg",
+      },
+      {
         name: "Wavestrand Port",
         icon: "wavestrand-port.webp",
+        size: "lg",
+      },
+      {
+        name: "Windbringer Hills",
+        icon: "windbringer-hills.webp",
         size: "lg",
       },
     ],
