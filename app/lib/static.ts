@@ -6239,18 +6239,6 @@ export const continents: Continent[] = [
             max: [3, 3],
           },
           {
-            id: 4,
-            tile: "nia_village/lv_pap_niatown_t_ps_4_{y}x{x}.webp",
-            full: "nia_village/lv_pap_niatown_t_ps_4_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 5,
-            tile: "nia_village/lv_pap_niatown_t_ps_5_{y}x{x}.webp",
-            full: "nia_village/lv_pap_niatown_t_ps_5_full.webp",
-            max: [1, 1],
-          },
-          {
             id: 6,
             tile: "nia_village/lv_pap_niatown_t_ps_6_{y}x{x}.webp",
             full: "nia_village/lv_pap_niatown_t_ps_6_full.webp",
