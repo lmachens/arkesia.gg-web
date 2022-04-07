@@ -6328,18 +6328,6 @@ export const continents: Continent[] = [
             full: "tikatika_colony/lv_pap_ticac_f_ps_1_full.webp",
             max: [4, 2],
           },
-          {
-            id: 2,
-            tile: "tikatika_colony/lv_pap_ticac_f_ps_2_{y}x{x}.webp",
-            full: "tikatika_colony/lv_pap_ticac_f_ps_2_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 3,
-            tile: "tikatika_colony/lv_pap_ticac_f_ps_3_{y}x{x}.webp",
-            full: "tikatika_colony/lv_pap_ticac_f_ps_3_full.webp",
-            max: [2, 2],
-          },
         ],
       },
       {
