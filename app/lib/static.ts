@@ -6239,18 +6239,6 @@ export const continents: Continent[] = [
             max: [3, 3],
           },
           {
-            id: 4,
-            tile: "nia_village/lv_pap_niatown_t_ps_4_{y}x{x}.webp",
-            full: "nia_village/lv_pap_niatown_t_ps_4_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 5,
-            tile: "nia_village/lv_pap_niatown_t_ps_5_{y}x{x}.webp",
-            full: "nia_village/lv_pap_niatown_t_ps_5_full.webp",
-            max: [1, 1],
-          },
-          {
             id: 6,
             tile: "nia_village/lv_pap_niatown_t_ps_6_{y}x{x}.webp",
             full: "nia_village/lv_pap_niatown_t_ps_6_full.webp",
@@ -6312,21 +6300,15 @@ export const continents: Continent[] = [
         tiles: [
           {
             id: 0,
-            tile: "starsand_beach/lv_pap_starsb_f_ps_0_{y}x{x}.webp",
-            full: "starsand_beach/lv_pap_starsb_f_ps_0_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 1,
             tile: "starsand_beach/lv_pap_starsb_f_ps_1_{y}x{x}.webp",
             full: "starsand_beach/lv_pap_starsb_f_ps_1_full.webp",
             max: [6, 6],
           },
           {
-            id: 2,
-            tile: "starsand_beach/lv_pap_starsb_f_ps_2_{y}x{x}.webp",
-            full: "starsand_beach/lv_pap_starsb_f_ps_2_full.webp",
-            max: [3, 3],
+            id: 1,
+            tile: "starsand_beach/lv_pap_starsb_f_ps_0_{y}x{x}.webp",
+            full: "starsand_beach/lv_pap_starsb_f_ps_0_full.webp",
+            max: [1, 1],
           },
         ],
       },
@@ -6345,18 +6327,6 @@ export const continents: Continent[] = [
             tile: "tikatika_colony/lv_pap_ticac_f_ps_1_{y}x{x}.webp",
             full: "tikatika_colony/lv_pap_ticac_f_ps_1_full.webp",
             max: [4, 2],
-          },
-          {
-            id: 2,
-            tile: "tikatika_colony/lv_pap_ticac_f_ps_2_{y}x{x}.webp",
-            full: "tikatika_colony/lv_pap_ticac_f_ps_2_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 3,
-            tile: "tikatika_colony/lv_pap_ticac_f_ps_3_{y}x{x}.webp",
-            full: "tikatika_colony/lv_pap_ticac_f_ps_3_full.webp",
-            max: [2, 2],
           },
         ],
       },
