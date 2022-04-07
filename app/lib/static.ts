@@ -6300,21 +6300,15 @@ export const continents: Continent[] = [
         tiles: [
           {
             id: 0,
-            tile: "starsand_beach/lv_pap_starsb_f_ps_0_{y}x{x}.webp",
-            full: "starsand_beach/lv_pap_starsb_f_ps_0_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 1,
             tile: "starsand_beach/lv_pap_starsb_f_ps_1_{y}x{x}.webp",
             full: "starsand_beach/lv_pap_starsb_f_ps_1_full.webp",
             max: [6, 6],
           },
           {
-            id: 2,
-            tile: "starsand_beach/lv_pap_starsb_f_ps_2_{y}x{x}.webp",
-            full: "starsand_beach/lv_pap_starsb_f_ps_2_full.webp",
-            max: [3, 3],
+            id: 1,
+            tile: "starsand_beach/lv_pap_starsb_f_ps_0_{y}x{x}.webp",
+            full: "starsand_beach/lv_pap_starsb_f_ps_0_full.webp",
+            max: [1, 1],
           },
         ],
       },
