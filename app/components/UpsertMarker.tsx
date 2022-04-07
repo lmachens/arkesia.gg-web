@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Tooltip } from "react-leaflet";
-import { Form, useActionData, useTransition } from "remix";
+import { Form, useActionData, useTransition } from "@remix-run/react";
 import { useNotifications } from "@mantine/notifications";
 import type { Area, Tile } from "~/lib/types";
 import {

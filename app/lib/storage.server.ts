@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import { unstable_createFileUploadHandler } from "remix";
+import { unstable_createFileUploadHandler } from "@remix-run/node";
 import sharp from "sharp";
 import type { NodeOnDiskFile } from "@remix-run/node";
 

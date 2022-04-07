@@ -6,7 +6,8 @@ import AppBreadcrumbs from "~/components/AppBreadcrumbs";
 import { useParams } from "react-router-dom";
 import { continents } from "~/lib/static";
 import { useMemo } from "react";
-import type { MetaFunction, ShouldReloadFunction } from "remix";
+import type { ShouldReloadFunction } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/node";
 import { areaLoader } from "~/lib/loaders.server";
 
 export const loader = areaLoader;

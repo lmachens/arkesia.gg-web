@@ -2,7 +2,6 @@ import type { AreaNode, AreaNodeLocation } from "@prisma/client";
 import create from "zustand";
 import { persist } from "zustand/middleware";
 import { trackHideDiscoveredNodes, trackShowDiscoveredNodes } from "./stats";
-import type { AreaNodeDTO, AreaNodeLocationDTO } from "./types";
 
 export type DiscoveredNode = Pick<AreaNode, "id" | "type">;
 

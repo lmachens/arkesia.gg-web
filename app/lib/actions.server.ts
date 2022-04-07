@@ -1,7 +1,7 @@
 import type { AreaNode, AreaNodeLocation } from "@prisma/client";
 import type { NodeOnDiskFile } from "@remix-run/node";
-import type { ActionFunction } from "remix";
-import { unstable_parseMultipartFormData } from "remix";
+import type { ActionFunction } from "@remix-run/node";
+import { unstable_parseMultipartFormData } from "@remix-run/node";
 import { badRequest } from "remix-utils";
 import {
   deleteNode,

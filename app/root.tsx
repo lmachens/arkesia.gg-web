@@ -5,8 +5,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "remix";
-import type { MetaFunction, ShouldReloadFunction } from "remix";
+} from "@remix-run/react";
+import type { ShouldReloadFunction } from "@remix-run/react";
 import styles from "~/styles/global.css";
 import leafletStyles from "leaflet/dist/leaflet.css";
 import { MantineProvider } from "@mantine/core";
@@ -14,6 +14,7 @@ import { NotificationsProvider } from "@mantine/notifications";
 import AppSpotlightProvider from "./components/AppSpotlightProvider";
 import InitClients from "./components/InitClients";
 import { envLoader } from "./lib/loaders.server";
+import type { MetaFunction } from "@remix-run/react/routeModules";
 
 export function links() {
   return [

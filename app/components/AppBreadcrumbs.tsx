@@ -1,6 +1,6 @@
 import { useSpotlight } from "@mantine/spotlight";
 import { Breadcrumbs, Button, Text } from "@mantine/core";
-import { useParams } from "remix";
+import { useParams } from "@remix-run/react";
 import type { Area } from "~/lib/types";
 
 export default function AppBreadcrumbs({ area }: { area: Area }) {

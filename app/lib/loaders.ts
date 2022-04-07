@@ -1,4 +1,4 @@
-import { useLoaderData } from "remix";
+import { useLoaderData } from "@remix-run/react";
 import type { AreaLoaderData, EnvLoaderData } from "./loaders.server";
 
 export const useEnv = () => {

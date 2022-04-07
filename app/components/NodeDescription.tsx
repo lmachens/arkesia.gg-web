@@ -1,7 +1,7 @@
 import { Text } from "@mantine/core";
 import type { HTMLReactParserOptions } from "html-react-parser";
 import parse, { domToReact, Element } from "html-react-parser";
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 
 const options: HTMLReactParserOptions = {
   replace: (domNode) => {

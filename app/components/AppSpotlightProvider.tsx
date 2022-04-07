@@ -1,6 +1,6 @@
 import { SpotlightProvider, useSpotlight } from "@mantine/spotlight";
 import { MagnifyingGlassIcon } from "@modulz/radix-icons";
-import type { ReactNode } from "react";
+import type { MouseEvent, ReactNode } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useMemo } from "react";
@@ -232,7 +232,7 @@ function CustomAction({
     <UnstyledButton
       className={cx(classes.action, { [classes.actionHovered]: hovered })}
       tabIndex={-1}
-      onMouseDown={(event) => event.preventDefault()}
+      onMouseDown={(event: MouseEvent) => event.preventDefault()}
       onClick={onTrigger}
       {...others}
     >
