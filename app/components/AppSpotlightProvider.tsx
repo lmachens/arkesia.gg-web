@@ -146,16 +146,11 @@ function AdditionalActions() {
             image: TILE_BASE_URL + area.tiles[0].full,
             onTrigger: handleTrigger,
           });
-          if (nodeActions.length >= 6) {
-            break;
-          }
         }
-      }
-      if (nodeActions.length >= 6) {
-        break;
       }
     }
 
+    nodeActions.sort((a, b) => a.title.length - b.title.length);
     spotlight.registerActions(nodeActions);
 
     return () => {
