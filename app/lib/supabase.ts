@@ -25,7 +25,7 @@ export const findNodes = async (query: string) => {
     `
     )
     .ilike("name", `%${query}%`)
-    .limit(5);
+    .limit(10);
   return result.data || [];
 };
 

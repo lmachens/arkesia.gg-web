@@ -19,6 +19,7 @@ import {
   createStyles,
   Group,
   Image,
+  ScrollArea,
   Text,
   UnstyledButton,
 } from "@mantine/core";
@@ -70,7 +71,7 @@ export default function AppSpotlightProvider({
       shortcut="ctrl + f"
       nothingFoundMessage="Nothing found..."
       zIndex={10000}
-      limit={6}
+      limit={10}
       filter={(query, actions) => {
         if (query === "") {
           return actions.filter(
@@ -84,11 +85,20 @@ export default function AppSpotlightProvider({
         );
       }}
       actionComponent={CustomAction}
+      actionsWrapperComponent={ActionsWrapper}
     >
       {children}
       <LatestAreaNames />
       <AdditionalActions />
     </SpotlightProvider>
+  );
+}
+
+function ActionsWrapper({ children }: { children: React.ReactNode }) {
+  return (
+    <ScrollArea style={{ maxHeight: "70vh", height: "100%" }}>
+      {children}
+    </ScrollArea>
   );
 }
 
