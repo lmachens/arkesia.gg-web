@@ -10,7 +10,7 @@ export const initSupabase = (supabaseUrl: string, supabaseKey: string) => {
   supabase = createClient(supabaseUrl, supabaseKey);
 };
 
-export const findNodes = async (query: string) => {
+export const searchNodesByName = async (query: string) => {
   const result = await supabase
     .from<TransitTo>("AreaNode")
     .select(
@@ -24,6 +24,9 @@ export const findNodes = async (query: string) => {
       )
     `
     )
+    .neq("type", "Map Transition")
+    .neq("type", "Stairs (Up)")
+    .neq("type", "Stairs (Down)")
     .ilike("name", `%${query}%`)
     .limit(10);
   return result.data || [];
