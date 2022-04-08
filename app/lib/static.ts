@@ -184,7 +184,7 @@ export const nodeCategories: AreaNodeCategory[] = [
       },
       {
         name: "Another Story",
-        icon: "book-cover.webp",
+        icon: "minimap_symbol_252.webp",
       },
       {
         name: "Hidden Story",
