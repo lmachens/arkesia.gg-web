@@ -703,6 +703,10 @@ export const nodeCategories: AreaNodeCategory[] = [
     includes: ["Continent", "Island"],
     types: [
       {
+        name: "Excavation",
+        icon: "excavation.webp",
+      },
+      {
         name: "Ore",
         icon: "minimap_symbol_21.webp",
       },
