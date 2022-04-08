@@ -453,6 +453,10 @@ export const nodeCategories: AreaNodeCategory[] = [
     includes: ["Continent", "Island"],
     types: [
       {
+        name: "Abyss Raid",
+        icon: "minimap_symbol_1_238.webp",
+      },
+      {
         name: "Adventure Quest",
         icon: "minimap_symbol_247.webp",
       },
@@ -483,6 +487,10 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Rapport Chain Quest",
         icon: "minimap_symbol_1_279.webp",
+      },
+      {
+        name: "Story Mission",
+        icon: "minimap_symbol_2.webp",
       },
     ],
   },
