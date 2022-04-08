@@ -184,7 +184,7 @@ export const nodeCategories: AreaNodeCategory[] = [
       },
       {
         name: "Another Story",
-        icon: "book-cover.webp",
+        icon: "minimap_symbol_252.webp",
       },
       {
         name: "Hidden Story",
@@ -702,6 +702,10 @@ export const nodeCategories: AreaNodeCategory[] = [
     name: "Trade Skills",
     includes: ["Continent", "Island"],
     types: [
+      {
+        name: "Excavation",
+        icon: "excavation.webp",
+      },
       {
         name: "Ore",
         icon: "minimap_symbol_21.webp",
