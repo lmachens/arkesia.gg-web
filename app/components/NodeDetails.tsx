@@ -7,6 +7,7 @@ import {
   Text,
   TextInput,
   Title,
+  Stack,
 } from "@mantine/core";
 import { useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
@@ -96,7 +97,7 @@ export default function NodeDetails({
       position={drawerPosition}
       onClose={onClose}
     >
-      <ScrollArea style={{ height: "calc(100% - 50px)" }}>
+      <Stack style={{ height: "calc(100% - 50px)" }} spacing={0}>
         {selectedNodeLocation && (
           <>
             <Title order={3}>
@@ -118,15 +119,19 @@ export default function NodeDetails({
               <ImagePreview src={selectedNodeLocation.areaNode.screenshot} />
             )}
             <Space h="md" />
-            {selectedNodeLocation.areaNode.transitTo && (
-              <AvailableNodes
-                areaName={
-                  selectedNodeLocation.areaNode.transitTo.areaNodeLocations[0]
-                    .areaName
-                }
-              />
-            )}
-            <Space h="md" />
+            <ScrollArea style={{ flex: 1 }}>
+              {selectedNodeLocation.areaNode.transitTo && (
+                <>
+                  <AvailableNodes
+                    areaName={
+                      selectedNodeLocation.areaNode.transitTo
+                        .areaNodeLocations[0].areaName
+                    }
+                  />
+                  <Space h="md" />
+                </>
+              )}
+            </ScrollArea>
             <Button
               onClick={() =>
                 toggleDiscoveredNode(selectedNodeLocation.areaNode)
@@ -136,6 +141,11 @@ export default function NodeDetails({
               size="xs"
               compact
               mb="xs"
+              sx={{
+                "> *": {
+                  justifyContent: "left",
+                },
+              }}
             >
               <Group>
                 {discoveredNodes.some(
@@ -196,7 +206,7 @@ export default function NodeDetails({
             )}
           </>
         )}
-      </ScrollArea>
+      </Stack>
     </Drawer>
   );
 }

@@ -1,4 +1,4 @@
-import { Avatar, List } from "@mantine/core";
+import { Avatar, List, Skeleton } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { ICON_BASE_URL, nodeTypesMap } from "~/lib/static";
 import { countTypesByLocation } from "~/lib/supabase";
@@ -8,14 +8,23 @@ type AvailableNodesProps = {
 };
 export function AvailableNodes({ areaName }: AvailableNodesProps) {
   const [typesCount, setTypesCount] = useState<
-    { type: string; count: number }[]
-  >([]);
+    { type: string; count: number }[] | null
+  >(null);
 
   useEffect(() => {
-    setTypesCount([]);
+    setTypesCount(null);
     countTypesByLocation(areaName).then(setTypesCount);
   }, [areaName]);
 
+  if (typesCount === null) {
+    return (
+      <>
+        <Skeleton height={8} />
+        <Skeleton mt={6} height={8} />
+        <Skeleton mt={6} height={8} />
+      </>
+    );
+  }
   return (
     <List center size="sm">
       {typesCount.map(({ type, count }) => (

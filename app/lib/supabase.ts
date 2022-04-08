@@ -51,6 +51,10 @@ export const countTypesByLocation = async (areaName: string) => {
     count: number;
   }[] = [];
   data.forEach((location) => {
+    if (["Map Transition"].includes(location.areaNode.type)) {
+      return;
+    }
+
     if (ids.includes(location.areaNodeId) || !location.areaNode) {
       return;
     }
