@@ -24,7 +24,7 @@ import {
   UnstyledButton,
 } from "@mantine/core";
 import { useDidUpdate, useHotkeys } from "@mantine/hooks";
-import { findNodes } from "~/lib/supabase";
+import { searchNodesByName } from "~/lib/supabase";
 import useThrottle from "~/lib/useThrottle";
 import type { TransitTo } from "~/lib/types";
 
@@ -110,7 +110,7 @@ function AdditionalActions() {
   const query = useThrottle(spotlight.query, 200);
 
   useDidUpdate(() => {
-    findNodes(query).then(setNodes);
+    searchNodesByName(query).then(setNodes);
   }, [query]);
 
   useEffect(() => {
