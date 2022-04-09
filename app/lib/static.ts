@@ -23,6 +23,7 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Map Transition",
         icon: "minimap_symbol_7.webp",
+        hideInSummary: true,
       },
       {
         name: "Secret Passage",
@@ -775,6 +776,7 @@ export const nodeCategories: AreaNodeCategory[] = [
   {
     name: "World Areas",
     includes: ["World"],
+    hideInSummary: true,
     types: [
       {
         name: "Ankumo Mountain",
@@ -980,6 +982,7 @@ export const nodeTypes = nodeCategories
     nodeCategory.types.map<AreaNodeType>((nodeType) => ({
       ...nodeType,
       category: nodeCategory.name,
+      hideInSummary: nodeType.hideInSummary || nodeCategory.hideInSummary || false
     }))
   )
   .flat();

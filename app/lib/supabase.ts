@@ -1,5 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { createClient } from "@supabase/supabase-js";
+import { nodeTypesMap } from "./static";
 import type { AreaNodeLocationDTO, TransitTo } from "./types";
 
 export let supabase: SupabaseClient;
@@ -51,7 +52,8 @@ export const countTypesByLocation = async (areaName: string) => {
     count: number;
   }[] = [];
   data.forEach((location) => {
-    if (["Map Transition"].includes(location.areaNode.type)) {
+    const nodeType = nodeTypesMap[location.areaNode.type];
+    if (!nodeType || nodeType.hideInSummary) {
       return;
     }
 

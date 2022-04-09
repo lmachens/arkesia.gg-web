@@ -50,6 +50,7 @@ export type AreaNodeType = {
   name: string;
   icon: string;
   size?: "lg";
+  hideInSummary?: boolean;
 };
 
 type PartialAreaNodeType = Omit<AreaNodeType, "category">;
@@ -58,6 +59,7 @@ export type AreaNodeCategory = {
   name: string;
   includes: AreaCategory[];
   types: PartialAreaNodeType[];
+  hideInSummary?: boolean;
 };
 
 export type TransitTo = AreaNode & {
