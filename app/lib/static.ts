@@ -1079,6 +1079,24 @@ export const continents: Continent[] = [
     name: "Sailing Voyage",
     areas: [
       {
+        name: "Isteri Island",
+        category: "Continent",
+        tiles: [
+          {
+            id: 0,
+            tile: "isteri_island/lv_ocn_iphisis_ps_0_{y}x{x}.webp",
+            full: "isteri_island/lv_ocn_iphisis_ps_0_full.webp",
+            max: [2, 2],
+          },
+          {
+            id: 1,
+            tile: "isteri_island/lv_ocn_iphisid_ps_0_{y}x{x}.webp",
+            full: "isteri_island/lv_ocn_iphisid_ps_0_full.webp",
+            max: [2, 2],
+          },
+        ],
+      },
+      {
         name: "Dark Chaos Gate",
         category: "Continent",
         tiles: [
