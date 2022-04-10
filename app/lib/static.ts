@@ -5584,12 +5584,6 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "great_castle/lv_yor_greatcs_t_ps_0_{y}x{x}.webp",
-            full: "great_castle/lv_yor_greatcs_t_ps_0_full.webp",
-            max: [2, 1],
-          },
-          {
             id: 1,
             tile: "great_castle/lv_yor_greatcs_t_ps_1_{y}x{x}.webp",
             full: "great_castle/lv_yor_greatcs_t_ps_1_full.webp",
@@ -5679,12 +5673,6 @@ export const continents: Continent[] = [
             full: "unfinished_garden/lv_yor_ugarden_f_ps_1_full.webp",
             max: [2, 2],
           },
-          {
-            id: 3,
-            tile: "unfinished_garden/lv_yor_ugarden_f_ps_3_{y}x{x}.webp",
-            full: "unfinished_garden/lv_yor_ugarden_f_ps_3_full.webp",
-            max: [2, 2],
-          },
         ],
       },
       {
@@ -5692,28 +5680,10 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "black_anvil_mine/lv_yor_firstwp_f_ps_0_{y}x{x}.webp",
-            full: "black_anvil_mine/lv_yor_firstwp_f_ps_0_full.webp",
-            max: [2, 3],
-          },
-          {
             id: 1,
             tile: "black_anvil_mine/lv_yor_firstwp_f_ps_1_{y}x{x}.webp",
             full: "black_anvil_mine/lv_yor_firstwp_f_ps_1_full.webp",
-            max: [7, 7],
-          },
-          {
-            id: 2,
-            tile: "black_anvil_mine/lv_yor_firstwp_f_ps_2_{y}x{x}.webp",
-            full: "black_anvil_mine/lv_yor_firstwp_f_ps_2_full.webp",
-            max: [3, 2],
-          },
-          {
-            id: 3,
-            tile: "black_anvil_mine/lv_yor_firstwp_f_ps_3_{y}x{x}.webp",
-            full: "black_anvil_mine/lv_yor_firstwp_f_ps_3_full.webp",
-            max: [2, 2],
+            max: [6, 6],
           },
         ],
       },
