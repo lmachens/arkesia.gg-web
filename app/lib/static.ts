@@ -1079,6 +1079,54 @@ export const continents: Continent[] = [
     name: "Sailing Voyage",
     areas: [
       {
+        name: "Isteri Island",
+        category: "Continent",
+        tiles: [
+          {
+            id: 0,
+            tile: "isteri_island/lv_ocn_iphisis_ps_0_{y}x{x}.webp",
+            full: "isteri_island/lv_ocn_iphisis_ps_0_full.webp",
+            max: [2, 2],
+          },
+          {
+            id: 1,
+            tile: "isteri_island/lv_ocn_iphisid_ps_0_{y}x{x}.webp",
+            full: "isteri_island/lv_ocn_iphisid_ps_0_full.webp",
+            max: [2, 2],
+          },
+        ],
+      },
+      {
+        name: "Bamboo Island",
+        category: "Continent",
+        tiles: [
+          {
+            id: 0,
+            tile: "bamboo_island/lv_ocn_illubamis_ps_0_{y}x{x}.webp",
+            full: "bamboo_island/lv_ocn_illubamis_ps_0_full.webp",
+            max: [2, 2],
+          },
+          {
+            id: 1,
+            tile: "bamboo_island/lv_ocn_illubamis_ps_1_{y}x{x}.webp",
+            full: "bamboo_island/lv_ocn_illubamis_ps_1_full.webp",
+            max: [2, 2],
+          },
+          {
+            id: 2,
+            tile: "bamboo_island/lv_ocn_illubamis_ps_2_{y}x{x}.webp",
+            full: "bamboo_island/lv_ocn_illubamis_ps_2_full.webp",
+            max: [2, 2],
+          },
+          {
+            id: 3,
+            tile: "bamboo_island/lv_ocn_illubamis_ps_3_{y}x{x}.webp",
+            full: "bamboo_island/lv_ocn_illubamis_ps_3_full.webp",
+            max: [1, 1],
+          },
+        ],
+      },
+      {
         name: "Dark Chaos Gate",
         category: "Continent",
         tiles: [
@@ -3020,18 +3068,6 @@ export const continents: Continent[] = [
             max: [4, 3],
           },
           {
-            id: 5,
-            tile: "rothun/lv_rhd_loa_t_ps_5_{y}x{x}.webp",
-            full: "rothun/lv_rhd_loa_t_ps_5_full.webp",
-            max: [3, 3],
-          },
-          {
-            id: 6,
-            tile: "rothun/lv_rhd_loa_t_ps_6_{y}x{x}.webp",
-            full: "rothun/lv_rhd_loa_t_ps_6_full.webp",
-            max: [3, 3],
-          },
-          {
             id: 7,
             tile: "rothun/lv_rhd_loa_t_ps_7_{y}x{x}.webp",
             full: "rothun/lv_rhd_loa_t_ps_7_full.webp",
@@ -3062,28 +3098,16 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "lake_shiverwave/lv_rhd_silverl_f_ps_0_{y}x{x}.webp",
-            full: "lake_shiverwave/lv_rhd_silverl_f_ps_0_full.webp",
-            max: [3, 3],
-          },
-          {
-            id: 1,
-            tile: "lake_shiverwave/lv_rhd_silverl_f_ps_1_{y}x{x}.webp",
-            full: "lake_shiverwave/lv_rhd_silverl_f_ps_1_full.webp",
-            max: [5, 5],
-          },
-          {
             id: 2,
             tile: "lake_shiverwave/lv_rhd_silverl_f_ps_2_{y}x{x}.webp",
             full: "lake_shiverwave/lv_rhd_silverl_f_ps_2_full.webp",
             max: [8, 8],
           },
           {
-            id: 3,
-            tile: "lake_shiverwave/lv_rhd_silverl_f_ps_3_{y}x{x}.webp",
-            full: "lake_shiverwave/lv_rhd_silverl_f_ps_3_full.webp",
-            max: [3, 3],
+            id: 1,
+            tile: "lake_shiverwave/lv_rhd_silverl_f_ps_1_{y}x{x}.webp",
+            full: "lake_shiverwave/lv_rhd_silverl_f_ps_1_full.webp",
+            max: [5, 5],
           },
         ],
       },
@@ -3098,22 +3122,10 @@ export const continents: Continent[] = [
             max: [6, 6],
           },
           {
-            id: 1,
-            tile: "glass_lotus_lake/lv_rhd_lotusap_f_ps_1_{y}x{x}.webp",
-            full: "glass_lotus_lake/lv_rhd_lotusap_f_ps_1_full.webp",
-            max: [1, 1],
-          },
-          {
             id: 2,
             tile: "glass_lotus_lake/lv_rhd_lotusap_f_ps_2_{y}x{x}.webp",
             full: "glass_lotus_lake/lv_rhd_lotusap_f_ps_2_full.webp",
             max: [2, 2],
-          },
-          {
-            id: 3,
-            tile: "glass_lotus_lake/lv_rhd_lotusap_f_ps_3_{y}x{x}.webp",
-            full: "glass_lotus_lake/lv_rhd_lotusap_f_ps_3_full.webp",
-            max: [1, 1],
           },
         ],
       },
@@ -3121,12 +3133,6 @@ export const continents: Continent[] = [
         name: "Breezesome Brae",
         category: "Continent",
         tiles: [
-          {
-            id: 0,
-            tile: "breezesome_brae/lv_rhd_breezeap_f_ps_0_{y}x{x}.webp",
-            full: "breezesome_brae/lv_rhd_breezeap_f_ps_0_full.webp",
-            max: [1, 1],
-          },
           {
             id: 2,
             tile: "breezesome_brae/lv_rhd_breezeap_f_ps_2_{y}x{x}.webp",
@@ -3146,27 +3152,9 @@ export const continents: Continent[] = [
             max: [5, 5],
           },
           {
-            id: 1,
-            tile: "xeneela_ruins/lv_rhd_zenail_f_ps_1_{y}x{x}.webp",
-            full: "xeneela_ruins/lv_rhd_zenail_f_ps_1_full.webp",
-            max: [1, 1],
-          },
-          {
             id: 2,
             tile: "xeneela_ruins/lv_rhd_zenail_f_ps_2_{y}x{x}.webp",
             full: "xeneela_ruins/lv_rhd_zenail_f_ps_2_full.webp",
-            max: [5, 5],
-          },
-          {
-            id: 3,
-            tile: "xeneela_ruins/lv_rhd_zenail_f_ps_3_{y}x{x}.webp",
-            full: "xeneela_ruins/lv_rhd_zenail_f_ps_3_full.webp",
-            max: [3, 3],
-          },
-          {
-            id: 4,
-            tile: "xeneela_ruins/lv_rhd_zenail_f_ps_4_{y}x{x}.webp",
-            full: "xeneela_ruins/lv_rhd_zenail_f_ps_4_full.webp",
             max: [5, 5],
           },
         ],
@@ -5004,18 +4992,6 @@ export const continents: Continent[] = [
             full: "kalaja/lv_fat_karlajavil_t_ps_5_full.webp",
             max: [2, 2],
           },
-          {
-            id: 6,
-            tile: "kalaja/lv_fat_karlajavil_t_ps_6_{y}x{x}.webp",
-            full: "kalaja/lv_fat_karlajavil_t_ps_6_full.webp",
-            max: [2, 1],
-          },
-          {
-            id: 7,
-            tile: "kalaja/lv_fat_karlajavil_t_ps_7_{y}x{x}.webp",
-            full: "kalaja/lv_fat_karlajavil_t_ps_7_full.webp",
-            max: [1, 2],
-          },
         ],
       },
       {
@@ -5023,34 +4999,22 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "nameless_valley/lv_fat_unravin_f_ps_0_{y}x{x}.webp",
-            full: "nameless_valley/lv_fat_unravin_f_ps_0_full.webp",
-            max: [6, 6],
-          },
-          {
             id: 1,
             tile: "nameless_valley/lv_fat_unravin_f_ps_1_{y}x{x}.webp",
             full: "nameless_valley/lv_fat_unravin_f_ps_1_full.webp",
             max: [5, 6],
           },
           {
+            id: 0,
+            tile: "nameless_valley/lv_fat_unravin_f_ps_0_{y}x{x}.webp",
+            full: "nameless_valley/lv_fat_unravin_f_ps_0_full.webp",
+            max: [3, 3],
+          },
+          {
             id: 2,
             tile: "nameless_valley/lv_fat_unravin_f_ps_2_{y}x{x}.webp",
             full: "nameless_valley/lv_fat_unravin_f_ps_2_full.webp",
             max: [4, 4],
-          },
-          {
-            id: 3,
-            tile: "nameless_valley/lv_fat_unravin_f_ps_3_{y}x{x}.webp",
-            full: "nameless_valley/lv_fat_unravin_f_ps_3_full.webp",
-            max: [1, 2],
-          },
-          {
-            id: 4,
-            tile: "nameless_valley/lv_fat_unravin_f_ps_4_{y}x{x}.webp",
-            full: "nameless_valley/lv_fat_unravin_f_ps_4_full.webp",
-            max: [1, 2],
           },
         ],
       },
@@ -5369,16 +5333,16 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "rania_village/lv_ber_raniat_t_ps_0_{y}x{x}.webp",
-            full: "rania_village/lv_ber_raniat_t_ps_0_full.webp",
-            max: [3, 4],
-          },
-          {
             id: 1,
             tile: "rania_village/lv_ber_raniat_t_ps_1_{y}x{x}.webp",
             full: "rania_village/lv_ber_raniat_t_ps_1_full.webp",
             max: [4, 5],
+          },
+          {
+            id: 0,
+            tile: "rania_village/lv_ber_raniat_t_ps_0_{y}x{x}.webp",
+            full: "rania_village/lv_ber_raniat_t_ps_0_full.webp",
+            max: [3, 4],
           },
           {
             id: 2,
@@ -5409,12 +5373,6 @@ export const continents: Continent[] = [
             tile: "rania_village/lv_ber_raniat_t_ps_7_{y}x{x}.webp",
             full: "rania_village/lv_ber_raniat_t_ps_7_full.webp",
             max: [3, 2],
-          },
-          {
-            id: 8,
-            tile: "rania_village/lv_ber_raniat_t_ps_8_{y}x{x}.webp",
-            full: "rania_village/lv_ber_raniat_t_ps_8_full.webp",
-            max: [3, 3],
           },
           {
             id: 10,
@@ -5507,16 +5465,16 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "port_krona/lv_ber_kronap_f_ps_0_{y}x{x}.webp",
-            full: "port_krona/lv_ber_kronap_f_ps_0_full.webp",
-            max: [1, 1],
-          },
-          {
             id: 1,
             tile: "port_krona/lv_ber_kronap_f_ps_1_{y}x{x}.webp",
             full: "port_krona/lv_ber_kronap_f_ps_1_full.webp",
             max: [6, 6],
+          },
+          {
+            id: 0,
+            tile: "port_krona/lv_ber_kronap_f_ps_0_{y}x{x}.webp",
+            full: "port_krona/lv_ber_kronap_f_ps_0_full.webp",
+            max: [1, 1],
           },
         ],
       },
@@ -5702,18 +5660,6 @@ export const continents: Continent[] = [
             tile: "yorns_cradle/lv_yor_lbeginning_f_ps_1_{y}x{x}.webp",
             full: "yorns_cradle/lv_yor_lbeginning_f_ps_1_full.webp",
             max: [1, 1],
-          },
-          {
-            id: 2,
-            tile: "yorns_cradle/lv_yor_lbeginning_f_ps_2_{y}x{x}.webp",
-            full: "yorns_cradle/lv_yor_lbeginning_f_ps_2_full.webp",
-            max: [2, 1],
-          },
-          {
-            id: 3,
-            tile: "yorns_cradle/lv_yor_lbeginning_f_ps_3_{y}x{x}.webp",
-            full: "yorns_cradle/lv_yor_lbeginning_f_ps_3_full.webp",
-            max: [2, 3],
           },
           {
             id: 4,
