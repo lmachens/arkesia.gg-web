@@ -139,9 +139,16 @@ export default function TileControl({
               const transitToLocation =
                 nodeLocation.areaNode.transitTo.areaNodeLocations[0];
               const continent = areaContinents[transitToLocation.areaName];
-              navigate(
-                `/maps/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}&node=${nodeLocation.areaNode.transitTo.id}&location=${transitToLocation.id}&hideDetails=true`
-              );
+              if (
+                nodeLocation.areaName === "Arkesia" &&
+                transitToLocation.areaName !== "Arkesia"
+              ) {
+                navigate(`/maps/${continent}/${transitToLocation.areaName}`);
+              } else {
+                navigate(
+                  `/maps/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}&node=${nodeLocation.areaNode.transitTo.id}&location=${transitToLocation.id}&hideDetails=true`
+                );
+              }
             },
           }}
         >
