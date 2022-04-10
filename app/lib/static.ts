@@ -5662,18 +5662,6 @@ export const continents: Continent[] = [
             max: [1, 1],
           },
           {
-            id: 2,
-            tile: "yorns_cradle/lv_yor_lbeginning_f_ps_2_{y}x{x}.webp",
-            full: "yorns_cradle/lv_yor_lbeginning_f_ps_2_full.webp",
-            max: [2, 1],
-          },
-          {
-            id: 3,
-            tile: "yorns_cradle/lv_yor_lbeginning_f_ps_3_{y}x{x}.webp",
-            full: "yorns_cradle/lv_yor_lbeginning_f_ps_3_full.webp",
-            max: [2, 3],
-          },
-          {
             id: 4,
             tile: "yorns_cradle/lv_yor_lbeginning_f_ps_4_{y}x{x}.webp",
             full: "yorns_cradle/lv_yor_lbeginning_f_ps_4_full.webp",
