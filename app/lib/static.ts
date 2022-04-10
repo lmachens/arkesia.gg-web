@@ -5004,18 +5004,6 @@ export const continents: Continent[] = [
             full: "kalaja/lv_fat_karlajavil_t_ps_5_full.webp",
             max: [2, 2],
           },
-          {
-            id: 6,
-            tile: "kalaja/lv_fat_karlajavil_t_ps_6_{y}x{x}.webp",
-            full: "kalaja/lv_fat_karlajavil_t_ps_6_full.webp",
-            max: [2, 1],
-          },
-          {
-            id: 7,
-            tile: "kalaja/lv_fat_karlajavil_t_ps_7_{y}x{x}.webp",
-            full: "kalaja/lv_fat_karlajavil_t_ps_7_full.webp",
-            max: [1, 2],
-          },
         ],
       },
       {
@@ -5023,34 +5011,22 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "nameless_valley/lv_fat_unravin_f_ps_0_{y}x{x}.webp",
-            full: "nameless_valley/lv_fat_unravin_f_ps_0_full.webp",
-            max: [6, 6],
-          },
-          {
             id: 1,
             tile: "nameless_valley/lv_fat_unravin_f_ps_1_{y}x{x}.webp",
             full: "nameless_valley/lv_fat_unravin_f_ps_1_full.webp",
             max: [5, 6],
           },
           {
+            id: 0,
+            tile: "nameless_valley/lv_fat_unravin_f_ps_0_{y}x{x}.webp",
+            full: "nameless_valley/lv_fat_unravin_f_ps_0_full.webp",
+            max: [3, 3],
+          },
+          {
             id: 2,
             tile: "nameless_valley/lv_fat_unravin_f_ps_2_{y}x{x}.webp",
             full: "nameless_valley/lv_fat_unravin_f_ps_2_full.webp",
             max: [4, 4],
-          },
-          {
-            id: 3,
-            tile: "nameless_valley/lv_fat_unravin_f_ps_3_{y}x{x}.webp",
-            full: "nameless_valley/lv_fat_unravin_f_ps_3_full.webp",
-            max: [1, 2],
-          },
-          {
-            id: 4,
-            tile: "nameless_valley/lv_fat_unravin_f_ps_4_{y}x{x}.webp",
-            full: "nameless_valley/lv_fat_unravin_f_ps_4_full.webp",
-            max: [1, 2],
           },
         ],
       },
@@ -5369,16 +5345,16 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "rania_village/lv_ber_raniat_t_ps_0_{y}x{x}.webp",
-            full: "rania_village/lv_ber_raniat_t_ps_0_full.webp",
-            max: [3, 4],
-          },
-          {
             id: 1,
             tile: "rania_village/lv_ber_raniat_t_ps_1_{y}x{x}.webp",
             full: "rania_village/lv_ber_raniat_t_ps_1_full.webp",
             max: [4, 5],
+          },
+          {
+            id: 0,
+            tile: "rania_village/lv_ber_raniat_t_ps_0_{y}x{x}.webp",
+            full: "rania_village/lv_ber_raniat_t_ps_0_full.webp",
+            max: [3, 4],
           },
           {
             id: 2,
@@ -5409,12 +5385,6 @@ export const continents: Continent[] = [
             tile: "rania_village/lv_ber_raniat_t_ps_7_{y}x{x}.webp",
             full: "rania_village/lv_ber_raniat_t_ps_7_full.webp",
             max: [3, 2],
-          },
-          {
-            id: 8,
-            tile: "rania_village/lv_ber_raniat_t_ps_8_{y}x{x}.webp",
-            full: "rania_village/lv_ber_raniat_t_ps_8_full.webp",
-            max: [3, 3],
           },
           {
             id: 10,
@@ -5507,16 +5477,16 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "port_krona/lv_ber_kronap_f_ps_0_{y}x{x}.webp",
-            full: "port_krona/lv_ber_kronap_f_ps_0_full.webp",
-            max: [1, 1],
-          },
-          {
             id: 1,
             tile: "port_krona/lv_ber_kronap_f_ps_1_{y}x{x}.webp",
             full: "port_krona/lv_ber_kronap_f_ps_1_full.webp",
             max: [6, 6],
+          },
+          {
+            id: 0,
+            tile: "port_krona/lv_ber_kronap_f_ps_0_{y}x{x}.webp",
+            full: "port_krona/lv_ber_kronap_f_ps_0_full.webp",
+            max: [1, 1],
           },
         ],
       },
