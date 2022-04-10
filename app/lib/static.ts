@@ -1097,6 +1097,36 @@ export const continents: Continent[] = [
         ],
       },
       {
+        name: "Bamboo Island",
+        category: "Continent",
+        tiles: [
+          {
+            id: 0,
+            tile: "bamboo_island/lv_ocn_illubamis_ps_0_{y}x{x}.webp",
+            full: "bamboo_island/lv_ocn_illubamis_ps_0_full.webp",
+            max: [2, 2],
+          },
+          {
+            id: 1,
+            tile: "bamboo_island/lv_ocn_illubamis_ps_1_{y}x{x}.webp",
+            full: "bamboo_island/lv_ocn_illubamis_ps_1_full.webp",
+            max: [2, 2],
+          },
+          {
+            id: 2,
+            tile: "bamboo_island/lv_ocn_illubamis_ps_2_{y}x{x}.webp",
+            full: "bamboo_island/lv_ocn_illubamis_ps_2_full.webp",
+            max: [2, 2],
+          },
+          {
+            id: 3,
+            tile: "bamboo_island/lv_ocn_illubamis_ps_3_{y}x{x}.webp",
+            full: "bamboo_island/lv_ocn_illubamis_ps_3_full.webp",
+            max: [1, 1],
+          },
+        ],
+      },
+      {
         name: "Dark Chaos Gate",
         category: "Continent",
         tiles: [
