@@ -26,7 +26,7 @@ export default function MapView({ area }: { area: Area }) {
   const setEditingNodeLocation = useSetEditingNodeLocation();
 
   const tileParam = searchParams.get("tile");
-  const tileId = tileParam ? +tileParam : 0;
+  const tileId = tileParam ? +tileParam : null;
   const hideDetails = searchParams.get("hideDetails");
   const nodeParam = searchParams.get("node");
   const nodeId = nodeParam ? +nodeParam : null;

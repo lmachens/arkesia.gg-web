@@ -982,7 +982,8 @@ export const nodeTypes = nodeCategories
     nodeCategory.types.map<AreaNodeType>((nodeType) => ({
       ...nodeType,
       category: nodeCategory.name,
-      hideInSummary: nodeType.hideInSummary || nodeCategory.hideInSummary || false
+      hideInSummary:
+        nodeType.hideInSummary || nodeCategory.hideInSummary || false,
     }))
   )
   .flat();
@@ -1142,18 +1143,6 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "toto_silver_island/lv_ocn_totosilveris_ps_0_{y}x{x}.webp",
-            full: "toto_silver_island/lv_ocn_totosilveris_ps_0_full.webp",
-            max: [4, 4],
-          },
-          {
-            id: 1,
-            tile: "toto_silver_island/lv_ocn_totosilveris_ps_1_{y}x{x}.webp",
-            full: "toto_silver_island/lv_ocn_totosilveris_ps_1_full.webp",
-            max: [1, 1],
-          },
-          {
             id: 2,
             tile: "toto_silver_island/lv_ocn_totosilveris_ps_2_{y}x{x}.webp",
             full: "toto_silver_island/lv_ocn_totosilveris_ps_2_full.webp",
@@ -1165,12 +1154,6 @@ export const continents: Continent[] = [
         name: "Totopia",
         category: "Continent",
         tiles: [
-          {
-            id: 0,
-            tile: "totopia/lv_ocn_totopia_ps_0_{y}x{x}.webp",
-            full: "totopia/lv_ocn_totopia_ps_0_full.webp",
-            max: [2, 2],
-          },
           {
             id: 3,
             tile: "totopia/lv_ocn_totopia_ps_3_{y}x{x}.webp",
@@ -1256,12 +1239,6 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "island_of_time/lv_ocn_timeis_ps_0_{y}x{x}.webp",
-            full: "island_of_time/lv_ocn_timeis_ps_0_full.webp",
-            max: [2, 2],
-          },
-          {
             id: 1,
             tile: "island_of_time/lv_ocn_timeis_ps_1_{y}x{x}.webp",
             full: "island_of_time/lv_ocn_timeis_ps_1_full.webp",
@@ -1297,18 +1274,6 @@ export const continents: Continent[] = [
         name: "Isle of Yearning",
         category: "Continent",
         tiles: [
-          {
-            id: 0,
-            tile: "isle_of_yearning/lv_ocn_longingis_ps_0_{y}x{x}.webp",
-            full: "isle_of_yearning/lv_ocn_longingis_ps_0_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 1,
-            tile: "isle_of_yearning/lv_ocn_longingis_ps_1_{y}x{x}.webp",
-            full: "isle_of_yearning/lv_ocn_longingis_ps_1_full.webp",
-            max: [4, 4],
-          },
           {
             id: 6,
             tile: "isle_of_yearning/lv_ocn_longingis_ps_6_{y}x{x}.webp",
@@ -1508,34 +1473,10 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "forpe/lv_ocn_forpeis_ps_0_{y}x{x}.webp",
-            full: "forpe/lv_ocn_forpeis_ps_0_full.webp",
-            max: [2, 1],
-          },
-          {
             id: 2,
             tile: "forpe/lv_ocn_forpeis_ps_2_{y}x{x}.webp",
             full: "forpe/lv_ocn_forpeis_ps_2_full.webp",
             max: [3, 3],
-          },
-          {
-            id: 3,
-            tile: "forpe/lv_ocn_forpeis_ps_3_{y}x{x}.webp",
-            full: "forpe/lv_ocn_forpeis_ps_3_full.webp",
-            max: [1, 2],
-          },
-          {
-            id: 4,
-            tile: "forpe/lv_ocn_forpeis_ps_4_{y}x{x}.webp",
-            full: "forpe/lv_ocn_forpeis_ps_4_full.webp",
-            max: [1, 2],
-          },
-          {
-            id: 5,
-            tile: "forpe/lv_ocn_forpeis_ps_5_{y}x{x}.webp",
-            full: "forpe/lv_ocn_forpeis_ps_5_full.webp",
-            max: [1, 2],
           },
         ],
       },
@@ -1550,12 +1491,6 @@ export const continents: Continent[] = [
             max: [2, 2],
           },
           {
-            id: 1,
-            tile: "peyto/lv_ocn_peyto_ps_1_{y}x{x}.webp",
-            full: "peyto/lv_ocn_peyto_ps_1_full.webp",
-            max: [1, 2],
-          },
-          {
             id: 2,
             tile: "peyto/lv_ocn_peyto_ps_2_{y}x{x}.webp",
             full: "peyto/lv_ocn_peyto_ps_2_full.webp",
@@ -1566,12 +1501,6 @@ export const continents: Continent[] = [
             tile: "peyto/lv_ocn_peyto_ps_3_{y}x{x}.webp",
             full: "peyto/lv_ocn_peyto_ps_3_full.webp",
             max: [2, 2],
-          },
-          {
-            id: 4,
-            tile: "peyto/lv_ocn_peyto_ps_4_{y}x{x}.webp",
-            full: "peyto/lv_ocn_peyto_ps_4_full.webp",
-            max: [10, 10],
           },
           {
             id: 5,
@@ -1615,12 +1544,6 @@ export const continents: Continent[] = [
             full: "blackfangs_den/lv_ocn_blackteethis_ps_1_full.webp",
             max: [2, 2],
           },
-          {
-            id: 0,
-            tile: "blackfangs_den/lv_ocn_blackteethis_fav_ps_0_{y}x{x}.webp",
-            full: "blackfangs_den/lv_ocn_blackteethis_fav_ps_0_full.webp",
-            max: [2, 2],
-          },
         ],
       },
       {
@@ -1633,24 +1556,12 @@ export const continents: Continent[] = [
             full: "gravis/lv_ocn_gravis_ps_0_full.webp",
             max: [4, 4],
           },
-          {
-            id: 7,
-            tile: "gravis/lv_ocn_gravis_ps_7_{y}x{x}.webp",
-            full: "gravis/lv_ocn_gravis_ps_7_full.webp",
-            max: [2, 2],
-          },
         ],
       },
       {
         name: "Opher, the Lonely Island",
         category: "Continent",
         tiles: [
-          {
-            id: 0,
-            tile: "opher_the_lonely_island/lv_ocn_opher_ps_0_{y}x{x}.webp",
-            full: "opher_the_lonely_island/lv_ocn_opher_ps_0_full.webp",
-            max: [4, 4],
-          },
           {
             id: 3,
             tile: "opher_the_lonely_island/lv_ocn_opher_ps_3_{y}x{x}.webp",
@@ -1676,6 +1587,12 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
+            id: 4,
+            tile: "freedom_isle/lv_ocn_freedomis_ps_4_{y}x{x}.webp",
+            full: "freedom_isle/lv_ocn_freedomis_ps_4_full.webp",
+            max: [3, 3],
+          },
+          {
             id: 0,
             tile: "freedom_isle/lv_ocn_freedomis_ps_0_{y}x{x}.webp",
             full: "freedom_isle/lv_ocn_freedomis_ps_0_full.webp",
@@ -1698,12 +1615,6 @@ export const continents: Continent[] = [
             tile: "freedom_isle/lv_ocn_freedomis_ps_3_{y}x{x}.webp",
             full: "freedom_isle/lv_ocn_freedomis_ps_3_full.webp",
             max: [2, 2],
-          },
-          {
-            id: 4,
-            tile: "freedom_isle/lv_ocn_freedomis_ps_4_{y}x{x}.webp",
-            full: "freedom_isle/lv_ocn_freedomis_ps_4_full.webp",
-            max: [3, 3],
           },
         ],
       },
@@ -1748,6 +1659,12 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
+            id: 10,
+            tile: "distorted_island/lv_ocn_distortedis_ps_10_{y}x{x}.webp",
+            full: "distorted_island/lv_ocn_distortedis_ps_10_full.webp",
+            max: [2, 2],
+          },
+          {
             id: 0,
             tile: "distorted_island/lv_ocn_distortedis_ps_0_{y}x{x}.webp",
             full: "distorted_island/lv_ocn_distortedis_ps_0_full.webp",
@@ -1758,12 +1675,6 @@ export const continents: Continent[] = [
             tile: "distorted_island/lv_ocn_distortedis_ps_1_{y}x{x}.webp",
             full: "distorted_island/lv_ocn_distortedis_ps_1_full.webp",
             max: [3, 3],
-          },
-          {
-            id: 10,
-            tile: "distorted_island/lv_ocn_distortedis_ps_10_{y}x{x}.webp",
-            full: "distorted_island/lv_ocn_distortedis_ps_10_full.webp",
-            max: [2, 2],
           },
         ],
       },
@@ -1883,7 +1794,7 @@ export const continents: Continent[] = [
             id: 0,
             tile: "wisdom_isle/lv_ocn_wisdomis_ps_0_{y}x{x}.webp",
             full: "wisdom_isle/lv_ocn_wisdomis_ps_0_full.webp",
-            max: [3, 3],
+            max: [2, 2],
           },
           {
             id: 1,
@@ -1898,12 +1809,6 @@ export const continents: Continent[] = [
             max: [4, 2],
           },
           {
-            id: 3,
-            tile: "wisdom_isle/lv_ocn_wisdomis_ps_3_{y}x{x}.webp",
-            full: "wisdom_isle/lv_ocn_wisdomis_ps_3_full.webp",
-            max: [2, 2],
-          },
-          {
             id: 10,
             tile: "wisdom_isle/lv_ocn_wisdomis_ps_10_{y}x{x}.webp",
             full: "wisdom_isle/lv_ocn_wisdomis_ps_10_full.webp",
@@ -1914,18 +1819,6 @@ export const continents: Continent[] = [
             tile: "wisdom_isle/lv_ocn_wisdomis_ps_11_{y}x{x}.webp",
             full: "wisdom_isle/lv_ocn_wisdomis_ps_11_full.webp",
             max: [1, 1],
-          },
-          {
-            id: 12,
-            tile: "wisdom_isle/lv_ocn_wisdomis_ps_12_{y}x{x}.webp",
-            full: "wisdom_isle/lv_ocn_wisdomis_ps_12_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 13,
-            tile: "wisdom_isle/lv_ocn_wisdomis_ps_13_{y}x{x}.webp",
-            full: "wisdom_isle/lv_ocn_wisdomis_ps_13_full.webp",
-            max: [2, 2],
           },
         ],
       },
@@ -2030,88 +1923,10 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "monte_island/lv_ocn_monteis_ps_0_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_0_full.webp",
-            max: [2, 2],
-          },
-          {
             id: 1,
             tile: "monte_island/lv_ocn_monteis_ps_1_{y}x{x}.webp",
             full: "monte_island/lv_ocn_monteis_ps_1_full.webp",
             max: [8, 8],
-          },
-          {
-            id: 2,
-            tile: "monte_island/lv_ocn_monteis_ps_2_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_2_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 3,
-            tile: "monte_island/lv_ocn_monteis_ps_3_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_3_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 4,
-            tile: "monte_island/lv_ocn_monteis_ps_4_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_4_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 5,
-            tile: "monte_island/lv_ocn_monteis_ps_5_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_5_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 6,
-            tile: "monte_island/lv_ocn_monteis_ps_6_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_6_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 7,
-            tile: "monte_island/lv_ocn_monteis_ps_7_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_7_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 8,
-            tile: "monte_island/lv_ocn_monteis_ps_8_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_8_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 9,
-            tile: "monte_island/lv_ocn_monteis_ps_9_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_9_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 10,
-            tile: "monte_island/lv_ocn_monteis_ps_10_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_10_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 11,
-            tile: "monte_island/lv_ocn_monteis_ps_11_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_11_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 12,
-            tile: "monte_island/lv_ocn_monteis_ps_12_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_12_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 13,
-            tile: "monte_island/lv_ocn_monteis_ps_13_{y}x{x}.webp",
-            full: "monte_island/lv_ocn_monteis_ps_13_full.webp",
-            max: [2, 2],
           },
         ],
       },
@@ -2204,22 +2019,16 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 4,
-            tile: "lagoon_island/lv_ocn_bhislandis_ps_4_{y}x{x}.webp",
-            full: "lagoon_island/lv_ocn_bhislandis_ps_4_full.webp",
-            max: [2, 2],
+            id: 6,
+            tile: "lagoon_island/lv_ocn_bhislandis_ps_6_{y}x{x}.webp",
+            full: "lagoon_island/lv_ocn_bhislandis_ps_6_full.webp",
+            max: [3, 3],
           },
           {
             id: 5,
             tile: "lagoon_island/lv_ocn_bhislandis_ps_5_{y}x{x}.webp",
             full: "lagoon_island/lv_ocn_bhislandis_ps_5_full.webp",
             max: [2, 2],
-          },
-          {
-            id: 6,
-            tile: "lagoon_island/lv_ocn_bhislandis_ps_6_{y}x{x}.webp",
-            full: "lagoon_island/lv_ocn_bhislandis_ps_6_full.webp",
-            max: [3, 3],
           },
         ],
       },
@@ -2293,12 +2102,6 @@ export const continents: Continent[] = [
             full: "eternity_isle/lv_ocn_brokengis_ps_1_full.webp",
             max: [1, 1],
           },
-          {
-            id: 2,
-            tile: "eternity_isle/lv_ocn_brokengis_ps_2_{y}x{x}.webp",
-            full: "eternity_isle/lv_ocn_brokengis_ps_2_full.webp",
-            max: [3, 3],
-          },
         ],
       },
       {
@@ -2354,16 +2157,16 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "sublime_isle/lv_ocn_atalanteis_ps_0_{y}x{x}.webp",
-            full: "sublime_isle/lv_ocn_atalanteis_ps_0_full.webp",
-            max: [3, 3],
-          },
-          {
             id: 2,
             tile: "sublime_isle/lv_ocn_atalanteis_ps_2_{y}x{x}.webp",
             full: "sublime_isle/lv_ocn_atalanteis_ps_2_full.webp",
             max: [1, 1],
+          },
+          {
+            id: 0,
+            tile: "sublime_isle/lv_ocn_atalanteis_ps_0_{y}x{x}.webp",
+            full: "sublime_isle/lv_ocn_atalanteis_ps_0_full.webp",
+            max: [3, 3],
           },
         ],
       },
@@ -2383,18 +2186,6 @@ export const continents: Continent[] = [
         name: "Orvis Island",
         category: "Continent",
         tiles: [
-          {
-            id: 0,
-            tile: "orvis_island/lv_ocn_orbisis_ps_0_{y}x{x}.webp",
-            full: "orvis_island/lv_ocn_orbisis_ps_0_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 1,
-            tile: "orvis_island/lv_ocn_orbisis_ps_1_{y}x{x}.webp",
-            full: "orvis_island/lv_ocn_orbisis_ps_1_full.webp",
-            max: [2, 2],
-          },
           {
             id: 2,
             tile: "orvis_island/lv_ocn_orbisis_ps_2_{y}x{x}.webp",
@@ -2475,15 +2266,9 @@ export const continents: Continent[] = [
         tiles: [
           {
             id: 0,
-            tile: "primal_island/lv_ocn_beginningis_ps_0_{y}x{x}.webp",
-            full: "primal_island/lv_ocn_beginningis_ps_0_full.webp",
-            max: [6, 6],
-          },
-          {
-            id: 11,
-            tile: "primal_island/lv_ocn_beginningis_ps_11_{y}x{x}.webp",
-            full: "primal_island/lv_ocn_beginningis_ps_11_full.webp",
-            max: [5, 5],
+            tile: "primal_island/lv_ocn_beginningis_custom_0_{y}x{x}.webp",
+            full: "primal_island/lv_ocn_beginningis_custom_0_full.webp",
+            max: [3, 3],
           },
         ],
       },
@@ -2504,28 +2289,16 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "boombling_island/lv_ocn_bombis_ps_0_{y}x{x}.webp",
-            full: "boombling_island/lv_ocn_bombis_ps_0_full.webp",
-            max: [3, 2],
-          },
-          {
-            id: 1,
-            tile: "boombling_island/lv_ocn_bombis_ps_1_{y}x{x}.webp",
-            full: "boombling_island/lv_ocn_bombis_ps_1_full.webp",
-            max: [3, 3],
+            id: 8,
+            tile: "boombling_island/lv_ocn_bombis_ps_8_{y}x{x}.webp",
+            full: "boombling_island/lv_ocn_bombis_ps_8_full.webp",
+            max: [2, 2],
           },
           {
             id: 7,
             tile: "boombling_island/lv_ocn_bombis_ps_7_{y}x{x}.webp",
             full: "boombling_island/lv_ocn_bombis_ps_7_full.webp",
             max: [1, 1],
-          },
-          {
-            id: 8,
-            tile: "boombling_island/lv_ocn_bombis_ps_8_{y}x{x}.webp",
-            full: "boombling_island/lv_ocn_bombis_ps_8_full.webp",
-            max: [2, 2],
           },
         ],
       },
@@ -2546,15 +2319,9 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "revelry_row/lv_ocn_avenueis_ps_0_{y}x{x}.webp",
-            full: "revelry_row/lv_ocn_avenueis_ps_0_full.webp",
-            max: [2, 2],
-          },
-          {
             id: 4,
             tile: "revelry_row/lv_ocn_avenueis_ps_4_{y}x{x}.webp",
-            full: "revelry_row/lv_ocn_avenueis_ps_4_full.webp",
+            full: "revelry_row/lv_ocn_avenueis_ps_0_full.webp",
             max: [3, 3],
           },
         ],
@@ -2630,12 +2397,6 @@ export const continents: Continent[] = [
         category: "Continent",
         tiles: [
           {
-            id: 0,
-            tile: "azure_wind_island/lv_ocn_blueis_ps_0_{y}x{x}.webp",
-            full: "azure_wind_island/lv_ocn_blueis_ps_0_full.webp",
-            max: [3, 2],
-          },
-          {
             id: 1,
             tile: "azure_wind_island/lv_ocn_blueis_ps_1_{y}x{x}.webp",
             full: "azure_wind_island/lv_ocn_blueis_ps_1_full.webp",
@@ -2651,7 +2412,7 @@ export const continents: Continent[] = [
             id: 3,
             tile: "azure_wind_island/lv_ocn_blueis_ps_3_{y}x{x}.webp",
             full: "azure_wind_island/lv_ocn_blueis_ps_3_full.webp",
-            max: [3, 4],
+            max: [2, 2],
           },
           {
             id: 4,
@@ -2684,28 +2445,10 @@ export const continents: Continent[] = [
             max: [3, 3],
           },
           {
-            id: 1,
-            tile: "shadowmoon_market/lv_ocn_shadowis_ps_1_{y}x{x}.webp",
-            full: "shadowmoon_market/lv_ocn_shadowis_ps_1_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 2,
-            tile: "shadowmoon_market/lv_ocn_shadowis_ps_2_{y}x{x}.webp",
-            full: "shadowmoon_market/lv_ocn_shadowis_ps_2_full.webp",
-            max: [2, 2],
-          },
-          {
             id: 3,
             tile: "shadowmoon_market/lv_ocn_shadowis_ps_3_{y}x{x}.webp",
             full: "shadowmoon_market/lv_ocn_shadowis_ps_3_full.webp",
             max: [5, 3],
-          },
-          {
-            id: 4,
-            tile: "shadowmoon_market/lv_ocn_shadowis_ps_4_{y}x{x}.webp",
-            full: "shadowmoon_market/lv_ocn_shadowis_ps_4_full.webp",
-            max: [2, 2],
           },
           {
             id: 5,
@@ -4132,7 +3875,7 @@ export const continents: Continent[] = [
             max: [4, 4],
           },
           {
-            id: 1,
+            id: 2,
             tile: "dr_bergstroms_laboratory/lv_att_ehmlabap_d_ps_1_{y}x{x}.webp",
             full: "dr_bergstroms_laboratory/lv_att_ehmlabap_d_ps_1_full.webp",
             max: [4, 4],
