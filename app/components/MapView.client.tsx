@@ -103,9 +103,6 @@ export default function MapView({ area }: { area: Area }) {
     if (selectedNodeLocation) {
       return selectedNodeLocation.position as [number, number];
     }
-    if (area.name === "Arkesia") {
-      return [-710, 600] as [number, number];
-    }
     return getMapCenter(area.tiles[0]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -141,6 +138,9 @@ export default function MapView({ area }: { area: Area }) {
       tap={false}
       crs={L.CRS.Simple}
       zoomControl={false}
+      zoomSnap={0.5}
+      wheelPxPerZoomLevel={120}
+      zoomDelta={0.5}
       attributionControl={false}
       style={{
         background: "none",
