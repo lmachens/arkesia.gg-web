@@ -206,6 +206,10 @@ export const nodeCategories: AreaNodeCategory[] = [
     includes: ["Continent", "Dungeon", "Island"],
     types: [
       {
+        name: 'Unique Monster',
+        icon: 'adventure-tome.webp'
+      },
+      {
         name: "Boss",
         icon: "minimap_symbol_1.webp",
       },
