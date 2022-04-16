@@ -87,9 +87,11 @@ body {
 .seo-anchor {
   text-decoration: none;
   color: #22b8cf !important;
+  font-weight: bold;
 }
 
 .seo-anchor-lg {
   text-decoration: none;
   color: var(--color-shade-1) !important;
+  font-weight: bold;
 }

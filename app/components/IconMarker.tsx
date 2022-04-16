@@ -18,10 +18,14 @@ function getIcon(markerSize: number, type?: AreaNodeType, highlight?: boolean) {
   const path = type ? type.icon : "unknown.webp";
   const identifier = path + (highlight ? "-highlight" : "");
   if (!icons[identifier]) {
+    const sizeMultiplicator = type?.sizeMultiplicator || 1;
     const iconSize: L.PointExpression =
       type?.size === "lg"
-        ? [markerSize * 1.3, markerSize * 1.3]
-        : [markerSize, markerSize];
+        ? [
+            markerSize * 1.3 * sizeMultiplicator,
+            markerSize * 1.3 * sizeMultiplicator,
+          ]
+        : [markerSize * sizeMultiplicator, markerSize * sizeMultiplicator];
     icons[identifier] = L.icon({
       iconUrl: `${ICON_BASE_URL}${path}`,
       iconSize,
@@ -59,7 +63,7 @@ function getLabel(
           }">${label}</a>`
         : label,
       className: "text-below-marker",
-      iconAnchor: [0, -24],
+      iconAnchor: [0, -18],
       iconSize: undefined,
     });
   }
@@ -78,13 +82,14 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
     const areaNodeType = type ? nodeTypesMap[type] : undefined;
     const showNameOnMap = useShowNameOnMap();
     const markerSize = useMarkerSize();
+    const zIndex = areaNodeType?.zIndex || 0;
 
     return (
       <>
         <Marker
           icon={getIcon(markerSize, areaNodeType, highlight)}
           opacity={verified ? 1 : 0.5}
-          zIndexOffset={highlight ? 1000 : 0}
+          zIndexOffset={highlight ? 1000 : zIndex}
           {...props}
           ref={ref}
         />
@@ -93,7 +98,7 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
             icon={getLabel(name, type, transitTo, areaNodeType?.size)}
             opacity={verified ? 1 : 0.5}
             interactive={false}
-            zIndexOffset={highlight ? 1000 : 0}
+            zIndexOffset={highlight ? 1000 : zIndex}
             position={props.position}
           />
         )}
