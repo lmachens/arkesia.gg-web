@@ -13,6 +13,7 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Mokoko Seed",
         icon: "minimap_symbol_1_121.webp",
+        sizeMultiplicator: 1.1,
       },
     ],
   },
@@ -104,10 +105,13 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Island",
         icon: "minimap_symbol_219.webp",
+        sizeMultiplicator: 1.1,
+        zIndex: 100,
       },
       {
         name: "PvP Island",
         icon: "minimap_symbol_218.webp",
+        zIndex: 100,
       },
       {
         name: "Port",
@@ -206,8 +210,8 @@ export const nodeCategories: AreaNodeCategory[] = [
     includes: ["Continent", "Dungeon", "Island"],
     types: [
       {
-        name: 'Unique Monster',
-        icon: 'adventure-tome.webp'
+        name: "Unique Monster",
+        icon: "adventure-tome.webp",
       },
       {
         name: "Boss",
@@ -781,6 +785,7 @@ export const nodeCategories: AreaNodeCategory[] = [
     name: "World Areas",
     includes: ["World"],
     hideInSummary: true,
+    zIndex: 100,
     types: [
       {
         name: "Ankumo Mountain",
@@ -988,6 +993,7 @@ export const nodeTypes = nodeCategories
       category: nodeCategory.name,
       hideInSummary:
         nodeType.hideInSummary || nodeCategory.hideInSummary || false,
+      zIndex: nodeType.zIndex || nodeCategory.zIndex || 0,
     }))
   )
   .flat();
