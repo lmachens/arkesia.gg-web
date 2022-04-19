@@ -982,6 +982,101 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "windbringer-hills.webp",
         size: "lg",
       },
+      {
+        name: "Lake Eternity",
+        icon: "lake-eternity.webp",
+        size: "lg",
+      },
+      {
+        name: "Icewing Heights",
+        icon: "icewing-heights.webp",
+        size: "lg",
+      },
+      {
+        name: "Iceblood Plateau",
+        icon: "iceblood-plateau.webp",
+        size: "lg",
+      },
+      {
+        name: "Bitterwind Hill",
+        icon: "bitterwind-hill.webp",
+        size: "lg",
+      },
+      {
+        name: "Frozen Sea",
+        icon: "frozen-sea.webp",
+        size: "lg",
+      },
+      {
+        name: "Parna Forest",
+        icon: "parna-forest.webp",
+        size: "lg",
+      },
+      {
+        name: "Fesnar Highland",
+        icon: "fesnar-highland.webp",
+        size: "lg",
+      },
+      {
+        name: "Vernese Forest",
+        icon: "vernese-forest.webp",
+        size: "lg",
+      },
+      {
+        name: "Kandaria",
+        icon: "kandaria.webp",
+        size: "lg",
+      },
+      {
+        name: "Balankar Mountains",
+        icon: "balankar-mountains.webp",
+        size: "lg",
+      },
+      {
+        name: "Port Krona",
+        icon: "port-krona.webp",
+        size: "lg",
+      },
+      {
+        name: "Rania Village",
+        icon: "rania-village.webp",
+        size: "lg",
+      },
+      {
+        name: "Vern Castle",
+        icon: "vern-castle.webp",
+        size: "lg",
+      },
+      {
+        name: "Ruins of Bel-Illion",
+        icon: "ruins-of-bel-illion.webp",
+        size: "lg",
+      },
+      {
+        name: "Wailing Swamp",
+        icon: "wailing-swamp.webp",
+        size: "lg",
+      },
+      {
+        name: "Kalaja",
+        icon: "kalaja.webp",
+        size: "lg",
+      },
+      {
+        name: "Nameless Valley",
+        icon: "nameless-valley.webp",
+        size: "lg",
+      },
+      {
+        name: "Red Moonshade",
+        icon: "red-moonshade.webp",
+        size: "lg",
+      },
+      {
+        name: "Shady Cliff",
+        icon: "shady-cliff.webp",
+        size: "lg",
+      },
     ],
   },
 ];
