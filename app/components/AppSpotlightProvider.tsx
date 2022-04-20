@@ -7,10 +7,12 @@ import { useMemo } from "react";
 import type { SpotlightAction, SpotlightActionProps } from "@mantine/spotlight";
 import {
   areaContinents,
+  arkesiaArea,
   continents,
   ICON_BASE_URL,
   nodeTypesMap,
   TILE_BASE_URL,
+  world,
 } from "~/lib/static";
 import { useNavigate } from "react-router-dom";
 import { useLastAreaNames } from "~/lib/store";
@@ -37,13 +39,7 @@ export default function AppSpotlightProvider({
 }: AppSpotlightProviderProps) {
   const navigate = useNavigate();
 
-  useHotkeys([
-    [
-      "ctrl+space",
-      () =>
-        navigate(`/maps/${continents[0].name}/${continents[0].areas[0].name}`),
-    ],
-  ]);
+  useHotkeys([["ctrl+space", () => navigate(`/`)]]);
 
   const actions = useMemo(() => {
     const actions: SpotlightAction[] = [];
@@ -52,11 +48,11 @@ export default function AppSpotlightProvider({
     };
 
     actions.push({
-      title: continents[0].areas[0].name,
+      title: arkesiaArea.name,
       group: "popular",
-      description: `Continent: ${continents[0].name}`,
-      url: `/maps/${continents[0].name}/${continents[0].areas[0].name}`,
-      image: TILE_BASE_URL + continents[0].areas[0].tiles[0].full,
+      description: `Continent: ${world.name}`,
+      url: `/`,
+      image: TILE_BASE_URL + arkesiaArea.tiles[0].full,
       onTrigger: handleTrigger,
     });
 
@@ -129,7 +125,7 @@ function AdditionalActions() {
           id: node.id.toString(),
           title: node.name!,
           description: `${node.type} in ${continent} / ${nodeLocation.areaName}`,
-          url: `/maps/${continent}/${nodeLocation.areaName}?tile=${nodeLocation.tileId}&node=${node.id}&location=${nodeLocation.id}`,
+          url: `/${continent}/${nodeLocation.areaName}?tile=${nodeLocation.tileId}&node=${node.id}&location=${nodeLocation.id}`,
           image: ICON_BASE_URL + nodeType.icon,
           onTrigger: handleTrigger,
         };
@@ -142,7 +138,7 @@ function AdditionalActions() {
             id: `${continent.name}-${area.name}`,
             title: area.name,
             description: `Continent: ${continent.name}`,
-            url: `/maps/${continent.name}/${area.name}`,
+            url: `/${continent.name}/${area.name}`,
             image: TILE_BASE_URL + area.tiles[0].full,
             onTrigger: handleTrigger,
           });
@@ -183,7 +179,7 @@ function LatestAreaNames() {
         title: lastAreaName,
         group: "latest areas",
         description: `Continent: ${continentName}`,
-        url: `/maps/${continentName}/${lastAreaName}`,
+        url: `/${continentName}/${lastAreaName}`,
         image: TILE_BASE_URL + area?.tiles[0].full,
         onTrigger: handleTrigger,
       };

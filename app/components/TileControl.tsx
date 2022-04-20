@@ -3,12 +3,13 @@ import { useEffect, useMemo, useRef } from "react";
 import { TileLayer, Tooltip, useMapEvents } from "react-leaflet";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getBounds } from "~/lib/map";
-import { areaContinents, continents, TILE_BASE_URL } from "~/lib/static";
+import { areaContinents, TILE_BASE_URL } from "~/lib/static";
 import {
   useDiscoveredNodes,
   useDrawerPosition,
   useEditingNodeLocation,
   useIsShowingDiscoveredNodes,
+  useSetSelectedNodeLocation,
 } from "~/lib/store";
 import type { Area, AreaNodeLocationDTO, Tile } from "~/lib/types";
 import IconMarker from "./IconMarker";
@@ -47,6 +48,7 @@ export default function TileControl({
     }
   }, [activeTile]);
   const drawerPosition = useDrawerPosition();
+  const setSelectedNodeLocation = useSetSelectedNodeLocation();
 
   const visibleNodeLocations = useMemo(
     () =>
@@ -71,11 +73,12 @@ export default function TileControl({
   );
   useMapEvents({
     contextmenu: () => {
+      setSelectedNodeLocation(null);
       const index = area.tiles.findIndex((tile) => tile.id === activeTile.id);
       if (index !== 0) {
         setSearchParams({});
       } else {
-        navigate(`/maps/${continents[0].name}/${continents[0].areas[0].name}`);
+        navigate(`/`);
       }
     },
   });
@@ -139,14 +142,15 @@ export default function TileControl({
               const transitToLocation =
                 nodeLocation.areaNode.transitTo.areaNodeLocations[0];
               const continent = areaContinents[transitToLocation.areaName];
+              setSelectedNodeLocation(null);
               if (
                 nodeLocation.areaName === "Arkesia" &&
                 transitToLocation.areaName !== "Arkesia"
               ) {
-                navigate(`/maps/${continent}/${transitToLocation.areaName}`);
+                navigate(`/${continent}/${transitToLocation.areaName}`);
               } else {
                 navigate(
-                  `/maps/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}&node=${nodeLocation.areaNode.transitTo.id}&location=${transitToLocation.id}&hideDetails=true`
+                  `/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}&node=${nodeLocation.areaNode.transitTo.id}&location=${transitToLocation.id}&hideDetails=true`
                 );
               }
             },

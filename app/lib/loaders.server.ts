@@ -1,7 +1,7 @@
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import invariant from "tiny-invariant";
 import { findNodeLocations } from "./db.server";
+import { arkesiaArea } from "./static";
 import type { AreaNodeLocationDTO } from "./types";
 
 export type EnvLoaderData = {
@@ -29,8 +29,8 @@ export type AreaLoaderData = {
 };
 
 export const areaLoader: LoaderFunction = async ({ params }) => {
-  invariant(params.area, "Expected params.area");
-  const nodeLocations = await findNodeLocations({ areaName: params.area });
+  const areaName = params.area || arkesiaArea.name;
+  const nodeLocations = await findNodeLocations({ areaName });
 
   return json({
     nodeLocations,

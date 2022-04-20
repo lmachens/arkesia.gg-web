@@ -1,11 +1,21 @@
 import { useSpotlight } from "@mantine/spotlight";
 import { Breadcrumbs, Button, Text } from "@mantine/core";
 import { useParams } from "@remix-run/react";
-import type { Area } from "~/lib/types";
+import { arkesiaArea, continents, world } from "~/lib/static";
+import { useMemo } from "react";
 
-export default function AppBreadcrumbs({ area }: { area: Area }) {
+export default function AppBreadcrumbs() {
   const params = useParams();
   const spotlight = useSpotlight();
+
+  const area = useMemo(() => {
+    const continent = continents.find(
+      (continent) => continent.name === params.continent
+    );
+    return (
+      continent?.areas.find((area) => area.name === params.area) || arkesiaArea
+    );
+  }, [params.area, params.continent]);
 
   return (
     <Button
@@ -28,9 +38,9 @@ export default function AppBreadcrumbs({ area }: { area: Area }) {
         }}
       >
         <Text component="h1" sx={{ margin: 0 }}>
-          {params.continent}
+          {params.continent || world.name}
         </Text>
-        {area && params.continent !== "World" && (
+        {area && params.continent && (
           <Text component="h2" sx={{ margin: 0 }}>
             {area.name}
           </Text>

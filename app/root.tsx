@@ -9,12 +9,14 @@ import {
 import type { ShouldReloadFunction } from "@remix-run/react";
 import styles from "~/styles/global.css";
 import leafletStyles from "leaflet/dist/leaflet.css";
-import { MantineProvider } from "@mantine/core";
+import { AppShell, MantineProvider } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
 import AppSpotlightProvider from "./components/AppSpotlightProvider";
 import InitClients from "./components/InitClients";
 import { envLoader } from "./lib/loaders.server";
 import type { MetaFunction } from "@remix-run/react/routeModules";
+import AppBreadcrumbs from "./components/AppBreadcrumbs";
+import ActionIcons from "./components/ActionIcons";
 
 export function links() {
   return [
@@ -49,6 +51,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <InitClients />
         <MantineProvider
           theme={{ fontFamily: "NunitoVariable", colorScheme: "dark" }}
         >
@@ -58,12 +61,25 @@ export default function App() {
             autoClose={2500}
           >
             <AppSpotlightProvider>
-              <Outlet />
+              <AppShell
+                padding={0}
+                style={{ overflow: "hidden" }}
+                styles={(theme) => ({
+                  main: {
+                    backgroundColor: theme.colors.dark[8],
+                    color: theme.colors.dark[0],
+                    height: "100vh",
+                  },
+                })}
+              >
+                <AppBreadcrumbs />
+                <Outlet />
+                <ActionIcons />
+              </AppShell>
             </AppSpotlightProvider>
           </NotificationsProvider>
         </MantineProvider>
         <ScrollRestoration />
-        <InitClients />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>

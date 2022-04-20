@@ -15,7 +15,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   }
 
   return redirect(
-    `/maps/${encodeURIComponent(continent.name)}/${encodeURIComponent(
+    `/${encodeURIComponent(continent.name)}/${encodeURIComponent(
       continent.areas[0].name
     )}`
   );

@@ -9,32 +9,32 @@ import {
   Title,
   Stack,
 } from "@mantine/core";
-import { useLocalStorageValue } from "@mantine/hooks";
+import { useDidUpdate, useLocalStorageValue } from "@mantine/hooks";
 import { useNotifications } from "@mantine/notifications";
 import { EyeClosedIcon, EyeOpenIcon } from "@modulz/radix-icons";
 import { useEffect, useRef } from "react";
-import { useMapEvents } from "react-leaflet";
 import { Form, useActionData, useTransition } from "@remix-run/react";
 import {
   useDiscoveredNodes,
   useDrawerPosition,
+  useEditingNodeLocation,
+  useSelectedNodeLocation,
+  useSetEditingNodeLocation,
+  useSetSelectedNodeLocation,
   useToggleDiscoveredNode,
 } from "~/lib/store";
-import type { AreaNodeLocationDTO } from "~/lib/types";
 import { AvailableNodes } from "./AvailableNodes";
 import ImagePreview from "./ImagePreview";
 import NodeDescription from "./NodeDescription";
+import type { URLSearchParamsInit } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { ClientOnly } from "remix-utils";
 
-type NodeDetailsProps = {
-  selectedNodeLocation: AreaNodeLocationDTO | null;
-  onClose: () => void;
-  onEdit: (nodeLocation: AreaNodeLocationDTO) => void;
-};
-export default function NodeDetails({
-  selectedNodeLocation,
-  onClose,
-  onEdit,
-}: NodeDetailsProps) {
+export default function NodeDetails() {
+  const selectedNodeLocation = useSelectedNodeLocation();
+  const setSelectedNodeLocation = useSetSelectedNodeLocation();
+  const editingNodeLocation = useEditingNodeLocation();
+  const setEditingNodeLocation = useSetEditingNodeLocation();
   const transition = useTransition();
   const actionData = useActionData();
   const [userToken] = useLocalStorageValue<string>({
@@ -46,6 +46,7 @@ export default function NodeDetails({
   const discoveredNodes = useDiscoveredNodes();
   const toggleDiscoveredNode = useToggleDiscoveredNode();
   const drawerPosition = useDrawerPosition();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     if (
@@ -74,28 +75,38 @@ export default function NodeDetails({
           message: "",
         });
         notificationId.current = null;
-        onClose();
+        setSelectedNodeLocation(null);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [transition.state, actionData, transition.submission?.method]);
 
-  useMapEvents({
-    click: () => {
-      if (selectedNodeLocation) {
-        onClose();
-      }
-    },
-  });
+  useDidUpdate(() => {
+    const newSearchParams: URLSearchParamsInit = {};
+    const tile = searchParams.get("tile");
+    if (tile) {
+      newSearchParams.tile = tile;
+    }
+    if (selectedNodeLocation) {
+      newSearchParams.node = selectedNodeLocation.areaNodeId.toString();
+      newSearchParams.location = selectedNodeLocation.id.toString();
+    }
+    setSearchParams(newSearchParams);
+  }, [selectedNodeLocation]);
 
   return (
     <Drawer
-      opened={Boolean(selectedNodeLocation)}
-      zIndex={8950}
+      opened={Boolean(selectedNodeLocation && !editingNodeLocation)}
+      zIndex={10950}
       withOverlay={false}
       padding="md"
       position={drawerPosition}
-      onClose={onClose}
+      onClose={() => setSelectedNodeLocation(null)}
+      withinPortal={false}
+      style={{
+        position: "relative",
+        zIndex: 10950,
+      }}
     >
       <Stack style={{ height: "calc(100% - 50px)" }} spacing={0}>
         {selectedNodeLocation && (
@@ -148,62 +159,73 @@ export default function NodeDetails({
               }}
             >
               <Group>
-                {discoveredNodes.some(
-                  (discoveredNode) =>
-                    discoveredNode.id === selectedNodeLocation.areaNodeId
-                ) ? (
-                  <>
-                    <EyeClosedIcon /> Discovered
-                  </>
-                ) : (
-                  <>
-                    <EyeOpenIcon />
-                    Not discovered
-                  </>
-                )}
+                <ClientOnly>
+                  {() =>
+                    discoveredNodes.some(
+                      (discoveredNode) =>
+                        discoveredNode.id === selectedNodeLocation.areaNodeId
+                    ) ? (
+                      <>
+                        <EyeClosedIcon /> Discovered
+                      </>
+                    ) : (
+                      <>
+                        <EyeOpenIcon />
+                        Not discovered
+                      </>
+                    )
+                  }
+                </ClientOnly>
               </Group>
             </Button>
             <Text size="xs">See all discovered nodes in the settings</Text>
             <Space h="md" />
-            {userToken ? (
-              <Form method="delete" className="node-form">
-                <input type="hidden" name="_action" value="delete" />
-                <input
-                  type="hidden"
-                  name="id"
-                  value={selectedNodeLocation.id}
-                />
-                <input type="hidden" name="userToken" value={userToken} />
-                <Button type="submit" color="red">
-                  Delete
-                </Button>
-                <Button
-                  type="button"
-                  color="teal"
-                  onClick={() => onEdit(selectedNodeLocation)}
-                >
-                  Edit
-                </Button>
-              </Form>
-            ) : (
-              <Form method="post" className="node-form">
-                <input type="hidden" name="_action" value="report" />
-                <input
-                  type="hidden"
-                  name="id"
-                  value={selectedNodeLocation.id}
-                />
-                <TextInput
-                  label="Is there any issue with this node?"
-                  placeholder="Give us details"
-                  name="reason"
-                  required
-                />
-                <Button type="submit" color="teal">
-                  Report issue
-                </Button>
-              </Form>
-            )}
+            <ClientOnly>
+              {() =>
+                userToken ? (
+                  <Form method="delete" className="node-form">
+                    <input type="hidden" name="_action" value="delete" />
+                    <input
+                      type="hidden"
+                      name="id"
+                      value={selectedNodeLocation.id}
+                    />
+                    <input type="hidden" name="userToken" value={userToken} />
+                    <Button type="submit" color="red">
+                      Delete
+                    </Button>
+                    <Button
+                      type="button"
+                      color="teal"
+                      onClick={() => {
+                        setEditingNodeLocation(selectedNodeLocation);
+                        setSelectedNodeLocation(null);
+                      }}
+                    >
+                      Edit
+                    </Button>
+                  </Form>
+                ) : (
+                  <Form method="post" className="node-form">
+                    <input type="hidden" name="_action" value="report" />
+                    <input
+                      type="hidden"
+                      name="id"
+                      value={selectedNodeLocation.id}
+                    />
+                    <TextInput
+                      label="Is there any issue with this node?"
+                      placeholder="Give us details"
+                      name="reason"
+                      required
+                    />
+                    <Button type="submit" color="teal">
+                      Report issue
+                    </Button>
+                  </Form>
+                )
+              }
+            </ClientOnly>
           </>
         )}
       </Stack>

@@ -14,11 +14,11 @@ import {
 import { useLocalStorageValue, useMediaQuery } from "@mantine/hooks";
 import { DrawingPinIcon, GearIcon, GitHubLogoIcon } from "@modulz/radix-icons";
 import { useState } from "react";
-import { useMap, useMapEvents } from "react-leaflet";
 import { trackOutboundLinkClick } from "~/lib/stats";
 import {
   useDrawerPosition,
   useIsShowingDiscoveredNodes,
+  useMap,
   useMarkerSize,
   useSetDrawerPosition,
   useSetEditingNodeLocation,
@@ -47,17 +47,6 @@ export default function ActionIcons() {
   const markerSize = useMarkerSize();
   const setMarkerSize = useSetMarkerSize();
   const largeScreen = useMediaQuery("(min-width: 900px)");
-
-  useMapEvents({
-    click: (event) => {
-      if (event.originalEvent.ctrlKey) {
-        setEditingNodeLocation({
-          position: [event.latlng.lat, event.latlng.lng],
-          areaNode: {},
-        });
-      }
-    },
-  });
 
   return (
     <Group
@@ -91,11 +80,13 @@ export default function ActionIcons() {
       >
         <ActionIcon
           onClick={() => {
-            const mapCenter = map.getCenter();
-            setEditingNodeLocation({
-              position: [mapCenter.lat, mapCenter.lng],
-              areaNode: {},
-            });
+            if (map) {
+              const mapCenter = map.getCenter();
+              setEditingNodeLocation({
+                position: [mapCenter.lat, mapCenter.lng],
+                areaNode: {},
+              });
+            }
           }}
           size="md"
           aria-label="Propose a node"
