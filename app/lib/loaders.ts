@@ -8,5 +8,5 @@ export const useEnv = () => {
 
 export const useNodeLocations = () => {
   const { nodeLocations } = useLoaderData<AreaLoaderData>();
-  return nodeLocations;
+  return nodeLocations || [];
 };

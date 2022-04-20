@@ -6,7 +6,7 @@ export const loader: LoaderFunction = async () => {
   continents.forEach((continent) => {
     continent.areas.forEach((area) => {
       urls.push(
-        `<url><loc>https://arkesia.gg/maps/${continent.name}/${area.name}</loc></url>`
+        `<url><loc>https://arkesia.gg/${continent.name}/${area.name}</loc></url>`
       );
     });
   });

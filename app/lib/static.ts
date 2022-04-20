@@ -1,4 +1,4 @@
-import type { Continent, AreaNodeCategory, AreaNodeType } from "./types";
+import type { Continent, AreaNodeCategory, AreaNodeType, Area } from "./types";
 
 export const ICON_BASE_URL =
   "https://wtudsavjhvtxvqitnoxr.supabase.co/storage/v1/object/public/cdn/icons/";
@@ -1103,24 +1103,26 @@ export const nodeTypesMap = nodeTypes.reduce(
   }
 );
 
+export const arkesiaArea: Area = {
+  name: "Arkesia",
+  category: "World",
+  tiles: [
+    {
+      id: 0,
+      tile: "world_dark/lv_ocn_world_ps_0_{y}x{x}_voyage.webp",
+      full: "world_dark/lv_ocn_world_ps_0_voyage_full.webp",
+      max: [12, 16],
+    },
+  ],
+};
+
+export const world: Continent = {
+  name: "World",
+  areas: [arkesiaArea],
+};
+
 export const continents: Continent[] = [
-  {
-    name: "World",
-    areas: [
-      {
-        name: "Arkesia",
-        category: "World",
-        tiles: [
-          {
-            id: 0,
-            tile: "world_dark/lv_ocn_world_ps_0_{y}x{x}_voyage.webp",
-            full: "world_dark/lv_ocn_world_ps_0_voyage_full.webp",
-            max: [12, 16],
-          },
-        ],
-      },
-    ],
-  },
+  world,
   {
     name: "Trixion",
     areas: [

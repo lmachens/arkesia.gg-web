@@ -1,7 +1,11 @@
 import type { AreaNode, AreaNodeLocation } from "@prisma/client";
+import { useCallback } from "react";
+import { useSearchParams } from "react-router-dom";
 import create from "zustand";
 import { persist } from "zustand/middleware";
+import { useNodeLocations } from "./loaders";
 import { trackHideDiscoveredNodes, trackShowDiscoveredNodes } from "./stats";
+import type { AreaNodeLocationDTO } from "./types";
 
 export type DiscoveredNode = Pick<AreaNode, "id" | "type">;
 
@@ -80,24 +84,13 @@ type EditingNodeLocation = Partial<AreaNodeLocation> & {
 };
 
 type SessionStoreProps = {
+  selectedNodeLocation: AreaNodeLocationDTO | null | undefined;
+  setSelectedNodeLocation: (
+    selectedNodeLocation: AreaNodeLocationDTO | null
+  ) => void;
   editingNodeLocation: EditingNodeLocation | null;
   setEditingNodeLocation: (editingNode: EditingNodeLocation | null) => void;
 };
-
-export const useSessionStore = create(
-  persist<SessionStoreProps>(
-    (set) => ({
-      editingNodeLocation: null,
-      setEditingNodeLocation: (
-        editingNodeLocation: EditingNodeLocation | null
-      ) => set({ editingNodeLocation }),
-    }),
-    {
-      name: "session-storage",
-      getStorage: () => sessionStorage,
-    }
-  )
-);
 
 const lastTypeSelector = (state: PersistentStoreProps) =>
   [state.lastType, state.setLastType] as [string, (type: string) => void];
@@ -172,6 +165,57 @@ export const useSetMarkerSize = () => {
   return usePersistentStore(setMarkerSizeSelector);
 };
 
+export const useSessionStore = create(
+  persist<SessionStoreProps>(
+    (set) => ({
+      selectedNodeLocation: undefined,
+      setSelectedNodeLocation: (
+        selectedNodeLocation: AreaNodeLocationDTO | null
+      ) => set({ selectedNodeLocation }),
+      editingNodeLocation: null,
+      setEditingNodeLocation: (
+        editingNodeLocation: EditingNodeLocation | null
+      ) => set({ editingNodeLocation }),
+    }),
+    {
+      name: "session-storage",
+      getStorage: () => sessionStorage,
+    }
+  )
+);
+
+const selectedNodeLocationSelector = (state: SessionStoreProps) =>
+  state.selectedNodeLocation;
+export const useSelectedNodeLocation = () => {
+  const nodeLocations = useNodeLocations();
+  const [searchParams] = useSearchParams();
+  const nodeParam = searchParams.get("node");
+  const nodeId = nodeParam ? +nodeParam : null;
+  const locationParam = searchParams.get("location");
+  const locationId = locationParam ? +locationParam : null;
+  const hideDetails = searchParams.get("hideDetails");
+
+  const isSelectedLocation = useCallback(
+    (nodeLocation: AreaNodeLocationDTO) =>
+      locationId
+        ? nodeLocation.id === locationId
+        : nodeLocation.areaNodeId === nodeId,
+    [nodeId, locationId]
+  );
+
+  const selectedNodeLocation = useSessionStore(selectedNodeLocationSelector);
+  if (typeof selectedNodeLocation === "undefined") {
+    return (!hideDetails && nodeLocations.find(isSelectedLocation)) || null;
+  }
+  return selectedNodeLocation;
+};
+
+const setSelectedNodeLocationSelector = (state: SessionStoreProps) =>
+  state.setSelectedNodeLocation;
+export const useSetSelectedNodeLocation = () => {
+  return useSessionStore(setSelectedNodeLocationSelector);
+};
+
 const editingNodeLocationSelector = (state: SessionStoreProps) =>
   state.editingNodeLocation;
 export const useEditingNodeLocation = () => {
@@ -182,4 +226,23 @@ const setEditingNodeLocationSelector = (state: SessionStoreProps) =>
   state.setEditingNodeLocation;
 export const useSetEditingNodeLocation = () => {
   return useSessionStore(setEditingNodeLocationSelector);
+};
+
+type TempStoreProps = {
+  map: L.Map | null;
+  setMap: (map: L.Map) => void;
+};
+export const useTempStore = create<TempStoreProps>((set) => ({
+  map: null,
+  setMap: (map: L.Map) => set({ map }),
+}));
+
+const useMapSelector = (state: TempStoreProps) => state.map;
+export const useMap = () => {
+  return useTempStore(useMapSelector);
+};
+
+const useSetMapSelector = (state: TempStoreProps) => state.setMap;
+export const useSetMap = () => {
+  return useTempStore(useSetMapSelector);
 };

@@ -40,7 +40,7 @@ export function postToDiscord(
         {
           name: "URL",
           value: continent
-            ? `https://www.arkesia.gg/maps/${encodeURIComponent(
+            ? `https://www.arkesia.gg/${encodeURIComponent(
                 continent.name
               )}/${encodeURIComponent(nodeLocation.areaName)}/?tile=${
                 nodeLocation.tileId

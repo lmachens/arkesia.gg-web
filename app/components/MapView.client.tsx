@@ -1,25 +1,42 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { MapContainer } from "react-leaflet";
-import type { Area, AreaNodeLocationDTO, Tile } from "~/lib/types";
+import type { AreaNodeLocationDTO, Tile } from "~/lib/types";
 import L from "leaflet";
-import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import "leaflet-rotate";
+import { MapContainer, useMapEvents } from "react-leaflet";
+import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import MousePosition from "./MousePosition";
 import TileControl from "./TileControl";
 import { getBounds, getMapCenter } from "~/lib/map";
-import NodeDetails from "./NodeDetails";
 import UpsertMarker from "./UpsertMarker";
-import type { URLSearchParamsInit } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useDidUpdate } from "@mantine/hooks";
-import { useLastAreaNames, useSetEditingNodeLocation } from "~/lib/store";
-import ActionIcons from "./ActionIcons";
+import {
+  useLastAreaNames,
+  useMap,
+  useSelectedNodeLocation,
+  useSetEditingNodeLocation,
+  useSetMap,
+  useSetSelectedNodeLocation,
+} from "~/lib/store";
 import { useNodeLocations } from "~/lib/loaders";
+import { arkesiaArea, continents } from "~/lib/static";
 
 includeCanvasTileLayer();
 
 const canvasRenderer = L.canvas();
-export default function MapView({ area }: { area: Area }) {
+
+export default function MapView() {
+  const params = useParams();
+  const area = useMemo(() => {
+    const continent = continents.find(
+      (continent) => continent.name === params.continent
+    );
+    return (
+      continent?.areas.find((area) => area.name === params.area) || arkesiaArea
+    );
+  }, [params.area, params.continent]);
+
   const nodeLocations = useNodeLocations();
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -32,7 +49,8 @@ export default function MapView({ area }: { area: Area }) {
   const nodeId = nodeParam ? +nodeParam : null;
   const locationParam = searchParams.get("location");
   const locationId = locationParam ? +locationParam : null;
-  const [map, setMap] = useState<L.Map | null>(null);
+  const map = useMap();
+  const setMap = useSetMap();
   const { addLastAreaName } = useLastAreaNames();
 
   const isSelectedLocation = useCallback(
@@ -46,10 +64,9 @@ export default function MapView({ area }: { area: Area }) {
   const [activeTile, setActiveTile] = useState<Tile>(
     () => area.tiles.find((tile) => tile.id === tileId) || area.tiles[0]
   );
-  const [selectedNodeLocation, setSelectedNodeLocation] =
-    useState<AreaNodeLocationDTO | null>(
-      () => nodeLocations.find(isSelectedLocation) || null
-    );
+
+  const selectedNodeLocation = useSelectedNodeLocation();
+  const setSelectedNodeLocation = useSetSelectedNodeLocation();
 
   useEffect(() => {
     if (area.name !== "Arkesia") {
@@ -87,17 +104,10 @@ export default function MapView({ area }: { area: Area }) {
   }, [area.name, tileId]);
 
   useDidUpdate(() => {
-    let replace = tileId === activeTile.id;
-    let newSearchParams: URLSearchParamsInit = `tile=${activeTile.id}`;
-    if (selectedNodeLocation) {
-      newSearchParams += `&node=${selectedNodeLocation.areaNodeId}&location=${selectedNodeLocation.id}`;
-      replace = selectedNodeLocation.areaNodeId === nodeId;
+    if (tileId !== activeTile.id) {
+      setSearchParams({ tileId: activeTile.id.toString() });
     }
-    if (searchParams.toString() !== newSearchParams.toString()) {
-      setSearchParams(newSearchParams, { replace });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeTile, selectedNodeLocation]);
+  }, [activeTile]);
 
   const initialCenter = useMemo(() => {
     if (selectedNodeLocation) {
@@ -146,11 +156,12 @@ export default function MapView({ area }: { area: Area }) {
         background: "none",
       }}
       renderer={canvasRenderer}
+      preferCanvas
+      ref={setMap}
+      // @ts-ignore
       rotate
       rotateControl={false}
       bearing={area.name !== "Arkesia" ? -45 : 0}
-      preferCanvas
-      whenCreated={setMap}
     >
       <MousePosition />
       <TileControl
@@ -166,15 +177,28 @@ export default function MapView({ area }: { area: Area }) {
         }}
       />
       <UpsertMarker area={area} tile={activeTile} />
-      <NodeDetails
-        selectedNodeLocation={selectedNodeLocation}
-        onClose={() => setSelectedNodeLocation(null)}
-        onEdit={(node) => {
-          setEditingNodeLocation(node);
-          setSelectedNodeLocation(null);
-        }}
-      />
-      <ActionIcons />
+      <MapEvents />
     </MapContainer>
   );
+}
+
+function MapEvents() {
+  const setEditingNodeLocation = useSetEditingNodeLocation();
+  const selectedNodeLocation = useSelectedNodeLocation();
+  const setSelectedNodeLocation = useSetSelectedNodeLocation();
+
+  useMapEvents({
+    click: (event) => {
+      if (event.originalEvent.ctrlKey) {
+        setEditingNodeLocation({
+          position: [event.latlng.lat, event.latlng.lng],
+          areaNode: {},
+        });
+      } else if (selectedNodeLocation) {
+        setSelectedNodeLocation(null);
+      }
+    },
+  });
+
+  return <></>;
 }

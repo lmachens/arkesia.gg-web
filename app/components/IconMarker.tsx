@@ -51,7 +51,7 @@ function getLabel(
       const transitToLocation = transitTo.areaNodeLocations[0];
       if (transitToLocation) {
         const continent = areaContinents[transitToLocation.areaName];
-        href = `/maps/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}`;
+        href = `/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}`;
       }
     }
 
@@ -90,6 +90,8 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
           icon={getIcon(markerSize, areaNodeType, highlight)}
           opacity={verified ? 1 : 0.5}
           zIndexOffset={highlight ? 1000 : zIndex}
+          // @ts-ignore
+          autoPanOnFocus={false}
           {...props}
           ref={ref}
         />
@@ -98,8 +100,10 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
             icon={getLabel(name, type, transitTo, areaNodeType?.size)}
             opacity={verified ? 1 : 0.5}
             interactive={false}
-            zIndexOffset={highlight ? 1000 : zIndex}
+            zIndexOffset={(highlight ? 1000 : zIndex) + 1}
             position={props.position}
+            // @ts-ignore
+            autoPanOnFocus={false}
           />
         )}
       </>
