@@ -1,6 +1,6 @@
 import type { AreaNode, AreaNodeLocation } from "@prisma/client";
-import type { NodeOnDiskFile } from "@remix-run/node";
-import type { ActionFunction } from "@remix-run/node";
+import { redirect } from "@remix-run/node";
+import type { ActionFunction, NodeOnDiskFile } from "@remix-run/node";
 import { unstable_parseMultipartFormData } from "@remix-run/node";
 import { badRequest } from "remix-utils";
 import {
@@ -342,5 +342,8 @@ export const nodeAction: ActionFunction = async ({ request }) => {
       break;
   }
 
-  return null;
+  let referer = request.headers.get("Referer") || "";
+  referer += referer.includes("?") ? "&" : "?";
+  referer += "_vercel_no_cache=1";
+  return redirect(referer);
 };
