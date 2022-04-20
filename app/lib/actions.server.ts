@@ -342,7 +342,7 @@ export const nodeAction: ActionFunction = async ({ request }) => {
       break;
   }
 
-  let referer = request.headers.get("Referer") || "";
+  let referer = request.url;
   referer += referer.includes("?") ? "&" : "?";
   referer += "_vercel_no_cache=1";
   return redirect(referer);
