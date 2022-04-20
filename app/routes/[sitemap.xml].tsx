@@ -1,4 +1,4 @@
-import type { LoaderFunction } from "@remix-run/node";
+import type { HeadersFunction, LoaderFunction } from "@remix-run/node";
 import { continents } from "~/lib/static";
 
 export const loader: LoaderFunction = async () => {
@@ -23,4 +23,10 @@ export const loader: LoaderFunction = async () => {
       encoding: "UTF-8",
     },
   });
+};
+
+export const headers: HeadersFunction = () => {
+  return {
+    "cache-control": "s-maxage=60, stale-while-revalidate",
+  };
 };
