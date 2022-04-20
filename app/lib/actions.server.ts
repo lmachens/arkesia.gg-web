@@ -343,7 +343,7 @@ export const nodeAction: ActionFunction = async ({ request }) => {
 
   return json(null, {
     headers: {
-      Cookie: "_vercel_no_cache=1",
+      "Set-Cookie": "_vercel_no_cache=1;Max-Age=60",
     },
   });
 };
