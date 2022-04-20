@@ -1,8 +1,7 @@
 import type { AreaNode, AreaNodeLocation } from "@prisma/client";
-import { redirect } from "@remix-run/node";
 import type { ActionFunction, NodeOnDiskFile } from "@remix-run/node";
 import { unstable_parseMultipartFormData } from "@remix-run/node";
-import { badRequest } from "remix-utils";
+import { badRequest, json } from "remix-utils";
 import {
   deleteNode,
   deleteNodeLocation,
@@ -342,8 +341,9 @@ export const nodeAction: ActionFunction = async ({ request }) => {
       break;
   }
 
-  let referer = request.url;
-  referer += referer.includes("?") ? "&" : "?";
-  referer += "_vercel_no_cache=1";
-  return redirect(referer);
+  return json(null, {
+    headers: {
+      Cookie: "_vercel_no_cache=1",
+    },
+  });
 };

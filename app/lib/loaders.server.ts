@@ -32,13 +32,20 @@ export const areaLoader: LoaderFunction = async ({ params }) => {
   const areaName = params.area || arkesiaArea.name;
   const nodeLocations = await findNodeLocations({ areaName });
 
-  return json({
-    nodeLocations,
-    ENV: {
-      SUPABASE_URL: process.env.SUPABASE_URL,
-      SUPABASE_PUBLIC_KEY: process.env.SUPABASE_PUBLIC_KEY,
-      PLAUSIBLE_API_HOST: process.env.PLAUSIBLE_API_HOST,
-      PLAUSIBLE_DOMAIN: process.env.PLAUSIBLE_DOMAIN,
-    },
-  } as AreaLoaderData);
+  return json(
+    {
+      nodeLocations,
+      ENV: {
+        SUPABASE_URL: process.env.SUPABASE_URL,
+        SUPABASE_PUBLIC_KEY: process.env.SUPABASE_PUBLIC_KEY,
+        PLAUSIBLE_API_HOST: process.env.PLAUSIBLE_API_HOST,
+        PLAUSIBLE_DOMAIN: process.env.PLAUSIBLE_DOMAIN,
+      },
+    } as AreaLoaderData,
+    {
+      headers: {
+        "cache-control": "s-maxage=60, stale-while-revalidate",
+      },
+    }
+  );
 };
