@@ -1,4 +1,4 @@
-import type { LoaderFunction } from "@remix-run/node";
+import type { HeadersFunction, LoaderFunction } from "@remix-run/node";
 
 export const loader: LoaderFunction = async () => {
   const robotText = `
@@ -17,4 +17,10 @@ export const loader: LoaderFunction = async () => {
       "Content-Type": "text/plain",
     },
   });
+};
+
+export const headers: HeadersFunction = () => {
+  return {
+    "cache-control": "s-maxage=360, stale-while-revalidate",
+  };
 };

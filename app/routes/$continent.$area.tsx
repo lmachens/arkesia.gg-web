@@ -1,5 +1,5 @@
 import { LoadingOverlay } from "@mantine/core";
-import type { MetaFunction } from "@remix-run/node";
+import type { HeadersFunction, MetaFunction } from "@remix-run/node";
 import type { ShouldReloadFunction } from "@remix-run/react";
 import { ClientOnly } from "remix-utils";
 import MapView from "~/components/MapView.client";
@@ -27,6 +27,12 @@ export const meta: MetaFunction = ({ params }) => {
 
 export const unstable_shouldReload: ShouldReloadFunction = ({ submission }) => {
   return Boolean(submission);
+};
+
+export const headers: HeadersFunction = () => {
+  return {
+    "cache-control": "s-maxage=60, stale-while-revalidate",
+  };
 };
 
 export default function WorldPage() {
