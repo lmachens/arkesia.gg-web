@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { MapContainer } from "react-leaflet";
 import type { Area, AreaNodeLocationDTO, Tile } from "~/lib/types";
 import L from "leaflet";
-import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import "leaflet-rotate";
+import { MapContainer } from "react-leaflet";
+import includeCanvasTileLayer from "./includeCanvasTileLayer";
 import MousePosition from "./MousePosition";
 import TileControl from "./TileControl";
 import { getBounds, getMapCenter } from "~/lib/map";
@@ -146,11 +146,12 @@ export default function MapView({ area }: { area: Area }) {
         background: "none",
       }}
       renderer={canvasRenderer}
+      preferCanvas
+      ref={setMap}
+      // @ts-ignore
       rotate
       rotateControl={false}
       bearing={area.name !== "Arkesia" ? -45 : 0}
-      preferCanvas
-      whenCreated={setMap}
     >
       <MousePosition />
       <TileControl
