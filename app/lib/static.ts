@@ -7585,6 +7585,48 @@ export const continents: Continent[] = [
     name: "South Vern",
     areas: [
       {
+        name: "Bellion Ruins",
+        category: "Continent",
+        tiles: [
+          {
+            id: 0,
+            tile: "bellion_ruins/lv_ber_bellionr_f_ps_0_{y}x{x}.webp",
+            full: "bellion_ruins/lv_ber_bellionr_f_ps_0_full.webp",
+            max: [5, 6],
+          },
+        ],
+      },
+      {
+        name: "Candaria Territory",
+        category: "Continent",
+        tiles: [
+          {
+            id: 0,
+            tile: "candaria_territory/lv_ber_kandad_f_ps_0_{y}x{x}.webp",
+            full: "candaria_territory/lv_ber_kandad_f_ps_0_full.webp",
+            max: [6, 6],
+          },
+          {
+            id: 1,
+            tile: "candaria_territory/lv_ber_kandad_f_ps_1_{y}x{x}.webp",
+            full: "candaria_territory/lv_ber_kandad_f_ps_1_full.webp",
+            max: [3, 3],
+          },
+          {
+            id: 4,
+            tile: "candaria_territory/lv_ber_kandad_f_ps_4_{y}x{x}.webp",
+            full: "candaria_territory/lv_ber_kandad_f_ps_4_full.webp",
+            max: [3, 3],
+          },
+          {
+            id: 5,
+            tile: "candaria_territory/lv_ber_kandad_f_ps_5_{y}x{x}.webp",
+            full: "candaria_territory/lv_ber_kandad_f_ps_5_full.webp",
+            max: [3, 3],
+          },
+        ],
+      },
+      {
         name: "Secret Dungeon",
         category: "Continent",
         tiles: [
