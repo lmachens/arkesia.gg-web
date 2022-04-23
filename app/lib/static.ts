@@ -1082,6 +1082,66 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "hall-of-promise.webp",
         size: "lg",
       },
+      {
+        name: "Iron Hammer Mine",
+        icon: "iron-hammer-mine.webp",
+        size: "lg",
+      },
+      {
+        name: "Black Anvil Mine",
+        icon: "black-anvil-mine.webp",
+        size: "lg",
+      },
+      {
+        name: "Unfinished Garden",
+        icon: "unfinished-garden.webp",
+        size: "lg",
+      },
+      {
+        name: "Great Castle",
+        icon: "great-castle.webp",
+        size: "lg",
+      },
+      {
+        name: "Yorn's Castle",
+        icon: "yorns-castle.webp",
+        size: "lg",
+      },
+      {
+        name: "Secret Forest",
+        icon: "secret-forest.webp",
+        size: "lg",
+      },
+      {
+        name: "Tikatika Colony",
+        icon: "tikatika-colony.webp",
+        size: "lg",
+      },
+      {
+        name: "Tideshelf Path",
+        icon: "tideshelf-path.webp",
+        size: "lg",
+      },
+      {
+        name: "Nia Village",
+        icon: "nia-village.webp",
+        size: "lg",
+      },
+      {
+        name: "Starsand Beach",
+        icon: "starsand-beach.webp",
+        size: "lg",
+      },
+      {
+        name: "Xeneela Ruins",
+        icon: "xeneela-ruins.webp",
+        size: "lg",
+      },
+      {
+        name: "Lake Shiverwave",
+        icon: "lake-shiverwave.webp",
+        size: "lg",
+      },
     ],
   },
 ];
@@ -5809,18 +5869,6 @@ export const continents: Continent[] = [
             full: "iron_hammer_mine/lv_yor_secondwp_f_ps_0_full.webp",
             max: [7, 7],
           },
-          {
-            id: 1,
-            tile: "iron_hammer_mine/lv_yor_secondwp_f_ps_1_{y}x{x}.webp",
-            full: "iron_hammer_mine/lv_yor_secondwp_f_ps_1_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 2,
-            tile: "iron_hammer_mine/lv_yor_secondwp_f_ps_2_{y}x{x}.webp",
-            full: "iron_hammer_mine/lv_yor_secondwp_f_ps_2_full.webp",
-            max: [2, 1],
-          },
         ],
       },
       {
@@ -6040,18 +6088,6 @@ export const continents: Continent[] = [
             id: 4,
             tile: "tideshelf_path/lv_pap_scoast_f_ps_4_{y}x{x}.webp",
             full: "tideshelf_path/lv_pap_scoast_f_ps_4_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 5,
-            tile: "tideshelf_path/lv_pap_scoast_f_ps_5_{y}x{x}.webp",
-            full: "tideshelf_path/lv_pap_scoast_f_ps_5_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 6,
-            tile: "tideshelf_path/lv_pap_scoast_f_ps_6_{y}x{x}.webp",
-            full: "tideshelf_path/lv_pap_scoast_f_ps_6_full.webp",
             max: [1, 1],
           },
         ],
