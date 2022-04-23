@@ -1,6 +1,13 @@
-import { Checkbox } from "@mantine/core";
+import {
+  ActionIcon,
+  Button,
+  Checkbox,
+  Container,
+  Popover,
+} from "@mantine/core";
 import { Stack } from "@mantine/core";
-import { StackIcon } from "@modulz/radix-icons";
+import { useDisclosure } from "@mantine/hooks";
+import { CheckIcon, StackIcon } from "@modulz/radix-icons";
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { arkesiaArea, continents, nodeCategories } from "~/lib/static";
@@ -11,6 +18,7 @@ const FiltersSelect = () => {
   const filters = useFilters();
   const setFilters = useSetFilters();
   const params = useParams();
+  const [opened, handlers] = useDisclosure(false);
 
   const area = useMemo(() => {
     const continent = continents.find(
@@ -29,24 +37,11 @@ const FiltersSelect = () => {
     [area]
   );
 
-  return (
-    <Stack
-      spacing="xs"
-      sx={(theme) => ({
-        borderRadius: theme.radius.sm,
-        padding: theme.spacing.sm,
-        backgroundColor: theme.colors.dark[8],
-        position: "absolute",
-        top: 10,
-        right: drawerPosition === "left" ? 10 : "auto",
-        left: drawerPosition === "left" ? "auto" : 10,
-        zIndex: 8900,
-      })}
-    >
+  const content = (
+    <Stack spacing="xs">
       {categoryNames.map((categoryName) => (
         <Checkbox
           key={categoryName}
-          icon={StackIcon}
           label={categoryName}
           onChange={(event) => {
             if (event.target.checked) {
@@ -61,6 +56,41 @@ const FiltersSelect = () => {
         />
       ))}
     </Stack>
+  );
+
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 8,
+        right: drawerPosition === "left" ? 10 : "auto",
+        left: drawerPosition === "left" ? "auto" : 10,
+        zIndex: 8900,
+      }}
+    >
+      <Popover
+        opened={opened}
+        onClose={handlers.close}
+        target={
+          <ActionIcon
+            onClick={handlers.toggle}
+            size="lg"
+            variant="filled"
+            title="Filters"
+            color="cyan"
+          >
+            <StackIcon />
+          </ActionIcon>
+        }
+        position="bottom"
+        withArrow
+        zIndex={8900}
+        radius="sm"
+      >
+        {content}
+      </Popover>
+      {/* {content} */}
+    </div>
   );
 };
 

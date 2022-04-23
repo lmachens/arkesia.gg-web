@@ -129,33 +129,6 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "Trade Skills",
-    includes: ["Continent", "Island"],
-    unselectByDefault: true,
-    types: [
-      {
-        name: "Excavation",
-        icon: "excavation.webp",
-      },
-      {
-        name: "Ore",
-        icon: "minimap_symbol_21.webp",
-      },
-      {
-        name: "Timber",
-        icon: "minimap_symbol_22.webp",
-      },
-      {
-        name: "Foraging",
-        icon: "minimap_symbol_23.webp",
-      },
-      {
-        name: "Fishing Spot",
-        icon: "minimap_symbol_24.webp",
-      },
-    ],
-  },
-  {
     name: "Enemies",
     includes: ["Continent", "Dungeon", "Island"],
     types: [
@@ -468,6 +441,33 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
+    name: "Trade Skills",
+    includes: ["Continent", "Island"],
+    unselectByDefault: true,
+    types: [
+      {
+        name: "Excavation",
+        icon: "excavation.webp",
+      },
+      {
+        name: "Ore",
+        icon: "minimap_symbol_21.webp",
+      },
+      {
+        name: "Timber",
+        icon: "minimap_symbol_22.webp",
+      },
+      {
+        name: "Foraging",
+        icon: "minimap_symbol_23.webp",
+      },
+      {
+        name: "Fishing Spot",
+        icon: "minimap_symbol_24.webp",
+      },
+    ],
+  },
+  {
     name: "Events",
     includes: ["Continent", "Island"],
     unselectByDefault: true,
@@ -529,202 +529,6 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "Sea Bounties",
-    includes: ["World"],
-    types: [
-      {
-        name: "Sea Bounty - Mokoko Mushroom",
-        icon: "minimap_symbol_96.webp",
-      },
-      {
-        name: "Sea Bounty - Llama",
-        icon: "minimap_symbol_97.webp",
-      },
-      {
-        name: "Sea Bounty - Red Sea Turtle",
-        icon: "minimap_symbol_98.webp",
-      },
-      {
-        name: "Sea Bounty - Stardust",
-        icon: "minimap_symbol_99.webp",
-      },
-      {
-        name: "Sea Bounty - Sea Flower",
-        icon: "minimap_symbol_100.webp",
-      },
-      {
-        name: "Sea Bounty - Starfruit",
-        icon: "minimap_symbol_101.webp",
-      },
-      {
-        name: "Sea Bounty - Dragonfruit",
-        icon: "minimap_symbol_102.webp",
-      },
-      {
-        name: "Sea Bounty - Mandrill",
-        icon: "minimap_symbol_103.webp",
-      },
-      {
-        name: "Sea Bounty - Ghost Lizard",
-        icon: "minimap_symbol_104.webp",
-      },
-      {
-        name: "Sea Bounty - Five-colored Parrot",
-        icon: "minimap_symbol_105.webp",
-      },
-      {
-        name: "Sea Bounty - Tablet of Wind",
-        icon: "minimap_symbol_106.webp",
-      },
-      {
-        name: "Sea Bounty - Halfmoon Mask",
-        icon: "minimap_symbol_107.webp",
-      },
-      {
-        name: "Sea Bounty - Ancient Rod",
-        icon: "minimap_symbol_108.webp",
-      },
-      {
-        name: "Sea Bounty - Eagle?",
-        icon: "minimap_symbol_109.webp",
-      },
-      {
-        name: "Sea Bounty - See?",
-        icon: "minimap_symbol_110.webp",
-      },
-      {
-        name: "Sea Bounty - Crevasse",
-        icon: "minimap_symbol_111.webp",
-      },
-      {
-        name: "Sea Bounty - Smoldering Ice",
-        icon: "minimap_symbol_112.webp",
-      },
-      {
-        name: "Sea Bounty - Dolmen",
-        icon: "minimap_symbol_113.webp",
-      },
-      {
-        name: "Sea Bounty - Magick Circle",
-        icon: "minimap_symbol_114.webp",
-      },
-      {
-        name: "Sea Bounty - Shipwreck",
-        icon: "minimap_symbol_115.webp",
-      },
-      {
-        name: "Sea Bounty - Common Dolphin",
-        icon: "minimap_symbol_116.webp",
-      },
-      {
-        name: "Sea Bounty - Polar Mammoth",
-        icon: "minimap_symbol_117.webp",
-      },
-      {
-        name: "Sea Bounty - Red Camel",
-        icon: "minimap_symbol_118.webp",
-      },
-      {
-        name: "Sea Bounty - Unicorn",
-        icon: "minimap_symbol_119.webp",
-      },
-      {
-        name: "Sea Bounty - Ghost Stringray",
-        icon: "minimap_symbol_120.webp",
-      },
-      {
-        name: "Sea Bounty - Dolphin?",
-        icon: "minimap_symbol_121.webp",
-      },
-      {
-        name: "Sea Bounty - Siren",
-        icon: "minimap_symbol_122.webp",
-      },
-      {
-        name: "Sea Bounty - Moonkeep",
-        icon: "minimap_symbol_123.webp",
-      },
-      {
-        name: "Sea Bounty - Godsent Spear",
-        icon: "minimap_symbol_124.webp",
-      },
-      {
-        name: "Sea Bounty - Tablet?",
-        icon: "minimap_symbol_125.webp",
-      },
-      {
-        name: "Sea Bounty - Dolmen?",
-        icon: "minimap_symbol_126.webp",
-      },
-      {
-        name: "Sea Bounty - Aurora",
-        icon: "minimap_symbol_127.webp",
-      },
-      {
-        name: "Sea Bounty - Whirlpool",
-        icon: "minimap_symbol_128.webp",
-      },
-      {
-        name: "Sea Bounty - The Hestia",
-        icon: "minimap_symbol_129.webp",
-      },
-      {
-        name: "Sea Bounty - Mute Island",
-        icon: "minimap_symbol_130.webp",
-      },
-      {
-        name: "Sea Bounty - Totoiki Boat",
-        icon: "minimap_symbol_131.webp",
-      },
-      {
-        name: "Sea Bounty - Mysterious Chest",
-        icon: "minimap_symbol_132.webp",
-      },
-      {
-        name: "Sea Bounty - Pirate's Peg Leg",
-        icon: "minimap_symbol_133.webp",
-      },
-      {
-        name: "Sea Bounty - Pirate Flag",
-        icon: "minimap_symbol_134.webp",
-      },
-      {
-        name: "Sea Bounty - Forgotten Lake",
-        icon: "minimap_symbol_135.webp",
-      },
-      {
-        name: "Sea Bounty - Whale?",
-        icon: "minimap_symbol_223.webp",
-      },
-      {
-        name: "Sea Bounty - PhantomWing",
-        icon: "minimap_symbol_1_323.webp",
-      },
-      {
-        name: "Sea Bounty - King Shellfish",
-        icon: "minimap_symbol_1_324.webp",
-      },
-      {
-        name: "Sea Bounty - Covered Figurehead",
-        icon: "minimap_symbol_1_325.webp",
-      },
-      {
-        name: "Sea Bounty - Ice Statue of a Woman",
-        icon: "minimap_symbol_1_326.webp",
-      },
-    ],
-  },
-  {
-    name: "Marinas",
-    includes: ["World"],
-    types: [
-      {
-        name: "Marina",
-        icon: "minimap_symbol_230.webp",
-      },
-    ],
-  },
-  {
     name: "Gates",
     includes: ["World"],
     types: [
@@ -748,10 +552,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Sailing Dungeon",
         icon: "minimap_symbol_1_204.webp",
       },
-      {
-        name: "Statue of Gienah (Island Souls)",
-        icon: "minimap_symbol_1_109.webp",
-      },
     ],
   },
   {
@@ -768,6 +568,10 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "PvP Island",
         icon: "minimap_symbol_218.webp",
         zIndex: 100,
+      },
+      {
+        name: "Statue of Gienah (Island Souls)",
+        icon: "minimap_symbol_1_109.webp",
       },
     ],
   },
@@ -1156,6 +960,204 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Rigens Village",
         icon: "rigens-village.webp",
         size: "lg",
+      },
+    ],
+  },
+  {
+    name: "Marinas",
+    includes: ["World"],
+    unselectByDefault: true,
+    types: [
+      {
+        name: "Marina",
+        icon: "minimap_symbol_230.webp",
+      },
+    ],
+  },
+  {
+    name: "Sea Bounties",
+    includes: ["World"],
+    unselectByDefault: true,
+    types: [
+      {
+        name: "Sea Bounty - Mokoko Mushroom",
+        icon: "minimap_symbol_96.webp",
+      },
+      {
+        name: "Sea Bounty - Llama",
+        icon: "minimap_symbol_97.webp",
+      },
+      {
+        name: "Sea Bounty - Red Sea Turtle",
+        icon: "minimap_symbol_98.webp",
+      },
+      {
+        name: "Sea Bounty - Stardust",
+        icon: "minimap_symbol_99.webp",
+      },
+      {
+        name: "Sea Bounty - Sea Flower",
+        icon: "minimap_symbol_100.webp",
+      },
+      {
+        name: "Sea Bounty - Starfruit",
+        icon: "minimap_symbol_101.webp",
+      },
+      {
+        name: "Sea Bounty - Dragonfruit",
+        icon: "minimap_symbol_102.webp",
+      },
+      {
+        name: "Sea Bounty - Mandrill",
+        icon: "minimap_symbol_103.webp",
+      },
+      {
+        name: "Sea Bounty - Ghost Lizard",
+        icon: "minimap_symbol_104.webp",
+      },
+      {
+        name: "Sea Bounty - Five-colored Parrot",
+        icon: "minimap_symbol_105.webp",
+      },
+      {
+        name: "Sea Bounty - Tablet of Wind",
+        icon: "minimap_symbol_106.webp",
+      },
+      {
+        name: "Sea Bounty - Halfmoon Mask",
+        icon: "minimap_symbol_107.webp",
+      },
+      {
+        name: "Sea Bounty - Ancient Rod",
+        icon: "minimap_symbol_108.webp",
+      },
+      {
+        name: "Sea Bounty - Eagle?",
+        icon: "minimap_symbol_109.webp",
+      },
+      {
+        name: "Sea Bounty - See?",
+        icon: "minimap_symbol_110.webp",
+      },
+      {
+        name: "Sea Bounty - Crevasse",
+        icon: "minimap_symbol_111.webp",
+      },
+      {
+        name: "Sea Bounty - Smoldering Ice",
+        icon: "minimap_symbol_112.webp",
+      },
+      {
+        name: "Sea Bounty - Dolmen",
+        icon: "minimap_symbol_113.webp",
+      },
+      {
+        name: "Sea Bounty - Magick Circle",
+        icon: "minimap_symbol_114.webp",
+      },
+      {
+        name: "Sea Bounty - Shipwreck",
+        icon: "minimap_symbol_115.webp",
+      },
+      {
+        name: "Sea Bounty - Common Dolphin",
+        icon: "minimap_symbol_116.webp",
+      },
+      {
+        name: "Sea Bounty - Polar Mammoth",
+        icon: "minimap_symbol_117.webp",
+      },
+      {
+        name: "Sea Bounty - Red Camel",
+        icon: "minimap_symbol_118.webp",
+      },
+      {
+        name: "Sea Bounty - Unicorn",
+        icon: "minimap_symbol_119.webp",
+      },
+      {
+        name: "Sea Bounty - Ghost Stringray",
+        icon: "minimap_symbol_120.webp",
+      },
+      {
+        name: "Sea Bounty - Dolphin?",
+        icon: "minimap_symbol_121.webp",
+      },
+      {
+        name: "Sea Bounty - Siren",
+        icon: "minimap_symbol_122.webp",
+      },
+      {
+        name: "Sea Bounty - Moonkeep",
+        icon: "minimap_symbol_123.webp",
+      },
+      {
+        name: "Sea Bounty - Godsent Spear",
+        icon: "minimap_symbol_124.webp",
+      },
+      {
+        name: "Sea Bounty - Tablet?",
+        icon: "minimap_symbol_125.webp",
+      },
+      {
+        name: "Sea Bounty - Dolmen?",
+        icon: "minimap_symbol_126.webp",
+      },
+      {
+        name: "Sea Bounty - Aurora",
+        icon: "minimap_symbol_127.webp",
+      },
+      {
+        name: "Sea Bounty - Whirlpool",
+        icon: "minimap_symbol_128.webp",
+      },
+      {
+        name: "Sea Bounty - The Hestia",
+        icon: "minimap_symbol_129.webp",
+      },
+      {
+        name: "Sea Bounty - Mute Island",
+        icon: "minimap_symbol_130.webp",
+      },
+      {
+        name: "Sea Bounty - Totoiki Boat",
+        icon: "minimap_symbol_131.webp",
+      },
+      {
+        name: "Sea Bounty - Mysterious Chest",
+        icon: "minimap_symbol_132.webp",
+      },
+      {
+        name: "Sea Bounty - Pirate's Peg Leg",
+        icon: "minimap_symbol_133.webp",
+      },
+      {
+        name: "Sea Bounty - Pirate Flag",
+        icon: "minimap_symbol_134.webp",
+      },
+      {
+        name: "Sea Bounty - Forgotten Lake",
+        icon: "minimap_symbol_135.webp",
+      },
+      {
+        name: "Sea Bounty - Whale?",
+        icon: "minimap_symbol_223.webp",
+      },
+      {
+        name: "Sea Bounty - PhantomWing",
+        icon: "minimap_symbol_1_323.webp",
+      },
+      {
+        name: "Sea Bounty - King Shellfish",
+        icon: "minimap_symbol_1_324.webp",
+      },
+      {
+        name: "Sea Bounty - Covered Figurehead",
+        icon: "minimap_symbol_1_325.webp",
+      },
+      {
+        name: "Sea Bounty - Ice Statue of a Woman",
+        icon: "minimap_symbol_1_326.webp",
       },
     ],
   },
