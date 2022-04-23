@@ -52,7 +52,7 @@ export default function ActionIcons() {
     <Group
       sx={{
         position: "absolute",
-        bottom: 34,
+        bottom: 7,
         right: drawerPosition === "left" ? 10 : "auto",
         left: drawerPosition === "left" ? "auto" : 10,
         zIndex: 8900,

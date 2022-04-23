@@ -1,13 +1,7 @@
-import {
-  ActionIcon,
-  Button,
-  Checkbox,
-  Container,
-  Popover,
-} from "@mantine/core";
+import { ActionIcon, Checkbox, Popover } from "@mantine/core";
 import { Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { CheckIcon, StackIcon } from "@modulz/radix-icons";
+import { StackIcon } from "@modulz/radix-icons";
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { arkesiaArea, continents, nodeCategories } from "~/lib/static";
@@ -89,7 +83,6 @@ const FiltersSelect = () => {
       >
         {content}
       </Popover>
-      {/* {content} */}
     </div>
   );
 };
