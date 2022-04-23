@@ -3,11 +3,12 @@ import { useEffect, useMemo, useRef } from "react";
 import { TileLayer, Tooltip, useMapEvents } from "react-leaflet";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getBounds } from "~/lib/map";
-import { areaContinents, TILE_BASE_URL } from "~/lib/static";
+import { areaContinents, nodeTypesMap, TILE_BASE_URL } from "~/lib/static";
 import {
   useDiscoveredNodes,
   useDrawerPosition,
   useEditingNodeLocation,
+  useFilters,
   useIsShowingDiscoveredNodes,
   useSetSelectedNodeLocation,
 } from "~/lib/store";
@@ -49,6 +50,7 @@ export default function TileControl({
   }, [activeTile]);
   const drawerPosition = useDrawerPosition();
   const setSelectedNodeLocation = useSetSelectedNodeLocation();
+  const filters = useFilters();
 
   const visibleNodeLocations = useMemo(
     () =>
@@ -60,7 +62,8 @@ export default function TileControl({
           (isShowingDiscoveredNodes ||
             !discoveredNodes.some(
               (discoveredNode) => discoveredNode.id === nodeLocation.areaNodeId
-            ))
+            )) &&
+          filters.includes(nodeTypesMap[nodeLocation.areaNode.type]?.category)
       ),
     [
       nodeLocations,
@@ -69,6 +72,7 @@ export default function TileControl({
       discoveredNodes,
       activeTile.id,
       area.name,
+      filters,
     ]
   );
   useMapEvents({

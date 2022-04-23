@@ -18,7 +18,7 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "General Orientation",
+    name: "Orientation",
     includes: ["Continent", "Dungeon", "Island"],
     types: [
       {
@@ -82,12 +82,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Purple Portal",
         icon: "minimap_symbol_1_317.webp",
       },
-    ],
-  },
-  {
-    name: "Land Orientation",
-    includes: ["Continent"],
-    types: [
       {
         name: "Triport",
         icon: "minimap_symbol_73.webp",
@@ -158,7 +152,7 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "Land Exchange",
+    name: "Exchange",
     includes: ["Continent"],
     types: [
       {
@@ -228,7 +222,7 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "General Services",
+    name: "Services",
     includes: ["Continent", "Island"],
     types: [
       {
@@ -239,12 +233,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Wandering Merchant",
         icon: "minimap_symbol_154.webp",
       },
-    ],
-  },
-  {
-    name: "Land Services",
-    includes: ["Continent"],
-    types: [
       {
         name: "Chef",
         icon: "minimap_symbol_206.webp",
@@ -718,6 +706,7 @@ export const nodeCategories: AreaNodeCategory[] = [
   {
     name: "Trade Skills",
     includes: ["Continent", "Island"],
+    unselectByDefault: true,
     types: [
       {
         name: "Excavation",
@@ -742,19 +731,14 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "General Event",
+    name: "Event",
     includes: ["Continent", "Island"],
+    unselectByDefault: true,
     types: [
       {
         name: "Co-op Quest Area",
         icon: "minimap_symbol_88.webp",
       },
-    ],
-  },
-  {
-    name: "Land Event",
-    includes: ["Continent"],
-    types: [
       {
         name: "Chaos Gate",
         icon: "minimap_symbol_6.webp",
