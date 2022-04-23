@@ -150,7 +150,7 @@ export default function TileControl({
                 navigate(`/${continent}/${transitToLocation.areaName}`);
               } else {
                 navigate(
-                  `/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}&node=${nodeLocation.areaNode.transitTo.id}&location=${transitToLocation.id}&hideDetails=true`
+                  `/${continent}/${transitToLocation.areaName}?tileId=${transitToLocation.tileId}&node=${nodeLocation.areaNode.transitTo.id}&location=${transitToLocation.id}&hideDetails=true`
                 );
               }
             },

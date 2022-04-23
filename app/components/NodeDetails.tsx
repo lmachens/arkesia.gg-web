@@ -83,9 +83,9 @@ export default function NodeDetails() {
 
   useDidUpdate(() => {
     const newSearchParams: URLSearchParamsInit = {};
-    const tile = searchParams.get("tile");
-    if (tile) {
-      newSearchParams.tile = tile;
+    const tileId = searchParams.get("tileIdId");
+    if (tileId) {
+      newSearchParams.tileId = tileId;
     }
     if (selectedNodeLocation) {
       newSearchParams.node = selectedNodeLocation.areaNodeId.toString();

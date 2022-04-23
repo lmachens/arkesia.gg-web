@@ -42,7 +42,7 @@ export default function MapView() {
   const [searchParams, setSearchParams] = useSearchParams();
   const setEditingNodeLocation = useSetEditingNodeLocation();
 
-  const tileParam = searchParams.get("tile");
+  const tileParam = searchParams.get("tileId");
   const tileId = tileParam ? +tileParam : null;
   const hideDetails = searchParams.get("hideDetails");
   const nodeParam = searchParams.get("node");
@@ -104,7 +104,8 @@ export default function MapView() {
   }, [area.name, tileId]);
 
   useDidUpdate(() => {
-    if (tileId !== activeTile.id) {
+    const tile = area.tiles.find((tile) => tile.id === tileId) || area.tiles[0];
+    if (tile.tile !== activeTile.tile) {
       setSearchParams({ tileId: activeTile.id.toString() });
     }
   }, [activeTile]);
