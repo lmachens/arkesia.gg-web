@@ -1023,7 +1023,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
-        name: "Kandaria",
+        name: "Candaria Territory",
         icon: "kandaria.webp",
         size: "lg",
       },
@@ -1048,7 +1048,7 @@ export const nodeCategories: AreaNodeCategory[] = [
         size: "lg",
       },
       {
-        name: "Ruins of Bel-Illion",
+        name: "Bellion Ruins",
         icon: "ruins-of-bel-illion.webp",
         size: "lg",
       },
@@ -1140,6 +1140,31 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Lake Shiverwave",
         icon: "lake-shiverwave.webp",
+        size: "lg",
+      },
+      {
+        name: "Rothun",
+        icon: "rothun.webp",
+        size: "lg",
+      },
+      {
+        name: "Breezesome Brae",
+        icon: "breezesome-brae.webp",
+        size: "lg",
+      },
+      {
+        name: "Glass Lotus Lake",
+        icon: "glass-lotus-lake.webp",
+        size: "lg",
+      },
+      {
+        name: "Elzowin's Shade",
+        icon: "elzowins-shade.webp",
+        size: "lg",
+      },
+      {
+        name: "Rigens Village",
+        icon: "rigens-village.webp",
         size: "lg",
       },
     ],
@@ -3334,18 +3359,6 @@ export const continents: Continent[] = [
             tile: "elzowins_shade/lv_rhd_shadeel_f_ps_0_{y}x{x}.webp",
             full: "elzowins_shade/lv_rhd_shadeel_f_ps_0_full.webp",
             max: [6, 6],
-          },
-          {
-            id: 2,
-            tile: "elzowins_shade/lv_rhd_shadeel_f_ps_2_{y}x{x}.webp",
-            full: "elzowins_shade/lv_rhd_shadeel_f_ps_2_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 3,
-            tile: "elzowins_shade/lv_rhd_shadeel_f_ps_3_{y}x{x}.webp",
-            full: "elzowins_shade/lv_rhd_shadeel_f_ps_3_full.webp",
-            max: [1, 1],
           },
         ],
       },
