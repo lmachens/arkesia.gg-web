@@ -2,6 +2,7 @@ import { LoadingOverlay } from "@mantine/core";
 import type { HeadersFunction, MetaFunction } from "@remix-run/node";
 import type { ShouldReloadFunction } from "@remix-run/react";
 import { ClientOnly } from "remix-utils";
+import FiltersSelect from "~/components/FiltersSelect";
 import MapView from "~/components/MapView.client";
 import NodeDetails from "~/components/NodeDetails";
 import { nodeAction } from "~/lib/actions.server";
@@ -42,6 +43,7 @@ export default function WorldPage() {
         {() => <MapView />}
       </ClientOnly>
       <NodeDetails />
+      <FiltersSelect />
     </>
   );
 }

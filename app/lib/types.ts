@@ -62,6 +62,7 @@ export type AreaNodeCategory = {
   includes: AreaCategory[];
   types: PartialAreaNodeType[];
   hideInSummary?: boolean;
+  unselectByDefault?: boolean;
   zIndex?: number;
 };
 

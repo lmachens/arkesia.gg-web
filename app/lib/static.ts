@@ -7,18 +7,7 @@ export const TILE_BASE_URL =
 
 export const nodeCategories: AreaNodeCategory[] = [
   {
-    name: "Collectibles",
-    includes: ["Continent", "Dungeon", "Island"],
-    types: [
-      {
-        name: "Mokoko Seed",
-        icon: "minimap_symbol_1_121.webp",
-        sizeMultiplicator: 1.1,
-      },
-    ],
-  },
-  {
-    name: "General Orientation",
+    name: "Orientation",
     includes: ["Continent", "Dungeon", "Island"],
     types: [
       {
@@ -82,12 +71,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Purple Portal",
         icon: "minimap_symbol_1_317.webp",
       },
-    ],
-  },
-  {
-    name: "Land Orientation",
-    includes: ["Continent"],
-    types: [
       {
         name: "Triport",
         icon: "minimap_symbol_73.webp",
@@ -95,87 +78,6 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Ark Dungeon",
         icon: "minimap_symbol_4.webp",
-      },
-    ],
-  },
-  {
-    name: "World Orientation",
-    includes: ["World"],
-    types: [
-      {
-        name: "Island",
-        icon: "minimap_symbol_219.webp",
-        sizeMultiplicator: 1.1,
-        zIndex: 100,
-      },
-      {
-        name: "PvP Island",
-        icon: "minimap_symbol_218.webp",
-        zIndex: 100,
-      },
-      {
-        name: "Port",
-        icon: "minimap_symbol_92.webp",
-      },
-      {
-        name: "Dock",
-        icon: "minimap_symbol_1_47.webp",
-      },
-      {
-        name: "Ghost Ship",
-        icon: "minimap_symbol_1_210.webp",
-      },
-      {
-        name: "Vast Sea",
-        icon: "minimap_symbol_1_328.webp",
-      },
-      {
-        name: "Sailing Dungeon",
-        icon: "minimap_symbol_1_204.webp",
-      },
-    ],
-  },
-  {
-    name: "Island Exchange",
-    includes: ["Island"],
-    types: [
-      {
-        name: "Sea Bounty Exchange",
-        icon: "minimap_symbol_1_318.webp",
-      },
-      {
-        name: "Island Soul Exchange",
-        icon: "minimap_symbol_1_40.webp",
-      },
-      {
-        name: "Giants' Heart Exchange",
-        icon: "minimap_symbol_1_122.webp",
-      },
-      {
-        name: "Masterpiece Exchange",
-        icon: "minimap_symbol_1_123.webp",
-      },
-    ],
-  },
-  {
-    name: "Land Exchange",
-    includes: ["Continent"],
-    types: [
-      {
-        name: "Rapport Exchange",
-        icon: "minimap_symbol_1_275.webp",
-      },
-      {
-        name: "World Tree Leaf Exchange",
-        icon: "minimap_symbol_1_320.webp",
-      },
-      {
-        name: "Ignea Token Exchange",
-        icon: "minimap_symbol_1_457.webp",
-      },
-      {
-        name: "Omnium Star Exchange",
-        icon: "minimap_symbol_1_321.webp",
       },
     ],
   },
@@ -206,6 +108,27 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
+    name: "Mokoko Seed",
+    includes: ["Continent", "Dungeon", "Island"],
+    types: [
+      {
+        name: "Mokoko Seed",
+        icon: "minimap_symbol_1_121.webp",
+        sizeMultiplicator: 1.1,
+      },
+    ],
+  },
+  {
+    name: "Rapport",
+    includes: ["Continent", "Island"],
+    types: [
+      {
+        name: "Rapport",
+        icon: "minimap_symbol_84.webp",
+      },
+    ],
+  },
+  {
     name: "Enemies",
     includes: ["Continent", "Dungeon", "Island"],
     types: [
@@ -228,7 +151,73 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "General Services",
+    name: "Merchants",
+    includes: ["Continent", "Island"],
+    types: [
+      {
+        name: "Trade Skill Merchant",
+        icon: "minimap_symbol_171.webp",
+      },
+      {
+        name: "General Merchant",
+        icon: "minimap_symbol_175.webp",
+      },
+      {
+        name: "Potion Merchant",
+        icon: "minimap_symbol_176.webp",
+      },
+      {
+        name: "Food Merchant 1",
+        icon: "minimap_symbol_179.webp",
+      },
+      {
+        name: "Luxury Goods Merchant",
+        icon: "minimap_symbol_180.webp",
+      },
+      {
+        name: "Luck Merchant",
+        icon: "minimap_symbol_181.webp",
+      },
+      {
+        name: "Gear Merchant",
+        icon: "minimap_symbol_162.webp",
+      },
+      {
+        name: "Trade Merchant",
+        icon: "minimap_symbol_152.webp",
+      },
+      {
+        name: "Ingredient Merchant",
+        icon: "minimap_symbol_184.webp",
+      },
+      {
+        name: "Food Merchant 2",
+        icon: "minimap_symbol_190.webp",
+      },
+      {
+        name: "Trade Skill Material Merchant",
+        icon: "minimap_symbol_228.webp",
+      },
+      {
+        name: "Unknown Merchant 1 - TBC",
+        icon: "minimap_symbol_177.webp",
+      },
+      {
+        name: "Unknown Merchant 2 - TBC",
+        icon: "minimap_symbol_1_124.webp",
+      },
+      {
+        name: "Proving Grounds Merchant",
+        icon: "minimap_symbol_1_125.webp",
+      },
+      {
+        name: "Unknown Merchant 4 - TBC",
+        icon: "minimap_symbol_1_202.webp",
+      },
+    ],
+  },
+  {
+    name: "Services",
     includes: ["Continent", "Island"],
     types: [
       {
@@ -239,12 +228,6 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Wandering Merchant",
         icon: "minimap_symbol_154.webp",
       },
-    ],
-  },
-  {
-    name: "Land Services",
-    includes: ["Continent"],
-    types: [
       {
         name: "Chef",
         icon: "minimap_symbol_206.webp",
@@ -368,92 +351,46 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "World Services",
-    includes: ["World"],
+    name: "Island Exchange",
+    includes: ["Island"],
     types: [
       {
-        name: "Marina",
-        icon: "minimap_symbol_230.webp",
+        name: "Sea Bounty Exchange",
+        icon: "minimap_symbol_1_318.webp",
       },
       {
-        name: "Statue of Gienah (Island Souls)",
-        icon: "minimap_symbol_1_109.webp",
+        name: "Island Soul Exchange",
+        icon: "minimap_symbol_1_40.webp",
+      },
+      {
+        name: "Giants' Heart Exchange",
+        icon: "minimap_symbol_1_122.webp",
+      },
+      {
+        name: "Masterpiece Exchange",
+        icon: "minimap_symbol_1_123.webp",
       },
     ],
   },
   {
-    name: "Merchants",
-    includes: ["Continent", "Island"],
+    name: "Exchange",
+    includes: ["Continent"],
     types: [
       {
-        name: "Trade Skill Merchant",
-        icon: "minimap_symbol_171.webp",
+        name: "Rapport Exchange",
+        icon: "minimap_symbol_1_275.webp",
       },
       {
-        name: "General Merchant",
-        icon: "minimap_symbol_175.webp",
+        name: "World Tree Leaf Exchange",
+        icon: "minimap_symbol_1_320.webp",
       },
       {
-        name: "Potion Merchant",
-        icon: "minimap_symbol_176.webp",
+        name: "Ignea Token Exchange",
+        icon: "minimap_symbol_1_457.webp",
       },
       {
-        name: "Food Merchant 1",
-        icon: "minimap_symbol_179.webp",
-      },
-      {
-        name: "Luxury Goods Merchant",
-        icon: "minimap_symbol_180.webp",
-      },
-      {
-        name: "Luck Merchant",
-        icon: "minimap_symbol_181.webp",
-      },
-      {
-        name: "Gear Merchant",
-        icon: "minimap_symbol_162.webp",
-      },
-      {
-        name: "Trade Merchant",
-        icon: "minimap_symbol_152.webp",
-      },
-      {
-        name: "Ingredient Merchant",
-        icon: "minimap_symbol_184.webp",
-      },
-      {
-        name: "Food Merchant 2",
-        icon: "minimap_symbol_190.webp",
-      },
-      {
-        name: "Trade Skill Material Merchant",
-        icon: "minimap_symbol_228.webp",
-      },
-      {
-        name: "Unknown Merchant 1 - TBC",
-        icon: "minimap_symbol_177.webp",
-      },
-      {
-        name: "Unknown Merchant 2 - TBC",
-        icon: "minimap_symbol_1_124.webp",
-      },
-      {
-        name: "Proving Grounds Merchant",
-        icon: "minimap_symbol_1_125.webp",
-      },
-      {
-        name: "Unknown Merchant 4 - TBC",
-        icon: "minimap_symbol_1_202.webp",
-      },
-    ],
-  },
-  {
-    name: "NPCs",
-    includes: ["Continent", "Island"],
-    types: [
-      {
-        name: "Rapport",
-        icon: "minimap_symbol_84.webp",
+        name: "Omnium Star Exchange",
+        icon: "minimap_symbol_1_321.webp",
       },
     ],
   },
@@ -504,220 +441,9 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "Sea Bounties",
-    includes: ["World"],
-    types: [
-      {
-        name: "Sea Bounty - Mokoko Mushroom",
-        icon: "minimap_symbol_96.webp",
-      },
-      {
-        name: "Sea Bounty - Llama",
-        icon: "minimap_symbol_97.webp",
-      },
-      {
-        name: "Sea Bounty - Red Sea Turtle",
-        icon: "minimap_symbol_98.webp",
-      },
-      {
-        name: "Sea Bounty - Stardust",
-        icon: "minimap_symbol_99.webp",
-      },
-      {
-        name: "Sea Bounty - Sea Flower",
-        icon: "minimap_symbol_100.webp",
-      },
-      {
-        name: "Sea Bounty - Starfruit",
-        icon: "minimap_symbol_101.webp",
-      },
-      {
-        name: "Sea Bounty - Dragonfruit",
-        icon: "minimap_symbol_102.webp",
-      },
-      {
-        name: "Sea Bounty - Mandrill",
-        icon: "minimap_symbol_103.webp",
-      },
-      {
-        name: "Sea Bounty - Ghost Lizard",
-        icon: "minimap_symbol_104.webp",
-      },
-      {
-        name: "Sea Bounty - Five-colored Parrot",
-        icon: "minimap_symbol_105.webp",
-      },
-      {
-        name: "Sea Bounty - Tablet of Wind",
-        icon: "minimap_symbol_106.webp",
-      },
-      {
-        name: "Sea Bounty - Halfmoon Mask",
-        icon: "minimap_symbol_107.webp",
-      },
-      {
-        name: "Sea Bounty - Ancient Rod",
-        icon: "minimap_symbol_108.webp",
-      },
-      {
-        name: "Sea Bounty - Eagle?",
-        icon: "minimap_symbol_109.webp",
-      },
-      {
-        name: "Sea Bounty - See?",
-        icon: "minimap_symbol_110.webp",
-      },
-      {
-        name: "Sea Bounty - Crevasse",
-        icon: "minimap_symbol_111.webp",
-      },
-      {
-        name: "Sea Bounty - Smoldering Ice",
-        icon: "minimap_symbol_112.webp",
-      },
-      {
-        name: "Sea Bounty - Dolmen",
-        icon: "minimap_symbol_113.webp",
-      },
-      {
-        name: "Sea Bounty - Magick Circle",
-        icon: "minimap_symbol_114.webp",
-      },
-      {
-        name: "Sea Bounty - Shipwreck",
-        icon: "minimap_symbol_115.webp",
-      },
-      {
-        name: "Sea Bounty - Common Dolphin",
-        icon: "minimap_symbol_116.webp",
-      },
-      {
-        name: "Sea Bounty - Polar Mammoth",
-        icon: "minimap_symbol_117.webp",
-      },
-      {
-        name: "Sea Bounty - Red Camel",
-        icon: "minimap_symbol_118.webp",
-      },
-      {
-        name: "Sea Bounty - Unicorn",
-        icon: "minimap_symbol_119.webp",
-      },
-      {
-        name: "Sea Bounty - Ghost Stringray",
-        icon: "minimap_symbol_120.webp",
-      },
-      {
-        name: "Sea Bounty - Dolphin?",
-        icon: "minimap_symbol_121.webp",
-      },
-      {
-        name: "Sea Bounty - Siren",
-        icon: "minimap_symbol_122.webp",
-      },
-      {
-        name: "Sea Bounty - Moonkeep",
-        icon: "minimap_symbol_123.webp",
-      },
-      {
-        name: "Sea Bounty - Godsent Spear",
-        icon: "minimap_symbol_124.webp",
-      },
-      {
-        name: "Sea Bounty - Tablet?",
-        icon: "minimap_symbol_125.webp",
-      },
-      {
-        name: "Sea Bounty - Dolmen?",
-        icon: "minimap_symbol_126.webp",
-      },
-      {
-        name: "Sea Bounty - Aurora",
-        icon: "minimap_symbol_127.webp",
-      },
-      {
-        name: "Sea Bounty - Whirlpool",
-        icon: "minimap_symbol_128.webp",
-      },
-      {
-        name: "Sea Bounty - The Hestia",
-        icon: "minimap_symbol_129.webp",
-      },
-      {
-        name: "Sea Bounty - Mute Island",
-        icon: "minimap_symbol_130.webp",
-      },
-      {
-        name: "Sea Bounty - Totoiki Boat",
-        icon: "minimap_symbol_131.webp",
-      },
-      {
-        name: "Sea Bounty - Mysterious Chest",
-        icon: "minimap_symbol_132.webp",
-      },
-      {
-        name: "Sea Bounty - Pirate's Peg Leg",
-        icon: "minimap_symbol_133.webp",
-      },
-      {
-        name: "Sea Bounty - Pirate Flag",
-        icon: "minimap_symbol_134.webp",
-      },
-      {
-        name: "Sea Bounty - Forgotten Lake",
-        icon: "minimap_symbol_135.webp",
-      },
-      {
-        name: "Sea Bounty - Whale?",
-        icon: "minimap_symbol_223.webp",
-      },
-      {
-        name: "Sea Bounty - PhantomWing",
-        icon: "minimap_symbol_1_323.webp",
-      },
-      {
-        name: "Sea Bounty - King Shellfish",
-        icon: "minimap_symbol_1_324.webp",
-      },
-      {
-        name: "Sea Bounty - Covered Figurehead",
-        icon: "minimap_symbol_1_325.webp",
-      },
-      {
-        name: "Sea Bounty - Ice Statue of a Woman",
-        icon: "minimap_symbol_1_326.webp",
-      },
-    ],
-  },
-  {
-    name: "Sea",
-    includes: ["World"],
-    types: [
-      {
-        name: "Sandstorm Sea",
-        icon: "minimap_symbol_1_307.webp",
-      },
-      {
-        name: "Cold Snap Sea",
-        icon: "minimap_symbol_1_304.webp",
-      },
-      {
-        name: "Tempest Sea",
-        icon: "minimap_symbol_1_306.webp",
-      },
-      {
-        name: "Siren Sea",
-        icon: "minimap_symbol_1_308.webp",
-      },
-      {
-        name: "Dead Waters",
-        icon: "minimap_symbol_1_305.webp",
-      },
-    ],
-  },
-  {
     name: "Trade Skills",
     includes: ["Continent", "Island"],
+    unselectByDefault: true,
     types: [
       {
         name: "Excavation",
@@ -742,19 +468,14 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "General Event",
+    name: "Events",
     includes: ["Continent", "Island"],
+    unselectByDefault: true,
     types: [
       {
         name: "Co-op Quest Area",
         icon: "minimap_symbol_88.webp",
       },
-    ],
-  },
-  {
-    name: "Land Event",
-    includes: ["Continent"],
-    types: [
       {
         name: "Chaos Gate",
         icon: "minimap_symbol_6.webp",
@@ -782,7 +503,80 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "World Areas",
+    name: "Hazardous Waters",
+    includes: ["World"],
+    types: [
+      {
+        name: "Sandstorm Sea",
+        icon: "minimap_symbol_1_307.webp",
+      },
+      {
+        name: "Cold Snap Sea",
+        icon: "minimap_symbol_1_304.webp",
+      },
+      {
+        name: "Tempest Sea",
+        icon: "minimap_symbol_1_306.webp",
+      },
+      {
+        name: "Siren Sea",
+        icon: "minimap_symbol_1_308.webp",
+      },
+      {
+        name: "Dead Waters",
+        icon: "minimap_symbol_1_305.webp",
+      },
+    ],
+  },
+  {
+    name: "Gates",
+    includes: ["World"],
+    types: [
+      {
+        name: "Port",
+        icon: "minimap_symbol_92.webp",
+      },
+      {
+        name: "Dock",
+        icon: "minimap_symbol_1_47.webp",
+      },
+      {
+        name: "Ghost Ship",
+        icon: "minimap_symbol_1_210.webp",
+      },
+      {
+        name: "Vast Sea",
+        icon: "minimap_symbol_1_328.webp",
+      },
+      {
+        name: "Sailing Dungeon",
+        icon: "minimap_symbol_1_204.webp",
+      },
+    ],
+  },
+  {
+    name: "Islands",
+    includes: ["World"],
+    types: [
+      {
+        name: "Island",
+        icon: "minimap_symbol_219.webp",
+        sizeMultiplicator: 1.1,
+        zIndex: 100,
+      },
+      {
+        name: "PvP Island",
+        icon: "minimap_symbol_218.webp",
+        zIndex: 100,
+      },
+      {
+        name: "Statue of Gienah (Island Souls)",
+        icon: "minimap_symbol_1_109.webp",
+      },
+    ],
+  },
+  {
+    name: "Continents",
     includes: ["World"],
     hideInSummary: true,
     zIndex: 100,
@@ -1166,6 +960,204 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Rigens Village",
         icon: "rigens-village.webp",
         size: "lg",
+      },
+    ],
+  },
+  {
+    name: "Marinas",
+    includes: ["World"],
+    unselectByDefault: true,
+    types: [
+      {
+        name: "Marina",
+        icon: "minimap_symbol_230.webp",
+      },
+    ],
+  },
+  {
+    name: "Sea Bounties",
+    includes: ["World"],
+    unselectByDefault: true,
+    types: [
+      {
+        name: "Sea Bounty - Mokoko Mushroom",
+        icon: "minimap_symbol_96.webp",
+      },
+      {
+        name: "Sea Bounty - Llama",
+        icon: "minimap_symbol_97.webp",
+      },
+      {
+        name: "Sea Bounty - Red Sea Turtle",
+        icon: "minimap_symbol_98.webp",
+      },
+      {
+        name: "Sea Bounty - Stardust",
+        icon: "minimap_symbol_99.webp",
+      },
+      {
+        name: "Sea Bounty - Sea Flower",
+        icon: "minimap_symbol_100.webp",
+      },
+      {
+        name: "Sea Bounty - Starfruit",
+        icon: "minimap_symbol_101.webp",
+      },
+      {
+        name: "Sea Bounty - Dragonfruit",
+        icon: "minimap_symbol_102.webp",
+      },
+      {
+        name: "Sea Bounty - Mandrill",
+        icon: "minimap_symbol_103.webp",
+      },
+      {
+        name: "Sea Bounty - Ghost Lizard",
+        icon: "minimap_symbol_104.webp",
+      },
+      {
+        name: "Sea Bounty - Five-colored Parrot",
+        icon: "minimap_symbol_105.webp",
+      },
+      {
+        name: "Sea Bounty - Tablet of Wind",
+        icon: "minimap_symbol_106.webp",
+      },
+      {
+        name: "Sea Bounty - Halfmoon Mask",
+        icon: "minimap_symbol_107.webp",
+      },
+      {
+        name: "Sea Bounty - Ancient Rod",
+        icon: "minimap_symbol_108.webp",
+      },
+      {
+        name: "Sea Bounty - Eagle?",
+        icon: "minimap_symbol_109.webp",
+      },
+      {
+        name: "Sea Bounty - See?",
+        icon: "minimap_symbol_110.webp",
+      },
+      {
+        name: "Sea Bounty - Crevasse",
+        icon: "minimap_symbol_111.webp",
+      },
+      {
+        name: "Sea Bounty - Smoldering Ice",
+        icon: "minimap_symbol_112.webp",
+      },
+      {
+        name: "Sea Bounty - Dolmen",
+        icon: "minimap_symbol_113.webp",
+      },
+      {
+        name: "Sea Bounty - Magick Circle",
+        icon: "minimap_symbol_114.webp",
+      },
+      {
+        name: "Sea Bounty - Shipwreck",
+        icon: "minimap_symbol_115.webp",
+      },
+      {
+        name: "Sea Bounty - Common Dolphin",
+        icon: "minimap_symbol_116.webp",
+      },
+      {
+        name: "Sea Bounty - Polar Mammoth",
+        icon: "minimap_symbol_117.webp",
+      },
+      {
+        name: "Sea Bounty - Red Camel",
+        icon: "minimap_symbol_118.webp",
+      },
+      {
+        name: "Sea Bounty - Unicorn",
+        icon: "minimap_symbol_119.webp",
+      },
+      {
+        name: "Sea Bounty - Ghost Stringray",
+        icon: "minimap_symbol_120.webp",
+      },
+      {
+        name: "Sea Bounty - Dolphin?",
+        icon: "minimap_symbol_121.webp",
+      },
+      {
+        name: "Sea Bounty - Siren",
+        icon: "minimap_symbol_122.webp",
+      },
+      {
+        name: "Sea Bounty - Moonkeep",
+        icon: "minimap_symbol_123.webp",
+      },
+      {
+        name: "Sea Bounty - Godsent Spear",
+        icon: "minimap_symbol_124.webp",
+      },
+      {
+        name: "Sea Bounty - Tablet?",
+        icon: "minimap_symbol_125.webp",
+      },
+      {
+        name: "Sea Bounty - Dolmen?",
+        icon: "minimap_symbol_126.webp",
+      },
+      {
+        name: "Sea Bounty - Aurora",
+        icon: "minimap_symbol_127.webp",
+      },
+      {
+        name: "Sea Bounty - Whirlpool",
+        icon: "minimap_symbol_128.webp",
+      },
+      {
+        name: "Sea Bounty - The Hestia",
+        icon: "minimap_symbol_129.webp",
+      },
+      {
+        name: "Sea Bounty - Mute Island",
+        icon: "minimap_symbol_130.webp",
+      },
+      {
+        name: "Sea Bounty - Totoiki Boat",
+        icon: "minimap_symbol_131.webp",
+      },
+      {
+        name: "Sea Bounty - Mysterious Chest",
+        icon: "minimap_symbol_132.webp",
+      },
+      {
+        name: "Sea Bounty - Pirate's Peg Leg",
+        icon: "minimap_symbol_133.webp",
+      },
+      {
+        name: "Sea Bounty - Pirate Flag",
+        icon: "minimap_symbol_134.webp",
+      },
+      {
+        name: "Sea Bounty - Forgotten Lake",
+        icon: "minimap_symbol_135.webp",
+      },
+      {
+        name: "Sea Bounty - Whale?",
+        icon: "minimap_symbol_223.webp",
+      },
+      {
+        name: "Sea Bounty - PhantomWing",
+        icon: "minimap_symbol_1_323.webp",
+      },
+      {
+        name: "Sea Bounty - King Shellfish",
+        icon: "minimap_symbol_1_324.webp",
+      },
+      {
+        name: "Sea Bounty - Covered Figurehead",
+        icon: "minimap_symbol_1_325.webp",
+      },
+      {
+        name: "Sea Bounty - Ice Statue of a Woman",
+        icon: "minimap_symbol_1_326.webp",
       },
     ],
   },

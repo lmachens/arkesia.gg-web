@@ -4,7 +4,6 @@ import L from "leaflet";
 import "leaflet-rotate";
 import { MapContainer, useMapEvents } from "react-leaflet";
 import includeCanvasTileLayer from "./includeCanvasTileLayer";
-import MousePosition from "./MousePosition";
 import TileControl from "./TileControl";
 import { getBounds, getMapCenter } from "~/lib/map";
 import UpsertMarker from "./UpsertMarker";
@@ -164,7 +163,6 @@ export default function MapView() {
       rotateControl={false}
       bearing={area.name !== "Arkesia" ? -45 : 0}
     >
-      <MousePosition />
       <TileControl
         area={area}
         nodeLocations={nodeLocations}

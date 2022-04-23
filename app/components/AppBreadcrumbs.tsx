@@ -27,6 +27,7 @@ export default function AppBreadcrumbs() {
         margin: "0 auto",
         width: "fit-content",
         zIndex: 680,
+        maxWidth: "70%",
       }}
       variant="gradient"
       gradient={{ from: "teal", to: "blue", deg: 60 }}

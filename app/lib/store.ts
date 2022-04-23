@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import create from "zustand";
 import { persist } from "zustand/middleware";
 import { useNodeLocations } from "./loaders";
+import { nodeCategories } from "./static";
 import { trackHideDiscoveredNodes, trackShowDiscoveredNodes } from "./stats";
 import type { AreaNodeLocationDTO } from "./types";
 
@@ -24,6 +25,8 @@ type PersistentStoreProps = {
   toggleShowNameOnMap: () => void;
   markerSize: number;
   setMarkerSize: (markerSize: number) => void;
+  filters: string[];
+  setFilters: (filters: string[]) => void;
 };
 
 export const usePersistentStore = create(
@@ -71,6 +74,10 @@ export const usePersistentStore = create(
         set((store) => ({ showNameOnMap: !store.showNameOnMap })),
       markerSize: 35,
       setMarkerSize: (markerSize) => set({ markerSize }),
+      filters: nodeCategories
+        .filter((category) => !category.unselectByDefault)
+        .map((nodeCategory) => nodeCategory.name),
+      setFilters: (filters) => set({ filters }),
     }),
     {
       name: "persistent-storage",
@@ -163,6 +170,16 @@ const setMarkerSizeSelector = (state: PersistentStoreProps) =>
   state.setMarkerSize;
 export const useSetMarkerSize = () => {
   return usePersistentStore(setMarkerSizeSelector);
+};
+
+const filtersSelector = (state: PersistentStoreProps) => state.filters;
+export const useFilters = () => {
+  return usePersistentStore(filtersSelector);
+};
+
+const setFiltersSelector = (state: PersistentStoreProps) => state.setFilters;
+export const useSetFilters = () => {
+  return usePersistentStore(setFiltersSelector);
 };
 
 export const useSessionStore = create(
