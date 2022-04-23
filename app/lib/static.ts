@@ -1077,6 +1077,11 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "shady-cliff.webp",
         size: "lg",
       },
+      {
+        name: "Hall of Promise",
+        icon: "hall-of-promise.webp",
+        size: "lg",
+      },
     ],
   },
 ];
@@ -5827,24 +5832,6 @@ export const continents: Continent[] = [
             tile: "hall_of_promise/lv_yor_lpromise_f_ps_0_{y}x{x}.webp",
             full: "hall_of_promise/lv_yor_lpromise_f_ps_0_full.webp",
             max: [6, 6],
-          },
-          {
-            id: 1,
-            tile: "hall_of_promise/lv_yor_lpromise_f_ps_1_{y}x{x}.webp",
-            full: "hall_of_promise/lv_yor_lpromise_f_ps_1_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 4,
-            tile: "hall_of_promise/lv_yor_lpromise_f_ps_4_{y}x{x}.webp",
-            full: "hall_of_promise/lv_yor_lpromise_f_ps_4_full.webp",
-            max: [1, 1],
-          },
-          {
-            id: 5,
-            tile: "hall_of_promise/lv_yor_lpromise_f_ps_5_{y}x{x}.webp",
-            full: "hall_of_promise/lv_yor_lpromise_f_ps_5_full.webp",
-            max: [1, 1],
           },
         ],
       },
