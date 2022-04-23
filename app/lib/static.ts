@@ -7,17 +7,6 @@ export const TILE_BASE_URL =
 
 export const nodeCategories: AreaNodeCategory[] = [
   {
-    name: "Collectibles",
-    includes: ["Continent", "Dungeon", "Island"],
-    types: [
-      {
-        name: "Mokoko Seed",
-        icon: "minimap_symbol_1_121.webp",
-        sizeMultiplicator: 1.1,
-      },
-    ],
-  },
-  {
     name: "Orientation",
     includes: ["Continent", "Dungeon", "Island"],
     types: [
@@ -93,87 +82,6 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "World Orientation",
-    includes: ["World"],
-    types: [
-      {
-        name: "Island",
-        icon: "minimap_symbol_219.webp",
-        sizeMultiplicator: 1.1,
-        zIndex: 100,
-      },
-      {
-        name: "PvP Island",
-        icon: "minimap_symbol_218.webp",
-        zIndex: 100,
-      },
-      {
-        name: "Port",
-        icon: "minimap_symbol_92.webp",
-      },
-      {
-        name: "Dock",
-        icon: "minimap_symbol_1_47.webp",
-      },
-      {
-        name: "Ghost Ship",
-        icon: "minimap_symbol_1_210.webp",
-      },
-      {
-        name: "Vast Sea",
-        icon: "minimap_symbol_1_328.webp",
-      },
-      {
-        name: "Sailing Dungeon",
-        icon: "minimap_symbol_1_204.webp",
-      },
-    ],
-  },
-  {
-    name: "Island Exchange",
-    includes: ["Island"],
-    types: [
-      {
-        name: "Sea Bounty Exchange",
-        icon: "minimap_symbol_1_318.webp",
-      },
-      {
-        name: "Island Soul Exchange",
-        icon: "minimap_symbol_1_40.webp",
-      },
-      {
-        name: "Giants' Heart Exchange",
-        icon: "minimap_symbol_1_122.webp",
-      },
-      {
-        name: "Masterpiece Exchange",
-        icon: "minimap_symbol_1_123.webp",
-      },
-    ],
-  },
-  {
-    name: "Exchange",
-    includes: ["Continent"],
-    types: [
-      {
-        name: "Rapport Exchange",
-        icon: "minimap_symbol_1_275.webp",
-      },
-      {
-        name: "World Tree Leaf Exchange",
-        icon: "minimap_symbol_1_320.webp",
-      },
-      {
-        name: "Ignea Token Exchange",
-        icon: "minimap_symbol_1_457.webp",
-      },
-      {
-        name: "Omnium Star Exchange",
-        icon: "minimap_symbol_1_321.webp",
-      },
-    ],
-  },
-  {
     name: "Adventure Tome",
     includes: ["Continent", "Dungeon"],
     types: [
@@ -200,6 +108,54 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
+    name: "Mokoko Seed",
+    includes: ["Continent", "Dungeon", "Island"],
+    types: [
+      {
+        name: "Mokoko Seed",
+        icon: "minimap_symbol_1_121.webp",
+        sizeMultiplicator: 1.1,
+      },
+    ],
+  },
+  {
+    name: "Rapport",
+    includes: ["Continent", "Island"],
+    types: [
+      {
+        name: "Rapport",
+        icon: "minimap_symbol_84.webp",
+      },
+    ],
+  },
+  {
+    name: "Trade Skills",
+    includes: ["Continent", "Island"],
+    unselectByDefault: true,
+    types: [
+      {
+        name: "Excavation",
+        icon: "excavation.webp",
+      },
+      {
+        name: "Ore",
+        icon: "minimap_symbol_21.webp",
+      },
+      {
+        name: "Timber",
+        icon: "minimap_symbol_22.webp",
+      },
+      {
+        name: "Foraging",
+        icon: "minimap_symbol_23.webp",
+      },
+      {
+        name: "Fishing Spot",
+        icon: "minimap_symbol_24.webp",
+      },
+    ],
+  },
+  {
     name: "Enemies",
     includes: ["Continent", "Dungeon", "Island"],
     types: [
@@ -218,6 +174,72 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Silver Named Enemy",
         icon: "minimap_symbol_76.webp",
+      },
+    ],
+  },
+  {
+    name: "Merchants",
+    includes: ["Continent", "Island"],
+    types: [
+      {
+        name: "Trade Skill Merchant",
+        icon: "minimap_symbol_171.webp",
+      },
+      {
+        name: "General Merchant",
+        icon: "minimap_symbol_175.webp",
+      },
+      {
+        name: "Potion Merchant",
+        icon: "minimap_symbol_176.webp",
+      },
+      {
+        name: "Food Merchant 1",
+        icon: "minimap_symbol_179.webp",
+      },
+      {
+        name: "Luxury Goods Merchant",
+        icon: "minimap_symbol_180.webp",
+      },
+      {
+        name: "Luck Merchant",
+        icon: "minimap_symbol_181.webp",
+      },
+      {
+        name: "Gear Merchant",
+        icon: "minimap_symbol_162.webp",
+      },
+      {
+        name: "Trade Merchant",
+        icon: "minimap_symbol_152.webp",
+      },
+      {
+        name: "Ingredient Merchant",
+        icon: "minimap_symbol_184.webp",
+      },
+      {
+        name: "Food Merchant 2",
+        icon: "minimap_symbol_190.webp",
+      },
+      {
+        name: "Trade Skill Material Merchant",
+        icon: "minimap_symbol_228.webp",
+      },
+      {
+        name: "Unknown Merchant 1 - TBC",
+        icon: "minimap_symbol_177.webp",
+      },
+      {
+        name: "Unknown Merchant 2 - TBC",
+        icon: "minimap_symbol_1_124.webp",
+      },
+      {
+        name: "Proving Grounds Merchant",
+        icon: "minimap_symbol_1_125.webp",
+      },
+      {
+        name: "Unknown Merchant 4 - TBC",
+        icon: "minimap_symbol_1_202.webp",
       },
     ],
   },
@@ -356,92 +378,46 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "World Services",
-    includes: ["World"],
+    name: "Island Exchange",
+    includes: ["Island"],
     types: [
       {
-        name: "Marina",
-        icon: "minimap_symbol_230.webp",
+        name: "Sea Bounty Exchange",
+        icon: "minimap_symbol_1_318.webp",
       },
       {
-        name: "Statue of Gienah (Island Souls)",
-        icon: "minimap_symbol_1_109.webp",
+        name: "Island Soul Exchange",
+        icon: "minimap_symbol_1_40.webp",
+      },
+      {
+        name: "Giants' Heart Exchange",
+        icon: "minimap_symbol_1_122.webp",
+      },
+      {
+        name: "Masterpiece Exchange",
+        icon: "minimap_symbol_1_123.webp",
       },
     ],
   },
   {
-    name: "Merchants",
-    includes: ["Continent", "Island"],
+    name: "Exchange",
+    includes: ["Continent"],
     types: [
       {
-        name: "Trade Skill Merchant",
-        icon: "minimap_symbol_171.webp",
+        name: "Rapport Exchange",
+        icon: "minimap_symbol_1_275.webp",
       },
       {
-        name: "General Merchant",
-        icon: "minimap_symbol_175.webp",
+        name: "World Tree Leaf Exchange",
+        icon: "minimap_symbol_1_320.webp",
       },
       {
-        name: "Potion Merchant",
-        icon: "minimap_symbol_176.webp",
+        name: "Ignea Token Exchange",
+        icon: "minimap_symbol_1_457.webp",
       },
       {
-        name: "Food Merchant 1",
-        icon: "minimap_symbol_179.webp",
-      },
-      {
-        name: "Luxury Goods Merchant",
-        icon: "minimap_symbol_180.webp",
-      },
-      {
-        name: "Luck Merchant",
-        icon: "minimap_symbol_181.webp",
-      },
-      {
-        name: "Gear Merchant",
-        icon: "minimap_symbol_162.webp",
-      },
-      {
-        name: "Trade Merchant",
-        icon: "minimap_symbol_152.webp",
-      },
-      {
-        name: "Ingredient Merchant",
-        icon: "minimap_symbol_184.webp",
-      },
-      {
-        name: "Food Merchant 2",
-        icon: "minimap_symbol_190.webp",
-      },
-      {
-        name: "Trade Skill Material Merchant",
-        icon: "minimap_symbol_228.webp",
-      },
-      {
-        name: "Unknown Merchant 1 - TBC",
-        icon: "minimap_symbol_177.webp",
-      },
-      {
-        name: "Unknown Merchant 2 - TBC",
-        icon: "minimap_symbol_1_124.webp",
-      },
-      {
-        name: "Proving Grounds Merchant",
-        icon: "minimap_symbol_1_125.webp",
-      },
-      {
-        name: "Unknown Merchant 4 - TBC",
-        icon: "minimap_symbol_1_202.webp",
-      },
-    ],
-  },
-  {
-    name: "NPCs",
-    includes: ["Continent", "Island"],
-    types: [
-      {
-        name: "Rapport",
-        icon: "minimap_symbol_84.webp",
+        name: "Omnium Star Exchange",
+        icon: "minimap_symbol_1_321.webp",
       },
     ],
   },
@@ -488,6 +464,67 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Story Mission",
         icon: "minimap_symbol_2.webp",
+      },
+    ],
+  },
+  {
+    name: "Events",
+    includes: ["Continent", "Island"],
+    unselectByDefault: true,
+    types: [
+      {
+        name: "Co-op Quest Area",
+        icon: "minimap_symbol_88.webp",
+      },
+      {
+        name: "Chaos Gate",
+        icon: "minimap_symbol_6.webp",
+      },
+      {
+        name: "Mayhem Chaos Gate",
+        icon: "minimap_symbol_64.webp",
+      },
+      {
+        name: "Plum Chaos Gate",
+        icon: "minimap_symbol_65.webp",
+      },
+      {
+        name: "Lime Chaos Gate",
+        icon: "minimap_symbol_66.webp",
+      },
+      {
+        name: "Pink Chaos Gate",
+        icon: "minimap_symbol_67.webp",
+      },
+      {
+        name: "Sudden Quest Area",
+        icon: "minimap_symbol_81.webp",
+      },
+    ],
+  },
+  {
+    name: "Hazardous Waters",
+    includes: ["World"],
+    types: [
+      {
+        name: "Sandstorm Sea",
+        icon: "minimap_symbol_1_307.webp",
+      },
+      {
+        name: "Cold Snap Sea",
+        icon: "minimap_symbol_1_304.webp",
+      },
+      {
+        name: "Tempest Sea",
+        icon: "minimap_symbol_1_306.webp",
+      },
+      {
+        name: "Siren Sea",
+        icon: "minimap_symbol_1_308.webp",
+      },
+      {
+        name: "Dead Waters",
+        icon: "minimap_symbol_1_305.webp",
       },
     ],
   },
@@ -678,95 +715,64 @@ export const nodeCategories: AreaNodeCategory[] = [
     ],
   },
   {
-    name: "Sea",
+    name: "Marinas",
     includes: ["World"],
     types: [
       {
-        name: "Sandstorm Sea",
-        icon: "minimap_symbol_1_307.webp",
-      },
-      {
-        name: "Cold Snap Sea",
-        icon: "minimap_symbol_1_304.webp",
-      },
-      {
-        name: "Tempest Sea",
-        icon: "minimap_symbol_1_306.webp",
-      },
-      {
-        name: "Siren Sea",
-        icon: "minimap_symbol_1_308.webp",
-      },
-      {
-        name: "Dead Waters",
-        icon: "minimap_symbol_1_305.webp",
+        name: "Marina",
+        icon: "minimap_symbol_230.webp",
       },
     ],
   },
   {
-    name: "Trade Skills",
-    includes: ["Continent", "Island"],
-    unselectByDefault: true,
+    name: "Gates",
+    includes: ["World"],
     types: [
       {
-        name: "Excavation",
-        icon: "excavation.webp",
+        name: "Port",
+        icon: "minimap_symbol_92.webp",
       },
       {
-        name: "Ore",
-        icon: "minimap_symbol_21.webp",
+        name: "Dock",
+        icon: "minimap_symbol_1_47.webp",
       },
       {
-        name: "Timber",
-        icon: "minimap_symbol_22.webp",
+        name: "Ghost Ship",
+        icon: "minimap_symbol_1_210.webp",
       },
       {
-        name: "Foraging",
-        icon: "minimap_symbol_23.webp",
+        name: "Vast Sea",
+        icon: "minimap_symbol_1_328.webp",
       },
       {
-        name: "Fishing Spot",
-        icon: "minimap_symbol_24.webp",
+        name: "Sailing Dungeon",
+        icon: "minimap_symbol_1_204.webp",
+      },
+      {
+        name: "Statue of Gienah (Island Souls)",
+        icon: "minimap_symbol_1_109.webp",
       },
     ],
   },
   {
-    name: "Event",
-    includes: ["Continent", "Island"],
-    unselectByDefault: true,
+    name: "Islands",
+    includes: ["World"],
     types: [
       {
-        name: "Co-op Quest Area",
-        icon: "minimap_symbol_88.webp",
+        name: "Island",
+        icon: "minimap_symbol_219.webp",
+        sizeMultiplicator: 1.1,
+        zIndex: 100,
       },
       {
-        name: "Chaos Gate",
-        icon: "minimap_symbol_6.webp",
-      },
-      {
-        name: "Mayhem Chaos Gate",
-        icon: "minimap_symbol_64.webp",
-      },
-      {
-        name: "Plum Chaos Gate",
-        icon: "minimap_symbol_65.webp",
-      },
-      {
-        name: "Lime Chaos Gate",
-        icon: "minimap_symbol_66.webp",
-      },
-      {
-        name: "Pink Chaos Gate",
-        icon: "minimap_symbol_67.webp",
-      },
-      {
-        name: "Sudden Quest Area",
-        icon: "minimap_symbol_81.webp",
+        name: "PvP Island",
+        icon: "minimap_symbol_218.webp",
+        zIndex: 100,
       },
     ],
   },
   {
-    name: "World Areas",
+    name: "Continents",
     includes: ["World"],
     hideInSummary: true,
     zIndex: 100,

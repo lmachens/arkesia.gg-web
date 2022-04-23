@@ -1,6 +1,6 @@
 import { Checkbox } from "@mantine/core";
 import { Stack } from "@mantine/core";
-import { DrawingPinFilledIcon, EyeOpenIcon } from "@modulz/radix-icons";
+import { StackIcon } from "@modulz/radix-icons";
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { arkesiaArea, continents, nodeCategories } from "~/lib/static";
@@ -25,8 +25,7 @@ const FiltersSelect = () => {
     () =>
       nodeCategories
         .filter((category) => category.includes.includes(area.category))
-        .map((category) => category.name)
-        .sort(),
+        .map((category) => category.name),
     [area]
   );
 
@@ -47,7 +46,7 @@ const FiltersSelect = () => {
       {categoryNames.map((categoryName) => (
         <Checkbox
           key={categoryName}
-          icon={DrawingPinFilledIcon}
+          icon={StackIcon}
           label={categoryName}
           onChange={(event) => {
             if (event.target.checked) {
