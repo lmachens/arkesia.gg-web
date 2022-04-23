@@ -1,4 +1,4 @@
-import { ActionIcon, Checkbox, Popover } from "@mantine/core";
+import { ActionIcon, Checkbox, Container, Popover } from "@mantine/core";
 import { Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { StackIcon } from "@modulz/radix-icons";
@@ -80,9 +80,27 @@ const FiltersSelect = () => {
         withArrow
         zIndex={8900}
         radius="sm"
+        sx={{
+          display: "none",
+          "@media (max-width: 800px)": {
+            display: "block",
+          },
+        }}
       >
         {content}
       </Popover>
+      <Container
+        sx={(theme) => ({
+          borderRadius: theme.radius.sm,
+          padding: theme.spacing.sm,
+          backgroundColor: theme.colors.dark[8],
+          "@media (max-width: 800px)": {
+            display: "none",
+          },
+        })}
+      >
+        {content}
+      </Container>
     </div>
   );
 };
