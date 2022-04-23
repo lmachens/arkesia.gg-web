@@ -1,4 +1,6 @@
-import { ActionIcon, Checkbox, Container, Popover } from "@mantine/core";
+import type { CSSObject } from "@mantine/core";
+import { Container } from "@mantine/core";
+import { ActionIcon, Checkbox, MediaQuery, Popover } from "@mantine/core";
 import { Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { StackIcon } from "@modulz/radix-icons";
@@ -31,6 +33,14 @@ const FiltersSelect = () => {
     [area]
   );
 
+  const css: CSSObject = {
+    position: "absolute",
+    top: 8,
+    right: drawerPosition === "left" ? 10 : "auto",
+    left: drawerPosition === "left" ? "auto" : 10,
+    zIndex: 8900,
+  };
+
   const content = (
     <Stack spacing="xs">
       {categoryNames.map((categoryName) => (
@@ -53,55 +63,51 @@ const FiltersSelect = () => {
   );
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: 8,
-        right: drawerPosition === "left" ? 10 : "auto",
-        left: drawerPosition === "left" ? "auto" : 10,
-        zIndex: 8900,
-      }}
-    >
-      <Popover
-        opened={opened}
-        onClose={handlers.close}
-        target={
-          <ActionIcon
-            onClick={handlers.toggle}
-            size="lg"
-            variant="filled"
-            title="Filters"
-            color="cyan"
-          >
-            <StackIcon />
-          </ActionIcon>
-        }
-        position="bottom"
-        withArrow
-        zIndex={8900}
-        radius="sm"
-        sx={{
-          display: "none",
-          "@media (max-width: 800px)": {
-            display: "block",
-          },
-        }}
-      >
-        {content}
-      </Popover>
-      <Container
-        sx={(theme) => ({
-          borderRadius: theme.radius.sm,
-          padding: theme.spacing.sm,
-          backgroundColor: theme.colors.dark[8],
-          "@media (max-width: 800px)": {
+    <>
+      <MediaQuery smallerThan="sm" styles={css}>
+        <Popover
+          opened={opened}
+          onClose={handlers.close}
+          target={
+            <ActionIcon
+              onClick={handlers.toggle}
+              size="lg"
+              variant="filled"
+              title="Filters"
+              color="cyan"
+            >
+              <StackIcon />
+            </ActionIcon>
+          }
+          position="bottom"
+          withArrow
+          zIndex={8900}
+          radius="sm"
+          sx={{
             display: "none",
-          },
-        })}
-      >
-        {content}
-      </Container>
-    </div>
+            "@media (max-width: 800px)": {
+              display: "block",
+            },
+          }}
+        >
+          {content}
+        </Popover>
+      </MediaQuery>
+      <MediaQuery largerThan="sm" styles={css}>
+        <Container
+          sx={(theme) => ({
+            borderRadius: theme.radius.sm,
+            padding: theme.spacing.sm,
+            backgroundColor: theme.colors.dark[8],
+            "@media (max-width: 800px)": {
+              display: "none",
+            },
+          })}
+        >
+          {content}
+        </Container>
+      </MediaQuery>
+    </>
   );
 };
 
