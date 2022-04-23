@@ -51,7 +51,7 @@ function getLabel(
       const transitToLocation = transitTo.areaNodeLocations[0];
       if (transitToLocation) {
         const continent = areaContinents[transitToLocation.areaName];
-        href = `/${continent}/${transitToLocation.areaName}?tile=${transitToLocation.tileId}`;
+        href = `/${continent}/${transitToLocation.areaName}?tileId=${transitToLocation.tileId}`;
       }
     }
 
