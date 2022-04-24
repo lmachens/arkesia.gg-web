@@ -9,10 +9,7 @@ export function postToDiscord(
   nodeLocation: AreaNodeLocation,
   reason?: string
 ) {
-  if (!process.env.DISCORD_WEBHOOK_URL) {
-    return;
-  }
-
+  let webhookUrl: string | undefined = undefined;
   const payload: {
     [key: string]: any;
   } = {
@@ -20,15 +17,26 @@ export function postToDiscord(
   };
 
   if (action === "inserted") {
-    payload.content = node.userId
-      ? `📌 There is a new node on the map!`
-      : `👾 This node needs validation!`;
+    if (node.userId) {
+      payload.content = `📌 There is a new node on the map!`;
+      webhookUrl = process.env.DISCORD_ACTIVITY_WEBHOOK_URL;
+    } else {
+      payload.content = `👾 This node needs validation!`;
+      webhookUrl = process.env.DISCORD_MODERATION_WEBHOOK_URL;
+    }
   } else if (action === "updated") {
-    payload.content = `📝 This node is updated!`;
+    payload.content = `📝 This node has been updated!`;
+    webhookUrl = process.env.DISCORD_ACTIVITY_WEBHOOK_URL;
   } else if (action === "deleted") {
     payload.content = `💀 This node has been deleted!`;
+    webhookUrl = process.env.DISCORD_ACTIVITY_WEBHOOK_URL;
   } else if (action === "report") {
     payload.content = `💡 There is an issue with this node:\n\n${reason}`;
+    webhookUrl = process.env.DISCORD_MODERATION_WEBHOOK_URL;
+  }
+
+  if (!webhookUrl) {
+    return;
   }
 
   const continent = continents.find((continent) =>
@@ -57,11 +65,6 @@ export function postToDiscord(
           value: node.type,
           inline: true,
         },
-        {
-          name: "Position",
-          value: `[${nodeLocation.position.join(", ")}]`,
-          inline: true,
-        },
       ],
     },
   ];
@@ -80,7 +83,7 @@ export function postToDiscord(
     });
   }
 
-  return fetch(process.env.DISCORD_WEBHOOK_URL, {
+  return fetch(webhookUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
