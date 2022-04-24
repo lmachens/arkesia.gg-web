@@ -36,8 +36,8 @@ const FiltersSelect = () => {
   const css: CSSObject = {
     position: "absolute",
     top: 8,
-    right: drawerPosition === "left" ? 10 : "auto",
-    left: drawerPosition === "left" ? "auto" : 10,
+    right: drawerPosition === "left" ? 7 : "auto",
+    left: drawerPosition === "left" ? "auto" : 7,
     zIndex: 8900,
   };
 
