@@ -20,9 +20,6 @@ export const validateNode = (node: AreaNodeWithoutId) => {
   if (node.name && (node.name.length < 3 || node.name.length > 50)) {
     result.name = "Invalid name length";
   }
-  if (node.description && node.description.length > 1000) {
-    result.description = "Description is too long";
-  }
   if (!node.type) {
     result.type = "Type is missing";
   }
