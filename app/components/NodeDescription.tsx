@@ -6,10 +6,13 @@ import { Link } from "@remix-run/react";
 const options: HTMLReactParserOptions = {
   replace: (domNode) => {
     if (domNode instanceof Element && domNode.attribs) {
-      if (domNode.name === "a" && domNode.attribs.href.startsWith("/")) {
-        return (
-          <Link to={domNode.attribs.href}>{domToReact(domNode.children)}</Link>
-        );
+      if (domNode.name === "a") {
+        const href = domNode.attribs.href
+          .replace("https://arkesia.gg", "")
+          .replace("https://www.arkesia.gg", "");
+        if (href.startsWith("/")) {
+          return <Link to={href}>{domToReact(domNode.children)}</Link>;
+        }
       }
     }
   },
