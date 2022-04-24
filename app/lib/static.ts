@@ -88,6 +88,7 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Cooking Ingredient",
         icon: "cooking.webp",
+        sizeMultiplicator: 0.9,
       },
       {
         name: "Another Story",
@@ -96,6 +97,7 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Hidden Story",
         icon: "hidden_story.webp",
+        sizeMultiplicator: 0.9,
       },
       {
         name: "Vista",
