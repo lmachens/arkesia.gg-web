@@ -102,8 +102,8 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "viewpoint.webp",
       },
       {
-        name: "Gold Named Enemy",
-        icon: "minimap_symbol_69.webp",
+        name: "Unique Monster",
+        icon: "adventure-tome.webp",
       },
     ],
   },
@@ -133,16 +133,16 @@ export const nodeCategories: AreaNodeCategory[] = [
     includes: ["Continent", "Dungeon", "Island"],
     types: [
       {
-        name: "Unique Monster",
-        icon: "adventure-tome.webp",
-      },
-      {
         name: "Boss",
         icon: "minimap_symbol_1.webp",
       },
       {
         name: "World Boss",
         icon: "minimap_symbol_40.webp",
+      },
+      {
+        name: "Gold Named Enemy",
+        icon: "minimap_symbol_69.webp",
       },
       {
         name: "Silver Named Enemy",
