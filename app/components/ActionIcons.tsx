@@ -50,13 +50,16 @@ export default function ActionIcons() {
 
   return (
     <Group
-      sx={{
+      sx={(theme) => ({
         position: "absolute",
         bottom: 7,
-        right: drawerPosition === "left" ? 10 : "auto",
-        left: drawerPosition === "left" ? "auto" : 10,
+        right: drawerPosition === "left" ? 7 : "auto",
+        left: drawerPosition === "left" ? "auto" : 7,
         zIndex: 8900,
-      }}
+        borderRadius: theme.radius.sm,
+        padding: theme.spacing.xs,
+        backgroundColor: theme.colors.dark[8],
+      })}
       spacing="xs"
     >
       <Tooltip
@@ -127,8 +130,9 @@ export default function ActionIcons() {
           target="_blank"
           size="md"
           sx={{
+            backgroundColor: "#5865f2",
             "&:hover": {
-              backgroundColor: "#5865f2",
+              backgroundColor: "#6974f3",
             },
           }}
           aria-label="Join the community"
