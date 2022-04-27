@@ -1715,7 +1715,43 @@ export const continents: Continent[] = [
       },
       {
         name: "Peyto",
-        category: "Continent",
+        category: "Island",
+        tiles: [
+          {
+            id: 0,
+            tile: "peyto/lv_ocn_peyto_ps_0_{y}x{x}.webp",
+            full: "peyto/lv_ocn_peyto_ps_0_full.webp",
+            max: [2, 2],
+          },
+          {
+            id: 2,
+            tile: "peyto/lv_ocn_peyto_ps_2_{y}x{x}.webp",
+            full: "peyto/lv_ocn_peyto_ps_2_full.webp",
+            max: [1, 1],
+          },
+          {
+            id: 3,
+            tile: "peyto/lv_ocn_peyto_ps_3_{y}x{x}.webp",
+            full: "peyto/lv_ocn_peyto_ps_3_full.webp",
+            max: [2, 2],
+          },
+          {
+            id: 5,
+            tile: "peyto/lv_ocn_peyto_ps_5_{y}x{x}.webp",
+            full: "peyto/lv_ocn_peyto_ps_5_full.webp",
+            max: [1, 1],
+          },
+          {
+            id: 6,
+            tile: "peyto/lv_ocn_peyto_ps_6_{y}x{x}.webp",
+            full: "peyto/lv_ocn_peyto_ps_6_full.webp",
+            max: [4, 2],
+          },
+        ],
+      },
+      {
+        name: "Cradle of the Sea Fermata",
+        category: "Island",
         tiles: [
           {
             id: 0,
