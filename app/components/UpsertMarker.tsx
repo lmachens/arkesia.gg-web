@@ -4,6 +4,7 @@ import { Form, useActionData, useTransition } from "@remix-run/react";
 import { useNotifications } from "@mantine/notifications";
 import type { Area, Tile } from "~/lib/types";
 import {
+  Anchor,
   Button,
   Drawer,
   InputWrapper,
@@ -23,6 +24,7 @@ import {
   useSetEditingNodeLocation,
 } from "~/lib/store";
 import TypeSelect from "./TypeSelect";
+import { trackOutboundLinkClick } from "~/lib/stats";
 
 type UpsertMarkerProps = {
   area: Area;
@@ -284,6 +286,25 @@ export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
                 >
                   {userToken ? "Save" : "Submit for review"}
                 </Button>
+                {!userToken && (
+                  <Text size="xs">
+                    Join us in{" "}
+                    <Anchor
+                      size="xs"
+                      href="https://discord.com/invite/NTZu8Px"
+                      target="_blank"
+                      onClick={() =>
+                        trackOutboundLinkClick(
+                          "https://discord.com/invite/NTZu8Px"
+                        )
+                      }
+                      rel="noreferrer"
+                    >
+                      Discord
+                    </Anchor>{" "}
+                    to help maintaining nodes
+                  </Text>
+                )}
               </Form>
               {!nodeLocation?.id && userToken && (
                 <Form method="post" className="node-form">
