@@ -1,7 +1,9 @@
 import type { HeadersFunction, LoaderFunction } from "@remix-run/node";
-import { continents } from "~/lib/static";
+import { getNodeLocations } from "~/lib/db.server";
+import { areaContinents, continents } from "~/lib/static";
 
 export const loader: LoaderFunction = async () => {
+  const nodeLocations = await getNodeLocations();
   const urls: string[] = [];
   continents.forEach((continent) => {
     continent.areas.forEach((area) => {
@@ -9,6 +11,13 @@ export const loader: LoaderFunction = async () => {
         `<url><loc>https://arkesia.gg/${continent.name}/${area.name}</loc></url>`
       );
     });
+  });
+
+  nodeLocations.forEach((nodeLocation) => {
+    const continent = areaContinents[nodeLocation.areaName];
+    urls.push(
+      `<url><loc>https://arkesia.gg/${continent}/${nodeLocation.areaName}?tileId=${nodeLocation.tileId}&amp;node=${nodeLocation.areaNodeId}&amp;location=${nodeLocation.id}</loc></url>`
+    );
   });
 
   const content = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join(

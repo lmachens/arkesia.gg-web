@@ -83,6 +83,12 @@ export const findNodeLocations = async (
   return locations;
 };
 
+export const getNodeLocations = async (
+): Promise<AreaNodeLocation[]> => {
+  const locations = await db.areaNodeLocation.findMany();
+  return locations;
+};
+
 export const insertNode = async (node: AreaNodeWithoutId) => {
   const result = await db.areaNode.create({ data: node });
   return result;
