@@ -17,6 +17,9 @@ import { envLoader } from "./lib/loaders.server";
 import type { MetaFunction } from "@remix-run/react/routeModules";
 import AppBreadcrumbs from "./components/AppBreadcrumbs";
 import ActionIcons from "./components/ActionIcons";
+import Footer from "./components/Footer";
+import VideoAds from "./components/VideoAds";
+import { useEffect } from "react";
 
 export function links() {
   return [
@@ -41,12 +44,14 @@ export const loader = envLoader;
 export const unstable_shouldReload: ShouldReloadFunction = () => false;
 
 export default function App() {
+  useEffect(() => {
+    window.AdSlots = window.AdSlots || { cmd: [], disableScripts: ["gpt"] };
+  }, []);
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-
         <Meta />
         <Links />
       </head>
@@ -75,11 +80,18 @@ export default function App() {
                 <AppBreadcrumbs />
                 <Outlet />
                 <ActionIcons />
+                <VideoAds />
+                <Footer />
               </AppShell>
             </AppSpotlightProvider>
           </NotificationsProvider>
         </MantineProvider>
         <ScrollRestoration />
+        <script
+          async
+          src="https://kumo.network-n.com/dist/app.js"
+          site="arkesiagg"
+        />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
