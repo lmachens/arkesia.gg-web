@@ -1,14 +1,15 @@
-import { Anchor } from "@mantine/core";
+import { Anchor, Box, Modal } from "@mantine/core";
+import { useState } from "react";
 import { useDrawerPosition } from "~/lib/store";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 const Footer = () => {
   const drawerPosition = useDrawerPosition();
+  const [openedPrivacyPolicy, setOpenedPrivacyPolicy] = useState(false);
 
   return (
     // eslint-disable-next-line jsx-a11y/anchor-is-valid
-    <Anchor
-      className="nn-cmp-show"
-      href="#"
+    <Box
       sx={(theme) => ({
         position: "absolute",
         bottom: 0,
@@ -19,8 +20,36 @@ const Footer = () => {
         color: "#ddd",
       })}
     >
-      Manage Cookie Settings
-    </Anchor>
+      <Anchor
+        className="nn-cmp-show"
+        href="#"
+        sx={{
+          color: "#ddd",
+        }}
+      >
+        Manage Cookie Settings
+      </Anchor>
+      {" | "}
+      <Anchor
+        href="#"
+        sx={{
+          color: "#ddd",
+        }}
+        onClick={() => setOpenedPrivacyPolicy(true)}
+      >
+        Privacy Policy
+      </Anchor>
+      <Modal
+        opened={openedPrivacyPolicy}
+        onClose={() => setOpenedPrivacyPolicy(false)}
+        title="Privacy Policy"
+        sx={{ zIndex: 10000 }}
+        size="calc(100vw - 87px)"
+        withinPortal={false}
+      >
+        <PrivacyPolicy />
+      </Modal>
+    </Box>
   );
 };
 
