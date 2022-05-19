@@ -45,8 +45,22 @@ export const unstable_shouldReload: ShouldReloadFunction = () => false;
 
 export default function App() {
   useEffect(() => {
-    window.AdSlots = window.AdSlots || { cmd: [], disableScripts: ["gpt"] };
+    function onOwAdReady() {
+      // @ts-ignore
+      window.AdSlots = window.AdSlots || { cmd: [], disableScripts: ["gpt"] };
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://kumo.network-n.com/dist/app.js";
+    script.setAttribute("site", "arkesiagg");
+
+    document.body.appendChild(script);
+    script.onload = onOwAdReady;
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
+
   return (
     <html lang="en">
       <head>
@@ -87,11 +101,6 @@ export default function App() {
           </NotificationsProvider>
         </MantineProvider>
         <ScrollRestoration />
-        <script
-          async
-          src="https://kumo.network-n.com/dist/app.js"
-          site="arkesiagg"
-        />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
