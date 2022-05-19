@@ -1,5 +1,6 @@
 import { Anchor, Box, Modal } from "@mantine/core";
 import { useState } from "react";
+import { ClientOnly } from "remix-utils";
 import { useDrawerPosition } from "~/lib/store";
 import PrivacyPolicy from "./PrivacyPolicy";
 
@@ -20,16 +21,25 @@ const Footer = () => {
         color: "#ddd",
       })}
     >
-      <Anchor
-        className="nn-cmp-show"
-        href="#"
-        sx={{
-          color: "#ddd",
-        }}
-      >
-        Manage Cookie Settings
-      </Anchor>
-      {" | "}
+      <ClientOnly>
+        {() =>
+          !navigator.userAgent.includes("Overwolf") && (
+            <>
+              <Anchor
+                className="nn-cmp-show"
+                href="#"
+                sx={{
+                  color: "#ddd",
+                }}
+              >
+                Manage Cookie Settings
+              </Anchor>
+              {" | "}
+            </>
+          )
+        }
+      </ClientOnly>
+
       <Anchor
         href="#"
         sx={{

@@ -45,7 +45,11 @@ export const unstable_shouldReload: ShouldReloadFunction = () => false;
 
 export default function App() {
   useEffect(() => {
-    function onOwAdReady() {
+    if (navigator.userAgent.includes("Overwolf")) {
+      return;
+    }
+
+    function onAdReady() {
       // @ts-ignore
       window.AdSlots = window.AdSlots || { cmd: [], disableScripts: ["gpt"] };
     }
@@ -55,7 +59,7 @@ export default function App() {
     script.setAttribute("site", "arkesiagg");
 
     document.body.appendChild(script);
-    script.onload = onOwAdReady;
+    script.onload = onAdReady;
     return () => {
       document.body.removeChild(script);
     };
