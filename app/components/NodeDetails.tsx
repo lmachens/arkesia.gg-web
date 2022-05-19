@@ -27,10 +27,12 @@ import { AvailableNodes } from "./AvailableNodes";
 import ImagePreview from "./ImagePreview";
 import NodeDescription from "./NodeDescription";
 import type { URLSearchParamsInit } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { ClientOnly } from "remix-utils";
 
 export default function NodeDetails() {
+  const location = useLocation();
   const selectedNodeLocation = useSelectedNodeLocation();
   const setSelectedNodeLocation = useSetSelectedNodeLocation();
   const editingNodeLocation = useEditingNodeLocation();
@@ -83,7 +85,7 @@ export default function NodeDetails() {
 
   useDidUpdate(() => {
     const newSearchParams: URLSearchParamsInit = {};
-    const tileId = searchParams.get("tileIdId");
+    const tileId = searchParams.get("tileId");
     if (tileId) {
       newSearchParams.tileId = tileId;
     }
@@ -183,7 +185,11 @@ export default function NodeDetails() {
             <ClientOnly>
               {() =>
                 userToken ? (
-                  <Form method="delete" className="node-form">
+                  <Form
+                    action={`${location.pathname}${location.search}`}
+                    method="delete"
+                    className="node-form"
+                  >
                     <input type="hidden" name="_action" value="delete" />
                     <input
                       type="hidden"
@@ -206,7 +212,11 @@ export default function NodeDetails() {
                     </Button>
                   </Form>
                 ) : (
-                  <Form method="post" className="node-form">
+                  <Form
+                    action={`${location.pathname}${location.search}`}
+                    method="post"
+                    className="node-form"
+                  >
                     <input type="hidden" name="_action" value="report" />
                     <input
                       type="hidden"
