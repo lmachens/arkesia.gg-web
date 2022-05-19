@@ -5353,30 +5353,6 @@ export const continents: Continent[] = [
         tiles: [
           {
             id: 0,
-            tile: "ruined_castle/lv_fat_ocastle_d_ps_0_{y}x{x}.webp",
-            full: "ruined_castle/lv_fat_ocastle_d_ps_0_full.webp",
-            max: [3, 4],
-          },
-          {
-            id: 1,
-            tile: "ruined_castle/lv_fat_ocastle_d_ps_1_{y}x{x}.webp",
-            full: "ruined_castle/lv_fat_ocastle_d_ps_1_full.webp",
-            max: [2, 2],
-          },
-          {
-            id: 2,
-            tile: "ruined_castle/lv_fat_ocastle_d_ps_2_{y}x{x}.webp",
-            full: "ruined_castle/lv_fat_ocastle_d_ps_2_full.webp",
-            max: [1, 2],
-          },
-          {
-            id: 3,
-            tile: "ruined_castle/lv_fat_ocastle_d_ps_3_{y}x{x}.webp",
-            full: "ruined_castle/lv_fat_ocastle_d_ps_3_full.webp",
-            max: [3, 4],
-          },
-          {
-            id: 0,
             tile: "ruined_castle/lv_fat_ocastlea_d_ps_0_{y}x{x}.webp",
             full: "ruined_castle/lv_fat_ocastlea_d_ps_0_full.webp",
             max: [3, 4],
