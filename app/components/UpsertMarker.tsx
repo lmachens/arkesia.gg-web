@@ -25,6 +25,7 @@ import {
 } from "~/lib/store";
 import TypeSelect from "./TypeSelect";
 import { trackOutboundLinkClick } from "~/lib/stats";
+import { useLocation } from "react-router-dom";
 
 type UpsertMarkerProps = {
   area: Area;
@@ -33,6 +34,7 @@ type UpsertMarkerProps = {
 
 export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
   const markerRef = useRef<L.Marker>(null);
+  const location = useLocation();
   const [fileScreenshot, setFileScreenshot] = useState<File | null>(null);
   const nodeLocation = useEditingNodeLocation();
   const setEditingNodeLocation = useSetEditingNodeLocation();
@@ -132,6 +134,7 @@ export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
           {nodeLocation?.position && (
             <>
               <Form
+                action={`${location.pathname}${location.search}`}
                 method="post"
                 className="node-form"
                 encType="multipart/form-data"
@@ -307,7 +310,11 @@ export default function UpsertMarker({ area, tile }: UpsertMarkerProps) {
                 )}
               </Form>
               {!nodeLocation?.id && userToken && (
-                <Form method="post" className="node-form">
+                <Form
+                  action={`${location.pathname}${location.search}`}
+                  method="post"
+                  className="node-form"
+                >
                   <Text size="xs" align="center" mt="md">
                     Or add as location to existing node
                   </Text>
