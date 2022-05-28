@@ -9,7 +9,7 @@ import {
 import type { ShouldReloadFunction } from "@remix-run/react";
 import styles from "~/styles/global.css";
 import leafletStyles from "leaflet/dist/leaflet.css";
-import { AppShell, MantineProvider } from "@mantine/core";
+import { AppShell, Global, MantineProvider } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
 import AppSpotlightProvider from "./components/AppSpotlightProvider";
 import InitClients from "./components/InitClients";
@@ -57,6 +57,13 @@ export default function App() {
         <MantineProvider
           theme={{ fontFamily: "NunitoVariable", colorScheme: "dark" }}
         >
+          <Global
+            styles={() => ({
+              body: {
+                overflow: "hidden",
+              },
+            })}
+          />
           <NotificationsProvider
             zIndex={900}
             position="top-right"
