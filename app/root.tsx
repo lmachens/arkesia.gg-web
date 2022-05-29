@@ -9,7 +9,7 @@ import {
 import type { ShouldReloadFunction } from "@remix-run/react";
 import styles from "~/styles/global.css";
 import leafletStyles from "leaflet/dist/leaflet.css";
-import { AppShell, MantineProvider } from "@mantine/core";
+import { AppShell, Global, MantineProvider } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
 import AppSpotlightProvider from "./components/AppSpotlightProvider";
 import InitClients from "./components/InitClients";
@@ -19,7 +19,7 @@ import AppBreadcrumbs from "./components/AppBreadcrumbs";
 import ActionIcons from "./components/ActionIcons";
 import Footer from "./components/Footer";
 import VideoAds from "./components/VideoAds";
-import { useEffect } from "react";
+import { ClientOnly } from "remix-utils";
 
 export function links() {
   return [
@@ -44,27 +44,6 @@ export const loader = envLoader;
 export const unstable_shouldReload: ShouldReloadFunction = () => false;
 
 export default function App() {
-  useEffect(() => {
-    if (navigator.userAgent.includes("Overwolf")) {
-      return;
-    }
-
-    function onAdReady() {
-      // @ts-ignore
-      window.AdSlots = window.AdSlots || { cmd: [], disableScripts: ["gpt"] };
-    }
-
-    const script = document.createElement("script");
-    script.src = "https://kumo.network-n.com/dist/app.js";
-    script.setAttribute("site", "arkesiagg");
-
-    document.body.appendChild(script);
-    script.onload = onAdReady;
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <html lang="en">
       <head>
@@ -78,6 +57,13 @@ export default function App() {
         <MantineProvider
           theme={{ fontFamily: "NunitoVariable", colorScheme: "dark" }}
         >
+          <Global
+            styles={() => ({
+              body: {
+                overflow: "hidden",
+              },
+            })}
+          />
           <NotificationsProvider
             zIndex={900}
             position="top-right"
@@ -98,7 +84,7 @@ export default function App() {
                 <AppBreadcrumbs />
                 <Outlet />
                 <ActionIcons />
-                <VideoAds />
+                <ClientOnly>{() => <VideoAds />}</ClientOnly>
                 <Footer />
               </AppShell>
             </AppSpotlightProvider>
