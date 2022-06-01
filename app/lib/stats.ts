@@ -4,7 +4,7 @@ import Plausible from "plausible-tracker";
 let plausible: ReturnType<typeof Plausible> | null = null;
 export const initPlausible = (domain: string, apiHost: string) => {
   plausible = Plausible({
-    domain,
+    domain: navigator.userAgent.includes("Overwolf") ? domain + "-app" : domain,
     apiHost,
   });
   plausible.enableAutoPageviews();
