@@ -17,14 +17,12 @@ import { useState } from "react";
 import { trackOutboundLinkClick } from "~/lib/stats";
 import {
   useDrawerPosition,
-  useIsShowingDiscoveredNodes,
   useMap,
   useMarkerSize,
   useSetDrawerPosition,
   useSetEditingNodeLocation,
   useSetMarkerSize,
   useShowNameOnMap,
-  useToggleIsShowingDiscoveredNodes,
   useToggleShowNameOnMap,
 } from "~/lib/store";
 import { DiscordIcon } from "./DiscordIcon";
@@ -36,8 +34,7 @@ export default function ActionIcons() {
     key: "user-token",
     defaultValue: "",
   });
-  const isShowingDiscoveredNodes = useIsShowingDiscoveredNodes();
-  const toggleIsShowingDiscoveredNodes = useToggleIsShowingDiscoveredNodes();
+
   const drawerPosition = useDrawerPosition();
   const setDrawerPosition = useSetDrawerPosition();
   const setEditingNodeLocation = useSetEditingNodeLocation();
@@ -183,15 +180,6 @@ export default function ActionIcons() {
             label={null}
           />
         </InputWrapper>
-        <Space h="md" />
-        <Text style={{ marginBottom: 10 }} weight={500}>
-          Discovered Nodes
-        </Text>
-        <Switch
-          label="Show discovered nodes"
-          checked={isShowingDiscoveredNodes}
-          onChange={toggleIsShowingDiscoveredNodes}
-        />
         <Space h="md" />
         <DiscoveredNodes />
         <Text style={{ marginBottom: 10 }} weight={500}>

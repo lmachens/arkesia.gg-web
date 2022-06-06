@@ -17,6 +17,7 @@ type PersistentStoreProps = {
   toggleIsShowingDiscoveredNodes: () => void;
   discoveredNodes: DiscoveredNode[];
   toggleDiscoveredNode: (node: AreaNode) => void;
+  setDiscoveredNode: (discoveredNodes: DiscoveredNode[]) => void;
   drawerPosition: "left" | "right";
   setDrawerPosition: (drawerPosition: "left" | "right") => void;
   lastAreaNames: string[];
@@ -45,6 +46,10 @@ export const usePersistentStore = create(
           return {
             isShowingDiscoveredNodes: !state.isShowingDiscoveredNodes,
           };
+        }),
+      setDiscoveredNode: (discoveredNodes) =>
+        set({
+          discoveredNodes,
         }),
       discoveredNodes: [],
       toggleDiscoveredNode: (node) =>
@@ -121,6 +126,12 @@ const discoveredNodesSelector = (state: PersistentStoreProps) =>
   state.discoveredNodes;
 export const useDiscoveredNodes = () => {
   return usePersistentStore(discoveredNodesSelector);
+};
+
+const setDiscoveredNodesSelector = (state: PersistentStoreProps) =>
+  state.setDiscoveredNode;
+export const useSetDiscoveredNodes = () => {
+  return usePersistentStore(setDiscoveredNodesSelector);
 };
 
 const toggleDiscoveredNodeSelector = (state: PersistentStoreProps) =>
