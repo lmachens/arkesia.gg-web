@@ -86,7 +86,7 @@ export default function PrivacyPolicy() {
       <Title order={2}>Cookies and Web Beacons</Title>
 
       <Text>
-        Like any other website, Arkesia.gg uses 'cookies'. These cookies are
+        Like any other website, arkesia.gg uses 'cookies'. These cookies are
         used to store information including visitors' preferences, and the pages
         on the website that the visitor accessed or visited. The information is
         used to optimize the users' experience by customizing our web page
@@ -163,14 +163,14 @@ export default function PrivacyPolicy() {
         the consumer's personal data.
       </Text>
       <Text>
-        If you make a request, we have one month to respond to you. If you
-        woListd like to exercise any of these rights, please contact us.
+        If you make a request, we have one month to respond to you. If you would
+        like to exercise any of these rights, please contact us.
       </Text>
 
       <Title order={2}>GDPR Data Protection Rights</Title>
 
       <Text>
-        We woListd like to make sure you are fListly aware of all of your data
+        We would like to make sure you are fully aware of all of your data
         protection rights. Every user is entitled to the following:
       </Text>
       <Text>
@@ -201,8 +201,8 @@ export default function PrivacyPolicy() {
         directly to you, under certain conditions.
       </Text>
       <Text>
-        If you make a request, we have one month to respond to you. If you
-        woListd like to exercise any of these rights, please contact us.
+        If you make a request, we have one month to respond to you. If you would
+        like to exercise any of these rights, please contact us.
       </Text>
 
       <Title order={2}>Children's Information</Title>

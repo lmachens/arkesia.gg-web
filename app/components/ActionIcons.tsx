@@ -49,7 +49,7 @@ export default function ActionIcons() {
     <Group
       sx={(theme) => ({
         position: "absolute",
-        bottom: 22,
+        top: 8,
         right: drawerPosition === "left" ? 7 : "auto",
         left: drawerPosition === "left" ? "auto" : 7,
         zIndex: 8900,
@@ -148,7 +148,7 @@ export default function ActionIcons() {
         size={largeScreen ? "lg" : "md"}
         radius="md"
         position={{
-          bottom: 65,
+          top: 60,
           right: drawerPosition === "left" ? 5 : "auto",
           left: drawerPosition === "left" ? "auto" : 5,
         }}

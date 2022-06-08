@@ -1,6 +1,5 @@
 import { Anchor, Box, Modal } from "@mantine/core";
 import { useState } from "react";
-import { ClientOnly } from "remix-utils";
 import { useDrawerPosition } from "~/lib/store";
 import PrivacyPolicy from "./PrivacyPolicy";
 
@@ -14,37 +13,19 @@ const Footer = () => {
       sx={(theme) => ({
         position: "absolute",
         bottom: 0,
-        right: drawerPosition === "left" ? 7 : "auto",
-        left: drawerPosition === "left" ? "auto" : 7,
+        left: drawerPosition === "left" ? 7 : "auto",
+        right: drawerPosition === "left" ? "auto" : 7,
         zIndex: 8900,
         borderRadius: theme.radius.sm,
         color: "#ddd",
       })}
     >
-      <ClientOnly>
-        {() =>
-          !navigator.userAgent.includes("Overwolf") && (
-            <>
-              <Anchor
-                className="nn-cmp-show"
-                href="#"
-                sx={{
-                  color: "#ddd",
-                }}
-              >
-                Manage Cookie Settings
-              </Anchor>
-              {" | "}
-            </>
-          )
-        }
-      </ClientOnly>
-
       <Anchor
         href="#"
         sx={{
           color: "#ddd",
         }}
+        size="xs"
         onClick={() => setOpenedPrivacyPolicy(true)}
       >
         Privacy Policy
