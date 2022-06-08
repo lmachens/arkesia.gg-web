@@ -18,8 +18,6 @@ import type { MetaFunction } from "@remix-run/react/routeModules";
 import AppBreadcrumbs from "./components/AppBreadcrumbs";
 import ActionIcons from "./components/ActionIcons";
 import Footer from "./components/Footer";
-import VideoAds from "./components/VideoAds";
-import { ClientOnly } from "remix-utils";
 
 export function links() {
   return [
@@ -84,7 +82,6 @@ export default function App() {
                 <AppBreadcrumbs />
                 <Outlet />
                 <ActionIcons />
-                <ClientOnly>{() => <VideoAds />}</ClientOnly>
                 <Footer />
               </AppShell>
             </AppSpotlightProvider>
