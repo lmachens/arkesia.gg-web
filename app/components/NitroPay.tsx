@@ -3,6 +3,10 @@ import { useEffect } from "react";
 
 const NitroPay = () => {
   useEffect(() => {
+    if (navigator.userAgent.includes("Overwolf")) {
+      return;
+    }
+
     const script = document.createElement("script");
     script.src = "https://s.nitropay.com/ads-1043.js";
     script.setAttribute("data-cfasync", "false");
