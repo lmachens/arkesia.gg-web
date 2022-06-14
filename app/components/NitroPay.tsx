@@ -45,6 +45,7 @@ const NitroPay = () => {
         bottom: "-200px",
         width: 300,
         height: 200,
+        zIndex: 9999,
       }}
     />
   );
