@@ -195,6 +195,18 @@ export default function ActionIcons() {
             { label: "Right", value: "right" },
           ]}
         />
+        <Text
+          id="ncmp-consent-link"
+          color="blue"
+          sx={{
+            button: {
+              background: "none",
+              border: "none",
+              color: "inherit",
+              cursor: "pointer",
+            },
+          }}
+        />
       </Dialog>
     </Group>
   );

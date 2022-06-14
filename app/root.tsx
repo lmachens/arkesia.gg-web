@@ -18,6 +18,7 @@ import type { MetaFunction } from "@remix-run/react/routeModules";
 import AppBreadcrumbs from "./components/AppBreadcrumbs";
 import ActionIcons from "./components/ActionIcons";
 import Footer from "./components/Footer";
+import NitroPay from "./components/NitroPay";
 
 export function links() {
   return [
@@ -83,6 +84,7 @@ export default function App() {
                 <Outlet />
                 <ActionIcons />
                 <Footer />
+                <NitroPay />
               </AppShell>
             </AppSpotlightProvider>
           </NotificationsProvider>
