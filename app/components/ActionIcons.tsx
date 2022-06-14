@@ -1,5 +1,6 @@
 import {
   ActionIcon,
+  Box,
   Dialog,
   Group,
   InputWrapper,
@@ -194,6 +195,18 @@ export default function ActionIcons() {
             { label: "Left", value: "left" },
             { label: "Right", value: "right" },
           ]}
+        />
+        <Text
+          id="ncmp-consent-link"
+          color="blue"
+          sx={{
+            button: {
+              background: "none",
+              border: "none",
+              color: "inherit",
+              cursor: "pointer",
+            },
+          }}
         />
       </Dialog>
     </Group>

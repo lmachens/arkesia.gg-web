@@ -126,24 +126,25 @@ export default function PrivacyPolicy() {
       <Title order={2}>Third Party Privacy Policies</Title>
 
       <Text>
-        We use third party advertisements to support our site. Some of these
-        advertisers may be served from our third party advertiser. You can view
-        their privacy policy and cookie policy here. You can manage your cookies
-        by clicking "Manage Cookie Settings" in the footer. We use Google
-        Analytics and Comscore to analyse the use of our website. Google
-        Analytics and Comscore gather information about website use by means of
-        cookies. The information gathered relating to our website is used to
-        create reports about the use of our website. Google's privacy policy is
-        available at:{" "}
-        <Anchor href="https://www.google.com/policies/privacy/">
-          https://www.google.com/policies/privacy/
-        </Anchor>
-        . Comscore’s privacy policy is available at{" "}
-        <Anchor href="https://www.comscore.com/About-comScore/Privacy-Policy">
-          https://www.comscore.com/About-comScore/Privacy-Policy
-        </Anchor>
-        .
+        Aeternum Map's Privacy Policy does not apply to other advertisers or
+        websites. Thus, we are advising you to consult the respective Privacy
+        Policies of these third-party ad servers for more detailed information.
+        It may include their practices and instructions about how to opt-out of
+        certain options.{" "}
       </Text>
+
+      <Text>
+        You can choose to disable cookies through your individual browser
+        options. To know more detailed information about cookie management with
+        specific web browsers, it can be found at the browsers' respective
+        websites.
+      </Text>
+
+      <Title order={2}>
+        CCPA Privacy Rights (Do Not Sell My Personal Information)
+      </Title>
+
+      <Text data-ccpa-link="1" />
 
       <Text>
         Under the CCPA, among other rights, California consumers have the right
@@ -166,6 +167,8 @@ export default function PrivacyPolicy() {
         If you make a request, we have one month to respond to you. If you would
         like to exercise any of these rights, please contact us.
       </Text>
+
+      <Text data-ccpa-link="1" />
 
       <Title order={2}>GDPR Data Protection Rights</Title>
 
