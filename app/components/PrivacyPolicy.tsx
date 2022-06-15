@@ -1,6 +1,15 @@
 import { Anchor, Container, List, Text, Title } from "@mantine/core";
+import { useEffect } from "react";
 
 export default function PrivacyPolicy() {
+  useEffect(() => {
+    // @ts-ignore
+    if (window["NitroPayCCPA"]) {
+      // @ts-ignore
+      window["NitroPayCCPA"].init();
+    }
+  }, []);
+
   return (
     <Container>
       <Title order={2}>Details</Title>
@@ -126,7 +135,7 @@ export default function PrivacyPolicy() {
       <Title order={2}>Third Party Privacy Policies</Title>
 
       <Text>
-        Aeternum Map's Privacy Policy does not apply to other advertisers or
+        Arkesia.gg's Privacy Policy does not apply to other advertisers or
         websites. Thus, we are advising you to consult the respective Privacy
         Policies of these third-party ad servers for more detailed information.
         It may include their practices and instructions about how to opt-out of

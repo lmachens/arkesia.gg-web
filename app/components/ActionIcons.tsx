@@ -1,48 +1,23 @@
-import {
-  ActionIcon,
-  Dialog,
-  Group,
-  InputWrapper,
-  SegmentedControl,
-  Slider,
-  Space,
-  Switch,
-  Text,
-  TextInput,
-  Tooltip,
-} from "@mantine/core";
-import { useLocalStorageValue, useMediaQuery } from "@mantine/hooks";
+import { ActionIcon, Dialog, Group, Text, Tooltip } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { DrawingPinIcon, GearIcon, GitHubLogoIcon } from "@modulz/radix-icons";
 import { useState } from "react";
 import { trackOutboundLinkClick } from "~/lib/stats";
 import {
   useDrawerPosition,
   useMap,
-  useMarkerSize,
-  useSetDrawerPosition,
   useSetEditingNodeLocation,
-  useSetMarkerSize,
-  useShowNameOnMap,
-  useToggleShowNameOnMap,
 } from "~/lib/store";
 import { DiscordIcon } from "./DiscordIcon";
-import { DiscoveredNodes } from "./DiscoveredNodes";
+import Settings from "./Settings";
 
 export default function ActionIcons() {
   const [opened, setOpened] = useState(false);
-  const [userToken, setUserToken] = useLocalStorageValue<string>({
-    key: "user-token",
-    defaultValue: "",
-  });
 
   const drawerPosition = useDrawerPosition();
-  const setDrawerPosition = useSetDrawerPosition();
   const setEditingNodeLocation = useSetEditingNodeLocation();
   const map = useMap();
-  const showNameOnMap = useShowNameOnMap();
-  const toggleShowNameOnMap = useToggleShowNameOnMap();
-  const markerSize = useMarkerSize();
-  const setMarkerSize = useSetMarkerSize();
+
   const largeScreen = useMediaQuery("(min-width: 900px)");
 
   return (
@@ -154,59 +129,7 @@ export default function ActionIcons() {
         }}
         zIndex={9000}
       >
-        <TextInput
-          label="User-Token"
-          required
-          placeholder="Only for moderators right now"
-          value={userToken}
-          onChange={(event) => setUserToken(event.target.value)}
-          name="userToken"
-        />
-        <Space h="md" />
-        <Text style={{ marginBottom: 10 }} weight={500}>
-          Map
-        </Text>
-        <Switch
-          label="Show name on map"
-          checked={showNameOnMap}
-          onChange={toggleShowNameOnMap}
-        />
-        <InputWrapper label="Marker size" style={{ marginTop: 5 }}>
-          <Slider
-            value={markerSize}
-            onChange={setMarkerSize}
-            min={15}
-            max={60}
-            label={null}
-          />
-        </InputWrapper>
-        <Space h="md" />
-        <DiscoveredNodes />
-        <Text style={{ marginBottom: 10 }} weight={500}>
-          Drawer position
-        </Text>
-        <SegmentedControl
-          size="sm"
-          value={drawerPosition}
-          onChange={(value: "left" | "right") => setDrawerPosition(value)}
-          sx={{ width: "100%" }}
-          data={[
-            { label: "Left", value: "left" },
-            { label: "Right", value: "right" },
-          ]}
-        />
-        <Text
-          id="ncmp-consent-link"
-          color="blue"
-          sx={{
-            button: {
-              background: "none",
-              border: "none",
-              color: "inherit",
-              cursor: "pointer",
-            },
-          }}
-        />
+        <Settings />
       </Dialog>
     </Group>
   );
