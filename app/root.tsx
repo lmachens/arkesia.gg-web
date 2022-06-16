@@ -19,6 +19,7 @@ import AppBreadcrumbs from "./components/AppBreadcrumbs";
 import ActionIcons from "./components/ActionIcons";
 import Footer from "./components/Footer";
 import NitroPay from "./components/NitroPay";
+import Notifications from "./components/Notifications";
 
 export function links() {
   return [
@@ -64,7 +65,7 @@ export default function App() {
             })}
           />
           <NotificationsProvider
-            zIndex={900}
+            zIndex={9000}
             position="top-right"
             autoClose={2500}
           >
@@ -85,6 +86,7 @@ export default function App() {
                 <ActionIcons />
                 <Footer />
                 <NitroPay />
+                <Notifications />
               </AppShell>
             </AppSpotlightProvider>
           </NotificationsProvider>
