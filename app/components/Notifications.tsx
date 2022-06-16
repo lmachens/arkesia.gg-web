@@ -18,6 +18,7 @@ const Notifications = () => {
     }
     setTimeout(() => {
       notifications.showNotification({
+        id: "hasContributorsSeen",
         title: "Join the team",
         message: (
           <>
@@ -41,7 +42,10 @@ const Notifications = () => {
               <Button
                 variant="outline"
                 compact
-                onClick={() => setHasContributorsSeen(true)}
+                onClick={() => {
+                  setHasContributorsSeen(true);
+                  notifications.hideNotification("hasContributorsSeen");
+                }}
               >
                 Do not show again
               </Button>
