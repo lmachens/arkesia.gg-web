@@ -30,6 +30,7 @@ import type { URLSearchParamsInit } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { ClientOnly } from "remix-utils";
+import IslandGuideLink from "./IslandGuideLink";
 
 export default function NodeDetails() {
   const location = useLocation();
@@ -122,7 +123,9 @@ export default function NodeDetails() {
               Node ID: {selectedNodeLocation.areaNodeId} Location ID:{" "}
               {selectedNodeLocation.id}
             </Text>
-
+            {selectedNodeLocation.areaNode.type === "Island" && (
+              <IslandGuideLink areaNode={selectedNodeLocation.areaNode} />
+            )}
             {selectedNodeLocation.areaNode.description && (
               <NodeDescription
                 html={selectedNodeLocation.areaNode.description}
