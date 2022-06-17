@@ -1,8 +1,8 @@
 import { Anchor } from "@mantine/core";
-import type { AreaNodeDTO } from "~/lib/types";
+import type { Area, AreaNodeDTO } from "~/lib/types";
 
 type IslandGuideLinkProps = {
-  areaNode: AreaNodeDTO;
+  areaNode: AreaNodeDTO | Area;
 };
 const IslandGuideLink = ({ areaNode }: IslandGuideLinkProps) => {
   const path =

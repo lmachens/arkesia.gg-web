@@ -8,6 +8,7 @@ import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { arkesiaArea, continents, nodeCategories } from "~/lib/static";
 import { useDrawerPosition, useFilters, useSetFilters } from "~/lib/store";
+import IslandGuideLink from "./IslandGuideLink";
 
 const FiltersSelect = () => {
   const drawerPosition = useDrawerPosition();
@@ -59,6 +60,7 @@ const FiltersSelect = () => {
           checked={filters.includes(categoryName)}
         />
       ))}
+      {area.category === "Island" && <IslandGuideLink areaNode={area} />}
     </Stack>
   );
 
