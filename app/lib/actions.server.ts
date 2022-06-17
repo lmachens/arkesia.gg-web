@@ -158,11 +158,15 @@ export async function requestReportNode(id: number, reason: string) {
 }
 
 export const nodeAction: ActionFunction = async ({ request }) => {
-  const body = await unstable_parseMultipartFormData(request, uploadHandler);
+  const contentType = request.headers.get("Content-Type") || "";
+  const [type] = contentType.split(/\s*;\s*boundary=/);
+
+  const body = await (type === "multipart/form-data"
+    ? unstable_parseMultipartFormData(request, uploadHandler)
+    : request.formData());
   const user = await requestUser(body.get("userToken")?.toString());
 
   const action = body.get("_action")?.toString();
-
   switch (action) {
     case "create":
       {

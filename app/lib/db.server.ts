@@ -83,8 +83,7 @@ export const findNodeLocations = async (
   return locations;
 };
 
-export const getNodeLocations = async (
-): Promise<AreaNodeLocation[]> => {
+export const getNodeLocations = async (): Promise<AreaNodeLocation[]> => {
   const locations = await db.areaNodeLocation.findMany();
   return locations;
 };
