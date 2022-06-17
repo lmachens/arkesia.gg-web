@@ -6,7 +6,7 @@ type IslandGuideLinkProps = {
 };
 const IslandGuideLink = ({ areaNode }: IslandGuideLinkProps) => {
   const path =
-    areaNode.name?.toLowerCase().replace(/\s/g, "-").replace(/'/g, "s") || "";
+    areaNode.name?.toLowerCase().replace(/\s/g, "-").replace(/'/g, "") || "";
   return (
     <Anchor href={`https://lost-ark.maxroll.gg/island/${path}`} target="_blank">
       Maxroll Island Guide
