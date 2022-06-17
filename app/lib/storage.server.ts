@@ -1,5 +1,9 @@
 import { createClient } from "@supabase/supabase-js";
-import { unstable_createFileUploadHandler } from "@remix-run/node";
+import {
+  unstable_composeUploadHandlers,
+  unstable_createFileUploadHandler,
+  unstable_createMemoryUploadHandler,
+} from "@remix-run/node";
 import sharp from "sharp";
 import type { NodeOnDiskFile } from "@remix-run/node";
 
@@ -35,7 +39,10 @@ export const deleteNodeScreenshot = async (publicUrl: string) => {
   return bucket.remove([path]);
 };
 
-export const uploadHandler = unstable_createFileUploadHandler({
-  maxFileSize: 60000000,
-  file: ({ filename }) => filename,
-});
+export const uploadHandler = unstable_composeUploadHandlers(
+  unstable_createFileUploadHandler({
+    maxPartSize: 60000000,
+    file: ({ filename }) => filename,
+  }),
+  unstable_createMemoryUploadHandler()
+);
