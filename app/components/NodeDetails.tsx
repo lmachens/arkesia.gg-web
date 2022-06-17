@@ -123,7 +123,8 @@ export default function NodeDetails() {
               Node ID: {selectedNodeLocation.areaNodeId} Location ID:{" "}
               {selectedNodeLocation.id}
             </Text>
-            {selectedNodeLocation.areaNode.type === "Island" && (
+            {(selectedNodeLocation.areaNode.type === "Island" ||
+              selectedNodeLocation.areaNode.type === "PvP Island") && (
               <IslandGuideLink areaNode={selectedNodeLocation.areaNode} />
             )}
             {selectedNodeLocation.areaNode.description && (

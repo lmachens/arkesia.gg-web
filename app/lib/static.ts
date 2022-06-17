@@ -1271,7 +1271,7 @@ export const continents: Continent[] = [
     areas: [
       {
         name: "Isteri Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1283,7 +1283,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Bamboo Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1313,7 +1313,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Dark Chaos Gate",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1325,7 +1325,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Secret Dungeon",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1337,7 +1337,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Goblin Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1349,7 +1349,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Giant Mushroom Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -1373,7 +1373,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Toto Silver Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 2,
@@ -1385,7 +1385,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Totopia",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 3,
@@ -1397,7 +1397,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Illusion Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1409,7 +1409,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Lullaby Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 3,
@@ -1421,7 +1421,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Starlight Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1469,7 +1469,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Island of Time",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -1481,7 +1481,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Volare Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1493,7 +1493,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Tooki Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1505,7 +1505,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Isle of Yearning",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 6,
@@ -1517,7 +1517,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Facility X-301",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1547,7 +1547,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Alteisen",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1565,7 +1565,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Meteora",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 2,
@@ -1577,7 +1577,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Kalthertz",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -1589,7 +1589,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Island of Mist",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 3,
@@ -1601,7 +1601,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Argon",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -1613,7 +1613,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Frostfire Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1625,7 +1625,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Aiwana Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -1637,7 +1637,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Fortuna",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1649,7 +1649,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Vairgrys's Nest",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1661,7 +1661,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Spida Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1679,7 +1679,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Mercia",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 5,
@@ -1691,7 +1691,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Reminiscence Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -1703,7 +1703,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Forpe",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 2,
@@ -1787,7 +1787,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Lost City",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1799,7 +1799,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Blackfang's Den",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1817,7 +1817,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Gravis",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1829,7 +1829,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Opher, the Lonely Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 3,
@@ -1841,7 +1841,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Sunflower Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 2,
@@ -1853,7 +1853,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Freedom Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 4,
@@ -1889,7 +1889,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Kharmine's Lair",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -1901,7 +1901,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Oblivion Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1913,7 +1913,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Little Luck Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1925,7 +1925,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Distorted Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 10,
@@ -1949,7 +1949,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Erasmo's Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 3,
@@ -1961,7 +1961,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Fomona Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1973,7 +1973,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Runaways Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -1991,7 +1991,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Medeia",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2003,7 +2003,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Liebeheim",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -2015,7 +2015,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Lush Reed Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2027,7 +2027,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Metus Islands",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2045,7 +2045,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Atlas",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2057,7 +2057,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Wisdom Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2093,7 +2093,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Crescent Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2105,7 +2105,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Serenity Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2117,7 +2117,7 @@ export const continents: Continent[] = [
       },
       {
         name: "White Wave Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2129,7 +2129,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Outlaw Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2141,7 +2141,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Wildwater Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2153,7 +2153,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Naruni Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2165,7 +2165,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Niheltalop's Thoughts",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2177,7 +2177,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Notos Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2189,7 +2189,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Monte Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -2201,7 +2201,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Panda Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2225,7 +2225,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Fantasm Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2249,7 +2249,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Harmony Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2261,7 +2261,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Dreamgull Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2273,7 +2273,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Glacier Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2285,7 +2285,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Lagoon Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 6,
@@ -2303,7 +2303,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Turtle Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -2315,7 +2315,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Hope Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 2,
@@ -2327,7 +2327,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Lopang Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -2357,7 +2357,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Eternity Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2375,7 +2375,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Hypnos's Eyes",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2423,7 +2423,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Sublime Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 2,
@@ -2441,7 +2441,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Death's Hold Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 3,
@@ -2453,7 +2453,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Orvis Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 2,
@@ -2465,7 +2465,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Astella",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2477,7 +2477,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Slime Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2501,7 +2501,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Alakkir",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -2519,7 +2519,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Opportunity Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -2531,7 +2531,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Primal Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2543,7 +2543,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Golden Wave Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2555,7 +2555,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Boombling Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 8,
@@ -2573,7 +2573,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Tranquil Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -2585,7 +2585,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Revelry Row",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 4,
@@ -2597,7 +2597,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Asura Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2609,7 +2609,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Promise Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2621,7 +2621,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Twilight Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2645,7 +2645,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Phantomwing Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2663,7 +2663,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Azure Wind Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -2705,7 +2705,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Shadowmoon Market",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2735,7 +2735,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Shangra",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2813,7 +2813,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Atropos",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2861,7 +2861,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Walpurgis",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 2,
@@ -2873,7 +2873,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Unknown Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2885,7 +2885,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Gesbroy",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -2939,7 +2939,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Land of Truth",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -3035,7 +3035,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Tooki Corporation",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -3059,7 +3059,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Whispering Islet",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -3077,7 +3077,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Anguished Isle",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -3089,7 +3089,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Drumbeat Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -3107,7 +3107,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Snowpang Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -3119,7 +3119,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Past Hidden by Mikeel",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 3,
@@ -3131,7 +3131,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Werner's Grand Manor",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -3161,7 +3161,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Shadow Island",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -3179,7 +3179,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Secret Laboratory",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -3191,7 +3191,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Sacrificial Altar",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 2,
@@ -3203,7 +3203,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Twilight Chapel",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 1,
@@ -3215,7 +3215,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Night of Walpurgis",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 7,
@@ -3227,7 +3227,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Arena of Blood Low",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,
@@ -3239,7 +3239,7 @@ export const continents: Continent[] = [
       },
       {
         name: "Garden of Despair",
-        category: "Continent",
+        category: "Island",
         tiles: [
           {
             id: 0,

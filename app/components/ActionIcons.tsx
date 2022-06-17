@@ -1,6 +1,21 @@
-import { ActionIcon, Dialog, Group, Text, Tooltip } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
-import { DrawingPinIcon, GearIcon, GitHubLogoIcon } from "@modulz/radix-icons";
+import type { CSSObject } from "@mantine/core";
+import { Container } from "@mantine/core";
+import {
+  ActionIcon,
+  Dialog,
+  Group,
+  MediaQuery,
+  Popover,
+  Text,
+  Tooltip,
+} from "@mantine/core";
+import { useDisclosure, useMediaQuery } from "@mantine/hooks";
+import {
+  DrawingPinIcon,
+  GearIcon,
+  GitHubLogoIcon,
+  InfoCircledIcon,
+} from "@modulz/radix-icons";
 import { useState } from "react";
 import { trackOutboundLinkClick } from "~/lib/stats";
 import {
@@ -12,7 +27,8 @@ import { DiscordIcon } from "./DiscordIcon";
 import Settings from "./Settings";
 
 export default function ActionIcons() {
-  const [opened, setOpened] = useState(false);
+  const [openedSettings, setOpenedSettings] = useState(false);
+  const [opened, handlers] = useDisclosure(false);
 
   const drawerPosition = useDrawerPosition();
   const setEditingNodeLocation = useSetEditingNodeLocation();
@@ -20,20 +36,16 @@ export default function ActionIcons() {
 
   const largeScreen = useMediaQuery("(min-width: 900px)");
 
-  return (
-    <Group
-      sx={(theme) => ({
-        position: "absolute",
-        top: 8,
-        right: drawerPosition === "left" ? 7 : "auto",
-        left: drawerPosition === "left" ? "auto" : 7,
-        zIndex: 8900,
-        borderRadius: theme.radius.sm,
-        padding: theme.spacing.xs,
-        backgroundColor: theme.colors.dark[8],
-      })}
-      spacing="xs"
-    >
+  const css: CSSObject = {
+    position: "absolute",
+    top: 8,
+    right: drawerPosition === "left" ? 7 : "auto",
+    left: drawerPosition === "left" ? "auto" : 7,
+    zIndex: 8900,
+  };
+
+  const content = (
+    <Group spacing="xs">
       <Tooltip
         zIndex={9100}
         label={
@@ -72,7 +84,7 @@ export default function ActionIcons() {
       </Tooltip>
       <Tooltip zIndex={9100} label={<Text>Settings</Text>}>
         <ActionIcon
-          onClick={() => setOpened((opened) => !opened)}
+          onClick={() => setOpenedSettings((opened) => !opened)}
           size="md"
           aria-label="Settings"
           p={4}
@@ -117,9 +129,9 @@ export default function ActionIcons() {
         </ActionIcon>
       </Tooltip>
       <Dialog
-        opened={opened}
+        opened={openedSettings}
         withCloseButton
-        onClose={() => setOpened(false)}
+        onClose={() => setOpenedSettings(false)}
         size={largeScreen ? "lg" : "md"}
         radius="md"
         position={{
@@ -132,5 +144,53 @@ export default function ActionIcons() {
         <Settings />
       </Dialog>
     </Group>
+  );
+
+  return (
+    <>
+      <MediaQuery smallerThan="sm" styles={css}>
+        <Popover
+          opened={opened}
+          onClose={handlers.close}
+          target={
+            <ActionIcon
+              onClick={handlers.toggle}
+              size="lg"
+              variant="filled"
+              title="Actions"
+              color="cyan"
+            >
+              <InfoCircledIcon />
+            </ActionIcon>
+          }
+          position="bottom"
+          withArrow
+          zIndex={8900}
+          radius="sm"
+          sx={{
+            display: "none",
+            "@media (max-width: 800px)": {
+              display: "block",
+            },
+          }}
+        >
+          {content}
+        </Popover>
+      </MediaQuery>
+      <MediaQuery largerThan="sm" styles={css}>
+        <Container
+          sx={(theme) => ({
+            borderRadius: theme.radius.sm,
+            padding: theme.spacing.xs,
+            backgroundColor: theme.colors.dark[8],
+            "@media (max-width: 800px)": {
+              display: "none",
+            },
+          })}
+        >
+          {content}
+        </Container>
+      </MediaQuery>
+    </>
   );
 }
