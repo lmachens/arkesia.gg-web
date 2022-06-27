@@ -31,6 +31,7 @@ import { useLocation } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { ClientOnly } from "remix-utils";
 import IslandGuideLink from "./IslandGuideLink";
+import ShareButton from "./ShareButton";
 
 export default function NodeDetails() {
   const location = useLocation();
@@ -154,7 +155,7 @@ export default function NodeDetails() {
                 toggleDiscoveredNode(selectedNodeLocation.areaNode)
               }
               color="gray"
-              variant="subtle"
+              variant="light"
               size="xs"
               compact
               mb="xs"
@@ -184,6 +185,7 @@ export default function NodeDetails() {
                 </ClientOnly>
               </Group>
             </Button>
+            <ShareButton areaNodeLocation={selectedNodeLocation} />
             <Text size="xs">See all discovered nodes in the settings</Text>
             <Space h="md" />
             <ClientOnly>
