@@ -1,20 +1,18 @@
-import { Image, Text } from "@mantine/core";
+import { Image } from "@mantine/core";
 import { useEffect, useMemo, useRef } from "react";
-import { TileLayer, Tooltip, useMapEvents } from "react-leaflet";
+import { TileLayer, useMapEvents } from "react-leaflet";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getBounds } from "~/lib/map";
-import { areaContinents, nodeTypesMap, TILE_BASE_URL } from "~/lib/static";
+import { nodeTypesMap, TILE_BASE_URL } from "~/lib/static";
 import {
-  useDiscoveredNodes,
   useDrawerPosition,
   useEditingNodeLocation,
   useFilters,
-  useIsShowingDiscoveredNodes,
   useSetSelectedNodeLocation,
 } from "~/lib/store";
 import type { Area, AreaNodeLocationDTO, Tile } from "~/lib/types";
-import IconMarker from "./IconMarker";
 import L from "leaflet";
+import NodeLocationMarker from "./NodeLocationMarker";
 
 type TileControlProps = {
   area: Area;
@@ -34,8 +32,6 @@ export default function TileControl({
   selectedNodeLocation,
 }: TileControlProps) {
   const tileLayerRef = useRef<L.TileLayer | null>(null);
-  const discoveredNodes = useDiscoveredNodes();
-  const isShowingDiscoveredNodes = useIsShowingDiscoveredNodes();
   const navigate = useNavigate();
   const editingNodeLocation = useEditingNodeLocation();
   const [, setSearchParams] = useSearchParams();
@@ -59,21 +55,9 @@ export default function TileControl({
           nodeLocation.id !== editingNodeLocation?.id &&
           nodeLocation.areaName === area.name &&
           nodeLocation.tileId === activeTile.id &&
-          (isShowingDiscoveredNodes ||
-            !discoveredNodes.some(
-              (discoveredNode) => discoveredNode.id === nodeLocation.areaNodeId
-            )) &&
           filters.includes(nodeTypesMap[nodeLocation.areaNode.type]?.category)
       ),
-    [
-      nodeLocations,
-      editingNodeLocation?.id,
-      isShowingDiscoveredNodes,
-      discoveredNodes,
-      activeTile.id,
-      area.name,
-      filters,
-    ]
+    [nodeLocations, editingNodeLocation?.id, activeTile.id, area.name, filters]
   );
   useMapEvents({
     contextmenu: () => {
@@ -123,61 +107,16 @@ export default function TileControl({
         bounds={getBounds(activeTile)}
       />
       {visibleNodeLocations.map((nodeLocation) => (
-        <IconMarker
+        <NodeLocationMarker
           key={nodeLocation.position.toString()}
-          position={nodeLocation.position as [number, number]}
-          alt={nodeLocation.areaNode.type}
-          type={nodeLocation.areaNode.type}
-          name={nodeLocation.areaNode.name}
-          riseOnHover
-          verified={Boolean(nodeLocation.areaNode.userId)}
-          transitTo={nodeLocation.areaNode.transitTo}
-          highlight={selectedNodeLocation?.id === nodeLocation.id}
-          eventHandlers={{
-            click() {
-              if (!document.querySelector("#upsert-marker-drawer")) {
-                onNodeLocationClick(nodeLocation);
-              }
-            },
-            contextmenu() {
-              if (!nodeLocation.areaNode.transitTo) {
-                return;
-              }
-              const transitToLocation =
-                nodeLocation.areaNode.transitTo.areaNodeLocations[0];
-              const continent = areaContinents[transitToLocation.areaName];
-              setSelectedNodeLocation(null);
-              if (
-                nodeLocation.areaName === "Arkesia" &&
-                transitToLocation.areaName !== "Arkesia"
-              ) {
-                navigate(`/${continent}/${transitToLocation.areaName}`);
-              } else {
-                navigate(
-                  `/${continent}/${transitToLocation.areaName}?tileId=${transitToLocation.tileId}&node=${nodeLocation.areaNode.transitTo.id}&location=${transitToLocation.id}&hideDetails=true`
-                );
-              }
-            },
+          nodeLocation={nodeLocation}
+          selectedNodeLocation={selectedNodeLocation}
+          onClick={() => {
+            if (!document.querySelector("#upsert-marker-drawer")) {
+              onNodeLocationClick(nodeLocation);
+            }
           }}
-        >
-          <Tooltip direction="top" offset={[0, -15]}>
-            <Text size="md" align="center">
-              {nodeLocation.areaNode.name || nodeLocation.areaNode.type}
-              {!nodeLocation.areaNode.userId && " (Not verified)"}
-            </Text>
-            {nodeLocation.areaNode.name &&
-              nodeLocation.areaNode.name !== nodeLocation.areaNode.type && (
-                <Text size="xs" color="teal" align="center">
-                  {nodeLocation.areaNode.type}
-                </Text>
-              )}
-            {nodeLocation.areaNode.transitTo && (
-              <Text size="xs" color="cyan" align="center">
-                Right-click to transit
-              </Text>
-            )}
-          </Tooltip>
-        </IconMarker>
+        />
       ))}
     </div>
   );

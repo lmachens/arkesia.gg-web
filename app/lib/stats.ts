@@ -23,11 +23,3 @@ export const trackEvent = (
 export const trackOutboundLinkClick = (url: string) => {
   trackEvent("Outbound Link: Click", { props: { url: url } });
 };
-
-export const trackShowDiscoveredNodes = () => {
-  trackEvent("Show discovered nodes");
-};
-
-export const trackHideDiscoveredNodes = () => {
-  trackEvent("Hide discovered nodes");
-};
