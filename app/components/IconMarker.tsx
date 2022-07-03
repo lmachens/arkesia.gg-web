@@ -76,9 +76,10 @@ type IconMarkerProps = {
   type?: string;
   name?: string | null;
   highlight?: boolean;
+  opacity?: number;
 } & MarkerProps;
 const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
-  ({ type, verified, name, transitTo, highlight, ...props }, ref) => {
+  ({ type, verified, name, transitTo, highlight, opacity, ...props }, ref) => {
     const areaNodeType = type ? nodeTypesMap[type] : undefined;
     const showNameOnMap = useShowNameOnMap();
     const markerSize = useMarkerSize();
@@ -92,6 +93,7 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
           zIndexOffset={highlight ? 1000 : zIndex}
           // @ts-ignore
           autoPanOnFocus={false}
+          opacity={opacity}
           {...props}
           ref={ref}
         />
@@ -102,6 +104,7 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
             interactive={false}
             zIndexOffset={(highlight ? 1000 : zIndex) + 1}
             position={props.position}
+            opacity={opacity}
             // @ts-ignore
             autoPanOnFocus={false}
           />
