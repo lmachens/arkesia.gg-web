@@ -4,25 +4,24 @@ import {
   Button,
   List,
   ScrollArea,
-  Space,
+  Slider,
   Stack,
-  Switch,
   Text,
 } from "@mantine/core";
 import { useMemo } from "react";
 import { ICON_BASE_URL, nodeTypesMap } from "~/lib/static";
 import {
   useDiscoveredNodes,
-  useIsShowingDiscoveredNodes,
+  useDiscoveredNodesOpacity,
   useSetDiscoveredNodes,
-  useToggleIsShowingDiscoveredNodes,
+  useSetDiscoveredNodesOpacity,
 } from "~/lib/store";
 
 export function DiscoveredNodes() {
   const discoveredNodes = useDiscoveredNodes();
   const setDiscoveredNodes = useSetDiscoveredNodes();
-  const isShowingDiscoveredNodes = useIsShowingDiscoveredNodes();
-  const toggleIsShowingDiscoveredNodes = useToggleIsShowingDiscoveredNodes();
+  const discoveredNodesOpacity = useDiscoveredNodesOpacity();
+  const setDiscoveredNodesOpacity = useSetDiscoveredNodesOpacity();
 
   const groups = useMemo(
     () =>
@@ -85,10 +84,14 @@ export function DiscoveredNodes() {
             Import
           </Button>
         </Box>
-        <Switch
-          label="Show discovered nodes"
-          checked={isShowingDiscoveredNodes}
-          onChange={toggleIsShowingDiscoveredNodes}
+        <Text size="sm">Opacity</Text>
+        <Slider
+          min={0}
+          max={1}
+          step={0.1}
+          value={discoveredNodesOpacity}
+          label={(value) => `${(value * 100).toFixed(0)}%`}
+          onChange={setDiscoveredNodesOpacity}
         />
         <ScrollArea style={{ maxHeight: 250 }}>
           <List center size="sm">

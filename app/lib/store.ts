@@ -5,7 +5,6 @@ import create from "zustand";
 import { persist } from "zustand/middleware";
 import { useNodeLocations } from "./loaders";
 import { nodeCategories } from "./static";
-import { trackHideDiscoveredNodes, trackShowDiscoveredNodes } from "./stats";
 import type { AreaNodeLocationDTO } from "./types";
 
 export type DiscoveredNode = Pick<AreaNode, "id" | "type">;
@@ -13,8 +12,8 @@ export type DiscoveredNode = Pick<AreaNode, "id" | "type">;
 type PersistentStoreProps = {
   lastType: string;
   setLastType: (type: string) => void;
-  isShowingDiscoveredNodes: boolean;
-  toggleIsShowingDiscoveredNodes: () => void;
+  discoveredNodesOpacity: number;
+  setDiscoveredNodesOpacity: (opacity: number) => void;
   discoveredNodes: DiscoveredNode[];
   toggleDiscoveredNode: (node: AreaNode) => void;
   setDiscoveredNode: (discoveredNodes: DiscoveredNode[]) => void;
@@ -35,18 +34,9 @@ export const usePersistentStore = create(
     (set) => ({
       lastType: "Map Transition",
       setLastType: (type: string) => set({ lastType: type }),
-      isShowingDiscoveredNodes: false,
-      toggleIsShowingDiscoveredNodes: () =>
-        set((state) => {
-          if (state.isShowingDiscoveredNodes) {
-            trackHideDiscoveredNodes();
-          } else {
-            trackShowDiscoveredNodes();
-          }
-          return {
-            isShowingDiscoveredNodes: !state.isShowingDiscoveredNodes,
-          };
-        }),
+      discoveredNodesOpacity: 0.2,
+      setDiscoveredNodesOpacity: (discoveredNodesOpacity) =>
+        set({ discoveredNodesOpacity }),
       setDiscoveredNode: (discoveredNodes) =>
         set({
           discoveredNodes,
@@ -110,16 +100,16 @@ export const useLastType = () => {
   return usePersistentStore(lastTypeSelector);
 };
 
-const isShowingDiscoveredNodesSelector = (state: PersistentStoreProps) =>
-  state.isShowingDiscoveredNodes;
-export const useIsShowingDiscoveredNodes = () => {
-  return usePersistentStore(isShowingDiscoveredNodesSelector);
+const discoveredNodesOpacitySelector = (state: PersistentStoreProps) =>
+  state.discoveredNodesOpacity;
+export const useDiscoveredNodesOpacity = () => {
+  return usePersistentStore(discoveredNodesOpacitySelector);
 };
 
-const toggleIsShowingDiscoveredNodesSelector = (state: PersistentStoreProps) =>
-  state.toggleIsShowingDiscoveredNodes;
-export const useToggleIsShowingDiscoveredNodes = () => {
-  return usePersistentStore(toggleIsShowingDiscoveredNodesSelector);
+const setDiscoveredNodesOpacitySelector = (state: PersistentStoreProps) =>
+  state.setDiscoveredNodesOpacity;
+export const useSetDiscoveredNodesOpacity = () => {
+  return usePersistentStore(setDiscoveredNodesOpacitySelector);
 };
 
 const discoveredNodesSelector = (state: PersistentStoreProps) =>
