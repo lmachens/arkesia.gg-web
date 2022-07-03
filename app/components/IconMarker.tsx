@@ -89,22 +89,20 @@ const IconMarker = forwardRef<L.Marker, IconMarkerProps>(
       <>
         <Marker
           icon={getIcon(markerSize, areaNodeType, highlight)}
-          opacity={verified ? 1 : 0.5}
           zIndexOffset={highlight ? 1000 : zIndex}
           // @ts-ignore
           autoPanOnFocus={false}
-          opacity={opacity}
+          opacity={verified ? opacity : 0.5}
           {...props}
           ref={ref}
         />
         {showNameOnMap && name && (
           <Marker
             icon={getLabel(name, type, transitTo, areaNodeType?.size)}
-            opacity={verified ? 1 : 0.5}
             interactive={false}
             zIndexOffset={(highlight ? 1000 : zIndex) + 1}
             position={props.position}
-            opacity={opacity}
+            opacity={verified ? opacity : 0.5}
             // @ts-ignore
             autoPanOnFocus={false}
           />
