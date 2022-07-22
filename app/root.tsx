@@ -14,7 +14,6 @@ import { NotificationsProvider } from "@mantine/notifications";
 import AppSpotlightProvider from "./components/AppSpotlightProvider";
 import InitClients from "./components/InitClients";
 import { envLoader } from "./lib/loaders.server";
-import type { MetaFunction } from "@remix-run/react/routeModules";
 import AppBreadcrumbs from "./components/AppBreadcrumbs";
 import ActionIcons from "./components/ActionIcons";
 import Footer from "./components/Footer";
@@ -28,7 +27,7 @@ export function links() {
   ];
 }
 
-export const meta: MetaFunction = () => {
+export const meta = () => {
   return {
     title: "Arkesia.gg - Lost Ark Map",
     charset: "utf-8",
