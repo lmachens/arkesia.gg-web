@@ -3466,31 +3466,7 @@ export const continents: Continent[] = [
             id: 0,
             tile: "phantom_palace/lv_rhd_palacedp_c_ps_0_{y}x{x}.webp",
             full: "phantom_palace/lv_rhd_palacedp_c_ps_0_full.webp",
-            max: [10, 6],
-          },
-          {
-            id: 1,
-            tile: "phantom_palace/lv_rhd_palacedp_c_ps_1_{y}x{x}.webp",
-            full: "phantom_palace/lv_rhd_palacedp_c_ps_1_full.webp",
-            max: [3, 3],
-          },
-          {
-            id: 2,
-            tile: "phantom_palace/lv_rhd_palacedp_c_ps_2_{y}x{x}.webp",
-            full: "phantom_palace/lv_rhd_palacedp_c_ps_2_full.webp",
-            max: [3, 3],
-          },
-          {
-            id: 3,
-            tile: "phantom_palace/lv_rhd_palacedp_c_ps_3_{y}x{x}.webp",
-            full: "phantom_palace/lv_rhd_palacedp_c_ps_3_full.webp",
-            max: [3, 3],
-          },
-          {
-            id: 4,
-            tile: "phantom_palace/lv_rhd_palacedp_c_ps_4_{y}x{x}.webp",
-            full: "phantom_palace/lv_rhd_palacedp_c_ps_4_full.webp",
-            max: [2, 2],
+            max: [4, 6],
           },
           {
             id: 5,
