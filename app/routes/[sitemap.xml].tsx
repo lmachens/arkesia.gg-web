@@ -8,7 +8,7 @@ export const loader = async () => {
   continents.forEach((continent) => {
     continent.areas.forEach((area) => {
       urls.push(
-        `<url><loc>https://arkesia.gg/${continent.name}/${area.name}</loc></url>`
+        `<url><loc>https://www.arkesia.gg/${continent.name}/${area.name}</loc></url>`
       );
     });
   });
@@ -16,7 +16,7 @@ export const loader = async () => {
   nodeLocations.forEach((nodeLocation) => {
     const continent = areaContinents[nodeLocation.areaName];
     urls.push(
-      `<url><loc>https://arkesia.gg/${continent}/${nodeLocation.areaName}?tileId=${nodeLocation.tileId}&amp;node=${nodeLocation.areaNodeId}&amp;location=${nodeLocation.id}</loc></url>`
+      `<url><loc>https://www.arkesia.gg/${continent}/${nodeLocation.areaName}?tileId=${nodeLocation.tileId}&amp;node=${nodeLocation.areaNodeId}&amp;location=${nodeLocation.id}</loc></url>`
     );
   });
 
