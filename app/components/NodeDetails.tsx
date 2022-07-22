@@ -32,6 +32,7 @@ import { useSearchParams } from "react-router-dom";
 import { ClientOnly } from "remix-utils";
 import IslandGuideLink from "./IslandGuideLink";
 import ShareButton from "./ShareButton";
+import type { nodeAction } from "~/lib/actions.server";
 
 export default function NodeDetails() {
   const location = useLocation();
@@ -40,7 +41,7 @@ export default function NodeDetails() {
   const editingNodeLocation = useEditingNodeLocation();
   const setEditingNodeLocation = useSetEditingNodeLocation();
   const transition = useTransition();
-  const actionData = useActionData();
+  const actionData = useActionData<typeof nodeAction>();
   const [userToken] = useLocalStorageValue<string>({
     key: "user-token",
     defaultValue: "",

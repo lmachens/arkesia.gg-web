@@ -1,5 +1,5 @@
 import type { AreaNode, AreaNodeLocation } from "@prisma/client";
-import type { ActionFunction, NodeOnDiskFile } from "@remix-run/node";
+import type { ActionArgs, NodeOnDiskFile } from "@remix-run/node";
 import { unstable_parseMultipartFormData } from "@remix-run/node";
 import { badRequest } from "remix-utils";
 import { json } from "@remix-run/node";
@@ -157,7 +157,7 @@ export async function requestReportNode(id: number, reason: string) {
   }
 }
 
-export const nodeAction: ActionFunction = async ({ request }) => {
+export const nodeAction = async ({ request }: ActionArgs) => {
   const contentType = request.headers.get("Content-Type") || "";
   const [type] = contentType.split(/\s*;\s*boundary=/);
 

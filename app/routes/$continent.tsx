@@ -1,9 +1,9 @@
-import type { HeadersFunction, LoaderFunction } from "@remix-run/node";
+import type { HeadersFunction, LoaderArgs } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import invariant from "tiny-invariant";
 import { continents } from "~/lib/static";
 
-export const loader: LoaderFunction = async ({ params }) => {
+export const loader = async ({ params }: LoaderArgs) => {
   invariant(params.continent, "Expected params.continent");
 
   const continent = continents.find(

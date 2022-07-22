@@ -1,7 +1,7 @@
-import type { HeadersFunction, LoaderFunction } from "@remix-run/node";
+import type { HeadersFunction } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 
-export const loader: LoaderFunction = async () => {
+export const loader = async () => {
   return redirect("https://api.nitropay.com/v1/ads-1043.txt", 301);
 };
 
