@@ -1,8 +1,8 @@
-import type { HeadersFunction, LoaderFunction } from "@remix-run/node";
+import type { HeadersFunction } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import { arkesiaArea, world } from "~/lib/static";
 
-export const loader: LoaderFunction = async () => {
+export const loader = async () => {
   return redirect(`/${world.name}/${encodeURIComponent(arkesiaArea.name)}`);
 };
 

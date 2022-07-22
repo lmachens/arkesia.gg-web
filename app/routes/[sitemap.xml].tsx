@@ -1,8 +1,8 @@
-import type { HeadersFunction, LoaderFunction } from "@remix-run/node";
+import type { HeadersFunction } from "@remix-run/node";
 import { getNodeLocations } from "~/lib/db.server";
 import { areaContinents, continents } from "~/lib/static";
 
-export const loader: LoaderFunction = async () => {
+export const loader = async () => {
   const nodeLocations = await getNodeLocations();
   const urls: string[] = [];
   continents.forEach((continent) => {

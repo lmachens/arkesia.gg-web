@@ -1,6 +1,6 @@
-import type { HeadersFunction, LoaderFunction } from "@remix-run/node";
+import type { HeadersFunction } from "@remix-run/node";
 
-export const loader: LoaderFunction = async () => {
+export const loader = async () => {
   const robotText = `
     User-agent: Googlebot
     Disallow: /nogooglebot/

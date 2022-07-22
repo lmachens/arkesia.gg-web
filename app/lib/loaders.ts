@@ -1,12 +1,12 @@
 import { useLoaderData } from "@remix-run/react";
-import type { AreaLoaderData, EnvLoaderData } from "./loaders.server";
+import type { areaLoader, envLoader } from "./loaders.server";
 
 export const useEnv = () => {
-  const { ENV } = useLoaderData<EnvLoaderData>();
+  const { ENV } = useLoaderData<typeof envLoader>();
   return ENV;
 };
 
 export const useNodeLocations = () => {
-  const { nodeLocations } = useLoaderData<AreaLoaderData>();
+  const { nodeLocations } = useLoaderData<typeof areaLoader>();
   return nodeLocations || [];
 };

@@ -1,10 +1,10 @@
-import type { HeadersFunction, LoaderFunction } from "@remix-run/node";
+import type { HeadersFunction, LoaderArgs } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 
 /**
  * @deprecated redirects from /maps/:continent/:area to /:continent/:area
  */
-export const loader: LoaderFunction = async ({ request }) => {
+export const loader = async ({ request }: LoaderArgs) => {
   return redirect(request.url.replace("/maps", ""), 301);
 };
 
