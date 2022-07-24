@@ -79,6 +79,10 @@ export const nodeCategories: AreaNodeCategory[] = [
         name: "Ark Dungeon",
         icon: "minimap_symbol_4.webp",
       },
+      {
+        name: "Thronespire",
+        icon: "thronespire.webp",
+      },
     ],
   },
   {
@@ -239,6 +243,10 @@ export const nodeCategories: AreaNodeCategory[] = [
         icon: "minimap_symbol_5.webp",
       },
       {
+        name: "Legion Raid",
+        icon: "legion.webp",
+      },
+      {
         name: "Chaos Dungeon",
         icon: "minimap_symbol_1_38.webp",
       },
@@ -349,6 +357,10 @@ export const nodeCategories: AreaNodeCategory[] = [
       {
         name: "Siege Status Board",
         icon: "minimap_symbol_1_152.webp",
+      },
+      {
+        name: "Quality Upgrade",
+        icon: "quality_upgrade.webp",
       },
     ],
   },
