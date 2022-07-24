@@ -158,197 +158,204 @@ export async function requestReportNode(id: number, reason: string) {
 }
 
 export const nodeAction = async ({ request }: ActionArgs) => {
-  const contentType = request.headers.get("Content-Type") || "";
-  const [type] = contentType.split(/\s*;\s*boundary=/);
+  try {
+    const contentType = request.headers.get("Content-Type") || "";
+    const [type] = contentType.split(/\s*;\s*boundary=/);
 
-  const body = await (type === "multipart/form-data"
-    ? unstable_parseMultipartFormData(request, uploadHandler)
-    : request.formData());
-  const user = await requestUser(body.get("userToken")?.toString());
+    const body = await (type === "multipart/form-data"
+      ? unstable_parseMultipartFormData(request, uploadHandler)
+      : request.formData());
+    const user = await requestUser(body.get("userToken")?.toString());
 
-  const action = body.get("_action")?.toString();
-  switch (action) {
-    case "create":
-      {
-        const formData = parseFormData<CreateNodeForm>(body, {
-          lat: "number",
-          lng: "number",
-          areaName: "string",
-          type: "string",
-          name: "string",
-          tileId: "number",
-          description: "string",
-          screenshot: "string",
-          transitToId: "number",
-        });
-
-        if (formData instanceof Response) {
-          return formData;
-        }
-        const { lat, lng, areaName, tileId, ...partialFormData } = formData;
-        const position = [lat, lng];
-
-        const node: AreaNodeWithoutId = {
-          ...partialFormData,
-          description: formData.description.replace("<p><br></p>", ""),
-          userId: user ? user.id : null,
-          transitToId: formData.transitToId || null,
-        };
-
-        const fileScreenshot = body.get(
-          "fileScreenshot"
-        ) as NodeOnDiskFile | null;
-        const createdNode = await requestCreateNode(node, fileScreenshot);
-
-        if (createdNode instanceof Response) {
-          return createdNode;
-        }
-
-        const location: AreaNodeLocationWithoutId = {
-          areaNodeId: createdNode.id,
-          areaName: areaName,
-          position: position,
-          tileId: tileId,
-        };
-        const createdNodeLocation = await insertNodeLocation(location);
-
-        postToDiscord("inserted", createdNode, createdNodeLocation);
-      }
-      break;
-    case "location":
-      {
-        if (!user) {
-          return badRequest<PostNodeActionData>({
-            formError: "You shall not pass",
+    const action = body.get("_action")?.toString();
+    switch (action) {
+      case "create":
+        {
+          const formData = parseFormData<CreateNodeForm>(body, {
+            lat: "number",
+            lng: "number",
+            areaName: "string",
+            type: "string",
+            name: "string",
+            tileId: "number",
+            description: "string",
+            screenshot: "string",
+            transitToId: "number",
           });
-        }
-        const formData = parseFormData<CreateNodeLocationForm>(body, {
-          nodeId: "number",
-          lat: "number",
-          lng: "number",
-          areaName: "string",
-          tileId: "number",
-        });
 
-        if (formData instanceof Response) {
-          return formData;
-        }
-
-        const location: AreaNodeLocationWithoutId = {
-          areaNodeId: formData.nodeId,
-          areaName: formData.areaName,
-          position: [formData.lat, formData.lng],
-          tileId: formData.tileId,
-        };
-        const node = await findNode(formData.nodeId);
-        if (!node) {
-          return badRequest<PostNodeActionData>({
-            formError: "Node not found",
-          });
-        }
-        const createdNodeLocation = await insertNodeLocation(location);
-        postToDiscord("inserted", node, createdNodeLocation);
-      }
-      break;
-    case "update":
-      {
-        if (!user) {
-          return badRequest<PostNodeActionData>({
-            formError: "You shall not pass",
-          });
-        }
-        const formData = parseFormData<UpdateNodeForm>(body, {
-          id: "number",
-          locationId: "number",
-          lat: "number",
-          lng: "number",
-          areaName: "string",
-          type: "string",
-          name: "string",
-          tileId: "number",
-          description: "string",
-          screenshot: "string",
-          transitToId: "number",
-        });
-
-        if (formData instanceof Response) {
-          return formData;
-        }
-        const { lat, lng, areaName, tileId, locationId, ...partialFormData } =
-          formData;
-        const position = [lat, lng];
-
-        const node: Omit<AreaNode, "validationNote"> = {
-          ...partialFormData,
-          description: formData.description.replace("<p><br></p>", ""),
-          userId: user ? user.id : null,
-          transitToId: formData.transitToId || null,
-        };
-        const fileScreenshot = body.get(
-          "fileScreenshot"
-        ) as NodeOnDiskFile | null;
-        const createdNode = await requestUpdateNode(node, fileScreenshot);
-        if (createdNode instanceof Response) {
-          return createdNode;
-        }
-
-        const location: AreaNodeLocation = {
-          id: locationId,
-          areaNodeId: createdNode.id,
-          areaName: areaName,
-          position: position,
-          tileId: tileId,
-        };
-        const updatedNodeLocation = await updateNodeLocation(location);
-        postToDiscord("updated", createdNode, updatedNodeLocation);
-      }
-      break;
-    case "delete":
-      {
-        if (!user) {
-          return badRequest<PostNodeActionData>({
-            formError: "You shall not pass",
-          });
-        }
-
-        const formData = parseFormData<{ id: number }>(body, {
-          id: "number",
-        });
-        if (formData instanceof Response) {
-          return formData;
-        }
-
-        const deletedNodeLocation = await deleteNodeLocation(formData.id);
-        const node = await findNode(deletedNodeLocation.areaNodeId);
-        if (node) {
-          const otherLocations = await findNodeLocations({
-            areaNodeId: deletedNodeLocation.areaNodeId,
-          });
-          if (otherLocations.length === 0) {
-            await requestDeleteNode(node.id);
+          if (formData instanceof Response) {
+            return formData;
           }
-          postToDiscord("deleted", node, deletedNodeLocation);
-        }
-      }
-      break;
-    case "report":
-      {
-        const formData = parseFormData<{ id: number; reason: string }>(body, {
-          id: "number",
-          reason: "string",
-        });
-        if (formData instanceof Response) {
-          return formData;
-        }
+          const { lat, lng, areaName, tileId, ...partialFormData } = formData;
+          const position = [lat, lng];
 
-        requestReportNode(formData.id, formData.reason);
-      }
-      break;
+          const node: AreaNodeWithoutId = {
+            ...partialFormData,
+            description: formData.description.replace("<p><br></p>", ""),
+            userId: user ? user.id : null,
+            transitToId: formData.transitToId || null,
+          };
+
+          const fileScreenshot = body.get(
+            "fileScreenshot"
+          ) as NodeOnDiskFile | null;
+          const createdNode = await requestCreateNode(node, fileScreenshot);
+
+          if (createdNode instanceof Response) {
+            return createdNode;
+          }
+
+          const location: AreaNodeLocationWithoutId = {
+            areaNodeId: createdNode.id,
+            areaName: areaName,
+            position: position,
+            tileId: tileId,
+          };
+          const createdNodeLocation = await insertNodeLocation(location);
+
+          postToDiscord("inserted", createdNode, createdNodeLocation);
+        }
+        break;
+      case "location":
+        {
+          if (!user) {
+            return badRequest<PostNodeActionData>({
+              formError: "You shall not pass",
+            });
+          }
+          const formData = parseFormData<CreateNodeLocationForm>(body, {
+            nodeId: "number",
+            lat: "number",
+            lng: "number",
+            areaName: "string",
+            tileId: "number",
+          });
+
+          if (formData instanceof Response) {
+            return formData;
+          }
+
+          const location: AreaNodeLocationWithoutId = {
+            areaNodeId: formData.nodeId,
+            areaName: formData.areaName,
+            position: [formData.lat, formData.lng],
+            tileId: formData.tileId,
+          };
+          const node = await findNode(formData.nodeId);
+          if (!node) {
+            return badRequest<PostNodeActionData>({
+              formError: "Node not found",
+            });
+          }
+          const createdNodeLocation = await insertNodeLocation(location);
+          postToDiscord("inserted", node, createdNodeLocation);
+        }
+        break;
+      case "update":
+        {
+          if (!user) {
+            return badRequest<PostNodeActionData>({
+              formError: "You shall not pass",
+            });
+          }
+          const formData = parseFormData<UpdateNodeForm>(body, {
+            id: "number",
+            locationId: "number",
+            lat: "number",
+            lng: "number",
+            areaName: "string",
+            type: "string",
+            name: "string",
+            tileId: "number",
+            description: "string",
+            screenshot: "string",
+            transitToId: "number",
+          });
+
+          if (formData instanceof Response) {
+            return formData;
+          }
+          const { lat, lng, areaName, tileId, locationId, ...partialFormData } =
+            formData;
+          const position = [lat, lng];
+
+          const node: Omit<AreaNode, "validationNote"> = {
+            ...partialFormData,
+            description: formData.description.replace("<p><br></p>", ""),
+            userId: user ? user.id : null,
+            transitToId: formData.transitToId || null,
+          };
+          const fileScreenshot = body.get(
+            "fileScreenshot"
+          ) as NodeOnDiskFile | null;
+          const createdNode = await requestUpdateNode(node, fileScreenshot);
+          if (createdNode instanceof Response) {
+            return createdNode;
+          }
+
+          const location: AreaNodeLocation = {
+            id: locationId,
+            areaNodeId: createdNode.id,
+            areaName: areaName,
+            position: position,
+            tileId: tileId,
+          };
+          const updatedNodeLocation = await updateNodeLocation(location);
+          postToDiscord("updated", createdNode, updatedNodeLocation);
+        }
+        break;
+      case "delete":
+        {
+          if (!user) {
+            return badRequest<PostNodeActionData>({
+              formError: "You shall not pass",
+            });
+          }
+
+          const formData = parseFormData<{ id: number }>(body, {
+            id: "number",
+          });
+          if (formData instanceof Response) {
+            return formData;
+          }
+
+          const deletedNodeLocation = await deleteNodeLocation(formData.id);
+          const node = await findNode(deletedNodeLocation.areaNodeId);
+          if (node) {
+            const otherLocations = await findNodeLocations({
+              areaNodeId: deletedNodeLocation.areaNodeId,
+            });
+            if (otherLocations.length === 0) {
+              await requestDeleteNode(node.id);
+            }
+            postToDiscord("deleted", node, deletedNodeLocation);
+          }
+        }
+        break;
+      case "report":
+        {
+          const formData = parseFormData<{ id: number; reason: string }>(body, {
+            id: "number",
+            reason: "string",
+          });
+          if (formData instanceof Response) {
+            return formData;
+          }
+
+          requestReportNode(formData.id, formData.reason);
+        }
+        break;
+    }
+
+    return json(null, {
+      headers: {
+        "Set-Cookie": "_vercel_no_cache=1;Max-Age=60",
+      },
+    });
+  } catch (error) {
+    console.error(error);
+    return badRequest<PostNodeActionData>({
+      formError: "Something went wrong",
+    });
   }
-
-  return json(null, {
-    headers: {
-      "Set-Cookie": "_vercel_no_cache=1;Max-Age=60",
-    },
-  });
 };

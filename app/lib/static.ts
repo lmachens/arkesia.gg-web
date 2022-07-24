@@ -5972,12 +5972,6 @@ export const continents: Continent[] = [
             full: "wonderful_brewery/lv_yor_awesomeb_d_ps_0_full.webp",
             max: [4, 5],
           },
-          {
-            id: 1,
-            tile: "wonderful_brewery/lv_yor_awesomeb_d_ps_1_{y}x{x}.webp",
-            full: "wonderful_brewery/lv_yor_awesomeb_d_ps_1_full.webp",
-            max: [2, 2],
-          },
         ],
       },
       {
